@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 3 — The Time Value of Money</title>
+<link rel="stylesheet" href="css/style.css">
+<style>body{--accent:var(--m3);--accent-soft:var(--m3s)}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Module 3 of 10</div>
+    <h1>⏳ The Time Value of Money</h1>
+    <p class="lead">One idea powers this whole module: <strong>a dollar today is worth more than a dollar tomorrow</strong>, because today's dollar can grow. Master the picture, and the math becomes button-pushing.</p>
+    <div><span class="badge">PV &amp; FV</span><span class="badge">Compounding</span><span class="badge">Annuities</span><span class="badge">Rule of 72</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h2>🕒 The money time machine</h2>
+  <figure class="viz">
+    <svg viewBox="0 0 760 190" role="img" aria-label="Present value grows into future value through compounding; future value shrinks to present value through discounting">
+      <rect x="20" y="55" width="180" height="80" rx="14" fill="#FDF3E3" stroke="#D97706" stroke-width="3"/>
+      <text x="110" y="90" text-anchor="middle" font-family="Georgia" font-size="19" font-weight="bold" fill="#D97706">PV 💵</text>
+      <text x="110" y="115" text-anchor="middle" font-size="13" fill="#6B6584">money TODAY</text>
+      <rect x="560" y="55" width="180" height="80" rx="14" fill="#D97706"/>
+      <text x="650" y="90" text-anchor="middle" font-family="Georgia" font-size="19" font-weight="bold" fill="#fff">FV 💰</text>
+      <text x="650" y="115" text-anchor="middle" font-size="13" fill="#FDF3E3">money LATER</text>
+      <path d="M210 75 C 350 30, 450 30, 550 75" fill="none" stroke="#059669" stroke-width="4" marker-end="url(#g)"/>
+      <path d="M550 118 C 450 165, 350 165, 210 118" fill="none" stroke="#7C3AED" stroke-width="4" marker-end="url(#p)"/>
+      <defs>
+        <marker id="g" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><polygon points="0 0, 8 3.5, 0 7" fill="#059669"/></marker>
+        <marker id="p" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><polygon points="0 0, 8 3.5, 0 7" fill="#7C3AED"/></marker>
+      </defs>
+      <text x="380" y="33" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#059669">COMPOUNDING → grow it forward 🌱</text>
+      <text x="380" y="172" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#7C3AED">← DISCOUNTING — shrink it back 🔍</text>
+    </svg>
+    <figcaption>Every TVM problem is one of these two trips. Ask: “Am I going forward (FV) or backward (PV)?”</figcaption>
+  </figure>
+
+  <h2>🧮 The 5 magic buttons</h2>
+  <p>Your HP 10bII+ (the recommended exam calculator) thinks in five variables. Know any four → it finds the fifth:</p>
+  <div class="grid c4" style="grid-template-columns:repeat(5,1fr)">
+    <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">N</div><div class="stat-label">number of periods</div></div>
+    <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">I/YR</div><div class="stat-label">interest rate per year</div></div>
+    <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">PV</div><div class="stat-label">present value</div></div>
+    <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">PMT</div><div class="stat-label">recurring payment</div></div>
+    <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">FV</div><div class="stat-label">future value</div></div>
+  </div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap #1:</strong> Money going OUT of your pocket is negative; money coming IN is positive. If your answer looks crazy, check your signs. <strong>Trap #2:</strong> monthly compounding → divide the rate by 12 AND multiply years by 12.</div></div>
+
+  <h2>🎭 Annuity flavors: ordinary vs. due</h2>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m3);background:var(--m3s)"><h3 style="color:var(--m3)">📦 Ordinary annuity — pay at END</h3><p style="font-size:14.5px">Payments land at the end of each period. Most loans work this way (your first mortgage payment comes after a month).</p></div>
+    <div class="side" style="border-color:var(--m4);background:var(--m4s)"><h3 style="color:var(--m4)">🏠 Annuity due — pay at START</h3><p style="font-size:14.5px">Payments land at the beginning of each period. Think RENT — due on the 1st! Worth slightly more (each payment compounds longer).</p></div>
+  </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> “Rent is DUE on the 1st” → annuity <strong>due = beginning</strong> of period. On the calculator, that's BEGIN mode.</div></div>
+
+  <h2>⚡ The Rule of 72</h2>
+  <figure class="viz">
+    <svg viewBox="0 0 760 170" role="img" aria-label="Rule of 72: 72 divided by the interest rate gives years to double">
+      <text x="380" y="40" text-anchor="middle" font-family="Georgia" font-size="26" font-weight="bold" fill="#2B2640">72 ÷ interest rate ≈ years to DOUBLE 🎉</text>
+      <g font-family="Arial" font-size="14" text-anchor="middle">
+        <rect x="60" y="70" width="180" height="70" rx="12" fill="#FDF3E3"/><text x="150" y="100" font-weight="bold">72 ÷ 6% </text><text x="150" y="124" fill="#D97706" font-weight="bold">= 12 years</text>
+        <rect x="290" y="70" width="180" height="70" rx="12" fill="#FDF3E3"/><text x="380" y="100" font-weight="bold">72 ÷ 8%</text><text x="380" y="124" fill="#D97706" font-weight="bold">= 9 years</text>
+        <rect x="520" y="70" width="180" height="70" rx="12" fill="#FDF3E3"/><text x="610" y="100" font-weight="bold">72 ÷ 12%</text><text x="610" y="124" fill="#D97706" font-weight="bold">= 6 years</text>
+      </g>
+    </svg>
+    <figcaption>A mental shortcut the exam expects you to know cold.</figcaption>
+  </figure>
+
+  <h2>🌊 Why compounding frequency matters</h2>
+  <p>More compounding periods = more growth on growth. Ranking, smallest to biggest FV for the same stated rate:</p>
+  <div class="pill-row">
+    <span class="pill">Annual 🐢</span><span class="pill">Semiannual</span><span class="pill">Quarterly</span><span class="pill">Monthly</span><span class="pill">Daily 🚀</span>
+  </div>
+  <p style="font-size:14.5px;color:var(--ink-soft)">This is also why the <strong>effective annual rate (EAR)</strong> is higher than the stated (nominal) rate whenever compounding happens more than once a year.</p>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div><strong>TVM scares most students — but not you.</strong> You now see it as two arrows and five buttons. That's genuinely the whole game. Prove it below! 🧡</div></div>
+
+  <h2>✍️ Module 3 self-quiz</h2>
+  <div id="quiz" class="quiz"></div>
+
+  <p><a href="module4.html">Next up: Module 4 — Insurance Basics &amp; Property Insurance →</a></p>
+</main>
+
+<footer><div class="wrap"><p>FPQP® Visual Academy v1 · <a href="index.html">Home</a></p></div></footer>
+
+<script>
+window.QUIZ = { id:"m3", questions:[
+ {q:"A dollar today is worth more than a dollar next year because…", opts:["inflation always falls","today's dollar can be invested and grow","taxes rise every year","banks charge fees"], a:1, why:"That's the core of TVM: money now can earn returns, so it's worth more than the same amount later."},
+ {q:"Moving a FUTURE amount back to today's value is called…", opts:["compounding","amortizing","discounting","annuitizing"], a:2, why:"Discounting shrinks future money back to present value. Compounding grows it forward."},
+ {q:"Rent paid on the 1st of each month is an example of…", opts:["an ordinary annuity","an annuity due","a perpetuity","a lump sum"], a:1, why:"Payments at the BEGINNING of the period = annuity due. ‘Rent is due on the 1st!’"},
+ {q:"Using the Rule of 72, money earning 9% doubles in about…", opts:["6 years","8 years","9 years","12 years"], a:1, why:"72 ÷ 9 = 8 years."},
+ {q:"For a monthly-compounding problem over 10 years at 6% annual, what do you enter?", opts:["N=10, I=6","N=120, I=0.5","N=120, I=6","N=10, I=0.5"], a:1, why:"Monthly: multiply years by 12 (N=120) and divide the rate by 12 (0.5% per month)."},
+ {q:"All else equal, which compounding frequency creates the LARGEST future value?", opts:["Annual","Quarterly","Monthly","Daily"], a:3, why:"More frequent compounding = more growth-on-growth. Daily wins."},
+ {q:"An annuity due is worth ______ an otherwise identical ordinary annuity.", opts:["less than","the same as","more than","exactly half of"], a:2, why:"Each payment arrives one period earlier, so it compounds longer — worth more."},
+ {q:"Which five variables do TVM calculator problems revolve around?", opts:["N, I/YR, PV, PMT, FV","P, E, R, T, X","APR, APY, EAR, IRR, NPV","D, C, B, A, F"], a:0, why:"Know any four of N, I/YR, PV, PMT, FV — the calculator finds the fifth."}
+]};
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
