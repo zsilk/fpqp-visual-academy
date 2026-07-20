@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Number Bank — FPQP® Visual Academy</title>
+<link rel="stylesheet" href="css/style.css">
+<style>body{--accent:var(--m8);--accent-soft:var(--m8s)}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Every exam number in one place · 2026-current</div>
+    <h1>🔢 The Number Bank</h1>
+    <p class="lead">Every dollar figure, age threshold, and rate the FPQP® exam can ask — on <strong>one filterable page</strong>, organized by topic instead of by module. Search it, filter it, memorize it.</p>
+    <div><span class="badge">Filter by topic</span><span class="badge">Search any figure</span><span class="badge">All 2026 numbers</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>How to use this:</strong> On the exam, old numbers from a ~5-year-old book make perfect <em>wrong</em> answers. Drill the current figures here until they feel automatic — then a stale number can't fool you. Every figure below is verified against the 2026 CFFP Annual Limits sheet.</div></div>
+  <div class="callout exam"><span class="ico">📅</span><div><strong>Which tax year does your exam use?</strong> The 2026 course teaches these 2026 figures, but the CFFP exam tables through the <strong>March 2026</strong> window still provide <strong>2025</strong> tax brackets &amp; standard deductions ($15,750 single / $31,500 MFJ). The retirement, estate, and HSA limits track 2026. Check your exam window and use the tables it provides.</div></div>
+
+  <div id="number-bank"></div>
+
+  <p style="margin-top:30px"><a href="index.html">← Back to the hub</a></p>
+</main>
+
+<footer><div class="wrap">
+  <p><strong>Sources:</strong> <a href="https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500">IRS: 2026 retirement limits</a> · <a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill">IRS: 2026 inflation adjustments</a> · <a href="https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax">IRS: estate &amp; gift tax</a> · <a href="https://www.finra.org/investors/professional-designations/fpqp">FINRA: FPQP®</a></p>
+  <p>FPQP® Visual Academy · <a href="index.html">Home</a> · Always verify figures against official IRS tables and your course materials.</p>
+</div></footer>
+
+<script>
+window.NUMBERS = [
+ /* Exam logistics */
+ {num:"75",     name:"Exam questions",        topic:"Exam",        color:"--m10", desc:"Multiple-choice questions on the FPQP® final exam."},
+ {num:"70%",    name:"Passing score",         topic:"Exam",        color:"--m10", desc:"That's 53 of 75 correct — you can miss 22 and still pass."},
+ {num:"3 hrs",  name:"Time allowed",          topic:"Exam",        color:"--m10", desc:"Over 2 minutes per question."},
+ {num:"2",      name:"Attempts allowed",      topic:"Exam",        color:"--m10", desc:"A built-in safety net."},
+ {num:"120",    name:"Days to finish",        topic:"Exam",        color:"--m10", desc:"Days of online access to complete the program."},
+ {num:"16",     name:"CE hours / 2 yrs",      topic:"Exam",        color:"--m10", desc:"Continuing education required to keep the designation."},
+
+ /* Regulation */
+ {num:"2020",   name:"Reg BI effective",      topic:"Regulation",  color:"--m1",  desc:"Regulation Best Interest replaced plain suitability for broker-dealers (June 30, 2020)."},
+ {num:"4",      name:"Reg BI obligations",    topic:"Regulation",  color:"--m1",  desc:"Disclosure, Care, Conflicts, Compliance — plus Form CRS."},
+
+ /* Cash & debt */
+ {num:"28%",    name:"Housing ratio",         topic:"Cash & Debt", color:"--m2",  desc:"Max share of gross monthly income for housing costs."},
+ {num:"36%",    name:"Total-debt ratio",      topic:"Cash & Debt", color:"--m2",  desc:"Max share of gross income for ALL debt payments."},
+ {num:"3–6 mo", name:"Emergency fund",        topic:"Cash & Debt", color:"--m2",  desc:"Months of expenses to keep liquid for emergencies."},
+
+ /* Time value of money */
+ {num:"72",     name:"Rule of 72",            topic:"Investments", color:"--m3",  desc:"72 ÷ interest rate ≈ years for money to double."},
+
+ /* Investments */
+ {num:"0/15/20%",name:"LT capital gains",     topic:"Investments", color:"--m6",  desc:"Long-term gains rates (held > 1 year), by income."},
+ {num:"1 yr",   name:"LT holding period",     topic:"Investments", color:"--m6",  desc:"Hold longer than one year to get long-term treatment."},
+
+ /* Retirement */
+ {num:"$24,500",name:"401(k) deferral",       topic:"Retirement",  color:"--m7",  desc:"2026 employee deferral for 401(k)/403(b)/457."},
+ {num:"$8,000", name:"401(k) catch-up",       topic:"Retirement",  color:"--m7",  desc:"Additional deferral at age 50+."},
+ {num:"$11,250",name:"Super catch-up",        topic:"Retirement",  color:"--m7",  desc:"Enhanced catch-up for ages 60–63 (SECURE 2.0)."},
+ {num:"$7,500", name:"IRA limit",             topic:"Retirement",  color:"--m7",  desc:"2026 combined traditional + Roth IRA contribution."},
+ {num:"$1,100", name:"IRA catch-up",          topic:"Retirement",  color:"--m7",  desc:"Additional IRA contribution at age 50+ (now indexed)."},
+ {num:"$17,000",name:"SIMPLE IRA",            topic:"Retirement",  color:"--m7",  desc:"2026 SIMPLE IRA deferral (some plans allow more)."},
+ {num:"73",     name:"RMD age (1951–59)",     topic:"Retirement",  color:"--m7",  desc:"RMDs start at 73 for those born 1951–1959."},
+ {num:"75",     name:"RMD age (1960+)",       topic:"Retirement",  color:"--m7",  desc:"RMDs start at 75 for those born 1960 or later (from 2033)."},
+ {num:"25%",    name:"Missed-RMD penalty",    topic:"Retirement",  color:"--m7",  desc:"Down from 50%; just 10% if corrected quickly."},
+ {num:"59½",    name:"Early-withdrawal age",  topic:"Retirement",  color:"--m7",  desc:"Below this, a 10% penalty generally applies (plus income tax)."},
+ {num:"62 / 67 / 70",name:"Social Security ages",topic:"Retirement",color:"--m7", desc:"Earliest / full retirement age / max delayed credits."},
+
+ /* Taxes */
+ {num:"$16,100",name:"Std. deduction (single)",topic:"Taxes",      color:"--m8",  desc:"2026 standard deduction, single filer (post-OBBB)."},
+ {num:"$32,200",name:"Std. deduction (MFJ)",  topic:"Taxes",       color:"--m8",  desc:"2026 standard deduction, married filing jointly."},
+ {num:"$24,150",name:"Std. deduction (HoH)",  topic:"Taxes",       color:"--m8",  desc:"2026 standard deduction, head of household."},
+ {num:"7",      name:"Tax brackets",          topic:"Taxes",       color:"--m8",  desc:"Seven ordinary rates: 10, 12, 22, 24, 32, 35, 37%."},
+
+ /* Estate */
+ {num:"$15M",   name:"Estate/gift exemption", topic:"Estate",      color:"--m9",  desc:"Per person in 2026 ($30M per couple) — made permanent by OBBB."},
+ {num:"$19,000",name:"Annual gift exclusion", topic:"Estate",      color:"--m9",  desc:"Per recipient, per year — to unlimited recipients, no forms."},
+ {num:"40%",    name:"Top estate tax rate",   topic:"Estate",      color:"--m9",  desc:"On amounts above the exemption."},
+
+ /* Insurance */
+ {num:"65",     name:"Medicare age",          topic:"Insurance",   color:"--m5",  desc:"Standard Medicare eligibility age."},
+ {num:"A/B/C/D",name:"Medicare parts",        topic:"Insurance",   color:"--m5",  desc:"Hospital / medical / Advantage / drug coverage."},
+
+ /* Additional official 2026 figures (CFFP Annual Limits) */
+ {num:"$72,000",name:"DC plan limit §415",    topic:"Retirement",  color:"--m7",  desc:"2026 total defined-contribution annual additions limit."},
+ {num:"$290,000",name:"DB plan limit",        topic:"Retirement",  color:"--m7",  desc:"2026 maximum annual defined-benefit (pension) payout limit."},
+ {num:"$360,000",name:"Includible comp",      topic:"Retirement",  color:"--m7",  desc:"2026 max compensation counted for plan contributions."},
+ {num:"$4,000", name:"SIMPLE catch-up",       topic:"Retirement",  color:"--m7",  desc:"2026 SIMPLE IRA age-50+ catch-up ($5,250 at 60–63)."},
+ {num:"$184,500",name:"SS wage base",         topic:"Retirement",  color:"--m7",  desc:"2026 Social Security taxable wage base."},
+ {num:"$4,152", name:"SS max benefit",        topic:"Retirement",  color:"--m7",  desc:"2026 max monthly benefit for a worker retiring at FRA."},
+ {num:"$24,480",name:"SS earnings limit",     topic:"Retirement",  color:"--m7",  desc:"2026 earnings limit below FRA ($1 withheld per $2 over)."},
+ {num:"7.65%",  name:"FICA rate (employee)",  topic:"Taxes",       color:"--m8",  desc:"6.2% OASDI + 1.45% Medicare; 15.3% total for self-employed."},
+ {num:"21%",    name:"Corporate tax rate",    topic:"Taxes",       color:"--m8",  desc:"Flat federal C-corporation income tax rate."},
+ {num:"3.8%",   name:"Net investment income tax",topic:"Taxes",    color:"--m8",  desc:"On investment income above $200k single / $250k MFJ (MAGI)."},
+ {num:"0.9%",   name:"Additional Medicare tax",topic:"Taxes",      color:"--m8",  desc:"On wages above $200k single / $250k MFJ."},
+ {num:"$2,200", name:"Child tax credit",      topic:"Taxes",       color:"--m8",  desc:"2026 per qualifying child under 17 ($500 other dependents)."},
+ {num:"$4,400", name:"HSA contribution (self)",topic:"Insurance",  color:"--m5",  desc:"2026 HSA max, self-only ($8,750 family; +$1,000 at 55+)."},
+ {num:"$1,700", name:"HDHP min deductible",   topic:"Insurance",   color:"--m5",  desc:"2026 minimum deductible to qualify as an HDHP ($3,400 family)."},
+ {num:"$202.90",name:"Medicare Part B premium",topic:"Insurance",  color:"--m5",  desc:"2026 standard monthly Part B premium (Part B deductible $283)."},
+ {num:"$430",   name:"LTC per diem limit",    topic:"Insurance",   color:"--m5",  desc:"2026 tax-free long-term-care per-diem benefit limit."},
+ {num:"2 of 6", name:"LTC / ADL trigger",     topic:"Insurance",   color:"--m5",  desc:"LTC benefits typically trigger when 2 of 6 ADLs can't be done."}
+];
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

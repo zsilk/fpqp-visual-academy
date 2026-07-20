@@ -1,0 +1,12 @@
+{
+  "name": "fpqp-visual-academy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A visual-first static study site for the FPQP® final exam.",
+  "type": "module",
+  "scripts": {
+    "check-links": "node tools/check-links.mjs",
+    "lint": "node tools/check-links.mjs",
+    "serve": "python3 -m http.server 8000"
+  }
+}
