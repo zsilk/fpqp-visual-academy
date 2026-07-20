@@ -15,7 +15,7 @@ const PAGES = [
   ["index.html","🏛️ Home"],
   ["module1.html","1"],["module2.html","2"],["module3.html","3"],["module4.html","4"],["module5.html","5"],
   ["module6.html","6"],["module7.html","7"],["module8.html","8"],["module9.html","9"],["module10.html","10"],
-  ["exam-skills.html","🎯 Exam Skills"],["study-plan.html","🗓️ 30-Day Plan"],["whats-new.html","✨ 2026 Updates"]
+  ["exam-skills.html","🎯 Exam Skills"],["study-plan.html","🗓️ 30-Day Plan"]
 ];
 function buildNav(){
   const here = location.pathname.split("/").pop() || "index.html";

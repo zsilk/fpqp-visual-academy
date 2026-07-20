@@ -5,7 +5,7 @@ A visual-first, static study site for the **FPQP® (Financial Paraplanner Qualif
 ## What's inside
 
 - **10 module lessons** (`module1.html`–`module10.html`) covering the full current FPQP® curriculum, each with an interactive self-quiz.
-- **Toolkit pages** — test-taking skills (`exam-skills.html`), a checkable/editable 30-day study plan (`study-plan.html`), and a "what changed since your book" modernization report (`whats-new.html`).
+- **Toolkit pages** — test-taking skills (`exam-skills.html`) and a checkable/editable 30-day study plan (`study-plan.html`).
 - **Progress tracking** — quiz scores and study-plan progress save automatically to the browser via `localStorage`.
 
 ## Tech
