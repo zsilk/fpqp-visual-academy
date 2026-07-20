@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module 8 — Tax Implications of Financial Decisions</title>
+<link rel="stylesheet" href="css/style.css">
+<style>body{--accent:var(--m8);--accent-soft:var(--m8s)}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Module 8 of 10 — updated with 2026 figures ✨</div>
+    <h1>🧾 Tax Implications of Financial Decisions</h1>
+    <p class="lead">Taxes feel like a maze — until you see the flow. <strong>Income enters at the top, and each floor of the building takes its slice.</strong> Here's the whole system, drawn.</p>
+    <div><span class="badge">The income tax flow</span><span class="badge">Brackets (2026)</span><span class="badge">Capital gains</span><span class="badge">Deductions vs. credits</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h2>🏗️ The income tax waterfall</h2>
+  <div class="step-flow">
+    <div class="step"><div class="step-num">1</div><div><h4>💵 Gross income</h4><p>Everything taxable: wages, interest, business income, capital gains…</p></div></div>
+    <div class="step"><div class="step-num">2</div><div><h4>➖ Adjustments (“above-the-line”)</h4><p>Deductible IRA/HSA contributions, student loan interest, etc. → gives you <strong>AGI</strong>.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div><h4>➖ Standard OR itemized deduction</h4><p>2026 standard deduction: <strong>$16,100 single · $32,200 married filing jointly · $24,150 head of household</strong>. Itemize only if bigger.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div><h4>= Taxable income → apply the brackets</h4><p>Seven rates for 2026: <strong>10, 12, 22, 24, 32, 35, 37%</strong>.</p></div></div>
+    <div class="step"><div class="step-num">5</div><div><h4>➖ Credits → final tax bill</h4><p>Credits cut the TAX itself, dollar for dollar. That's why credits beat deductions.</p></div></div>
+  </div>
+  <p class="src">Source: <a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill">IRS: 2026 inflation adjustments (incl. One Big Beautiful Bill changes)</a></p>
+
+  <h2>🪜 Marginal vs. effective: the staircase</h2>
+  <figure class="viz">
+    <svg viewBox="0 0 760 240" role="img" aria-label="Tax bracket staircase: only the income inside each bracket is taxed at that bracket's rate">
+      <g font-family="Arial">
+        <rect x="60" y="180" width="140" height="40" rx="8" fill="#FDEEE3"/><text x="130" y="205" text-anchor="middle" font-size="14" font-weight="bold" fill="#EA580C">10%</text>
+        <rect x="200" y="140" width="140" height="80" rx="8" fill="#FBD9BC"/><text x="270" y="185" text-anchor="middle" font-size="14" font-weight="bold" fill="#9A3412">12%</text>
+        <rect x="340" y="100" width="140" height="120" rx="8" fill="#F8BE8E"/><text x="410" y="165" text-anchor="middle" font-size="14" font-weight="bold" fill="#9A3412">22%</text>
+        <rect x="480" y="60" width="140" height="160" rx="8" fill="#F49B57"/><text x="550" y="145" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">24%</text>
+        <rect x="620" y="25" width="110" height="195" rx="8" fill="#EA580C"/><text x="675" y="125" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">32–37%</text>
+        <text x="380" y="238" text-anchor="middle" font-size="12.5" fill="#6B6584">income → each slice is taxed ONLY at its own step's rate</text>
+      </g>
+    </svg>
+    <figcaption>Entering a higher bracket does NOT raise tax on all your income — only the slice inside that bracket. Your <strong>marginal</strong> rate = the top step you touch; your <strong>effective</strong> rate = total tax ÷ total income (always lower).</figcaption>
+  </figure>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> “A raise pushed me into the 24% bracket, so ALL my income is taxed at 24%” — FALSE. Only the dollars inside the 24% band are.</div></div>
+
+  <h2>⏳ Capital gains: the 1-year stopwatch</h2>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m5);background:var(--m5s)"><h3 style="color:var(--m5)">🏃 Short-term (held ≤ 1 year)</h3><p style="font-size:14.5px">Taxed at your <strong>ordinary income rates</strong> — up to 37%. Ouch.</p></div>
+    <div class="side" style="border-color:var(--m6);background:var(--m6s)"><h3 style="color:var(--m6)">🧘 Long-term (held &gt; 1 year)</h3><p style="font-size:14.5px">Preferential rates: <strong>0%, 15%, or 20%</strong> depending on income. Patience literally pays.</p></div>
+  </div>
+
+  <h2>🎯 Deduction vs. credit: which is worth more?</h2>
+  <div class="grid c2">
+    <div class="card"><h3>✂️ Deduction</h3><p style="font-size:14.5px">Reduces <strong>taxable income</strong>. A $1,000 deduction saves $1,000 × your bracket (e.g., $220 in the 22% bracket).</p></div>
+    <div class="card tint"><h3>💎 Credit (the winner)</h3><p style="font-size:14.5px">Reduces <strong>the tax bill itself</strong>. A $1,000 credit saves the full $1,000 — regardless of bracket.</p></div>
+  </div>
+
+  <h2>🪣 Tax buckets to recognize on sight</h2>
+  <div class="pill-row">
+    <span class="pill">Tax-DEFERRED: traditional 401(k)/IRA, annuities</span>
+    <span class="pill">Tax-FREE: Roth withdrawals, muni bond interest, HSA (medical)</span>
+    <span class="pill">Taxable now: wages, interest, short-term gains</span>
+    <span class="pill">Step-up in basis: inherited assets (heirs' gains reset)</span>
+  </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> <strong>Muni bonds</strong> = federal-tax-free interest — which is why they typically pay LOWER stated rates and shine for high-bracket clients. Compare using the taxable-equivalent yield: muni rate ÷ (1 − tax bracket).</div></div>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div><strong>Taxes: officially demystified.</strong> Waterfall → staircase → stopwatch → buckets. Four pictures carry this whole module. Two more to go — you're SO close! 🧡</div></div>
+
+  <h2>✍️ Module 8 self-quiz</h2>
+  <div id="quiz" class="quiz"></div>
+
+  <p><a href="module9.html">Next up: Module 9 — Estate Planning Basics →</a></p>
+</main>
+
+<footer><div class="wrap"><p>FPQP® Visual Academy v1 · <a href="index.html">Home</a></p></div></footer>
+
+<script>
+window.QUIZ = { id:"m8", questions:[
+ {q:"What is the 2026 standard deduction for married filing jointly?", opts:["$24,150","$27,700","$32,200","$16,100"], a:2, why:"$32,200 MFJ · $16,100 single · $24,150 head of household for 2026."},
+ {q:"Adjusted gross income (AGI) equals gross income minus…", opts:["credits","above-the-line adjustments","the standard deduction","withholding"], a:1, why:"Adjustments (IRA, HSA, student loan interest…) come off BEFORE AGI. Deductions come after."},
+ {q:"Moving into a higher bracket means…", opts:["all income is taxed at the new rate","only income within that bracket is taxed at the new rate","your effective rate exceeds your marginal rate","credits stop working"], a:1, why:"The staircase: each slice is taxed only at its own step's rate."},
+ {q:"A stock held 14 months is sold at a gain. It's taxed at…", opts:["ordinary income rates","long-term capital gains rates (0/15/20%)","a flat 37%","payroll tax rates"], a:1, why:"Held over 1 year = long-term = preferential 0/15/20% rates."},
+ {q:"For someone in the 22% bracket, which saves more tax: a $1,000 deduction or a $1,000 credit?", opts:["The deduction","The credit","They're identical","Neither saves anything"], a:1, why:"Credit = full $1,000 off the bill. Deduction = $220 (22% × $1,000)."},
+ {q:"Municipal bond interest is generally…", opts:["taxed twice","free from federal income tax","taxed as capital gains","only taxable at death"], a:1, why:"Munis pay federal-tax-free interest — most valuable to high-bracket investors."},
+ {q:"How many federal ordinary income tax rates are there in 2026?", opts:["Five","Six","Seven","Nine"], a:2, why:"Seven: 10, 12, 22, 24, 32, 35, 37 percent."},
+ {q:"Your effective tax rate is…", opts:["always equal to your marginal rate","total tax ÷ total income (lower than marginal)","the highest bracket that exists","your bracket plus payroll tax"], a:1, why:"Effective = the blended average across all the staircase steps you filled — always below your top (marginal) rate."}
+]};
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
