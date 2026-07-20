@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula Sheet — FPQP® Visual Academy</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+body{--accent:var(--m3);--accent-soft:var(--m3s)}
+.formula{font-family:Georgia,serif;font-size:1.2rem;background:var(--accent-soft);color:var(--accent);
+  border-radius:10px;padding:10px 14px;display:inline-block;margin:4px 0}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">One page · every formula worth memorizing</div>
+    <h1>📐 The Formula Sheet</h1>
+    <p class="lead">The math the FPQP® exam actually asks for — each formula with the plain-English version and when to reach for it. Print it (it's print-optimized) and keep it by your calculator.</p>
+    <div><span class="badge">TVM</span><span class="badge">Ratios</span><span class="badge">Insurance math</span><span class="badge">Tax &amp; investing</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h2>⏳ Time value of money</h2>
+  <table>
+    <tr><th>Concept</th><th>Formula</th><th>Use it when…</th></tr>
+    <tr><td><strong>Future value</strong></td><td><span class="formula">FV = PV × (1 + i)ⁿ</span></td><td>Growing one lump sum forward.</td></tr>
+    <tr><td><strong>Present value</strong></td><td><span class="formula">PV = FV ÷ (1 + i)ⁿ</span></td><td>Discounting a future amount back to today.</td></tr>
+    <tr><td><strong>Rule of 72</strong></td><td><span class="formula">years to double ≈ 72 ÷ rate</span></td><td>Fast mental estimate of doubling time.</td></tr>
+    <tr><td><strong>Periodic rate</strong></td><td><span class="formula">i = annual rate ÷ periods; n = years × periods</span></td><td>Any non-annual compounding (÷12 for monthly).</td></tr>
+    <tr><td><strong>Effective annual rate</strong></td><td><span class="formula">EAR = (1 + i/m)ᵐ − 1</span></td><td>Comparing rates with different compounding.</td></tr>
+  </table>
+  <p><a href="module3.html#sec-the-money-time-machine">Try the interactive TVM calculator in Module 3 →</a></p>
+
+  <h2>📐 Cash-flow &amp; debt ratios</h2>
+  <table>
+    <tr><th>Ratio</th><th>Formula</th><th>Limit</th></tr>
+    <tr><td><strong>Housing (front-end)</strong></td><td><span class="formula">PITI ÷ gross monthly income</span></td><td>≤ 28%</td></tr>
+    <tr><td><strong>Total debt (back-end)</strong></td><td><span class="formula">all debt payments ÷ gross monthly income</span></td><td>≤ 36%</td></tr>
+    <tr><td><strong>Consumer debt</strong></td><td><span class="formula">non-housing debt ÷ NET income</span></td><td>≤ 20%</td></tr>
+  </table>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Watch the switch:</strong> the 20% consumer-debt ratio uses <strong>net</strong> (take-home) income, while 28/36 use <strong>gross</strong>.</div></div>
+
+  <h2>☂️ Insurance math</h2>
+  <table>
+    <tr><th>Concept</th><th>Formula</th><th>Use it when…</th></tr>
+    <tr><td><strong>Coinsurance (80% rule)</strong></td><td><span class="formula">payout = (carried ÷ required) × loss</span></td><td>Home insured below 80% of replacement cost.</td></tr>
+    <tr><td><strong>Actual cash value</strong></td><td><span class="formula">ACV = replacement cost − depreciation</span></td><td>Older property claims without RC coverage.</td></tr>
+    <tr><td><strong>Human life value</strong></td><td><span class="formula">PV of future earnings</span></td><td>Sizing life insurance by lost income.</td></tr>
+  </table>
+
+  <h2>🧾 Tax &amp; investing</h2>
+  <table>
+    <tr><th>Concept</th><th>Formula</th><th>Use it when…</th></tr>
+    <tr><td><strong>Effective tax rate</strong></td><td><span class="formula">total tax ÷ total income</span></td><td>Always lower than the marginal (top) rate.</td></tr>
+    <tr><td><strong>Taxable-equivalent yield</strong></td><td><span class="formula">muni rate ÷ (1 − tax bracket)</span></td><td>Comparing muni bonds to taxable bonds.</td></tr>
+    <tr><td><strong>Sharpe ratio</strong></td><td><span class="formula">(return − risk-free) ÷ std. deviation</span></td><td>Return earned per unit of total risk.</td></tr>
+    <tr><td><strong>After-tax return</strong></td><td><span class="formula">return × (1 − tax bracket)</span></td><td>Comparing taxable investment outcomes.</td></tr>
+  </table>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div>Memorize the <em>shapes</em>, not just the symbols. On exam day you'll recognize which picture the question is asking for — and the rest is button-pushing. 💛</div></div>
+
+  <p style="margin-top:24px"><a href="index.html">← Back to the hub</a> · <a href="number-bank.html">See the Number Bank →</a></p>
+</main>
+
+<footer><div class="wrap"><p>FPQP® Visual Academy · <a href="index.html">Home</a> · Always verify against your official course materials.</p></div></footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -23,7 +23,17 @@ function htmlFiles(dir) {
     .map((f) => join(dir, f));
 }
 
-// Collect id="..." (and name="...") anchors from a file, memoized.
+// Mirror of app.js slug(): app.js assigns id="sec-<slug>" to each <main> <h2>
+// at runtime, so those anchors must be treated as valid even though they are
+// not literal ids in the static HTML.
+function slug(text) {
+  return "sec-" + text.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim().replace(/\s+/g, "-");
+}
+function decodeEntities(s) {
+  return s.replace(/&amp;/g, "&").replace(/&nbsp;/g, " ").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+}
+
+// Collect id/name anchors plus runtime heading slugs from a file, memoized.
 const idCache = new Map();
 function idsOf(file) {
   if (idCache.has(file)) return idCache.get(file);
@@ -32,6 +42,12 @@ function idsOf(file) {
     const html = readFileSync(file, "utf8");
     for (const m of html.matchAll(/\bid\s*=\s*["']([^"']+)["']/g)) set.add(m[1]);
     for (const m of html.matchAll(/\bname\s*=\s*["']([^"']+)["']/g)) set.add(m[1]);
+    // Runtime section anchors: every <h2> (except the self-quiz one) gets an id.
+    for (const m of html.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)) {
+      const text = decodeEntities(m[1].replace(/<[^>]+>/g, "")).trim();
+      if (/self-quiz/i.test(text)) continue;
+      set.add(slug(text));
+    }
   }
   idCache.set(file, set);
   return set;

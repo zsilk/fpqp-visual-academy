@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scenario Drills — FPQP® Visual Academy</title>
+<link rel="stylesheet" href="css/style.css">
+<style>body{--accent:var(--m10);--accent-soft:var(--m10s)}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Think like a planner, one family at a time</div>
+    <h1>🎬 Scenario Drills</h1>
+    <p class="lead">The real exam hides the concept inside a story. These short case drills rehearse exactly that — read the situation, make the call, and see a planner's reasoning. Cross-module, just like exam day.</p>
+    <div><span class="badge">Applied thinking</span><span class="badge">Cross-module</span><span class="badge">Instant feedback</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <p>Work each one top to bottom. There's no score to chase here — the goal is to <em>reason</em> your way to the answer the exam rewards.</p>
+  <div id="scenarios"></div>
+  <div class="callout cheer"><span class="ico">🌟</span><div>Want a full family walkthrough? <a href="module10.html">Module 10</a> takes the Riveras from emergency fund to estate docs, step by step.</div></div>
+  <p style="margin-top:24px"><a href="index.html">← Back to the hub</a></p>
+</main>
+
+<footer><div class="wrap"><p>FPQP® Visual Academy · <a href="index.html">Home</a></p></div></footer>
+
+<script>
+window.SCENARIOS = [
+ {title:"🧾 The surprise bonus", intro:"Dana, single, has $9,000 in savings (about 1 month of expenses), a $6,000 credit-card balance at 22%, and just received a $10,000 bonus. Her 401(k) captures the full employer match already.",
+  steps:[
+   {q:"What's the highest-value first move for the bonus?", opts:["Open a taxable brokerage account","Pay off the 22% credit card","Buy whole life insurance","Max her IRA immediately"], a:1, why:"Paying off 22% debt is a guaranteed 22% “return,” risk-free — nothing else reliably beats that."},
+   {q:"After the card is gone, $4,000 remains. Next best step?", opts:["Top up the emergency fund toward 3–6 months","Day-trade options","Prepay her low-rate mortgage","Buy a bond ladder"], a:0, why:"With only ~1 month saved, building the emergency cushion comes before growth investing. Protection before growth."},
+   {q:"Dana asks where to keep that emergency cash. Best answer?", opts:["A growth stock fund","A high-yield savings or money-market account","A 20-year Treasury","Her 401(k)"], a:1, why:"Emergency money must be liquid and stable — reachable fast without losing value."}
+  ]},
+ {title:"🏖️ The Roth question", intro:"Priya, 26, just started her career in a low tax bracket. Her employer offers both traditional and Roth 401(k) options with the same match.",
+  steps:[
+   {q:"Given her situation, which account generally fits best?", opts:["Traditional — take the deduction now","Roth — pay low tax now, withdraw tax-free later","Neither — skip the 401(k)","A nondeductible IRA"], a:1, why:"Early career + low bracket = pay tax now while it's cheap, then enjoy decades of tax-free growth."},
+   {q:"Does she still get the employer match in the Roth 401(k)?", opts:["No, matches only go to traditional","Yes — always take the full match","Only if she's over 50","Only in a recession"], a:1, why:"The match is free money regardless of Roth vs. traditional. Always capture the full match first."},
+   {q:"At 26, when will Priya's Roth 401(k) force RMDs?", opts:["Age 70½","Age 73","Age 75","Roth 401(k)s have no lifetime RMDs (since 2024)"], a:3, why:"SECURE 2.0 removed lifetime RMDs from Roth 401(k)s starting 2024 — a nice planning perk."}
+  ]},
+ {title:"🏰 The blended family", intro:"Robert remarried and updated his will to leave everything to his new spouse, Ana. But his old 401(k) still names his first wife as beneficiary, and his brokerage account is titled joint with his adult son.",
+  steps:[
+   {q:"Who inherits the 401(k) at Robert's death?", opts:["Ana, because the will controls","His first wife — the beneficiary form wins","His son","The probate court decides"], a:1, why:"Beneficiary designations OVERRIDE the will. The outdated form sends the 401(k) to the first wife."},
+   {q:"What happens to the jointly-titled brokerage account?", opts:["It goes through probate","It passes directly to his son by survivorship","It's split under the will","It's frozen for a year"], a:1, why:"Joint tenancy with right of survivorship passes outside probate, straight to the surviving owner."},
+   {q:"What's the planner's key fix here?", opts:["Rewrite the will again","Review and update every beneficiary designation and title","Buy more life insurance","Create an irrevocable trust immediately"], a:1, why:"Titling and beneficiary forms beat the will — they must be reviewed to match his real wishes."}
+  ]}
+];
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

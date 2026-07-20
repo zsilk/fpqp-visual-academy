@@ -4,14 +4,18 @@ A visual-first, static study site for the **FPQP® (Financial Paraplanner Qualif
 
 ## What's inside
 
-- **10 module lessons** (`module1.html`–`module10.html`) covering the full current FPQP® curriculum, each with an interactive self-quiz.
-- **Interactive diagrams** instead of static text — a clickable 7-step planning-process wheel (Module 1), a Roth-vs-Traditional decision tree and an RMD birth-year number line (Module 7), a drag-to-explore marginal tax-bracket stack (Module 8), and a hover/tap probate-bypass map (Module 9).
-- **Topic tools** — a searchable **Topics A–Z** index (`concepts.html`) that re-sorts the curriculum by subject rather than module, a filterable **Number Bank** (`number-bank.html`) of every 2026 figure, and a flip-card **Flashcards** deck (`flashcards.html`) for the closed-book exam.
+- **10 module lessons** (`module1.html`–`module10.html`) covering the full current FPQP® curriculum, each opening with a **myth-or-fact warm-up** and closing with a self-quiz.
+- **Interactive diagrams** instead of static text — a clickable 7-step planning-process wheel and a "who regulates whom" map (Module 1), a live **TVM calculator** (Module 3), a **term-vs-whole-life cost-over-time** chart (Module 5), a Roth-vs-Traditional decision tree, an RMD birth-year number line and a contribution bar chart (Module 7), a drag-to-explore marginal tax-bracket stack (Module 8), and a hover/tap probate-bypass map (Module 9).
+- **Topic tools** — a searchable **Topics A–Z** index (`concepts.html`) whose chips deep-link to the exact section, a filterable **Number Bank** (`number-bank.html`), a big flip-card **Flashcards** deck (`flashcards.html`) you can mark *known* / *needs review*, **Scenario Drills** (`scenarios.html`), and a print-ready **Formula Sheet** (`formulas.html`).
+- **Flag & Rematch** — flag any section (or a flashcard) to review; it collects on your **Rematch list** (`review.html`), a personal focus queue.
+- **Guided tour** — a first-visit walkthrough (re-runnable via the hub button) introduces the nav, warm-ups, flagging, the color legend, and the plain-language toggle.
+- **Plain-language ⇄ exam-precise toggle** adds plain-English explanations alongside the exam wording.
 - **Toolkit pages** — test-taking skills (`exam-skills.html`) and a checkable/editable 30-day study plan (`study-plan.html`).
-- **Consistent color = topic** — each topic keeps its accent color across the whole site, surfaced by a persistent "Color = topic" legend (bottom-left) as a built-in memory hook.
+- **Consistent color = topic** — each topic keeps its accent color site-wide, surfaced by a persistent, numbered "Color = topic" legend (colorblind-friendly: color is never the only cue).
 - **Trap-answer callouts** in quizzes flag the outdated numbers that make classic wrong answers.
-- **Progress tracking** — quiz scores and study-plan progress save automatically to the browser via `localStorage`.
-- **Print-friendly** — a dedicated print stylesheet turns any page into a clean offline study sheet (quiz answers and both flashcard sides are revealed in print).
+- **Deep-linkable sections** — every section heading gets a shareable anchor and a "flag to review" control.
+- **Progress tracking** — quiz scores, flags, flashcard marks, mode, and study-plan progress all save automatically via `localStorage`.
+- **Accessible & print-friendly** — reduced-motion is honored globally; a dedicated print stylesheet turns any page into a clean offline study sheet (quiz answers, plain-language notes, and both flashcard sides are revealed in print).
 
 ## Tech
 

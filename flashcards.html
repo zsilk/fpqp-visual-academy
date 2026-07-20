@@ -18,7 +18,7 @@
 </header>
 
 <main class="wrap">
-  <p>Quiz yourself: read the front, say your answer out loud, <em>then</em> flip. Anything you miss becomes tonight's review. 💛</p>
+  <p>Quiz yourself: read the front, say your answer out loud, <em>then</em> flip. Mark each card <strong>✅ I know it</strong> or <strong>🔁 Needs review</strong> — the “needs review” ones flow straight to your <a href="review.html">Rematch list</a>. Use the tabs to drill just the cards you haven't nailed yet.</p>
 
   <div data-flashcards></div>
 
@@ -31,23 +31,82 @@
 
 <script>
 window.FLASHCARDS = [
- {mod:"--m1", tag:"Module 1 · Process",   q:"The 7 planning steps, in order?", a:"“Unicorns In Art Draw Pretty Incredible Murals” → Understand, Identify, Analyze, Develop, Present, Implement, Monitor."},
- {mod:"--m1", tag:"Module 1 · Goals",     q:"What 3 things make a usable goal?", a:"PTA → Purpose, Time frame, Amount. Miss one and the goal is too vague."},
- {mod:"--m1", tag:"Module 1 · Reg BI",    q:"Reg BI's four obligations?", a:"“Don't Cheat Clients, Comply!” → Disclosure, Care, Conflicts, Compliance (+ Form CRS)."},
- {mod:"--m1", tag:"Module 1 · Pay",       q:"Fee-only vs. fee-based?", a:"Fee-ONLY = client fees only (fewest conflicts). Fee-BASED = fees AND commissions. Classic trap!"},
- {mod:"--m2", tag:"Module 2 · Ratios",    q:"The 28 / 36 housing & debt ratios?", a:"≤28% of gross income on housing; ≤36% on ALL debt payments combined."},
- {mod:"--m3", tag:"Module 3 · TVM",       q:"The Rule of 72?", a:"72 ÷ interest rate ≈ the years for money to double. (e.g., 8% → ~9 years.)"},
- {mod:"--m6", tag:"Module 6 · Investing", q:"How to cut unsystematic risk?", a:"Diversify — spread across many holdings. Systematic (market) risk can't be diversified away."},
- {mod:"--m7", tag:"Module 7 · Roth",      q:"Roth vs. Traditional — when do you pay tax?", a:"🍓 Roth = tax NOW, tax-free later. 🥔 Traditional = deduct NOW, taxed at withdrawal."},
- {mod:"--m7", tag:"Module 7 · RMDs",      q:"RMD start ages under SECURE 2.0?", a:"73 if born 1951–1959; 75 if born 1960+. Roth IRAs & (since 2024) Roth 401(k)s have none."},
- {mod:"--m7", tag:"Module 7 · Penalty",   q:"Early-withdrawal penalty age?", a:"Before 59½, a 10% penalty generally applies — plus ordinary income tax on pre-tax money."},
- {mod:"--m8", tag:"Module 8 · Brackets",  q:"Marginal vs. effective rate?", a:"Marginal = the top step you touch. Effective = total tax ÷ total income (always lower). Only each slice is taxed at its own rate."},
- {mod:"--m8", tag:"Module 8 · Tax",       q:"Deduction vs. credit — which wins?", a:"Credit. A $1,000 credit cuts the bill by $1,000; a $1,000 deduction only saves $1,000 × your bracket."},
- {mod:"--m8", tag:"Module 8 · Munis",     q:"Taxable-equivalent yield of a muni?", a:"Muni rate ÷ (1 − tax bracket). Muni interest is federal-tax-free — best for high brackets."},
- {mod:"--m9", tag:"Module 9 · Trusts",    q:"The three trust roles?", a:"G.T.B. → Grantor gives, Trustee tends (manages), Beneficiary benefits."},
- {mod:"--m9", tag:"Module 9 · Probate",   q:"What beats the will?", a:"Beneficiary designations, JTWROS, TOD/POD, and trust assets pass OUTSIDE probate — a beneficiary form overrides the will."},
- {mod:"--m9", tag:"Module 9 · Basis",     q:"What is step-up in basis?", a:"Inherited assets reset cost basis to date-of-death value — decades of gains can escape capital gains tax."},
- {mod:"--m10",tag:"Module 10 · Exam",     q:"The exam, by the numbers?", a:"75 questions · 70% to pass (53/75) · 3 hours · 2 attempts · closed-book online."}
+ /* Module 1 — Planning process */
+ {id:"m1-steps", mod:"--m1", tag:"Module 1 · Process",   q:"The 7 planning steps, in order?", a:"“Unicorns In Art Draw Pretty Incredible Murals” → Understand, Identify, Analyze, Develop, Present, Implement, Monitor."},
+ {id:"m1-pta",   mod:"--m1", tag:"Module 1 · Goals",     q:"What 3 things make a usable goal?", a:"PTA → Purpose, Time frame, Amount. Miss one and the goal is too vague."},
+ {id:"m1-regbi", mod:"--m1", tag:"Module 1 · Reg BI",    q:"Reg BI's four obligations?", a:"“Don't Cheat Clients, Comply!” → Disclosure, Care, Conflicts, Compliance (+ Form CRS)."},
+ {id:"m1-pay",   mod:"--m1", tag:"Module 1 · Pay",       q:"Fee-only vs. fee-based?", a:"Fee-ONLY = client fees only (fewest conflicts). Fee-BASED = fees AND commissions. Classic trap!"},
+ {id:"m1-data",  mod:"--m1", tag:"Module 1 · Data",      q:"Quantitative vs. qualitative data?", a:"Quantitative = countable (income, balances, ages). Qualitative = feelings (risk tolerance, values, fears)."},
+ {id:"m1-fid",   mod:"--m1", tag:"Module 1 · Standards", q:"When is a CFP® pro a fiduciary?", a:"At ALL times when giving financial advice — not only during formal planning."},
+ {id:"m1-reg",   mod:"--m1", tag:"Module 1 · Regulators",q:"Who regulates broker-dealers vs. advisers?", a:"FINRA → broker-dealers; SEC/state (NASAA) → investment advisers; NAIC/states → insurance."},
+
+ /* Module 2 — Cash, debt & business */
+ {id:"m2-ratios",mod:"--m2", tag:"Module 2 · Ratios",    q:"The 28 / 36 / 20 ratios?", a:"≤28% gross on housing; ≤36% gross on ALL debt; ≤20% of NET income on consumer debt (watch the net switch!)."},
+ {id:"m2-ef",    mod:"--m2", tag:"Module 2 · Cash",      q:"How big an emergency fund?", a:"3–6 months of expenses in liquid accounts — lean toward 6 with one income or unstable pay."},
+ {id:"m2-cchapters",mod:"--m2",tag:"Module 2 · Bankruptcy",q:"Chapter 7 vs. Chapter 13?", a:"7 = liquidation (“LIQUIDS” has 7 letters). 13 = wage-earner repayment plan over 3–5 years."},
+ {id:"m2-fico",  mod:"--m2", tag:"Module 2 · Credit",    q:"Biggest FICO factor?", a:"Payment history (35%), then amounts owed (30%) — together 65% of the score."},
+ {id:"m2-ccorp", mod:"--m2", tag:"Module 2 · Entities",  q:"Which entity has double taxation?", a:"The C corporation only. S corps, LLCs, partnerships, sole props are pass-through."},
+
+ /* Module 3 — Time value of money */
+ {id:"m3-72",    mod:"--m3", tag:"Module 3 · TVM",       q:"The Rule of 72?", a:"72 ÷ interest rate ≈ the years for money to double. (e.g., 8% → ~9 years.)"},
+ {id:"m3-due",   mod:"--m3", tag:"Module 3 · Annuities", q:"Ordinary annuity vs. annuity due?", a:"Ordinary = pay at END (most loans). Due = pay at START (“rent is due on the 1st”). Due is worth more."},
+ {id:"m3-disc",  mod:"--m3", tag:"Module 3 · TVM",       q:"Compounding vs. discounting?", a:"Compounding grows PV forward to FV. Discounting shrinks FV back to PV."},
+ {id:"m3-sign",  mod:"--m3", tag:"Module 3 · Calculator",q:"Calculator sign convention?", a:"Money OUT = negative, money IN = positive. Crazy answer? Check your signs."},
+ {id:"m3-freq",  mod:"--m3", tag:"Module 3 · TVM",       q:"Which compounding frequency grows most?", a:"More frequent = more growth-on-growth. Daily > monthly > quarterly > annual."},
+
+ /* Module 4 — Property & casualty */
+ {id:"m4-arrt",  mod:"--m4", tag:"Module 4 · Risk",      q:"The 4 ways to handle risk?", a:"“ARRT” → Avoid, Reduce, Retain, Transfer. Insurance = transfer."},
+ {id:"m4-didec", mod:"--m4", tag:"Module 4 · Policy",    q:"Anatomy of a policy?", a:"DIDEC → Declarations, Insuring agreement, Definitions, Exclusions, Conditions."},
+ {id:"m4-80",    mod:"--m4", tag:"Module 4 · Home",      q:"The 80% coinsurance rule?", a:"Insure ≥80% of replacement cost for full partial-loss payment. Payout = (carried ÷ required) × loss."},
+ {id:"m4-acv",   mod:"--m4", tag:"Module 4 · Home",      q:"Replacement cost vs. ACV?", a:"Replacement cost pays for NEW. ACV = replacement cost − depreciation."},
+ {id:"m4-flood", mod:"--m4", tag:"Module 4 · Home",      q:"Two big homeowners exclusions?", a:"Flood and earthquake — both need separate policies."},
+ {id:"m4-pap",   mod:"--m4", tag:"Module 4 · Auto",      q:"A deer hits your parked car — which PAP part?", a:"Part D, “other than collision” (comprehensive): theft, hail, animals."},
+
+ /* Module 5 — Life & health */
+ {id:"m5-term",  mod:"--m5", tag:"Module 5 · Life",      q:"Young family, max coverage, tight budget?", a:"Term life — most death benefit per dollar. “Flexible premiums” = universal; “subaccounts” = variable."},
+ {id:"m5-hsa",   mod:"--m5", tag:"Module 5 · Health",    q:"The triple-tax-advantage account?", a:"HSA → pre-tax in, tax-free growth, tax-free out for qualified medical."},
+ {id:"m5-hmo",   mod:"--m5", tag:"Module 5 · Health",    q:"HMO vs. PPO?", a:"HMO = gatekeeper referrals, lowest cost, least freedom. PPO = any doctor, more freedom, higher premium."},
+ {id:"m5-ownocc",mod:"--m5", tag:"Module 5 · Disability",q:"Own-occ vs. any-occ disability?", a:"Own-occ pays if you can't do YOUR job (better, pricier). Any-occ pays only if you can't do ANY job."},
+ {id:"m5-elim",  mod:"--m5", tag:"Module 5 · Disability",q:"The elimination period?", a:"The waiting period before benefits start — a time-deductible. Longer wait = cheaper policy."},
+ {id:"m5-medicare",mod:"--m5",tag:"Module 5 · Medicare", q:"Medicare parts A/B/C/D?", a:"A = hospital (Admitted), B = doctor Bills, C = Advantage (private), D = Drugs. Eligible at 65."},
+ {id:"m5-ltc",   mod:"--m5", tag:"Module 5 · LTC",       q:"When does LTC typically trigger?", a:"When you can't do 2 of 6 activities of daily living (ADLs). Medicare barely covers custodial care."},
+
+ /* Module 6 — Investments */
+ {id:"m6-unsys", mod:"--m6", tag:"Module 6 · Risk",      q:"Which risk can diversification remove?", a:"Unsystematic (company-specific). Systematic/market risk stays — measured by beta."},
+ {id:"m6-seesaw",mod:"--m6", tag:"Module 6 · Bonds",     q:"Rates rise — what happens to bond prices?", a:"They fall (the seesaw). Longer maturity = bigger price swings."},
+ {id:"m6-ownlend",mod:"--m6",tag:"Module 6 · Basics",    q:"Stock vs. bond in one line?", a:"Stock = you're an OWNER (dividends, growth). Bond = you're a LENDER (coupons, paid first if things go bad)."},
+ {id:"m6-beta",  mod:"--m6", tag:"Module 6 · Measures",  q:"Beta vs. standard deviation?", a:"Beta = systematic risk vs. the market (1.0 = market). Std. deviation = total volatility."},
+ {id:"m6-dca",   mod:"--m6", tag:"Module 6 · Strategy",  q:"What is dollar-cost averaging?", a:"Investing a fixed amount on a schedule — automatically buying more shares when prices are low."},
+ {id:"m6-etf",   mod:"--m6", tag:"Module 6 · Funds",     q:"ETF vs. mutual fund trading?", a:"ETFs trade all day like a stock; mutual funds price once daily at NAV."},
+ {id:"m6-sharpe",mod:"--m6", tag:"Module 6 · Measures",  q:"What does the Sharpe ratio show?", a:"Excess return ÷ standard deviation — how well you're paid for the risk taken."},
+
+ /* Module 7 — Retirement */
+ {id:"m7-roth",  mod:"--m7", tag:"Module 7 · Roth",      q:"Roth vs. Traditional — when do you pay tax?", a:"🍓 Roth = tax NOW, tax-free later. 🥔 Traditional = deduct NOW, taxed at withdrawal."},
+ {id:"m7-limits",mod:"--m7", tag:"Module 7 · Limits",    q:"2026 401(k) & IRA limits?", a:"401(k) $24,500 (+$8,000 at 50+, $11,250 at 60–63). IRA $7,500 (+$1,100 at 50+)."},
+ {id:"m7-rmd",   mod:"--m7", tag:"Module 7 · RMDs",      q:"RMD start ages under SECURE 2.0?", a:"73 if born 1951–1959; 75 if born 1960+. Roth IRAs & (since 2024) Roth 401(k)s have none."},
+ {id:"m7-penalty",mod:"--m7",tag:"Module 7 · Penalty",   q:"Early-withdrawal penalty age?", a:"Before 59½, a 10% penalty generally applies — plus ordinary income tax on pre-tax money."},
+ {id:"m7-ss",    mod:"--m7", tag:"Module 7 · Soc. Sec.", q:"Social Security claiming ages?", a:"62 earliest (permanently reduced), 67 full retirement age, 70 max (~8%/yr delayed credits)."},
+ {id:"m7-db",    mod:"--m7", tag:"Module 7 · Plans",     q:"Who bears risk: DB vs. DC plan?", a:"Defined benefit (pension) → employer bears risk. Defined contribution (401(k)) → employee bears risk."},
+
+ /* Module 8 — Taxes */
+ {id:"m8-marg",  mod:"--m8", tag:"Module 8 · Brackets",  q:"Marginal vs. effective rate?", a:"Marginal = the top step you touch. Effective = total tax ÷ total income (always lower)."},
+ {id:"m8-credit",mod:"--m8", tag:"Module 8 · Tax",       q:"Deduction vs. credit — which wins?", a:"Credit. A $1,000 credit cuts the bill by $1,000; a $1,000 deduction saves only $1,000 × your bracket."},
+ {id:"m8-muni",  mod:"--m8", tag:"Module 8 · Munis",     q:"Taxable-equivalent yield of a muni?", a:"Muni rate ÷ (1 − tax bracket). Muni interest is federal-tax-free — best for high brackets."},
+ {id:"m8-ltcg",  mod:"--m8", tag:"Module 8 · Gains",     q:"Short vs. long-term capital gains?", a:"≤1 year = ordinary rates. >1 year = preferential 0/15/20%."},
+ {id:"m8-agi",   mod:"--m8", tag:"Module 8 · Flow",      q:"What gets you to AGI?", a:"Gross income − above-the-line adjustments (IRA, HSA, student-loan interest) = AGI. Deductions come after."},
+ {id:"m8-stdded",mod:"--m8", tag:"Module 8 · Deduction", q:"2026 standard deduction?", a:"$16,100 single · $32,200 MFJ · $24,150 head of household (post-OBBB)."},
+
+ /* Module 9 — Estate */
+ {id:"m9-gtb",   mod:"--m9", tag:"Module 9 · Trusts",    q:"The three trust roles?", a:"G.T.B. → Grantor gives, Trustee tends (manages), Beneficiary benefits."},
+ {id:"m9-probate",mod:"--m9",tag:"Module 9 · Probate",   q:"What beats the will?", a:"Beneficiary designations, JTWROS, TOD/POD, and trust assets pass OUTSIDE probate — a beneficiary form overrides the will."},
+ {id:"m9-basis", mod:"--m9", tag:"Module 9 · Basis",     q:"What is step-up in basis?", a:"Inherited assets reset cost basis to date-of-death value — decades of gains can escape capital gains tax."},
+ {id:"m9-exempt",mod:"--m9", tag:"Module 9 · Numbers",   q:"2026 estate & gift numbers?", a:"$15M exemption per person ($30M/couple, now permanent); $19,000 annual gift exclusion; 40% top rate."},
+ {id:"m9-rev",   mod:"--m9", tag:"Module 9 · Trusts",    q:"Revocable vs. irrevocable trust?", a:"Revocable = keep control, avoids probate, but no tax/creditor shield. Irrevocable = give up control, leaves your estate, gains protection."},
+ {id:"m9-intestate",mod:"--m9",tag:"Module 9 · Wills",   q:"Dying without a will is…?", a:"Intestate → state intestacy law decides who inherits (and courts pick guardians)."},
+
+ /* Module 10 — Exam */
+ {id:"m10-exam", mod:"--m10",tag:"Module 10 · Exam",     q:"The exam, by the numbers?", a:"75 questions · 70% to pass (53/75) · 3 hours · 2 attempts · closed-book online."},
+ {id:"m10-pyr",  mod:"--m10",tag:"Module 10 · Priority", q:"The planning priority pyramid?", a:"① Emergency fund & toxic debt → ② full employer match → ③ insurance → ④ estate docs → ⑤ extra investing. Protection before growth."}
 ];
 </script>
 <script src="js/app.js"></script>
