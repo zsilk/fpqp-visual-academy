@@ -40,6 +40,10 @@ python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
 
+## Accuracy
+
+All figures and core concepts are verified against the **official 2026 FFPN v2.5 (CFFP) course decks**, the CFFP **Annual Limits** sheet, and the **exam tax tables** — retirement, estate, HSA, and standard-deduction numbers, the tax brackets, RMD ages, ratios, and mnemonics (including the official 7-step "Umbrellas In A Downpour Prevent Immense Mess"). Module 1 also carries the official FPQP® Code of Ethics, behavioral-finance biases, and communication/counseling material; a few real-world extras (Reg BI, the regulator map, fee models) are kept but labeled *beyond the exam*. Note: exam windows through March 2026 provide **2025** tax tables — see the note on the Number Bank.
+
 ## Disclaimer
 
 A personal study aid. FPQP® is a mark of the College for Financial Planning® (a Kaplan Company). Always verify details against your official course materials.

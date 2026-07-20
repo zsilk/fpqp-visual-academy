@@ -445,7 +445,7 @@ function buildTaxStack(){
     '<div class="ts-bars" id="ts-bars"></div>'+
     '<div class="ts-readout"><span>Marginal rate<b id="ts-marg">22%</b></span>'+
     '<span>Effective rate<b id="ts-eff">0%</b></span><span>Total tax<b id="ts-tax">$0</b></span></div>'+
-    '<p class="src" style="margin-top:10px">Illustrative 2026 single-filer brackets — the point is how each slice is taxed at its own rate. Verify exact thresholds with the <a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill">IRS 2026 tables</a>.</p>';
+    '<p class="src" style="margin-top:10px">Official 2026 single-filer brackets (per the CFFP course tax tables): 10% to $12,400 · 12% · 22% · 24% · 32% · 35% · 37% over $640,600. Note: exam windows through March 2026 provide the <em>2025</em> tables — confirm which year your exam window uses.</p>';
   const range = host.querySelector("#ts-range"), barsEl = host.querySelector("#ts-bars");
   const fmt = n=>"$"+Math.round(n).toLocaleString();
   function update(){
