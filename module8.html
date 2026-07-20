@@ -19,6 +19,13 @@
 
 <main class="wrap">
 
+  <div class="tag-row">
+    <a class="tag" href="concepts.html">tax brackets</a>
+    <a class="tag" href="concepts.html">deductions vs credits</a>
+    <a class="tag" href="concepts.html">capital gains</a>
+    <a class="tag" href="number-bank.html">2026 figures</a>
+  </div>
+
   <h2>🏗️ The income tax waterfall</h2>
   <div class="step-flow">
     <div class="step"><div class="step-num">1</div><div><h4>💵 Gross income</h4><p>Everything taxable: wages, interest, business income, capital gains…</p></div></div>
@@ -44,6 +51,10 @@
     <figcaption>Entering a higher bracket does NOT raise tax on all your income — only the slice inside that bracket. Your <strong>marginal</strong> rate = the top step you touch; your <strong>effective</strong> rate = total tax ÷ total income (always lower).</figcaption>
   </figure>
   <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> “A raise pushed me into the 24% bracket, so ALL my income is taxed at 24%” — FALSE. Only the dollars inside the 24% band are.</div></div>
+
+  <h2>🎚️ See it stack: drag an income</h2>
+  <p>Slide the income and watch each bracket fill up. Notice your <strong>effective</strong> rate always trails your <strong>marginal</strong> rate — because only the top slice hits the top rate.</p>
+  <div data-taxstack></div>
 
   <h2>⏳ Capital gains: the 1-year stopwatch</h2>
   <div class="vs">
@@ -78,7 +89,7 @@
 
 <script>
 window.QUIZ = { id:"m8", questions:[
- {q:"What is the 2026 standard deduction for married filing jointly?", opts:["$24,150","$27,700","$32,200","$16,100"], a:2, why:"$32,200 MFJ · $16,100 single · $24,150 head of household for 2026."},
+ {q:"What is the 2026 standard deduction for married filing jointly?", opts:["$24,150","$27,700","$32,200","$16,100"], a:2, why:"$32,200 MFJ · $16,100 single · $24,150 head of household for 2026.", trap:"$27,700 is a prior-year MFJ figure. Standard deductions rise with inflation (and jumped under the One Big Beautiful Bill), so an older number is a planted wrong answer."},
  {q:"Adjusted gross income (AGI) equals gross income minus…", opts:["credits","above-the-line adjustments","the standard deduction","withholding"], a:1, why:"Adjustments (IRA, HSA, student loan interest…) come off BEFORE AGI. Deductions come after."},
  {q:"Moving into a higher bracket means…", opts:["all income is taxed at the new rate","only income within that bracket is taxed at the new rate","your effective rate exceeds your marginal rate","credits stop working"], a:1, why:"The staircase: each slice is taxed only at its own step's rate."},
  {q:"A stock held 14 months is sold at a gain. It's taxed at…", opts:["ordinary income rates","long-term capital gains rates (0/15/20%)","a flat 37%","payroll tax rates"], a:1, why:"Held over 1 year = long-term = preferential 0/15/20% rates."},

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcards — FPQP® Visual Academy</title>
+<link rel="stylesheet" href="css/style.css">
+<style>body{--accent:var(--m10);--accent-soft:var(--m10s)}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Closed-book exam → memory hooks matter</div>
+    <h1>🃏 Memory-Hook Flashcards</h1>
+    <p class="lead">The final is <strong>closed-book</strong>, so the mnemonics do the heavy lifting. Tap a card to flip it. Each one is color-coded to its topic — same colors as the rest of the site.</p>
+    <div><span class="badge">Tap to flip</span><span class="badge">Color = topic</span><span class="badge">All modules</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <p>Quiz yourself: read the front, say your answer out loud, <em>then</em> flip. Anything you miss becomes tonight's review. 💛</p>
+
+  <div data-flashcards></div>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div>Cards you flip fast are locked in. Cards you hesitate on are exactly where to spend your next study block. Keep looping the deck — repetition is the whole trick. 🔁</div></div>
+
+  <p style="margin-top:24px"><a href="index.html">← Back to the hub</a></p>
+</main>
+
+<footer><div class="wrap"><p>FPQP® Visual Academy · <a href="index.html">Home</a> · A personal study aid — verify details with your official course materials.</p></div></footer>
+
+<script>
+window.FLASHCARDS = [
+ {mod:"--m1", tag:"Module 1 · Process",   q:"The 7 planning steps, in order?", a:"“Unicorns In Art Draw Pretty Incredible Murals” → Understand, Identify, Analyze, Develop, Present, Implement, Monitor."},
+ {mod:"--m1", tag:"Module 1 · Goals",     q:"What 3 things make a usable goal?", a:"PTA → Purpose, Time frame, Amount. Miss one and the goal is too vague."},
+ {mod:"--m1", tag:"Module 1 · Reg BI",    q:"Reg BI's four obligations?", a:"“Don't Cheat Clients, Comply!” → Disclosure, Care, Conflicts, Compliance (+ Form CRS)."},
+ {mod:"--m1", tag:"Module 1 · Pay",       q:"Fee-only vs. fee-based?", a:"Fee-ONLY = client fees only (fewest conflicts). Fee-BASED = fees AND commissions. Classic trap!"},
+ {mod:"--m2", tag:"Module 2 · Ratios",    q:"The 28 / 36 housing & debt ratios?", a:"≤28% of gross income on housing; ≤36% on ALL debt payments combined."},
+ {mod:"--m3", tag:"Module 3 · TVM",       q:"The Rule of 72?", a:"72 ÷ interest rate ≈ the years for money to double. (e.g., 8% → ~9 years.)"},
+ {mod:"--m6", tag:"Module 6 · Investing", q:"How to cut unsystematic risk?", a:"Diversify — spread across many holdings. Systematic (market) risk can't be diversified away."},
+ {mod:"--m7", tag:"Module 7 · Roth",      q:"Roth vs. Traditional — when do you pay tax?", a:"🍓 Roth = tax NOW, tax-free later. 🥔 Traditional = deduct NOW, taxed at withdrawal."},
+ {mod:"--m7", tag:"Module 7 · RMDs",      q:"RMD start ages under SECURE 2.0?", a:"73 if born 1951–1959; 75 if born 1960+. Roth IRAs & (since 2024) Roth 401(k)s have none."},
+ {mod:"--m7", tag:"Module 7 · Penalty",   q:"Early-withdrawal penalty age?", a:"Before 59½, a 10% penalty generally applies — plus ordinary income tax on pre-tax money."},
+ {mod:"--m8", tag:"Module 8 · Brackets",  q:"Marginal vs. effective rate?", a:"Marginal = the top step you touch. Effective = total tax ÷ total income (always lower). Only each slice is taxed at its own rate."},
+ {mod:"--m8", tag:"Module 8 · Tax",       q:"Deduction vs. credit — which wins?", a:"Credit. A $1,000 credit cuts the bill by $1,000; a $1,000 deduction only saves $1,000 × your bracket."},
+ {mod:"--m8", tag:"Module 8 · Munis",     q:"Taxable-equivalent yield of a muni?", a:"Muni rate ÷ (1 − tax bracket). Muni interest is federal-tax-free — best for high brackets."},
+ {mod:"--m9", tag:"Module 9 · Trusts",    q:"The three trust roles?", a:"G.T.B. → Grantor gives, Trustee tends (manages), Beneficiary benefits."},
+ {mod:"--m9", tag:"Module 9 · Probate",   q:"What beats the will?", a:"Beneficiary designations, JTWROS, TOD/POD, and trust assets pass OUTSIDE probate — a beneficiary form overrides the will."},
+ {mod:"--m9", tag:"Module 9 · Basis",     q:"What is step-up in basis?", a:"Inherited assets reset cost basis to date-of-death value — decades of gains can escape capital gains tax."},
+ {mod:"--m10",tag:"Module 10 · Exam",     q:"The exam, by the numbers?", a:"75 questions · 70% to pass (53/75) · 3 hours · 2 attempts · closed-book online."}
+];
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

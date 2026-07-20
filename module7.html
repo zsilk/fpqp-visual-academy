@@ -19,12 +19,27 @@
 
 <main class="wrap">
 
+  <div class="tag-row">
+    <a class="tag" href="concepts.html">contribution limits</a>
+    <a class="tag" href="concepts.html">roth vs traditional</a>
+    <a class="tag" href="concepts.html">RMDs</a>
+    <a class="tag" href="number-bank.html">all 2026 numbers</a>
+  </div>
+
   <h2>💰 2026 contribution limits (the new numbers)</h2>
   <div class="grid c3">
     <div class="card" style="border-top:6px solid var(--m7)"><div class="stat">$24,500</div><div class="stat-label"><strong>401(k)/403(b)/457</strong> employee deferral · +$8,000 catch-up at 50+ · $11,250 “super catch-up” ages 60–63</div></div>
     <div class="card" style="border-top:6px solid var(--m2)"><div class="stat" style="color:var(--m2)">$7,500</div><div class="stat-label"><strong>IRA</strong> (traditional + Roth combined) · +$1,100 catch-up at 50+</div></div>
     <div class="card" style="border-top:6px solid var(--m8)"><div class="stat" style="color:var(--m8)">$17,000</div><div class="stat-label"><strong>SIMPLE IRA</strong> deferral (some plans allow more under SECURE 2.0)</div></div>
   </div>
+  <figure class="viz" style="text-align:left">
+    <div class="barchart" data-bars='[
+      {"label":"401(k)/403(b)/457","value":24500,"display":"$24,500","color":"--m7"},
+      {"label":"SIMPLE IRA","value":17000,"display":"$17,000","color":"--m8"},
+      {"label":"IRA (trad + Roth)","value":7500,"display":"$7,500","color":"--m2"}
+    ]'></div>
+    <figcaption>2026 base employee-contribution limits by account type — the workplace plan lets you save more than 3× an IRA.</figcaption>
+  </figure>
   <p class="src">Source: <a href="https://www.irs.gov/newsroom/401k-limit-increases-to-24500-for-2026-ira-limit-increases-to-7500">IRS: 2026 retirement plan limits</a></p>
 
   <h2>🍓 Roth vs. 🥔 Traditional: when do you pay the tax?</h2>
@@ -43,13 +58,13 @@
     </svg>
     <figcaption>Rule of thumb: expect a HIGHER tax bracket later → Roth. Lower bracket later → traditional.</figcaption>
   </figure>
+  <p><strong>Not sure which fits a client?</strong> Answer a couple of questions and watch the path light up:</p>
+  <div data-tree="roth"></div>
 
   <h2>⏳ RMDs: the new ages (SECURE 2.0)</h2>
-  <div class="grid c3">
-    <div class="card tint"><h3>🎂 Born 1951–1959</h3><p style="font-size:14.5px">RMDs start at <strong>age 73</strong>.</p></div>
-    <div class="card tint"><h3>🎂 Born 1960 or later</h3><p style="font-size:14.5px">RMDs start at <strong>age 75</strong> (beginning 2033).</p></div>
-    <div class="card tint"><h3>⚠️ Miss an RMD?</h3><p style="font-size:14.5px">Penalty is now <strong>25%</strong> of the shortfall (down from 50%) — reduced to <strong>10%</strong> if fixed quickly.</p></div>
-  </div>
+  <p>Your RMD start age depends on your birth year — find yours on the line:</p>
+  <div data-numline="rmd"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Miss an RMD?</strong> The penalty is now <strong>25%</strong> of the shortfall (down from 50%) — reduced to <strong>10%</strong> if you correct it quickly.</div></div>
   <div class="callout memory"><span class="ico">🧠</span><div><strong>More SECURE 2.0 gold:</strong> Roth IRAs have NO lifetime RMDs — and since 2024, <strong>Roth 401(k)s don't either</strong>. First RMD can be delayed to April 1 of the year after reaching RMD age (but then you take two that year!).</div></div>
   <p class="src">Sources: <a href="https://www.irs.gov/retirement-plans/retirement-plan-and-ira-required-minimum-distributions-faqs">IRS: RMD FAQs</a> · <a href="https://www.fidelity.com/learning-center/personal-finance/secure-act-2">Fidelity: SECURE 2.0 overview</a></p>
 
@@ -92,10 +107,10 @@
 
 <script>
 window.QUIZ = { id:"m7", questions:[
- {q:"What is the 2026 employee deferral limit for a 401(k) (under age 50)?", opts:["$19,500","$22,500","$24,500","$30,000"], a:2, why:"$24,500 for 2026, plus $8,000 catch-up at 50+ (and $11,250 super catch-up for ages 60–63)."},
- {q:"The 2026 IRA contribution limit (under 50) is…", opts:["$6,000","$6,500","$7,000","$7,500"], a:3, why:"$7,500 for 2026 — shared across traditional and Roth IRAs combined."},
+ {q:"What is the 2026 employee deferral limit for a 401(k) (under age 50)?", opts:["$19,500","$22,500","$24,500","$30,000"], a:2, why:"$24,500 for 2026, plus $8,000 catch-up at 50+ (and $11,250 super catch-up for ages 60–63).", trap:"$19,500 and $22,500 are older limits your book may still print. Contribution limits index up almost every year."},
+ {q:"The 2026 IRA contribution limit (under 50) is…", opts:["$6,000","$6,500","$7,000","$7,500"], a:3, why:"$7,500 for 2026 — shared across traditional and Roth IRAs combined.", trap:"$6,000 was the limit for years and sticks in memory — but it's now indexed and has moved up to $7,500."},
  {q:"Qualified withdrawals from a Roth IRA are…", opts:["taxed as ordinary income","taxed as capital gains","completely tax-free","subject to a flat 10% tax"], a:2, why:"Roth = pay tax going in, then qualified withdrawals (age 59½ + 5-year rule) are 100% tax-free."},
- {q:"A client born in 1962 must start RMDs at age…", opts:["70½","72","73","75"], a:3, why:"Born 1960 or later → RMD age 75 under SECURE 2.0. Born 1951–1959 → 73."},
+ {q:"A client born in 1962 must start RMDs at age…", opts:["70½","72","73","75"], a:3, why:"Born 1960 or later → RMD age 75 under SECURE 2.0. Born 1951–1959 → 73.", trap:"70½ and 72 are prior RMD ages. The exam offers all four ages together to catch anyone using an old edition."},
  {q:"The penalty for a missed RMD is now…", opts:["50%, no exceptions","25%, reduced to 10% if corrected timely","5%","nothing"], a:1, why:"SECURE 2.0 cut it from 50% to 25% — and just 10% if you fix it quickly."},
  {q:"In a defined BENEFIT plan, investment risk falls on…", opts:["the employee","the employer","the IRS","the fund manager"], a:1, why:"Pensions promise a set benefit — the employer must fund it regardless of markets. In a 401(k), the employee bears the risk."},
  {q:"Claiming Social Security at 62 instead of full retirement age results in…", opts:["a permanently reduced benefit","a temporarily reduced benefit","the same benefit","a larger benefit"], a:0, why:"Early claiming permanently reduces checks. Waiting past FRA adds ~8%/year to age 70."},
