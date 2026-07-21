@@ -43,6 +43,10 @@ window.FLASHCARDS = [
  {id:"m1-ethics",mod:"--m1", tag:"Module 1 · Ethics",    q:"The six FPQP® Code of Ethics principles?", a:"“Fine Integrity Comes Down Professional & Confidential” → Fiduciary Duty, Integrity, Competence, Diligence, Professionalism, Confidentiality."},
  {id:"m1-bias",  mod:"--m1", tag:"Module 1 · Behavioral", q:"Cognitive error vs. emotional bias?", a:"Cognitive = a thinking/knowledge mistake you can teach away (e.g. conservatism, mental accounting). Emotional = feelings-based, usually worked around (e.g. self-control, status quo)."},
  {id:"m1-comm",  mod:"--m1", tag:"Module 1 · Counseling", q:"Nondirective vs. directive counseling?", a:"Nondirective: clarification, paraphrasing, summarizing (client reflects). Directive: reframing, explanation, advice (planner guides)."},
+ {id:"m1-areas", mod:"--m1", tag:"Module 1 · Process",   q:"The six core planning areas?", a:"Cash flow & debt, risk mgmt & insurance, investments, tax, retirement, estate — constantly overlapping, which is the whole point of planning."},
+ {id:"m1-tolcap",mod:"--m1", tag:"Module 1 · Risk",      q:"Risk tolerance vs. risk capacity?", a:"Tolerance = emotional willingness to accept volatility. Capacity = financial ability to absorb loss without derailing goals. Always plan to the LOWER of the two."},
+ {id:"m1-resist",mod:"--m1", tag:"Module 1 · Behavioral", q:"Top reasons clients avoid planning?", a:"Perceived complexity, procrastination, the belief planning is only for the wealthy, avoidance (money = shame/fear), and mistaking a 401(k) for an actual plan."},
+ {id:"m1-adv",   mod:"--m1", tag:"Module 1 · Regulation", q:"What is Form ADV?", a:"An investment adviser's registration & primary disclosure document — services, fees, conflicts of interest, disciplinary history. Delivered to clients."},
 
  /* Module 2 — Cash, debt & business */
  {id:"m2-ratios",mod:"--m2", tag:"Module 2 · Ratios",    q:"The 28 / 36 / 20 ratios?", a:"≤28% gross on housing; ≤36% gross on ALL debt; ≤20% of NET income on consumer debt (watch the net switch!)."},
@@ -50,6 +54,11 @@ window.FLASHCARDS = [
  {id:"m2-cchapters",mod:"--m2",tag:"Module 2 · Bankruptcy",q:"Chapter 7 vs. Chapter 13?", a:"7 = liquidation (“LIQUIDS” has 7 letters). 13 = wage-earner repayment plan over 3–5 years."},
  {id:"m2-fico",  mod:"--m2", tag:"Module 2 · Credit",    q:"Biggest FICO factor?", a:"Payment history (35%), then amounts owed (30%) — together 65% of the score."},
  {id:"m2-ccorp", mod:"--m2", tag:"Module 2 · Entities",  q:"Which entity has double taxation?", a:"The C corporation only. S corps, LLCs, partnerships, sole props are pass-through."},
+ {id:"m2-5cs",   mod:"--m2", tag:"Module 2 · Credit",    q:"The five Cs of credit?", a:"Character, Capacity, Capital, Collateral, Conditions — what a lender weighs before approving a loan."},
+ {id:"m2-strategy",mod:"--m2",tag:"Module 2 · Debt",     q:"Avalanche vs. snowball payoff?", a:"Avalanche = highest rate first (mathematically optimal). Snowball = smallest balance first (behaviorally easier — early wins keep you going)."},
+ {id:"m2-entity",mod:"--m2", tag:"Module 2 · Entities",  q:"Which business forms give liability protection?", a:"C corp, S corp, LLC, and a limited partner in an LP (as long as they don't manage). NOT sole prop or general partnership."},
+ {id:"m2-current",mod:"--m2",tag:"Module 2 · Ratios",    q:"The current ratio?", a:"Current assets ÷ current liabilities. Below 1.0 means the client can't cover what's due within a year from what's available within a year."},
+ {id:"m2-pmi",   mod:"--m2", tag:"Module 2 · Mortgages", q:"Who does PMI protect?", a:"The LENDER, not the borrower — required below 20% equity, and usually removable once you cross that line."},
 
  /* Module 3 — Time value of money */
  {id:"m3-72",    mod:"--m3", tag:"Module 3 · TVM",       q:"The Rule of 72?", a:"72 ÷ interest rate ≈ the years for money to double. (e.g., 8% → ~9 years.)"},
@@ -57,6 +66,11 @@ window.FLASHCARDS = [
  {id:"m3-disc",  mod:"--m3", tag:"Module 3 · TVM",       q:"Compounding vs. discounting?", a:"Compounding grows PV forward to FV. Discounting shrinks FV back to PV."},
  {id:"m3-sign",  mod:"--m3", tag:"Module 3 · Calculator",q:"Calculator sign convention?", a:"Money OUT = negative, money IN = positive. Crazy answer? Check your signs."},
  {id:"m3-freq",  mod:"--m3", tag:"Module 3 · TVM",       q:"Which compounding frequency grows most?", a:"More frequent = more growth-on-growth. Daily > monthly > quarterly > annual."},
+ {id:"m3-fvann", mod:"--m3", tag:"Module 3 · Formulas", q:"Shape of the FV-of-annuity formula?", a:"FV = PMT × [((1+r)ⁿ − 1) ÷ r]. For an annuity DUE, multiply that whole result by (1+r)."},
+ {id:"m3-ear",   mod:"--m3", tag:"Module 3 · Formulas", q:"What does EAR (effective annual rate) do?", a:"EAR = (1 + i/m)ᵐ − 1 — lets you compare rates with different compounding frequencies apples-to-apples."},
+ {id:"m3-nperiods",mod:"--m3",tag:"Module 3 · Calculator",q:"What does N actually mean on the calculator?", a:"Total number of PERIODS, not years. Monthly payments over 30 years = N=360, not 30 — a classic error source."},
+ {id:"m3-begin", mod:"--m3", tag:"Module 3 · Annuities", q:"When do you switch to BEGIN mode?", a:"Rent, leases, insurance premiums, retirement income starting immediately — payments due at the START of the period."},
+ {id:"m3-realrate",mod:"--m3",tag:"Module 3 · Inflation", q:"Exact real-rate formula (not the shortcut)?", a:"Real rate = [(1 + nominal) ÷ (1 + inflation)] − 1. “Nominal minus inflation” is only an approximation."},
 
  /* Module 4 — Property & casualty */
  {id:"m4-arrt",  mod:"--m4", tag:"Module 4 · Risk",      q:"The 4 ways to handle risk?", a:"“ARRT” → Avoid, Reduce, Retain, Transfer. Insurance = transfer."},
@@ -65,6 +79,10 @@ window.FLASHCARDS = [
  {id:"m4-acv",   mod:"--m4", tag:"Module 4 · Home",      q:"Replacement cost vs. ACV?", a:"Replacement cost pays for NEW. ACV = replacement cost − depreciation."},
  {id:"m4-flood", mod:"--m4", tag:"Module 4 · Home",      q:"Two big homeowners exclusions?", a:"Flood and earthquake — both need separate policies."},
  {id:"m4-pap",   mod:"--m4", tag:"Module 4 · Auto",      q:"A deer hits your parked car — which PAP part?", a:"Part D, “other than collision” (comprehensive): theft, hail, animals."},
+ {id:"m4-hazard",mod:"--m4", tag:"Module 4 · Risk",      q:"Physical vs. moral vs. morale hazard?", a:"Physical = a tangible condition (frayed wiring). Moral = dishonesty (arson for the payout). Morale = carelessness because you're insured (leaving the car unlocked)."},
+ {id:"m4-insurable",mod:"--m4",tag:"Module 4 · Risk",    q:"Requirements of an insurable risk?", a:"Measurable & determinable, accidental/unintentional, part of a large homogeneous pool, not catastrophic to the insurer, economically feasible."},
+ {id:"m4-perils",mod:"--m4", tag:"Module 4 · Policy",    q:"Named perils vs. open perils — who proves what?", a:"Named perils: the INSURED must show the loss came from a listed peril. Open perils (all-risk): the INSURER must show an exclusion applies."},
+ {id:"m4-ho35",  mod:"--m4", tag:"Module 4 · Home",      q:"HO-3 vs. HO-5?", a:"Both cover the dwelling on open perils. HO-5 extends open perils to CONTENTS too — the pricier upgrade."},
 
  /* Module 5 — Life & health */
  {id:"m5-term",  mod:"--m5", tag:"Module 5 · Life",      q:"Young family, max coverage, tight budget?", a:"Term life — most death benefit per dollar. “Flexible premiums” = universal; “subaccounts” = variable."},
@@ -74,6 +92,9 @@ window.FLASHCARDS = [
  {id:"m5-elim",  mod:"--m5", tag:"Module 5 · Disability",q:"The elimination period?", a:"The waiting period before benefits start — a time-deductible. Longer wait = cheaper policy."},
  {id:"m5-medicare",mod:"--m5",tag:"Module 5 · Medicare", q:"Medicare parts A/B/C/D?", a:"A = hospital (Admitted), B = doctor Bills, C = Advantage (private), D = Drugs. Eligible at 65."},
  {id:"m5-ltc",   mod:"--m5", tag:"Module 5 · LTC",       q:"When does LTC typically trigger?", a:"When you can't do 2 of 6 activities of daily living (ADLs). Medicare barely covers custodial care."},
+ {id:"m5-viatical",mod:"--m5",tag:"Module 5 · Life",     q:"Viatical settlement vs. life settlement?", a:"Viatical = the seller is terminally ill. Life settlement = the seller is older, but not terminally ill. Both sell an existing policy to a third party."},
+ {id:"m5-annrisk",mod:"--m5", tag:"Module 5 · Annuities",q:"What risk does an annuity transfer?", a:"Longevity risk — outliving your money. The mirror image of life insurance, which protects against dying too soon."},
+ {id:"m5-nonocc",mod:"--m5", tag:"Module 5 · Disability",q:"Non-cancelable vs. guaranteed renewable?", a:"Non-cancelable: insurer can't change premium OR benefits — the strongest guarantee. Guaranteed renewable: can't cancel, but CAN raise premiums by class."},
 
  /* Module 6 — Investments */
  {id:"m6-unsys", mod:"--m6", tag:"Module 6 · Risk",      q:"Which risk can diversification remove?", a:"Unsystematic (company-specific). Systematic/market risk stays — measured by beta."},
@@ -83,6 +104,9 @@ window.FLASHCARDS = [
  {id:"m6-dca",   mod:"--m6", tag:"Module 6 · Strategy",  q:"What is dollar-cost averaging?", a:"Investing a fixed amount on a schedule — automatically buying more shares when prices are low."},
  {id:"m6-etf",   mod:"--m6", tag:"Module 6 · Funds",     q:"ETF vs. mutual fund trading?", a:"ETFs trade all day like a stock; mutual funds price once daily at NAV."},
  {id:"m6-sharpe",mod:"--m6", tag:"Module 6 · Measures",  q:"What does the Sharpe ratio show?", a:"Excess return ÷ standard deviation — how well you're paid for the risk taken."},
+ {id:"m6-correl",mod:"--m6", tag:"Module 6 · Risk",      q:"What makes diversification work?", a:"Combining assets with LOW correlation (below +1.0). Correlation runs from −1.0 (perfectly opposite) to +1.0 (perfectly together)."},
+ {id:"m6-nav",   mod:"--m6", tag:"Module 6 · Funds",     q:"What is NAV and when do mutual fund orders fill?", a:"NAV = (assets − liabilities) ÷ shares outstanding. Orders fill at the NEXT computed NAV (forward pricing) — never a known price up front."},
+ {id:"m6-tey",   mod:"--m6", tag:"Module 6 · Bonds",     q:"Taxable-equivalent yield formula?", a:"TEY = tax-free muni yield ÷ (1 − marginal tax bracket). Higher bracket → munis look relatively better."},
 
  /* Module 7 — Retirement */
  {id:"m7-roth",  mod:"--m7", tag:"Module 7 · Roth",      q:"Roth vs. Traditional — when do you pay tax?", a:"🍓 Roth = tax NOW, tax-free later. 🥔 Traditional = deduct NOW, taxed at withdrawal."},
@@ -91,6 +115,10 @@ window.FLASHCARDS = [
  {id:"m7-penalty",mod:"--m7",tag:"Module 7 · Penalty",   q:"Early-withdrawal penalty age?", a:"Before 59½, a 10% penalty generally applies — plus ordinary income tax on pre-tax money."},
  {id:"m7-ss",    mod:"--m7", tag:"Module 7 · Soc. Sec.", q:"Social Security claiming ages?", a:"62 earliest (permanently reduced), 67 full retirement age, 70 max (~8%/yr delayed credits)."},
  {id:"m7-db",    mod:"--m7", tag:"Module 7 · Plans",     q:"Who bears risk: DB vs. DC plan?", a:"Defined benefit (pension) → employer bears risk. Defined contribution (401(k)) → employee bears risk."},
+ {id:"m7-vesting",mod:"--m7",tag:"Module 7 · Vesting",   q:"Cliff vs. graded vesting?", a:"Cliff = 0% until a stated year, then 100% at once. Graded = vesting rises in steps. Your OWN deferrals are always 100% vested immediately."},
+ {id:"m7-457",   mod:"--m7", tag:"Module 7 · Plans",     q:"457(b) special perk?", a:"Governmental 457(b) withdrawals after separation skip the 10% early-withdrawal penalty at ANY age — and you can max both a 403(b) AND a 457(b) in the same year."},
+ {id:"m7-nqdc",  mod:"--m7", tag:"Module 7 · Executive", q:"Biggest risk of nonqualified deferred comp?", a:"It stays subject to the EMPLOYER'S creditors. If the company goes under, the executive is just an unsecured creditor."},
+ {id:"m7-4pct",  mod:"--m7", tag:"Module 7 · Retirees",  q:"The 4% withdrawal rule?", a:"Withdraw 4% of the starting portfolio in year one, then adjust that dollar amount for inflation each year — a starting reference, not a rigid rule."},
 
  /* Module 8 — Taxes */
  {id:"m8-marg",  mod:"--m8", tag:"Module 8 · Brackets",  q:"Marginal vs. effective rate?", a:"Marginal = the top step you touch. Effective = total tax ÷ total income (always lower)."},
@@ -99,6 +127,10 @@ window.FLASHCARDS = [
  {id:"m8-ltcg",  mod:"--m8", tag:"Module 8 · Gains",     q:"Short vs. long-term capital gains?", a:"≤1 year = ordinary rates. >1 year = preferential 0/15/20%."},
  {id:"m8-agi",   mod:"--m8", tag:"Module 8 · Flow",      q:"What gets you to AGI?", a:"Gross income − above-the-line adjustments (IRA, HSA, student-loan interest) = AGI. Deductions come after."},
  {id:"m8-stdded",mod:"--m8", tag:"Module 8 · Deduction", q:"2026 standard deduction?", a:"$16,100 single · $32,200 MFJ · $24,150 head of household (post-OBBB)."},
+ {id:"m8-wash",  mod:"--m8", tag:"Module 8 · Losses",    q:"The wash sale rule?", a:"A loss is disallowed if you buy substantially identical securities within 30 days before or after the sale. Repurchasing inside an IRA makes the loss PERMANENTLY lost."},
+ {id:"m8-stepup",mod:"--m8", tag:"Module 8 · Basis",     q:"Step-up in basis, in one line?", a:"Inherited assets reset to fair-market value at death — lifetime gains vanish for tax purposes. Gift cash/high-basis assets; bequeath low-basis appreciated ones."},
+ {id:"m8-hsatriple",mod:"--m8",tag:"Module 8 · Accounts",q:"HSA's triple tax advantage?", a:"Deductible going in, tax-free growth, tax-free out for qualified medical expenses — the only account type with all three."},
+ {id:"m8-529ctrl",mod:"--m8", tag:"Module 8 · Education",q:"Who controls a 529 plan?", a:"The ACCOUNT OWNER, forever — unlike a UTMA, the beneficiary never gains a legal right to take the money and spend it on anything."},
 
  /* Module 9 — Estate */
  {id:"m9-gtb",   mod:"--m9", tag:"Module 9 · Trusts",    q:"The three trust roles?", a:"G.T.B. → Grantor gives, Trustee tends (manages), Beneficiary benefits."},
@@ -107,10 +139,16 @@ window.FLASHCARDS = [
  {id:"m9-exempt",mod:"--m9", tag:"Module 9 · Numbers",   q:"2026 estate & gift numbers?", a:"$15M exemption per person ($30M/couple, now permanent); $19,000 annual gift exclusion; 40% top rate."},
  {id:"m9-rev",   mod:"--m9", tag:"Module 9 · Trusts",    q:"Revocable vs. irrevocable trust?", a:"Revocable = keep control, avoids probate, but no tax/creditor shield. Irrevocable = give up control, leaves your estate, gains protection."},
  {id:"m9-intestate",mod:"--m9",tag:"Module 9 · Wills",   q:"Dying without a will is…?", a:"Intestate → state intestacy law decides who inherits (and courts pick guardians)."},
+ {id:"m9-ilit",  mod:"--m9", tag:"Module 9 · Trusts",    q:"What does an ILIT do, and what's the 3-year rule?", a:"An irrevocable life insurance trust owns the policy so proceeds skip the gross estate — but transferring an EXISTING policy in pulls it back if you die within 3 years."},
+ {id:"m9-jtwros",mod:"--m9", tag:"Module 9 · Titling",   q:"The risk of JTWROS “for convenience”?", a:"It overrides the will entirely and exposes the asset to the joint owner's creditors and divorce. Adding a kid to a deed “for convenience” is a classic estate mistake."},
+ {id:"m9-durable",mod:"--m9",tag:"Module 9 · Incapacity",q:"Durable vs. regular power of attorney?", a:"A regular POA ends exactly when incapacity begins — the moment it's needed. DURABLE survives incapacity, which is the whole point."},
+ {id:"m9-gst",   mod:"--m9", tag:"Module 9 · Transfer Tax",q:"What is the GST tax?", a:"An extra tax layered ON TOP of gift/estate tax on transfers to a “skip person” — a grandchild or someone 37.5+ years younger."},
 
  /* Module 10 — Exam */
  {id:"m10-exam", mod:"--m10",tag:"Module 10 · Exam",     q:"The exam, by the numbers?", a:"75 questions · 70% to pass (53/75) · 3 hours · 2 attempts · closed-book online."},
- {id:"m10-pyr",  mod:"--m10",tag:"Module 10 · Priority", q:"The planning priority pyramid?", a:"① Emergency fund & toxic debt → ② full employer match → ③ insurance → ④ estate docs → ⑤ extra investing. Protection before growth."}
+ {id:"m10-pyr",  mod:"--m10",tag:"Module 10 · Priority", q:"The planning priority pyramid?", a:"① Emergency fund & toxic debt → ② full employer match → ③ insurance → ④ estate docs → ⑤ extra investing. Protection before growth."},
+ {id:"m10-surplus",mod:"--m10",tag:"Module 10 · Case",  q:"Whitfield case — the biggest hidden finding?", a:"Retirement was actually OVER-funded by ~$843,000, even though the clients feared it wasn't — freeing cash flow for education without new savings."},
+ {id:"m10-order",mod:"--m10",tag:"Module 10 · Case",     q:"Why do estate docs outrank the clients' #1 stated goal?", a:"Consequence + cost. No will means a court picks the guardian for minor kids — catastrophic and cheap to fix, so it goes first regardless of the client's own ranking."}
 ];
 </script>
 <script src="js/app.js"></script>

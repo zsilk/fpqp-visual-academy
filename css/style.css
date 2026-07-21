@@ -554,3 +554,80 @@ details.selfcheck[open] summary{border-bottom:1px solid var(--border)}
 details.selfcheck .sc-a{padding:12px 18px;font-size:14.5px;color:var(--ink-soft)}
 
 @media print{.fb-fab,.fb-scrim,.gate-scrim,.user-chip,.sync-badge{display:none!important}}
+
+/* ============================================================
+   v5 — dropdown nav, page aids, grouped flashcards
+   ============================================================ */
+
+/* Dropdown nav */
+.nav-inner{flex-wrap:nowrap;justify-content:flex-start}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.nav-burger{display:none;font:inherit;font-size:1.2rem;background:none;border:1.5px solid var(--border);
+  border-radius:10px;padding:6px 12px;cursor:pointer;min-height:42px}
+.nav-dd{position:relative}
+.nav-dd-btn{font:inherit;font-size:14px;color:var(--ink);background:none;border:none;padding:7px 12px;
+  border-radius:10px;min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.nav-dd-btn:hover{background:var(--accent-soft)}
+.nav-dd-btn.active{background:var(--accent);color:#fff}
+.nav-dd-btn .dd-caret{font-size:.75em;transition:transform .15s}
+.nav-dd.open .dd-caret{transform:rotate(180deg)}
+.nav-dd-panel{display:none;position:absolute;top:calc(100% + 6px);left:0;min-width:280px;max-height:min(70vh,520px);overflow:auto;
+  background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 40px rgba(43,38,64,.18);padding:8px;z-index:60}
+.nav-dd.open .nav-dd-panel{display:block}
+.nav-dd-panel a{display:block;padding:9px 12px;border-radius:9px;font-size:14px;color:var(--ink);text-decoration:none}
+.nav-dd-panel a:hover{background:var(--accent-soft)}
+.nav-dd-panel a.active{background:var(--accent);color:#fff}
+@media (max-width:900px){
+  .nav-burger{display:block;margin-left:8px}
+  .nav-right{margin-left:auto}
+  .nav-links{display:none}
+  .nav.open .nav-links{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:100%;left:0;right:0;
+    background:#fff;border-bottom:1px solid var(--border);box-shadow:0 16px 40px rgba(43,38,64,.15);padding:10px 14px;gap:2px}
+  .nav.open .nav-dd-panel{display:block;position:static;box-shadow:none;border:none;padding:0 0 6px 14px;min-width:0;max-height:none}
+  .nav.open .nav-dd-btn .dd-caret{display:none}
+  .nav.open .nav-dd-btn{pointer-events:none;font-weight:700;color:var(--ink-soft);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;min-height:34px}
+  .nav.open .nav-dd-btn.active{background:none;color:var(--accent)}
+  .user-chip span{display:none}
+}
+
+/* Reading progress bar + back-to-top */
+.readbar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--m2),var(--m1),var(--m10));z-index:60;pointer-events:none}
+.to-top{position:fixed;right:18px;bottom:118px;z-index:70;width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--border);background:#fff;color:var(--ink-soft);font-size:1.1rem;font-weight:700;cursor:pointer;
+  box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Sticky chapter nav + scrollspy highlight */
+.chapter-nav{position:sticky;top:0;z-index:45;background:rgba(255,253,248,.95);backdrop-filter:blur(8px);
+  padding:10px 0;margin:14px 0 6px;border-bottom:1px solid var(--border)}
+.chapter-nav a.current{background:var(--accent);color:#fff}
+
+/* Auto prev/next module bar */
+.modnav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:40px 0 10px}
+@media (max-width:560px){.modnav{grid-template-columns:1fr}}
+.modnav-card{display:flex;flex-direction:column;gap:4px;text-decoration:none;background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius);padding:16px 20px;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s}
+.modnav-card:hover{transform:translateY(-2px)}
+.modnav-card.prev{grid-column:1}
+.modnav-card.next{grid-column:2;text-align:right}
+.modnav-card.next:only-child,.modnav-card.prev:only-child{grid-column:1 / -1}
+.mn-dir{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.mn-title{font-family:Georgia,serif;font-weight:700;color:var(--accent)}
+
+/* Grouped, collapsible flashcards */
+.fc-group{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
+  margin:14px 0;overflow:hidden}
+.fc-group > summary{cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 20px;
+  font-family:Georgia,serif;font-size:1.1rem;font-weight:700;list-style:none}
+.fc-group > summary::-webkit-details-marker{display:none}
+.fc-group > summary::before{content:"▸";color:var(--accent);transition:transform .15s}
+.fc-group[open] > summary::before{transform:rotate(90deg)}
+.fc-group > summary:hover{background:var(--accent-soft)}
+.fc-group .fcg-name{color:var(--accent)}
+.fc-group .fcg-count{margin-left:auto;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--ink-soft);
+  background:var(--accent-soft);border-radius:999px;padding:4px 12px}
+.fc-group .deck{padding:0 18px 18px;margin:0}
+.fc-shell .flashcard{width:100%;display:block}
+@media print{.fc-group{border:none;box-shadow:none}.fc-group > summary{display:none}.fc-group:not([open]) .deck{display:grid}}
