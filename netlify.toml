@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Keep source material out of the deployed site.
+[[redirects]]
+  from = "/fpqp-book-content/*"
+  to = "/index.html"
+  status = 404
+
+[[redirects]]
+  from = "/1-21.pdf"
+  to = "/index.html"
+  status = 404

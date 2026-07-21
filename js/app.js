@@ -1,14 +1,89 @@
-/* FPQP Visual Academy v1 — shared engine: nav, quizzes, progress, plan, encouragement */
+/* FPQP Visual Academy v2 — shared engine: nav, quizzes, progress, interactives,
+   per-user cloud saves (Netlify Blobs), feedback, encouragement */
 (function(){
 "use strict";
-const LS = "fpqpAcademyV1";
+
+/* ---------- Per-user store + cloud sync ----------
+   Each user (Bluffman / Rhaley) gets their own localStorage bucket AND their
+   own blob on the server. Every write is debounced up to /api/state so
+   progress follows the user across devices; if the network or function is
+   unavailable, everything still works locally and re-syncs next visit. */
+const PIN_HEADER = { "x-fpqp-pin": "2026" };
+const user = ()=> window.FPQP_USER || null;
+const LS = ()=> "fpqpAcademyV2:" + (user()||"guest");
+
+/* One-time migration: old shared v1 data becomes the first user's data. */
+function migrateV1(){
+  try{
+    const old = localStorage.getItem("fpqpAcademyV1");
+    if(old && user() && !localStorage.getItem(LS())){
+      localStorage.setItem(LS(), old);
+      localStorage.removeItem("fpqpAcademyV1");
+    }
+  }catch(e){}
+}
+
 const store = {
-  read(){ try{ return JSON.parse(localStorage.getItem(LS)) || {}; }catch(e){ return {}; } },
-  write(d){ localStorage.setItem(LS, JSON.stringify(d)); },
+  read(){ try{ return JSON.parse(localStorage.getItem(LS())) || {}; }catch(e){ return {}; } },
+  write(d){ d._updatedAt = Date.now(); try{ localStorage.setItem(LS(), JSON.stringify(d)); }catch(e){} scheduleSync(); },
   get(k, fb){ const d = store.read(); return (k in d) ? d[k] : fb; },
   set(k, v){ const d = store.read(); d[k] = v; store.write(d); }
 };
 window.fpqpStore = store;
+
+/* Cloud sync */
+let syncTimer = null, syncBadge = null;
+function syncStatus(txt, cls){
+  if(!syncBadge) return;
+  syncBadge.textContent = txt;
+  syncBadge.className = "sync-badge " + (cls||"");
+}
+function scheduleSync(){
+  if(!user()) return;
+  syncStatus("☁️ Saving…","busy");
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(pushState, 1500);
+}
+async function pushState(){
+  if(!user()) return;
+  const d = store.read();
+  try{
+    const res = await fetch("/api/state?user="+user().toLowerCase(), {
+      method:"PUT", headers:{...PIN_HEADER, "content-type":"application/json"},
+      body: JSON.stringify({ data:d, updatedAt: d._updatedAt || Date.now() })
+    });
+    if(res.status===409){ // another device saved something newer — adopt it
+      const server = await res.json();
+      if(server && server.data){ try{ localStorage.setItem(LS(), JSON.stringify(server.data)); }catch(e){} }
+      syncStatus("☁️ Synced","ok");
+      return;
+    }
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    syncStatus("☁️ Saved","ok");
+  }catch(e){
+    syncStatus("📴 Saved on this device","off");
+  }
+}
+async function pullState(){
+  if(!user()) return;
+  try{
+    const res = await fetch("/api/state?user="+user().toLowerCase(), { headers: PIN_HEADER });
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    const server = await res.json();
+    const local = store.read();
+    const serverAt = Number(server && server.updatedAt) || 0;
+    const localAt = Number(local._updatedAt) || 0;
+    if(server && server.data && serverAt > localAt){
+      try{ localStorage.setItem(LS(), JSON.stringify(server.data)); }catch(e){}
+      document.dispatchEvent(new CustomEvent("fpqp:statechanged"));
+    } else if(localAt > serverAt && Object.keys(local).length > 1){
+      pushState(); // local is ahead (e.g. progress made while offline)
+    }
+    syncStatus("☁️ Synced","ok");
+  }catch(e){
+    syncStatus("📴 Offline — saving on this device","off");
+  }
+}
 
 /* ---------- Nav ---------- */
 const PAGES = [
@@ -25,7 +100,7 @@ const PAGES = [
   ["module10.html","10 · Case Study","Module 10 — Case Study & Exam Rehearsal"],
   ["concepts.html","🧭 Topics"],["number-bank.html","🔢 Numbers"],["flashcards.html","🃏 Flashcards"],
   ["review.html","🔁 Rematch"],["scenarios.html","🎬 Scenarios"],["formulas.html","📐 Formulas"],
-  ["exam-skills.html","🎯 Exam Skills"],["study-plan.html","🗓️ 30-Day Plan"]
+  ["exam-skills.html","🎯 Exam Skills"]
 ];
 function buildNav(){
   const here = location.pathname.split("/").pop() || "index.html";
@@ -42,6 +117,15 @@ function buildNav(){
     if(title) a.title = title;
     inner.appendChild(a);
   });
+  const who = document.createElement("button");
+  who.type="button"; who.className="user-chip";
+  who.title="Switch user";
+  who.innerHTML = (user()==="Bluffman"?"🦉 ":"🦊 ") + (user()||"?") + " <span>· switch</span>";
+  who.addEventListener("click", ()=>{ if(confirm("Switch user? Your progress is saved.")) window.fpqpSignOut && window.fpqpSignOut(); });
+  inner.appendChild(who);
+  syncBadge = document.createElement("span");
+  syncBadge.className = "sync-badge";
+  inner.appendChild(syncBadge);
   nav.appendChild(inner);
   document.body.prepend(nav);
 }
@@ -164,51 +248,225 @@ function hubProgress(){
   });
 }
 
-/* ---------- 30-day plan ---------- */
-function plan(){
-  const host = document.getElementById("plan");
-  if(!host) return;
-  const done = store.get("planDone", {});
-  const edits = store.get("planEdits", {});
-  document.querySelectorAll(".day-card").forEach(card=>{
-    const day = card.getAttribute("data-day");
-    const cb = card.querySelector("input[type=checkbox]");
-    const task = card.querySelector(".task");
-    if(edits[day]) task.textContent = edits[day];
-    if(done[day]){ cb.checked = true; card.classList.add("checked"); }
-    cb.addEventListener("change", ()=>{
-      const d = store.get("planDone", {});
-      d[day] = cb.checked; store.set("planDone", d);
-      card.classList.toggle("checked", cb.checked);
-      if(cb.checked){
-        const n = Object.values(d).filter(Boolean).length;
-        toast(n===30 ? "🏆 ALL 30 DAYS DONE. Go pass that exam — you've earned it!" : "Day "+day+" complete! "+n+"/30 days done. "+CHEERS[Math.floor(Math.random()*CHEERS.length)]);
-        if(n===30 || n%5===0) confetti();
-        planMeter();
-      } else planMeter();
-    });
-    task.addEventListener("blur", ()=>{
-      const e = store.get("planEdits", {});
-      e[day] = task.textContent.trim(); store.set("planEdits", e);
-      toast("✏️ Saved your edit for Day "+day+".");
-    });
+/* ---------- Feedback widget (every page) ----------
+   Floating button → modal. Captures page + nearest section automatically,
+   posts to /api/feedback; if that fails the report is queued locally and
+   retried on the next page load, so nothing is ever lost. */
+const FB_CATS = [["wrong","❌ Content is wrong"],["format","🧩 Formatting broken"],["idea","💡 Idea / request"],["other","💬 Something else"]];
+function queuedFeedback(){ try{ return JSON.parse(localStorage.getItem("fpqpFbQueue")) || []; }catch(e){ return []; } }
+function setQueue(q){ try{ localStorage.setItem("fpqpFbQueue", JSON.stringify(q)); }catch(e){} }
+async function sendFeedback(entry){
+  const res = await fetch("/api/feedback", {
+    method:"POST", headers:{...PIN_HEADER, "content-type":"application/json"},
+    body: JSON.stringify(entry)
   });
-  planMeter();
-  const reset = document.getElementById("plan-reset");
-  if(reset) reset.addEventListener("click", ()=>{
-    if(confirm("Reset all checkmarks and text edits for the 30-day plan?")){
-      store.set("planDone", {}); store.set("planEdits", {}); location.reload();
+  if(!res.ok) throw new Error("HTTP "+res.status);
+}
+async function flushFeedbackQueue(){
+  const q = queuedFeedback();
+  if(!q.length) return;
+  const remaining = [];
+  for(const entry of q){
+    try{ await sendFeedback(entry); }catch(e){ remaining.push(entry); }
+  }
+  setQueue(remaining);
+  if(remaining.length < q.length) toast("📨 Sent "+(q.length-remaining.length)+" saved feedback report(s).");
+}
+function buildFeedback(){
+  const btn = document.createElement("button");
+  btn.className="fb-fab"; btn.type="button"; btn.textContent="💬 Feedback";
+  btn.title="Spotted a mistake or broken layout? Tell us in 10 seconds.";
+  document.body.appendChild(btn);
+  btn.addEventListener("click", openModal);
+  function pageSections(){
+    return [...document.querySelectorAll("main h2")].map(h=>h.textContent.replace(/Flagged|Flag to review/g,"").trim()).filter(Boolean);
+  }
+  function openModal(){
+    const scrim = document.createElement("div"); scrim.className="fb-scrim";
+    const secs = pageSections();
+    scrim.innerHTML =
+      '<div class="fb-card" role="dialog" aria-modal="true" aria-label="Send feedback">'+
+      '<h3>💬 Quick feedback</h3><p class="fb-sub">Wrong number? Broken layout? Two taps and it\'s reported.</p>'+
+      '<div class="fb-cats">'+FB_CATS.map(([k,l],i)=>'<button type="button" class="fb-cat'+(i===0?" active":"")+'" data-k="'+k+'">'+l+'</button>').join("")+'</div>'+
+      (secs.length ? '<label class="fb-lbl">Which section?<select class="fb-sec"><option value="">(whole page)</option>'+secs.map(s=>'<option>'+s.replace(/</g,"&lt;")+'</option>').join("")+'</select></label>' : '')+
+      '<label class="fb-lbl">What\'s up?<textarea class="fb-msg" rows="4" placeholder="e.g. The 2026 IRA limit here looks wrong…"></textarea></label>'+
+      '<div class="fb-actions"><button type="button" class="fb-cancel">Cancel</button><button type="button" class="fb-send">Send it 🚀</button></div></div>';
+    document.body.appendChild(scrim);
+    let cat = FB_CATS[0][0];
+    scrim.querySelectorAll(".fb-cat").forEach(c=>c.addEventListener("click", ()=>{
+      scrim.querySelectorAll(".fb-cat").forEach(x=>x.classList.remove("active"));
+      c.classList.add("active"); cat = c.getAttribute("data-k");
+    }));
+    const close = ()=>scrim.remove();
+    scrim.querySelector(".fb-cancel").addEventListener("click", close);
+    scrim.addEventListener("click", e=>{ if(e.target===scrim) close(); });
+    scrim.querySelector(".fb-msg").focus();
+    scrim.querySelector(".fb-send").addEventListener("click", async ()=>{
+      const msg = scrim.querySelector(".fb-msg").value.trim();
+      if(!msg){ scrim.querySelector(".fb-msg").focus(); return; }
+      const secEl = scrim.querySelector(".fb-sec");
+      const entry = {
+        user: user()||"?",
+        page: location.pathname.split("/").pop() || "index.html",
+        section: secEl ? secEl.value : "",
+        category: cat, message: msg
+      };
+      close();
+      try{ await sendFeedback(entry); toast("💛 Feedback sent — thank you! It really helps."); }
+      catch(e){ setQueue([...queuedFeedback(), entry]); toast("📴 Offline — feedback saved; it'll send automatically next time."); }
+    });
+  }
+}
+
+/* ---------- Generic interactive engines (data-driven) ----------
+   Pages declare data + a host element; the engine renders it. See docs/AUTHORING.md.
+   1. Sorter   <div data-sorter="id"> + window.SORTERS  — sort items into buckets
+   2. Matcher  <div data-match="id">  + window.MATCHERS — pair terms with definitions
+   3. Order    <div data-order="id">  + window.ORDERS   — click steps in sequence
+   4. Reveal   <div data-reveal="id"> + window.REVEALS  — prompt cards that flip open */
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+function buildSorters(){
+  document.querySelectorAll("[data-sorter]").forEach(host=>{
+    const cfg = (window.SORTERS||{})[host.getAttribute("data-sorter")];
+    if(!cfg) return;
+    host.classList.add("sorter");
+    let queue, idx, score;
+    function start(){
+      queue = shuffle(cfg.items); idx = 0; score = 0; render();
     }
+    function render(){
+      if(idx >= queue.length){
+        const pct = Math.round(100*score/queue.length);
+        host.innerHTML = '<div class="sorter-done"><div class="big">'+score+' / '+queue.length+'</div>'+
+          '<p>'+(pct>=70?"🎉 You'd pass this one on the real exam!":"🌱 Run it again — repetition is the whole trick.")+'</p>'+
+          '<button type="button" class="tree-restart">↺ Play again</button></div>';
+        host.querySelector(".tree-restart").addEventListener("click", start);
+        if(pct>=70) confetti();
+        return;
+      }
+      const it = queue[idx];
+      host.innerHTML =
+        '<div class="sorter-status">Item '+(idx+1)+' of '+queue.length+' · Score '+score+'</div>'+
+        '<div class="sorter-item">'+it.text+'</div>'+
+        '<div class="sorter-fb"></div>'+
+        '<div class="sorter-buckets">'+cfg.buckets.map(b=>
+          '<button type="button" class="sorter-bucket" data-b="'+b.id+'"'+(b.color?' style="--bk:var('+b.color+')"':'')+'>'+b.label+'</button>').join("")+'</div>';
+      const fb = host.querySelector(".sorter-fb");
+      host.querySelectorAll(".sorter-bucket").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          if(fb.classList.contains("show")) return;
+          const right = btn.getAttribute("data-b")===it.bucket;
+          if(right) score++;
+          const correct = cfg.buckets.find(b=>b.id===it.bucket);
+          btn.classList.add(right?"right":"wrong");
+          fb.className = "sorter-fb show "+(right?"good":"bad");
+          fb.innerHTML = (right?"✅ Yes!":"💡 It's <b>"+correct.label+"</b>.")+(it.why?" "+it.why:"");
+          setTimeout(()=>{ idx++; render(); }, right?900:2600);
+        });
+      });
+    }
+    start();
   });
 }
-function planMeter(){
-  const m = document.getElementById("plan-meter");
-  if(!m) return;
-  const done = store.get("planDone", {});
-  const n = Object.values(done).filter(Boolean).length;
-  m.querySelector(".progress-fill").style.width = (n/30*100)+"%";
-  const lbl = document.getElementById("plan-meter-label");
-  if(lbl) lbl.textContent = n+" of 30 days complete"+(n>0 ? " — beautiful consistency! 🌟" : " — Day 1 is waiting for you 💛");
+
+function buildMatchers(){
+  document.querySelectorAll("[data-match]").forEach(host=>{
+    const cfg = (window.MATCHERS||{})[host.getAttribute("data-match")];
+    if(!cfg) return;
+    host.classList.add("matcher");
+    function start(){
+      const pairs = cfg.pairs.map((p,i)=>({i, term:p[0], def:p[1]}));
+      const left = shuffle(pairs), right = shuffle(pairs);
+      host.innerHTML = '<div class="match-cols"><div class="match-col">'+
+        left.map(p=>'<button type="button" class="match-item" data-side="t" data-i="'+p.i+'">'+p.term+'</button>').join("")+
+        '</div><div class="match-col">'+
+        right.map(p=>'<button type="button" class="match-item" data-side="d" data-i="'+p.i+'">'+p.def+'</button>').join("")+
+        '</div></div><div class="match-status"></div>';
+      let sel = null, solved = 0;
+      const status = host.querySelector(".match-status");
+      host.querySelectorAll(".match-item").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          if(btn.classList.contains("solved")) return;
+          if(sel === btn){ btn.classList.remove("sel"); sel = null; return; }
+          if(sel && sel.getAttribute("data-side") !== btn.getAttribute("data-side")){
+            if(sel.getAttribute("data-i") === btn.getAttribute("data-i")){
+              sel.classList.add("solved"); btn.classList.add("solved");
+              sel.classList.remove("sel"); sel = null; solved++;
+              if(solved === cfg.pairs.length){
+                status.innerHTML = '🎉 All matched! <button type="button" class="tree-restart">↺ Shuffle & replay</button>';
+                status.querySelector(".tree-restart").addEventListener("click", start);
+                confetti();
+              }
+            } else {
+              btn.classList.add("shake"); sel.classList.add("shake");
+              const a = sel; sel.classList.remove("sel"); sel = null;
+              setTimeout(()=>{ btn.classList.remove("shake"); a.classList.remove("shake"); }, 450);
+            }
+          } else {
+            if(sel) sel.classList.remove("sel");
+            sel = btn; btn.classList.add("sel");
+          }
+        });
+      });
+    }
+    start();
+  });
+}
+
+function buildOrders(){
+  document.querySelectorAll("[data-order]").forEach(host=>{
+    const cfg = (window.ORDERS||{})[host.getAttribute("data-order")];
+    if(!cfg) return;
+    host.classList.add("orderer");
+    function start(){
+      const items = shuffle(cfg.steps.map((s,i)=>({s,i})));
+      let next = 0, misses = 0;
+      host.innerHTML = '<div class="order-status">Tap the steps in the right order — first step first.</div>'+
+        '<div class="order-list">'+items.map(it=>'<button type="button" class="order-item" data-i="'+it.i+'">'+it.s+'</button>').join("")+'</div>'+
+        '<div class="order-done"></div>';
+      const status = host.querySelector(".order-status");
+      host.querySelectorAll(".order-item").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          if(btn.classList.contains("placed")) return;
+          if(+btn.getAttribute("data-i") === next){
+            btn.classList.add("placed");
+            btn.insertAdjacentHTML("afterbegin", '<span class="order-n">'+(next+1)+'</span>');
+            next++;
+            if(next === cfg.steps.length){
+              const done = host.querySelector(".order-done");
+              done.innerHTML = (misses===0?"🏆 Perfect, first try!":"🎉 Done — "+misses+" miss"+(misses===1?"":"es")+".")+
+                ' <button type="button" class="tree-restart">↺ Replay</button>';
+              done.querySelector(".tree-restart").addEventListener("click", start);
+              if(misses===0) confetti();
+            } else status.textContent = "✅ Step "+next+" locked in — what comes next?";
+          } else {
+            misses++;
+            btn.classList.add("shake");
+            status.textContent = "🤔 Not yet — that one comes later.";
+            setTimeout(()=>btn.classList.remove("shake"), 450);
+          }
+        });
+      });
+    }
+    start();
+  });
+}
+
+function buildReveals(){
+  document.querySelectorAll("[data-reveal]").forEach(host=>{
+    const cfg = (window.REVEALS||{})[host.getAttribute("data-reveal")];
+    if(!cfg) return;
+    host.classList.add("revealgrid");
+    if(cfg.cols) host.style.setProperty("--rv-cols", cfg.cols);
+    cfg.items.forEach(it=>{
+      const b = document.createElement("button");
+      b.type="button"; b.className="reveal-card";
+      b.innerHTML = '<span class="rv-front">'+it.front+'</span><span class="rv-back">'+it.back+'</span><span class="rv-hint">tap to reveal</span>';
+      b.addEventListener("click", ()=>b.classList.toggle("open"));
+      host.appendChild(b);
+    });
+  });
 }
 
 /* ---------- Color = topic legend (persistent) ---------- */
@@ -658,7 +916,8 @@ const TOUR = [
   {emoji:"🔁", title:"Flag anything to revisit", text:"See the “Flag to review” button on each section? Tap it and that concept lands on your Rematch list.", sel:".flag-btn"},
   {emoji:"🎨", title:"Color = topic", text:"Every topic keeps its color site-wide — a built-in memory hook. Open the key any time.", sel:".legend-toggle"},
   {emoji:"🧒", title:"Too jargon-y? Flip to plain words", text:"This toggle adds plain-language explanations alongside the exam-precise wording.", sel:".mode-toggle"},
-  {emoji:"🚀", title:"You're ready", text:"Pick Module 1 and go. Your progress saves automatically in this browser. You've got this. 💛"}
+  {emoji:"💬", title:"See something wrong?", text:"Tap the Feedback button on any page — wrong number, broken layout, anything. It takes 10 seconds.", sel:".fb-fab"},
+  {emoji:"🚀", title:"You're ready", text:"Pick Module 1 and go. Your progress saves automatically to your own profile — on any device. You've got this. 💛"}
 ];
 let tourState = 0, tourEls = null;
 function startTour(force){
@@ -898,12 +1157,22 @@ function buildScenarios(){
   });
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  buildNav(); buildQuiz(); hubProgress(); plan();
+function init(){
+  migrateV1();
+  buildNav(); buildQuiz(); hubProgress();
   buildLegend(); buildWheels(); buildTrees(); buildProbate(); buildFlashcards();
   buildBarCharts(); buildTaxStack(); buildNumLines(); buildNumberBank(); conceptFilter();
   buildWarmups(); enhanceHeadings(); buildModeToggle();
   buildTVM(); buildLifeCompare(); buildRegMap(); flashcardTools(); buildReview(); buildScenarios();
+  buildSorters(); buildMatchers(); buildOrders(); buildReveals(); buildFeedback();
+  pullState(); flushFeedbackQueue();
+  document.addEventListener("fpqp:statechanged", ()=>{ hubProgress(); buildReview(); });
   if((location.pathname.split("/").pop()||"index.html")==="index.html") startTour(false);
+}
+document.addEventListener("DOMContentLoaded", ()=>{
+  // The gate (js/gate.js) may still be up; wait for it so saves land in the
+  // right user's bucket.
+  if(window.FPQP_USER) init();
+  else document.addEventListener("fpqp:unlocked", init, {once:true});
 });
 })();

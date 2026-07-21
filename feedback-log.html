@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback Log — FPQP® Visual Academy</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/gate.js"></script>
+<style>body{--accent:var(--m10);--accent-soft:var(--m10s)}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Site maintenance</div>
+    <h1>💬 Feedback Log</h1>
+    <p class="lead">Every report sent from the 💬 Feedback button lands here — wrong content, broken formatting, ideas. Mark one resolved to clear it.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>📥 Reports</h2>
+  <div id="fb-log"><p style="color:var(--ink-soft)">Loading…</p></div>
+</main>
+
+<footer><div class="wrap"><p>FPQP® Visual Academy · <a href="index.html">Home</a></p></div></footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  function go(){ load(); }
+  if(window.FPQP_USER) go(); else document.addEventListener("fpqp:unlocked", go, {once:true});
+
+  const CATS = {wrong:"❌ Wrong content", format:"🧩 Broken formatting", idea:"💡 Idea", other:"💬 Other"};
+  async function load(){
+    const host = document.getElementById("fb-log");
+    try{
+      const res = await fetch("/api/feedback", {headers:{"x-fpqp-pin":"2026"}});
+      if(!res.ok) throw new Error("HTTP "+res.status);
+      const {items} = await res.json();
+      if(!items.length){ host.innerHTML = '<div class="card" style="text-align:center;color:var(--ink-soft)">🎉 Inbox zero — no open feedback.</div>'; return; }
+      host.innerHTML = "";
+      items.forEach(function(it){
+        const d = document.createElement("div"); d.className="fb-log-item";
+        const when = it.at ? new Date(it.at).toLocaleString() : "";
+        d.innerHTML = '<button class="fb-resolve" type="button">✓ Resolve</button>'+
+          '<div class="fb-log-meta"><span>'+(CATS[it.category]||it.category)+'</span><span>👤 '+it.user+'</span>'+
+          '<span>📄 '+it.page+(it.section?" › "+it.section:"")+'</span><span>🕐 '+when+'</span></div>'+
+          '<div></div>';
+        d.lastElementChild.textContent = it.message;
+        d.querySelector(".fb-resolve").addEventListener("click", async function(){
+          if(!confirm("Mark this report resolved and remove it?")) return;
+          await fetch("/api/feedback?key="+encodeURIComponent(it.key), {method:"DELETE", headers:{"x-fpqp-pin":"2026"}});
+          d.remove();
+        });
+        host.appendChild(d);
+      });
+    }catch(e){
+      host.innerHTML = '<div class="card">📴 Couldn\'t reach the feedback service. This page only works on the deployed Netlify site (the functions aren\'t available when browsing the files locally).</div>';
+    }
+  }
+});
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>

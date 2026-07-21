@@ -10,16 +10,20 @@ A visual-first, static study site for the **FPQP® (Financial Paraplanner Qualif
 - **Flag & Rematch** — flag any section (or a flashcard) to review; it collects on your **Rematch list** (`review.html`), a personal focus queue.
 - **Guided tour** — a first-visit walkthrough (re-runnable via the hub button) introduces the nav, warm-ups, flagging, the color legend, and the plain-language toggle.
 - **Plain-language ⇄ exam-precise toggle** adds plain-English explanations alongside the exam wording.
-- **Toolkit pages** — test-taking skills (`exam-skills.html`) and a checkable/editable 30-day study plan (`study-plan.html`).
+- **Toolkit pages** — test-taking skills (`exam-skills.html`) and a feedback inbox (`feedback-log.html`).
+- **Access gate** — the site sits behind a study PIN with per-user profiles (Bluffman / Rhaley); 10 wrong PIN attempts locks the gate for 15 minutes (`js/gate.js`).
+- **Feedback button** — a floating 💬 button on every page reports wrong content or broken formatting in two taps; reports land in `feedback-log.html` (stored in Netlify Blobs, queued locally when offline).
 - **Consistent color = topic** — each topic keeps its accent color site-wide, surfaced by a persistent, numbered "Color = topic" legend (colorblind-friendly: color is never the only cue).
 - **Trap-answer callouts** in quizzes flag the outdated numbers that make classic wrong answers.
 - **Deep-linkable sections** — every section heading gets a shareable anchor and a "flag to review" control.
-- **Progress tracking** — quiz scores, flags, flashcard marks, mode, and study-plan progress all save automatically via `localStorage`.
+- **Progress tracking** — quiz scores, flags, flashcard marks, and mode save automatically per user, locally **and** to the server (Netlify Blobs via `/api/state`), so progress follows each user across devices and survives cleared browsers. Offline changes re-sync on the next visit.
 - **Accessible & print-friendly** — reduced-motion is honored globally; a dedicated print stylesheet turns any page into a clean offline study sheet (quiz answers, plain-language notes, and both flashcard sides are revealed in print).
 
 ## Tech
 
-Plain HTML, one shared stylesheet (`css/style.css`), and one shared vanilla-JS engine (`js/app.js`) that builds the nav, quiz engine, progress meters, interactive diagrams, flashcards, the Number Bank filter, and the color legend. No build step and no runtime dependencies.
+Plain HTML, one shared stylesheet (`css/style.css`), and one shared vanilla-JS engine (`js/app.js`) that builds the nav, quiz engine, progress meters, interactive diagrams, flashcards, the Number Bank filter, and the color legend. No build step. Two Netlify Functions (`netlify/functions/`) back per-user progress sync and the feedback inbox with **Netlify Blobs** (strong consistency, so saves are immediately readable — the fix for progress not persisting).
+
+Study content is authored from the original notes in `fpqp-book-content/` — the authoritative source for all study material. Page-authoring conventions live in `docs/AUTHORING.md`.
 
 ## Checking links
 

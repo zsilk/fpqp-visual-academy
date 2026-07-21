@@ -1,6 +1,6 @@
 {
   "name": "fpqp-visual-academy",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "description": "A visual-first static study site for the FPQP® final exam.",
   "type": "module",
@@ -8,5 +8,8 @@
     "check-links": "node tools/check-links.mjs",
     "lint": "node tools/check-links.mjs",
     "serve": "python3 -m http.server 8000"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
   }
 }
