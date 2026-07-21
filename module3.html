@@ -13,12 +13,29 @@
   <div class="wrap">
     <div class="kicker">Module 3 of 10</div>
     <h1>⏳ The Time Value of Money</h1>
-    <p class="lead">One idea powers this whole module: <strong>a dollar today is worth more than a dollar tomorrow</strong>, because today's dollar can grow. Master the picture, and the math becomes button-pushing.</p>
-    <div><span class="badge">PV &amp; FV</span><span class="badge">Compounding</span><span class="badge">Annuities</span><span class="badge">Rule of 72</span></div>
+    <p class="lead">One idea powers this whole module: <strong>a dollar today is worth more than a dollar tomorrow</strong>, because today's dollar can grow. Master the picture, get fluent on the calculator, and the math becomes button-pushing.</p>
+    <div><span class="badge">Calculator setup</span><span class="badge">PV &amp; FV</span><span class="badge">Annuities</span><span class="badge">Rate assumptions</span></div>
   </div>
 </header>
 
 <main class="wrap">
+
+  <div class="tag-row">
+    <a class="tag" href="concepts.html">present &amp; future value</a>
+    <a class="tag" href="concepts.html">sign convention</a>
+    <a class="tag" href="concepts.html">annuities</a>
+    <a class="tag" href="concepts.html">rule of 72</a>
+    <a class="tag" href="concepts.html">inflation &amp; real return</a>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#c1">3.1 Calculator setup</a>
+    <a href="#c2">3.2 TVM calculations</a>
+    <a href="#c3">3.3 Interest rate assumptions</a>
+  </div>
+
+  <p class="chapter-kicker" id="c1">Chapter 3.1 — Getting Started: Financial Calculator Setup</p>
+  <p>Almost every wrong TVM answer traces back to a <strong>calculator setting</strong>, not a misunderstanding of the concept. Get fluent with the machine first — the concepts click faster once the buttons aren't fighting you.</p>
 
   <h2>🕒 The money time machine</h2>
   <figure class="viz">
@@ -40,29 +57,160 @@
     </svg>
     <figcaption>Every TVM problem is one of these two trips. Ask: “Am I going forward (FV) or backward (PV)?”</figcaption>
   </figure>
+  <p>Match the term to its meaning:</p>
+  <div data-match="pvfv"></div>
 
   <h2>🧮 The 5 magic buttons</h2>
-  <p>Your HP 10bII+ (the recommended exam calculator) thinks in five variables. Know any four → it finds the fifth:</p>
+  <p>Your HP 10bII+ or TI BAII Plus (the two calculators the program supports) think in five variables. Know any four → the machine finds the fifth:</p>
   <div class="grid c4" style="grid-template-columns:repeat(5,1fr)">
-    <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">N</div><div class="stat-label">number of periods</div></div>
+    <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">N</div><div class="stat-label">total number of periods</div></div>
     <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">I/YR</div><div class="stat-label">interest rate per year</div></div>
     <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">PV</div><div class="stat-label">present value</div></div>
-    <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">PMT</div><div class="stat-label">recurring payment</div></div>
+    <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">PMT</div><div class="stat-label">payment per period</div></div>
     <div class="card tint" style="text-align:center"><div class="stat" style="font-size:1.6rem">FV</div><div class="stat-label">future value</div></div>
   </div>
-  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap #1:</strong> Money going OUT of your pocket is negative; money coming IN is positive. If your answer looks crazy, check your signs. <strong>Trap #2:</strong> monthly compounding → divide the rate by 12 AND multiply years by 12.</div></div>
+  <p>Match each register to its meaning:</p>
+  <div data-match="tvmkeys"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Two rules, both common error sources:</strong> N is <em>total periods</em>, not years (monthly payments over 30 years → N = 360). And I/YR is always the <em>annual</em> rate — both calculators divide it by the payments-per-year setting internally.</div></div>
 
-  <h2>🧪 Try it: the TVM playground</h2>
-  <p>Change any number and watch the future value move. This is exactly what your calculator does — seeing it live makes the buttons click.</p>
-  <div data-tvm></div>
-  <div class="plain-note">Money you leave invested keeps earning on its earnings. Put in a lump sum, add a bit each month, pick a growth rate — the box shows what it could become.</div>
+  <h2>🔁 The cash flow sign convention</h2>
+  <div class="card tint">
+    <p style="margin:0"><strong>Money flowing AWAY from you is negative. Money flowing TOWARD you is positive.</strong> Deposits, investments, and loan payments you make are negative. Withdrawals, loan proceeds you receive, and maturity values you collect are positive.</p>
+  </div>
+  <p>Sort each cash flow into the right bucket:</p>
+  <div data-sorter="cashflow"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> if PV and FV (or PV and PMT) carry the <em>same</em> sign when they represent opposite directions of flow, the calculator errors out or returns nonsense. When an answer looks absurd, check signs first.</div></div>
 
   <h2>🎭 Annuity flavors: ordinary vs. due</h2>
   <div class="vs">
-    <div class="side" style="border-color:var(--m3);background:var(--m3s)"><h3 style="color:var(--m3)">📦 Ordinary annuity — pay at END</h3><p style="font-size:14.5px">Payments land at the end of each period. Most loans work this way (your first mortgage payment comes after a month).</p></div>
-    <div class="side" style="border-color:var(--m4);background:var(--m4s)"><h3 style="color:var(--m4)">🏠 Annuity due — pay at START</h3><p style="font-size:14.5px">Payments land at the beginning of each period. Think RENT — due on the 1st! Worth slightly more (each payment compounds longer).</p></div>
+    <div class="side" style="border-color:var(--m3);background:var(--m3s)"><h3 style="color:var(--m3)">📦 Ordinary annuity — pay at END</h3><p style="font-size:14.5px">Payments land at the end of each period. Most loans, mortgages, and retirement contributions work this way. This is the calculator's default (END mode).</p></div>
+    <div class="side" style="border-color:var(--m4);background:var(--m4s)"><h3 style="color:var(--m4)">🏠 Annuity due — pay at START</h3><p style="font-size:14.5px">Payments land at the beginning of each period. Think RENT — due on the 1st! Worth slightly more, because every payment compounds for one extra period. On the calculator, that's BEGIN mode.</p></div>
   </div>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> “Rent is DUE on the 1st” → annuity <strong>due = beginning</strong> of period. On the calculator, that's BEGIN mode.</div></div>
+  <p>Which mode does each scenario need?</p>
+  <div data-sorter="endbegin"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> “Rent is DUE on the 1st” → annuity <strong>due = beginning</strong> of period = BEGIN mode. Both calculators show a BEGIN indicator — make checking it a reflex, and switch back to END when you're done, or it silently corrupts your next problem.</div></div>
+
+  <h2>💻 Calculator keystrokes: HP 10bII+ vs. TI BAII Plus</h2>
+  <div class="grid c2">
+    <div class="card">
+      <h3>HP 10bII+</h3>
+      <table>
+        <tr><th>Setting</th><th>Keystrokes</th></tr>
+        <tr><td>Payments per year → 1</td><td><code>1</code> <code>SHIFT</code> <code>P/YR</code></td></tr>
+        <tr><td>Decimal places</td><td><code>SHIFT</code> <code>DISP</code> <code>4</code></td></tr>
+        <tr><td>BEGIN/END toggle</td><td><code>SHIFT</code> <code>BEG/END</code></td></tr>
+        <tr><td>Clear TVM registers</td><td><code>SHIFT</code> <code>C ALL</code></td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>TI BAII Plus</h3>
+      <table>
+        <tr><th>Setting</th><th>Keystrokes</th></tr>
+        <tr><td>Payments per year → 1</td><td><code>2ND</code> <code>P/Y</code> <code>1</code> <code>ENTER</code> <code>2ND</code> <code>QUIT</code></td></tr>
+        <tr><td>Decimal places</td><td><code>2ND</code> <code>FORMAT</code> <code>4</code> <code>ENTER</code> <code>2ND</code> <code>QUIT</code></td></tr>
+        <tr><td>BEGIN/END toggle</td><td><code>2ND</code> <code>BGN</code> <code>2ND</code> <code>SET</code> <code>2ND</code> <code>QUIT</code></td></tr>
+        <tr><td>Clear TVM registers</td><td><code>2ND</code> <code>CLR TVM</code></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>The one real difference:</strong> the TI requires <code>CPT</code> before pressing the unknown's key to solve. The HP doesn't — just press the unknown's key directly.</div></div>
+  <p>Put the HP 10bII+'s basic problem-solving sequence in order:</p>
+  <div data-order="calcsequence"></div>
+
+  <h2>🎯 Why set P/YR to 1 (and convert by hand)</h2>
+  <p>Both calculators can be set to 12 payments/year and auto-convert for you — but setting P/YR to <strong>1</strong> and converting yourself is more reliable: the setting is invisible once you leave it (a stale P/YR from a prior problem is a silent error), and it matches how the formulas are written.</p>
+  <p>Tap each compounding frequency to see how N and I/YR convert:</p>
+  <div data-reveal="pyrconversion"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> converting the rate but not the number of periods (or vice versa) is one of the most frequent, costly slips. 6% annual, monthly compounding, 30 years → N = 360, I/YR = 0.5 — <em>both</em> numbers change.</div></div>
+
+  <div class="step-flow">
+    <div class="step"><div class="step-num">1</div><div><h4>🧹 Clear</h4><p>Clear the TVM registers — stale values are the #1 error source.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div><h4>✅ Check BEGIN/END</h4><p>Matches the problem? (Rent/lease = BEGIN, almost everything else = END.)</p></div></div>
+    <div class="step"><div class="step-num">3</div><div><h4>✅ Check P/YR</h4><p>Confirm it's what you expect — 1, if you're converting by hand.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div><h4>🔄 Convert</h4><p>N and I/YR to the same period basis, together.</p></div></div>
+    <div class="step"><div class="step-num">5</div><div><h4>➕➖ Sign</h4><p>Outflows negative, inflows positive.</p></div></div>
+  </div>
+
+  <h3>Check yourself — 3.1</h3>
+  <details class="selfcheck"><summary>Why is the sign convention necessary at all?</summary><div class="sc-a">TVM math requires inflows and outflows to be distinguishable. The calculator uses sign to encode direction — negative for money leaving you, positive for money coming to you. Without opposing signs on opposing flows, the equation has no valid solution.</div></details>
+  <details class="selfcheck"><summary>A 5% annual rate compounded quarterly over 8 years, with P/YR = 1. What are N and I/YR?</summary><div class="sc-a">N = 8 × 4 = 32, and I/YR = 5 ÷ 4 = 1.25.</div></details>
+  <details class="selfcheck"><summary>Which mode for a lease with payments due on the first of each month, and why?</summary><div class="sc-a">BEGIN mode. Payments occur at the start of each period, making it an annuity due. Each payment has an extra period to compound, so the value differs from the END-mode result.</div></details>
+  <details class="selfcheck"><summary>A problem returns a wildly large FV. What do you check first?</summary><div class="sc-a">Whether the registers were cleared — a leftover PMT from the prior problem is the most common cause. Then verify N and I/YR share a period basis, and that the rate was entered as a percent rather than a decimal.</div></details>
+
+  <p class="chapter-kicker" id="c2">Chapter 3.2 — Time Value of Money Calculations</p>
+  <p>There are only five variables — N, I/YR, PV, PMT, FV. Enter four, solve for the fifth. The real skill is reading a word problem and correctly identifying <em>which</em> variable is being asked for.</p>
+
+  <h2>🧮 The core formulas</h2>
+  <table>
+    <tr><th>Quantity</th><th>Formula</th></tr>
+    <tr><td>Future value of a lump sum</td><td>FV = PV(1 + r)ⁿ</td></tr>
+    <tr><td>Present value of a lump sum</td><td>PV = FV ÷ (1 + r)ⁿ</td></tr>
+    <tr><td>Future value of an ordinary annuity</td><td>FV = PMT × [((1 + r)ⁿ − 1) ÷ r]</td></tr>
+    <tr><td>Present value of an ordinary annuity</td><td>PV = PMT × [(1 − (1 + r)⁻ⁿ) ÷ r]</td></tr>
+    <tr><td>Annuity due (either direction)</td><td>Ordinary annuity result × (1 + r)</td></tr>
+  </table>
+  <p style="font-size:13px;color:var(--ink-soft)">Here <strong>r</strong> is the rate <em>per period</em> and <strong>n</strong> the number of periods — the calculator does the arithmetic, but knowing these makes the period conversions obvious.</p>
+  <p>Match each formula to what it's for:</p>
+  <div data-match="formulas"></div>
+
+  <h2>📈 Growing money forward: future value</h2>
+  <div class="grid c2">
+    <div class="card"><h3>① Lump sum, annual compounding</h3><p style="font-size:13.5px">$25,000 today at 7%, compounded annually, 12 years.</p>
+      <table><tr><td>N</td><td>12</td></tr><tr><td>I/YR</td><td>7</td></tr><tr><td>PV</td><td>−25,000</td></tr><tr><td>PMT</td><td>0</td></tr><tr><td>FV</td><td>?</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">FV = $56,304.79</p></div>
+    <div class="card"><h3>② Same, but monthly compounding</h3><p style="font-size:13.5px">Same 7%, same 12 years — compounded monthly instead.</p>
+      <table><tr><td>N</td><td>144</td></tr><tr><td>I/YR</td><td>0.583333</td></tr><tr><td>PV</td><td>−25,000</td></tr><tr><td>FV</td><td>?</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">FV = $57,768.02</p></div>
+    <div class="card"><h3>③ Series of payments</h3><p style="font-size:13.5px">$500 at the end of every month, 30 years, 6% annual, monthly compounding.</p>
+      <table><tr><td>N</td><td>360</td></tr><tr><td>I/YR</td><td>0.5</td></tr><tr><td>PV</td><td>0</td></tr><tr><td>PMT</td><td>−500</td></tr><tr><td>FV</td><td>?</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">FV = $502,257.52</p></div>
+    <div class="card"><h3>④ Same, but annuity due</h3><p style="font-size:13.5px">Same as ③, payments at the <strong>beginning</strong> of each month — BEGIN mode.</p>
+      <table><tr><td>N</td><td>360</td></tr><tr><td>I/YR</td><td>0.5</td></tr><tr><td>PMT</td><td>−500</td></tr><tr><td>Mode</td><td>BEGIN</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">FV = $504,768.81</p></div>
+  </div>
+  <div class="callout cheer"><span class="ico">🌟</span><div>Problem ③ is arguably the single most persuasive calculation in personal finance: of the final $502,257.52, only $180,000 was contributed — the other <strong>$322,257.52 (≈64%)</strong> is pure compounding. Time in the market beats timing it.</div></div>
+  <p>Put the calculator steps for Problem ③ in the right order:</p>
+  <div data-order="fvsteps"></div>
+
+  <h2>💰 Discounting back: present value</h2>
+  <div class="grid c2">
+    <div class="card"><h3>⑥ Lump sum goal</h3><p style="font-size:13.5px">Need $80,000 in 6 years, expect 5% annually. Deposit needed today?</p>
+      <table><tr><td>N</td><td>6</td></tr><tr><td>I/YR</td><td>5</td></tr><tr><td>PMT</td><td>0</td></tr><tr><td>FV</td><td>80,000</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">PV = −$59,697.23</p></div>
+    <div class="card"><h3>⑦ Retirement income stream</h3><p style="font-size:13.5px">$40,000/year for 25 years, portfolio earning 5%. Lump sum needed at the start?</p>
+      <table><tr><td>N</td><td>25</td></tr><tr><td>I/YR</td><td>5</td></tr><tr><td>PMT</td><td>40,000</td></tr><tr><td>FV</td><td>0</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">PV = $563,757.78</p></div>
+  </div>
+  <p>Problem ⑦ assumed <strong>FV = 0</strong> — the portfolio is exactly exhausted after 25 years. If the client wants to leave money to heirs, that changes. Sort each goal into the right setting:</p>
+  <div data-sorter="fvtarget"></div>
+
+  <h2>🧭 Solving for rate, payment &amp; number of periods</h2>
+  <div class="grid c2">
+    <div class="card"><h3>⑨ Solving for the rate</h3><p style="font-size:13.5px">Grew from $15,000 to $28,000 over 9 years, no additions.</p>
+      <table><tr><td>N</td><td>9</td></tr><tr><td>PV</td><td>−15,000</td></tr><tr><td>PMT</td><td>0</td></tr><tr><td>FV</td><td>28,000</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">I/YR = 7.18%</p>
+      <p style="font-size:12.5px;color:var(--ink-soft);margin:4px 0 0">This is the compound annual growth rate — averaging annual returns overstates the result, since it ignores the compounding path.</p></div>
+    <div class="card"><h3>⑩ Solving for the payment (savings)</h3><p style="font-size:13.5px">Need $100,000 in 18 years for education, expect 6% annually.</p>
+      <table><tr><td>N</td><td>18</td></tr><tr><td>I/YR</td><td>6</td></tr><tr><td>PV</td><td>0</td></tr><tr><td>FV</td><td>100,000</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">PMT = −$3,235.65/yr</p></div>
+    <div class="card"><h3>⑪ Solving for the payment (loan)</h3><p style="font-size:13.5px">$320,000 mortgage at 6.5%, 30 years, monthly.</p>
+      <table><tr><td>N</td><td>360</td></tr><tr><td>I/YR</td><td>0.541667</td></tr><tr><td>PV</td><td>320,000</td></tr><tr><td>FV</td><td>0</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">PMT = −$2,022.62/mo</p>
+      <p style="font-size:12.5px;color:var(--ink-soft);margin:4px 0 0">Total paid: 360 × $2,022.62 = $728,143, of which $408,143 is interest.</p></div>
+    <div class="card"><h3>⑫ Solving for N</h3><p style="font-size:13.5px">How long for $5,000 to double at 8%, compounded annually?</p>
+      <table><tr><td>I/YR</td><td>8</td></tr><tr><td>PV</td><td>−5,000</td></tr><tr><td>PMT</td><td>0</td></tr><tr><td>FV</td><td>10,000</td></tr></table>
+      <p class="stat" style="font-size:1.3rem;margin:6px 0 0">N = 9.01 years</p></div>
+  </div>
+  <p>Put the mortgage-payment steps (Problem ⑪) in the right order:</p>
+  <div data-order="mortgagesteps"></div>
+
+  <h2>🌊 Why compounding frequency matters</h2>
+  <p>More compounding periods = more growth-on-growth, for the same stated rate:</p>
+  <div class="pill-row">
+    <span class="pill">Annual 🐢</span><span class="pill">Semiannual</span><span class="pill">Quarterly</span><span class="pill">Monthly</span><span class="pill">Daily 🚀</span>
+  </div>
+  <div class="barchart" data-bars='[{"label":"Annual compounding","value":56304.79,"display":"$56,304.79","color":"--m3"},{"label":"Monthly compounding","value":57768.02,"display":"$57,768.02","color":"--m6"}]'></div>
+  <p style="font-size:14.5px;color:var(--ink-soft)">Same $25,000 at 7% for 12 years (Problem ① vs. ②) — about <strong>$1,463 more</strong> from frequency alone. This is also why the <strong>effective annual rate (EAR)</strong> runs higher than the stated (nominal) rate whenever compounding happens more than once a year.</p>
 
   <h2>⚡ The Rule of 72</h2>
   <figure class="viz">
@@ -74,17 +222,99 @@
         <rect x="520" y="70" width="180" height="70" rx="12" fill="#FDF3E3"/><text x="610" y="100" font-weight="bold">72 ÷ 12%</text><text x="610" y="124" fill="#D97706" font-weight="bold">= 6 years</text>
       </g>
     </svg>
-    <figcaption>A mental shortcut the exam expects you to know cold.</figcaption>
+    <figcaption>72 ÷ 8 = 9 years, against the precise 9.01 (Problem ⑫) — accurate enough for conversation in the roughly 5–12% range, not for computing a recommendation.</figcaption>
   </figure>
+  <p>Match the rate to its (approximate) doubling time:</p>
+  <div data-match="rule72"></div>
 
-  <h2>🌊 Why compounding frequency matters</h2>
-  <p>More compounding periods = more growth on growth. Ranking, smallest to biggest FV for the same stated rate:</p>
-  <div class="pill-row">
-    <span class="pill">Annual 🐢</span><span class="pill">Semiannual</span><span class="pill">Quarterly</span><span class="pill">Monthly</span><span class="pill">Daily 🚀</span>
+  <h2>🔤 Reading word problems: which variable is being asked for?</h2>
+  <table>
+    <tr><th>Phrasing</th><th>Solve for</th></tr>
+    <tr><td>“What will it be worth?”</td><td>FV</td></tr>
+    <tr><td>“How much do I need today / what lump sum?”</td><td>PV</td></tr>
+    <tr><td>“How much must I save each month/year?”</td><td>PMT</td></tr>
+    <tr><td>“What return did I earn?” / “What rate is needed?”</td><td>I/YR</td></tr>
+    <tr><td>“How long until…?”</td><td>N</td></tr>
+  </table>
+  <p>Sort each question into the variable it's really asking for:</p>
+  <div data-sorter="whichvariable"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> solving for FV when the question actually asked for the required PMT is a classic slip — read the word problem twice before touching the calculator.</div></div>
+
+  <h2>🧪 Try it: the TVM playground</h2>
+  <p>Change any number and watch the future value move. This is exactly what your calculator does — seeing it live makes the buttons click.</p>
+  <div data-tvm></div>
+  <div class="plain-note">Money you leave invested keeps earning on its earnings. Put in a lump sum, add a bit each month, pick a growth rate — the box shows what it could become.</div>
+
+  <h3>Check yourself — 3.2</h3>
+  <details class="selfcheck"><summary>Why does monthly compounding beat annual at the same stated rate?</summary><div class="sc-a">Interest is credited more often, so it begins earning interest sooner. In Problem ② the same 7% over 12 years produced $57,768.02 monthly versus $56,304.79 annually — about $1,463 from frequency alone.</div></details>
+  <details class="selfcheck"><summary>In a loan problem, why is PV positive while PMT is negative?</summary><div class="sc-a">The client receives the loan proceeds (money flowing toward them, positive) and makes payments (money flowing away, negative). The sign convention encodes direction of flow, and opposite directions require opposite signs.</div></details>
+  <details class="selfcheck"><summary>A client saved $180,000 over 30 years and ended with $502,257. What does this show?</summary><div class="sc-a">Roughly $322,000 — about 64% of the final balance — came from compound growth rather than contributions. It demonstrates why time in the market dominates contribution size over long horizons, and why starting early matters more than starting large.</div></details>
+  <details class="selfcheck"><summary>A client wants $40,000/year for 25 years and also to leave $100,000 to heirs. What changes in the setup?</summary><div class="sc-a">FV changes from 0 to 100,000. Setting FV = 0 exhausts the portfolio exactly; a residual bequest requires a larger PV at the start of retirement.</div></details>
+  <details class="selfcheck"><summary>Estimate the doubling time at 9% using the Rule of 72, and state its limits.</summary><div class="sc-a">72 ÷ 9 = 8 years. It's a mental approximation, reasonably accurate around 5–12% and less so at the extremes — fine for illustrating a concept, not for computing a recommendation.</div></details>
+
+  <p class="chapter-kicker" id="c3">Chapter 3.3 — The Importance of Interest Rate Assumptions</p>
+  <p>Every projection in 3.2 rested on an assumed rate — and that assumption does more to determine the answer than any other input. Disclose it, keep it defensible, and show how sensitive the result is to being wrong.</p>
+
+  <h2>🎯 Choosing the right rate for the job</h2>
+  <p>There's no single correct rate across a plan — the rate should match the money it's funding:</p>
+  <table>
+    <tr><th>Application</th><th>Rate basis</th></tr>
+    <tr><td>Long-horizon retirement accumulation</td><td>Equity-weighted portfolio return, net of costs</td></tr>
+    <tr><td>Short-horizon goal in cash equivalents</td><td>Current money market or CD yields</td></tr>
+    <tr><td>Retirement distribution phase</td><td>More conservative — lower-volatility allocation</td></tr>
+    <tr><td>Comparing debt paydown against investing</td><td>The debt's interest rate (a guaranteed return)</td></tr>
+    <tr><td>Discounting an insurance need</td><td>Conservative, since the need is not optional</td></tr>
+  </table>
+  <p>Match the situation to the rate that belongs with it:</p>
+  <div data-match="ratepurpose"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Worth internalizing:</strong> retiring a 20% credit-card balance is a <em>guaranteed</em> 20% return. No investment assumption competes with a guaranteed return on a risk-adjusted basis.</div></div>
+
+  <h2>📉 The danger of overstating returns</h2>
+  <p>Same $500/month for 30 years — the assumed rate alone swings the ending balance enormously:</p>
+  <div class="barchart" data-bars='[{"label":"4% assumed","value":347024.70,"display":"$347,024.70","color":"--m5"},{"label":"6% assumed","value":502257.52,"display":"$502,257.52","color":"--m3"},{"label":"8% assumed","value":745179.71,"display":"$745,179.71","color":"--m6"}]'></div>
+  <p style="font-size:14.5px;color:var(--ink-soft)">8% produces more than <strong>twice</strong> the 4% result, from identical contributions. The errors aren't symmetric: a too-conservative assumption leaves a surplus (a good problem); a too-aggressive one leaves a shortfall discovered at retirement, with no time left to fix it.</p>
+
+  <h2>🌡️ Show the range: sensitivity analysis</h2>
+  <p>The professional response to assumption uncertainty isn't guessing better — it's running the projection at several rates and presenting <em>all</em> of them. It's honest about uncertainty, reveals which assumptions drive the outcome, and reframes the conversation from “will I have enough?” to “under what conditions do I fall short, and what would I do about it?”</p>
+  <p>Tap to see why the two kinds of error aren't equally costly:</p>
+  <div data-reveal="asymmetry"></div>
+
+  <h2>🎈 Inflation erodes purchasing power</h2>
+  <p>At 3% inflation, here's what $100,000 of today's spending power actually costs in future nominal dollars:</p>
+  <div class="barchart" data-bars='[{"label":"10 years out","value":134392,"display":"$134,392","color":"--m3"},{"label":"20 years out","value":180611,"display":"$180,611","color":"--m5"},{"label":"30 years out","value":242726,"display":"$242,726","color":"--m9"}]'></div>
+  <p style="font-size:14.5px;color:var(--ink-soft)">A client planning to spend “$100,000 a year” in a retirement 30 years out is really planning to spend roughly $242,700 in that year's dollars — and inflation keeps compounding <em>through</em> retirement, not just up to it, so later retirement years cost even more.</p>
+
+  <h2>🧮 Nominal vs. real returns</h2>
+  <p><strong>Nominal return</strong> is the stated return before adjusting for inflation. <strong>Real return</strong> is what actually buys more goods. The quick approximation everyone reaches for first — Real ≈ Nominal − Inflation — is good enough for conversation but not exact.</p>
+  <div class="card tint">
+    <p style="margin:0"><strong>Exact formula:</strong> Real rate = [(1 + nominal) ÷ (1 + inflation)] − 1</p>
+    <p style="margin:8px 0 0;font-size:14.5px">Example: 7% nominal, 3% inflation → approximation gives <strong>4.00%</strong>; the exact calculation gives <strong>3.8835%</strong>. Small in one year, meaningful over 30 — the program expects the exact method.</p>
   </div>
-  <p style="font-size:14.5px;color:var(--ink-soft)">This is also why the <strong>effective annual rate (EAR)</strong> is higher than the stated (nominal) rate whenever compounding happens more than once a year.</p>
+  <p>Match the term to its definition:</p>
+  <div data-match="realnominal"></div>
 
-  <div class="callout cheer"><span class="ico">🌟</span><div><strong>TVM scares most students — but not you.</strong> You now see it as two arrows and five buttons. That's genuinely the whole game. Prove it below! 🧡</div></div>
+  <h2>🧩 Don't mix your frameworks</h2>
+  <p>Two internally-consistent ways to run an inflation-adjusted projection: keep the goal in <strong>today's dollars</strong> and discount at the <strong>real</strong> rate, or inflate the goal to <strong>future dollars</strong> and discount at the <strong>nominal</strong> rate. Both give the same answer — the error is mixing them.</p>
+  <div class="card tint">
+    <p style="margin:0"><strong>Worked example.</strong> 30 years from retirement, wants $60,000/year in today's dollars for a 25-year retirement, 3% inflation, 7% nominal return.</p>
+    <p style="margin:8px 0 0;font-size:14.5px">Real rate = (1.07 ÷ 1.03) − 1 = 3.8835%. PV of a 25-year, $60,000 annuity at that rate = <strong>$948,974.75</strong> in today's dollars — the capital needed, in purchasing power a client understands. Inflated to the nominal dollars that will actually appear on the statement: $948,974.75 × 1.03³⁰ = <strong>$2,303,410.79</strong>. Both are correct; they answer different questions.</p>
+  </div>
+  <p>Sort each approach into consistent or mixed:</p>
+  <div data-sorter="mixing"></div>
+
+  <h2>📋 Other assumptions worth disclosing</h2>
+  <p>Rate and inflation get the attention, but a projection contains more. Tap each one:</p>
+  <div data-reveal="otherassumptions"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam traps:</strong> using the nominal − inflation shortcut where precision is required; mixing today's-dollar goals with nominal discount rates; applying inflation only up to retirement (not through it); and presenting a single-point projection as though it were a forecast.</div></div>
+
+  <h3>Check yourself — 3.3</h3>
+  <details class="selfcheck"><summary>Why is overstating the return worse than understating it?</summary><div class="sc-a">The errors aren't symmetric in consequence. Too conservative an assumption produces a surplus. Too aggressive an assumption produces a shortfall that surfaces at retirement, when there's no time left to correct it by saving more or working longer.</div></details>
+  <details class="selfcheck"><summary>Compute the exact real return for a 6% nominal return with 2.5% inflation, and compare to the approximation.</summary><div class="sc-a">Exact: (1.06 ÷ 1.025) − 1 = 3.4146%. Approximation: 6% − 2.5% = 3.5%. The shortcut overstates by about 0.085 percentage points.</div></details>
+  <details class="selfcheck"><summary>What's wrong with stating a goal in today's dollars and discounting at the nominal rate?</summary><div class="sc-a">It mixes two frameworks. Today's dollars must be paired with a real rate; nominal rates must be paired with inflated future dollars. Mixing them understates the required savings, because the goal isn't inflated but the discount rate assumes it was.</div></details>
+  <details class="selfcheck"><summary>Why present a range of rates rather than one?</summary><div class="sc-a">Because no one can forecast returns reliably, and a single figure implies a precision that doesn't exist. A range is honest about uncertainty, reveals which assumptions drive the outcome, and shifts the conversation toward what the client would do if returns disappoint.</div></details>
+  <details class="selfcheck"><summary>A client says they'll need “$80,000 a year” in a retirement 25 years out. At 3% inflation, what will that actually cost in year-one nominal dollars?</summary><div class="sc-a">$80,000 × 1.03²⁵ = $167,502. And it keeps rising through retirement — inflation doesn't stop at the retirement date, so later years cost more still.</div></details>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div><strong>TVM scares most students — but not you.</strong> You now see it as two arrows, five buttons, and a rate you know how to defend. That's genuinely the whole game. Prove it below! 🧡</div></div>
 
   <h2>✍️ Module 3 self-quiz</h2>
   <div id="quiz" class="quiz"></div>
@@ -98,13 +328,170 @@
 window.QUIZ = { id:"m3", questions:[
  {q:"A dollar today is worth more than a dollar next year because…", opts:["inflation always falls","today's dollar can be invested and grow","taxes rise every year","banks charge fees"], a:1, why:"That's the core of TVM: money now can earn returns, so it's worth more than the same amount later."},
  {q:"Moving a FUTURE amount back to today's value is called…", opts:["compounding","amortizing","discounting","annuitizing"], a:2, why:"Discounting shrinks future money back to present value. Compounding grows it forward."},
- {q:"Rent paid on the 1st of each month is an example of…", opts:["an ordinary annuity","an annuity due","a perpetuity","a lump sum"], a:1, why:"Payments at the BEGINNING of the period = annuity due. ‘Rent is due on the 1st!’"},
- {q:"Using the Rule of 72, money earning 9% doubles in about…", opts:["6 years","8 years","9 years","12 years"], a:1, why:"72 ÷ 9 = 8 years."},
- {q:"For a monthly-compounding problem over 10 years at 6% annual, what do you enter?", opts:["N=10, I=6","N=120, I=0.5","N=120, I=6","N=10, I=0.5"], a:1, why:"Monthly: multiply years by 12 (N=120) and divide the rate by 12 (0.5% per month)."},
- {q:"All else equal, which compounding frequency creates the LARGEST future value?", opts:["Annual","Quarterly","Monthly","Daily"], a:3, why:"More frequent compounding = more growth-on-growth. Daily wins."},
- {q:"An annuity due is worth ______ an otherwise identical ordinary annuity.", opts:["less than","the same as","more than","exactly half of"], a:2, why:"Each payment arrives one period earlier, so it compounds longer — worth more."},
- {q:"Which five variables do TVM calculator problems revolve around?", opts:["N, I/YR, PV, PMT, FV","P, E, R, T, X","APR, APY, EAR, IRR, NPV","D, C, B, A, F"], a:0, why:"Know any four of N, I/YR, PV, PMT, FV — the calculator finds the fifth."}
+ {q:"On the calculator, money flowing AWAY from you should be entered as…", opts:["positive","negative","zero","it doesn't matter"], a:1, why:"Sign encodes direction: outflows are negative, inflows are positive. Mixing this up is the #1 source of nonsensical answers.", trap:"Students who skip the sign convention often get an error message or a wildly wrong number and don't know why."},
+ {q:"For a monthly-compounding problem over 10 years at 6% annual (P/YR set to 1), what do you enter?", opts:["N=10, I=6","N=120, I=0.5","N=120, I=6","N=10, I=0.5"], a:1, why:"Monthly: multiply years by 12 (N=120) and divide the annual rate by 12 (0.5% per month). Convert BOTH.", trap:"Converting only N or only the rate — not both — is one of the most common and costly errors."},
+ {q:"Rent paid on the 1st of each month is an example of…", opts:["an ordinary annuity","an annuity due","a perpetuity","a lump sum"], a:1, why:"Payments at the BEGINNING of the period = annuity due. “Rent is due on the 1st!”"},
+ {q:"Which five variables do TVM calculator problems revolve around?", opts:["N, I/YR, PV, PMT, FV","P, E, R, T, X","APR, APY, EAR, IRR, NPV","D, C, B, A, F"], a:0, why:"Know any four of N, I/YR, PV, PMT, FV — the calculator finds the fifth."},
+ {q:"On the TI BAII Plus (unlike the HP 10bII+), you must press ___ before the unknown's key.", opts:["2ND","CPT","ENTER","CLR TVM"], a:1, why:"The TI requires CPT before solving; the HP does not — the one real workflow difference between the two calculators."},
+ {q:"$25,000 invested at 7% for 12 years grows to $56,304.79 compounded annually, but $57,768.02 compounded monthly. This ~$1,463 difference comes from…", opts:["a higher stated rate","more frequent compounding","a longer time period","a data entry error"], a:1, why:"More frequent compounding means interest starts earning interest sooner — a higher future value from frequency alone, at the same stated rate."},
+ {q:"A client saves $500/month for 30 years at 6% and ends with $502,257.52. Of that, roughly how much is compound growth rather than contributions?", opts:["About 10%","About 35%","About 64%","About 90%"], a:2, why:"$180,000 contributed vs. $322,257.52 of growth — about 64% of the ending balance came from compounding, not from the client's own deposits."},
+ {q:"A retirement PV calculation sets FV = 0. What does that mean?", opts:["The client has no assets","The portfolio is exactly exhausted at the end of the period","The interest rate is zero","The client made a data entry error"], a:1, why:"FV = 0 means the portfolio runs out exactly on schedule. Wanting to leave money to heirs means entering a positive FV instead — which raises the required PV."},
+ {q:"Using the Rule of 72, money earning 9% doubles in about…", opts:["6 years","8 years","9 years","12 years"], a:1, why:"72 ÷ 9 = 8 years (versus the precise 9.01 years at 8%, showing the rule's a mental shortcut, not exact math)."},
+ {q:"A word problem asks “what rate did the investment earn?” You should solve for…", opts:["PV","FV","PMT","I/YR"], a:3, why:"“What return/rate” always points to I/YR — one of the five translation phrases worth memorizing."},
+ {q:"Averaging annual returns instead of computing a compound annual growth rate…", opts:["understates growth","overstates the true growth rate","gives the same answer either way","only matters for bonds"], a:1, why:"Simple averaging ignores the compounding path and overstates the result versus the true CAGR (solving for I/YR with N, PV, and FV)."},
+ {q:"The exact real rate formula is…", opts:["Nominal − Inflation","Nominal + Inflation","[(1+nominal) ÷ (1+inflation)] − 1","Nominal ÷ Inflation"], a:2, why:"The quick approximation (nominal − inflation) is close but not exact. 7% nominal / 3% inflation gives an approximate 4.00% vs. an exact 3.8835%.", trap:"The exam expects the exact method, not the shortcut, whenever precision is required."},
+ {q:"Why is overstating an assumed rate of return the more dangerous error?", opts:["It never happens in practice","A shortfall surfaces at retirement with no time left to fix it","It always understates taxes","It only affects short-term goals"], a:1, why:"A too-conservative assumption leaves a surplus (a good problem). A too-aggressive one leaves a shortfall discovered too late to correct — the errors aren't symmetric."},
+ {q:"Stating a goal in today's dollars but discounting it at the NOMINAL rate is a mistake because…", opts:["it overstates the required savings","it mixes two frameworks and understates the required savings","nominal rates can't be used at all","today's dollars can't be projected"], a:1, why:"Today's dollars must pair with the real rate; nominal rates must pair with inflated future dollars. Mixing them understates what the client actually needs to save."}
 ]};
+
+window.MATCHERS = {
+  pvfv:{pairs:[
+    ["PV","Value of money TODAY"],
+    ["FV","Value of money at a FUTURE date"],
+    ["Compounding","Growing a present amount FORWARD through time"],
+    ["Discounting","Shrinking a future amount BACK to today's value"]
+  ]},
+  tvmkeys:{pairs:[
+    ["N","Total number of periods"],
+    ["I/YR","Interest rate per year"],
+    ["PV","Present value — the value today"],
+    ["PMT","Payment per period, constant across all periods"],
+    ["FV","Future value — the value at the end"]
+  ]},
+  formulas:{pairs:[
+    ["FV = PV(1 + r)ⁿ","Grows a single lump sum forward"],
+    ["PV = FV ÷ (1 + r)ⁿ","Discounts a single future amount back to today"],
+    ["FV = PMT × [((1+r)ⁿ − 1) ÷ r]","Future value of a series of level payments (ordinary annuity)"],
+    ["PV = PMT × [(1 − (1+r)⁻ⁿ) ÷ r]","Present value of a series of level payments (ordinary annuity)"],
+    ["Ordinary annuity result × (1 + r)","Converts an ordinary-annuity result into an annuity-due result"]
+  ]},
+  rule72:{pairs:[
+    ["3%","≈ 24 years to double"],
+    ["4%","≈ 18 years to double"],
+    ["6%","≈ 12 years to double"],
+    ["8%","≈ 9 years to double"],
+    ["9%","≈ 8 years to double"],
+    ["12%","≈ 6 years to double"]
+  ]},
+  ratepurpose:{pairs:[
+    ["Long-horizon retirement accumulation","Equity-weighted portfolio return, net of costs"],
+    ["Short-horizon goal in cash equivalents","Current money market or CD yields"],
+    ["Retirement distribution phase","A more conservative, lower-volatility allocation"],
+    ["Comparing debt paydown against investing","The debt's own interest rate — a guaranteed return"],
+    ["Discounting an insurance need","A conservative rate, since the need isn't optional"]
+  ]},
+  realnominal:{pairs:[
+    ["Nominal return","The stated return, before adjusting for inflation"],
+    ["Real return","The nominal return adjusted for inflation — what actually buys more goods"],
+    ["Quick approximation","Real ≈ Nominal − Inflation (close, but not exact)"],
+    ["Exact formula","[(1 + nominal) ÷ (1 + inflation)] − 1"]
+  ]}
+};
+
+window.SORTERS = {
+  cashflow:{
+    buckets:[{id:"neg",label:"➖ Negative (outflow)",color:"--m5"},{id:"pos",label:"➕ Positive (inflow)",color:"--m6"}],
+    items:[
+      {text:"You deposit $10,000 into an investment today", bucket:"neg", why:"Money leaving your pocket → negative."},
+      {text:"You collect $16,289 from that investment in ten years", bucket:"pos", why:"Money coming to you → positive."},
+      {text:"You receive $250,000 of loan proceeds today", bucket:"pos", why:"The loan money flows toward you → positive, even though it's debt."},
+      {text:"You make a $1,264.14 loan payment", bucket:"neg", why:"Payments you make flow away from you → negative."},
+      {text:"A withdrawal you take from your own account", bucket:"pos", why:"Withdrawals flow toward you → positive."},
+      {text:"A recurring 401(k) contribution from your paycheck", bucket:"neg", why:"You're sending money away to be invested → negative."}
+    ]
+  },
+  endbegin:{
+    buckets:[{id:"end",label:"📦 END mode (ordinary)",color:"--m3"},{id:"begin",label:"🏠 BEGIN mode (due)",color:"--m4"}],
+    items:[
+      {text:"A 30-year mortgage payment", bucket:"end", why:"Loan payments are due at the end of each period — the default."},
+      {text:"Rent due on the 1st of the month", bucket:"begin", why:"Rent is due at the START of the period — the classic annuity-due example."},
+      {text:"A typical 401(k) payroll contribution", bucket:"end", why:"Most retirement contributions are treated as ordinary annuities (END)."},
+      {text:"A lease payment", bucket:"begin", why:"Leases, like rent, are paid at the start of the period."},
+      {text:"An insurance premium", bucket:"begin", why:"Premiums are paid in advance, at the beginning of the coverage period."},
+      {text:"Retirement income beginning immediately", bucket:"begin", why:"Income starting right away is received at the start of each period."}
+    ]
+  },
+  fvtarget:{
+    buckets:[{id:"zero",label:"FV = 0 (exhaust it)",color:"--m3"},{id:"target",label:"FV = target amount (leave a bequest)",color:"--m6"}],
+    items:[
+      {text:"Client wants the portfolio to run out exactly when the retirement income stream ends", bucket:"zero", why:"Exactly exhausting the portfolio means FV = 0."},
+      {text:"Client wants to leave $100,000 to their kids after a 25-year retirement", bucket:"target", why:"A residual bequest means FV = 100,000, which raises the required PV today."},
+      {text:"Client has no heirs and just wants the money to last exactly as long as they need it", bucket:"zero", why:"No bequest desired → FV = 0."},
+      {text:"Client wants a cushion left over in case they live longer than planned", bucket:"target", why:"Wanting money left over at the end means a positive target FV, not zero."}
+    ]
+  },
+  whichvariable:{
+    buckets:[
+      {id:"N",label:"N",color:"--m1"},{id:"IYR",label:"I/YR",color:"--m3"},{id:"PV",label:"PV",color:"--m5"},
+      {id:"PMT",label:"PMT",color:"--m6"},{id:"FV",label:"FV",color:"--m7"}
+    ],
+    items:[
+      {text:"“$25,000 invested today at 7% for 12 years — what will it grow to?”", bucket:"FV", why:"Asking what something will be worth later = solve for FV."},
+      {text:"“A client needs $80,000 in 6 years — how much should they invest today?”", bucket:"PV", why:"A lump sum needed today = solve for PV."},
+      {text:"“How much must be saved every month to reach $100,000 in 18 years?”", bucket:"PMT", why:"“How much must I save each period” = solve for PMT."},
+      {text:"“An investment grew from $15,000 to $28,000 in 9 years — what was the return?”", bucket:"IYR", why:"“What return/rate” = solve for I/YR."},
+      {text:"“How long until $5,000 doubles at 8%?”", bucket:"N", why:"“How long until…” = solve for N."},
+      {text:"“What's the monthly payment on a $320,000 mortgage at 6.5% for 30 years?”", bucket:"PMT", why:"A required payment = solve for PMT."},
+      {text:"“What lump sum funds $40,000/year for 25 years of retirement income?”", bucket:"PV", why:"A required lump sum today = solve for PV."},
+      {text:"“How many years of monthly $500 deposits until the account hits $502,257.52?”", bucket:"N", why:"“How many periods until…” = solve for N."}
+    ]
+  },
+  mixing:{
+    buckets:[{id:"ok",label:"✅ Internally consistent",color:"--m6"},{id:"bad",label:"❌ Mixed frameworks",color:"--m5"}],
+    items:[
+      {text:"Goal kept in today's dollars, discounted at the REAL rate", bucket:"ok", why:"Today's dollars pair correctly with the real (inflation-adjusted) rate."},
+      {text:"Goal inflated to future dollars, discounted at the NOMINAL rate", bucket:"ok", why:"Future dollars pair correctly with the nominal rate."},
+      {text:"Goal kept in today's dollars, discounted at the NOMINAL rate", bucket:"bad", why:"This understates required savings — the goal wasn't inflated but the rate assumes it was."},
+      {text:"Goal inflated to future dollars, discounted at the REAL rate", bucket:"bad", why:"This double-counts inflation in the goal while removing it from the rate — an inconsistent mix."}
+    ]
+  }
+};
+
+window.ORDERS = {
+  calcsequence:{steps:[
+    "Clear the TVM registers (SHIFT C ALL)",
+    "Confirm P/YR and BEGIN/END mode",
+    "Enter each known value, pressing its register key after the number",
+    "Press the key for the unknown to solve"
+  ]},
+  fvsteps:{steps:[
+    "Clear the TVM registers",
+    "Set N = 360 (30 years × 12 months)",
+    "Set I/YR = 0.5 (6% ÷ 12)",
+    "Set PMT = −500 (money leaving the client)",
+    "Solve for FV"
+  ]},
+  mortgagesteps:{steps:[
+    "Clear the TVM registers",
+    "Set N = 360 (30 years × 12 months)",
+    "Set I/YR = 0.541667 (6.5% ÷ 12)",
+    "Set PV = 320,000 (loan proceeds received — positive)",
+    "Set FV = 0 (loan fully paid off)",
+    "Solve for PMT"
+  ]}
+};
+
+window.REVEALS = {
+  pyrconversion:{cols:5, items:[
+    {front:"Annual", back:"N = years · I/YR = annual rate"},
+    {front:"Semiannual", back:"N = years × 2 · I/YR = rate ÷ 2"},
+    {front:"Quarterly", back:"N = years × 4 · I/YR = rate ÷ 4"},
+    {front:"Monthly", back:"N = years × 12 · I/YR = rate ÷ 12"},
+    {front:"Daily", back:"N = years × 365 · I/YR = rate ÷ 365"}
+  ]},
+  asymmetry:{cols:2, items:[
+    {front:"Too conservative an assumption", back:"Proves too pessimistic → the client ends up with a surplus. A genuinely good problem to have."},
+    {front:"Too aggressive an assumption", back:"Proves too optimistic → the shortfall surfaces at retirement, when there's no time left to save more or work longer to fix it."}
+  ]},
+  otherassumptions:{cols:3, items:[
+    {front:"🎂 Life expectancy", back:"Planning to 90 vs. 100 changes required capital materially. Outliving your money is far worse than leaving some behind — the risk is asymmetric."},
+    {front:"📈 Contribution growth", back:"Will savings rise with income, or stay level? A flat assumption may understate what's actually saved."},
+    {front:"🧾 Tax rates in retirement", back:"Often assumed lower — not reliably true, and worth stress-testing."},
+    {front:"🏛️ Social Security & COLA", back:"The benefit assumed, and whether its cost-of-living adjustment is built in."},
+    {front:"🏥 Health care costs", back:"Historically inflate faster than general prices — a flat inflation rate can understate this specific expense."},
+    {front:"🌊 Sequence of returns", back:"An average return hides that poor returns early in retirement do disproportionate damage."}
+  ]}
+};
 </script>
 <script src="js/app.js"></script>
 </body>
