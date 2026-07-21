@@ -4,6 +4,12 @@
    Loaded synchronously in <head> so content never flashes before auth. */
 (function(){
 "use strict";
+/* Favicon for every page (no per-page <link> needed) */
+var fav = document.createElement("link");
+fav.rel = "icon";
+fav.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>';
+(document.head || document.documentElement).appendChild(fav);
+
 var PIN = "2026";
 var USERS = ["Bluffman","Rhaley"];
 var MAX_FAILS = 10;

@@ -8,6 +8,12 @@
   --m7:#7C3AED; --m7s:#F1EAFD; --m8:#EA580C; --m8s:#FDEEE3; --m9:#9333EA; --m9s:#F5EBFC;
   --m10:#DB2777; --m10s:#FCE9F3; --gold:#B98A0B; --golds:#FBF3DC;
   --accent:var(--m1); --accent-soft:var(--m1s);
+  /* spacing rhythm + extra shadow/radius levels (design-token pass, v6) */
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px; --sp-7:48px;
+  --radius-sm:10px; --radius-lg:22px;
+  --shadow-sm:0 1px 2px rgba(43,38,64,.05);
+  --shadow-lg:0 4px 10px rgba(43,38,64,.09),0 18px 40px rgba(43,38,64,.13);
+  --nav-h:64px; /* real rendered height of .nav — used to offset sticky bars & anchor jumps */
 }
 *{box-sizing:border-box} html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
@@ -52,7 +58,7 @@ p{margin:.4em 0 1em} a{color:var(--accent)}
 .vs .side{border-radius:var(--radius);padding:22px;border:2px solid}
 .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
 .pill{padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600;background:var(--accent-soft);color:var(--accent)}
-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14.5px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14.5px;background:#fff;border-radius:12px;box-shadow:var(--shadow);display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
 th{background:var(--accent);color:#fff;text-align:left;padding:11px 14px;font-size:13px;letter-spacing:.03em}
 td{padding:11px 14px;border-bottom:1px solid var(--border)}
 tr:last-child td{border-bottom:none}
@@ -111,7 +117,7 @@ figure.viz figcaption{font-size:13px;color:var(--ink-soft);margin-top:10px}
 #toast.show{transform:translateX(-50%) translateY(0)}
 .confetti{position:fixed;top:-12px;font-size:20px;z-index:98;animation:fall linear forwards;pointer-events:none}
 @keyframes fall{to{transform:translateY(105vh) rotate(720deg)}}
-@media (prefers-reduced-motion:reduce){.confetti{display:none}*{transition:none!important;animation:none!important}}
+@media (prefers-reduced-motion:reduce){.confetti{display:none}*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 
 footer{margin-top:70px;padding:34px 0 44px;border-top:1px solid var(--border);color:var(--ink-soft);font-size:13.5px}
 footer a{color:var(--ink-soft)}
@@ -122,7 +128,6 @@ footer a{color:var(--ink-soft)}
   .grid.c2,.grid.c3,.grid.c4,.vs{grid-template-columns:1fr}
   h1{font-size:2rem} .wrap{padding:0 18px}
   .nav-inner{padding:8px 14px;gap:4px}
-  table{display:block;overflow-x:auto}
 }
 
 /* ============================================================
@@ -244,7 +249,7 @@ a.tag:hover{border-color:var(--accent)}
 .q-feedback.show + .q-trap.show{display:block}
 
 /* Number Bank filter page */
-.nb-controls{position:sticky;top:58px;z-index:10;background:var(--paper);padding:14px 0;margin:8px 0 4px}
+.nb-controls{position:sticky;top:var(--nav-h);z-index:40;background:var(--paper);padding:14px 0;margin:8px 0 4px}
 .nb-search{width:100%;font:inherit;font-size:16px;padding:12px 16px;border:2px solid var(--border);border-radius:12px;background:#fff}
 .nb-search:focus{outline:none;border-color:var(--accent)}
 .nb-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
@@ -397,7 +402,8 @@ body.mode-plain .mode-toggle{background:var(--m2);border-color:var(--m2);color:#
   body{background:#fff;color:#000;font-size:12pt}
   .nav,#toast,.confetti,.tree-choices,.tree-restart,.wheel-node,.legend-toggle,.legend-panel,
   .nb-controls,.q-opt,.quiz-score,.flashcard-front .fc-hint,.mode-toggle,.tour-scrim,
-  .flag-btn,.sec-anchor,.warmup .wu-btns,.fc-tabs,.fc-mark{display:none!important}
+  .flag-btn,.sec-anchor,.warmup .wu-btns,.fc-tabs,.fc-mark,.to-top,.readbar{display:none!important}
+  *{animation:none!important}
   .plain-note{display:block!important}
   .warmup .wu-reveal{display:block!important}
   .hero{background:none!important;padding:12px 0;border-bottom:2px solid #000}
@@ -548,8 +554,10 @@ html.fpqp-locked body > *:not(.gate-scrim){display:none!important}
 .chapter-kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:2.4em 0 -0.8em}
 
 /* Self-check details (from book Self-Check sections) */
-details.selfcheck{background:#fff;border:1px solid var(--border);border-radius:12px;padding:0;margin:10px 0;box-shadow:var(--shadow)}
-details.selfcheck summary{cursor:pointer;font-weight:600;padding:13px 18px;list-style-position:inside}
+details.selfcheck{background:#fff;border:1px solid var(--border);border-radius:12px;padding:0;margin:10px 0;box-shadow:var(--shadow);overflow:hidden}
+details.selfcheck summary{cursor:pointer;font-weight:600;padding:13px 18px;list-style-position:inside;transition:background .15s}
+details.selfcheck summary:hover{background:var(--accent-soft)}
+details.selfcheck summary:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
 details.selfcheck[open] summary{border-bottom:1px solid var(--border)}
 details.selfcheck .sc-a{padding:12px 18px;font-size:14.5px;color:var(--ink-soft)}
 
@@ -599,8 +607,8 @@ details.selfcheck .sc-a{padding:12px 18px;font-size:14.5px;color:var(--ink-soft)
 .to-top.show{opacity:1;pointer-events:auto}
 .to-top:hover{border-color:var(--accent);color:var(--accent)}
 
-/* Sticky chapter nav + scrollspy highlight */
-.chapter-nav{position:sticky;top:0;z-index:45;background:rgba(255,253,248,.95);backdrop-filter:blur(8px);
+/* Sticky chapter nav + scrollspy highlight — sits BELOW the main nav, never under it */
+.chapter-nav{position:sticky;top:var(--nav-h);z-index:45;background:rgba(255,253,248,.95);backdrop-filter:blur(8px);
   padding:10px 0;margin:14px 0 6px;border-bottom:1px solid var(--border)}
 .chapter-nav a.current{background:var(--accent);color:#fff}
 
@@ -625,9 +633,111 @@ details.selfcheck .sc-a{padding:12px 18px;font-size:14.5px;color:var(--ink-soft)
 .fc-group > summary::before{content:"▸";color:var(--accent);transition:transform .15s}
 .fc-group[open] > summary::before{transform:rotate(90deg)}
 .fc-group > summary:hover{background:var(--accent-soft)}
+.fc-group > summary:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
 .fc-group .fcg-name{color:var(--accent)}
 .fc-group .fcg-count{margin-left:auto;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--ink-soft);
   background:var(--accent-soft);border-radius:999px;padding:4px 12px}
 .fc-group .deck{padding:0 18px 18px;margin:0}
 .fc-shell .flashcard{width:100%;display:block}
 @media print{.fc-group{border:none;box-shadow:none}.fc-group > summary{display:none}.fc-group:not([open]) .deck{display:grid}}
+
+/* ============================================================
+   v6 — polish pass: focus & motion consistency, mobile
+   compaction of floating controls, readability, small joys
+   ============================================================ */
+
+/* Anchor jumps (chapter pills, self-check ids, etc.) land clear of the
+   sticky nav — and the sticky chapter pill bar where one is present */
+main [id]{scroll-margin-top:calc(var(--nav-h) + 56px)}
+
+/* Cap prose line length on the long-form lesson paragraphs (top-level
+   flow text) so lines stay comfortable to read on wide screens; content
+   already inside cards/grids keeps its own narrower width */
+main > p, main > ul, main > ol{max-width:70ch}
+
+/* A friendlier text-selection color than the browser default */
+::selection{background:var(--accent);color:#fff}
+::-moz-selection{background:var(--accent);color:#fff}
+
+/* ---- Universal keyboard focus ----
+   Fallback ring for anything a component-specific rule above didn't
+   already give a visible :focus-visible state (nav, tags, chips, tabs,
+   list items, module tiles, etc.) */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, [tabindex]:focus-visible{
+  outline:3px solid var(--accent); outline-offset:2px; border-radius:6px;
+}
+.nav a:focus-visible, .nav-dd-btn:focus-visible, .nav-dd-panel a:focus-visible,
+.chapter-nav a:focus-visible, .modnav-card:focus-visible, .mod-tile:focus-visible,
+a.tag:focus-visible, .nb-chip:focus-visible, .fc-tab:focus-visible, .rm-item:focus-visible,
+.gate-user:focus-visible, .legend-item:focus-visible, .user-chip:focus-visible{
+  outline:3px solid var(--accent); outline-offset:2px;
+}
+
+/* ---- :active press feedback ----
+   Flat controls that had no pressed state get a small nudge down */
+.q-opt:active, .tree-btn:active, .tree-restart:active, .warmup .wu-btn:active,
+.sorter-bucket:active, .match-item:active, .order-item:active, .nb-chip:active,
+.fc-tab:active, .rm-item:active, .flag-btn:active, .chapter-nav a:active,
+.legend-toggle:active, .mode-toggle:active, .fb-fab:active, .to-top:active,
+.gate-go:active, .fb-send:active, .fb-cancel:active, .fb-cat:active,
+.fc-mark button:active, .user-chip:active, .nav-dd-btn:active{
+  transform:translateY(1px);
+}
+/* Controls that already move on :hover get a dampened press instead of a
+   conflicting one, so hover + active layer nicely on desktop pointers */
+.mod-tile:active{transform:translateY(-1px)}
+.asset:active{transform:translateY(-1px)}
+.modnav-card:active{transform:translateY(0)}
+.wheel-node:active{transform:translate(-50%,-50%) scale(1.04)}
+.gate-user:active{transform:translateY(-1px)}
+
+/* Fill in missing transitions so hover/active/focus changes ease instead
+   of snapping, on controls the earlier passes didn't cover */
+.legend-toggle, .mode-toggle, .to-top, .tree-restart, .chapter-nav a,
+.nb-chip, .fc-tab, .user-chip, .nav-dd-btn{
+  transition:border-color .15s, background .15s, color .15s, transform .1s;
+}
+.fb-fab{transition:filter .15s, transform .1s}
+
+/* ---- Details of joy ----
+   A subtle rise-and-fade for cards/panels as they paint — including ones
+   the JS engines build dynamically (quiz cards, reveal tiles), since the
+   animation fires the moment each element enters the DOM. The global
+   prefers-reduced-motion rule above already neutralizes this. */
+.card, .mod-tile, .q-card, .callout, .reveal-card, .warmup, .tree, .tvm,
+.taxstack, .lifecompare, .wheel-detail{
+  animation:fpqp-rise .45s cubic-bezier(.2,.8,.2,1) backwards;
+}
+@keyframes fpqp-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.grid > *:nth-child(2){animation-delay:.04s}
+.grid > *:nth-child(3){animation-delay:.08s}
+.grid > *:nth-child(4){animation-delay:.12s}
+
+/* A soft reveal for feedback/result panels and opened details, the
+   moment they become visible — CSS-only stand-in for a true native
+   <details> open transition (which can't be animated without markup
+   changes; see report) */
+.q-feedback.show, .warmup .wu-reveal.show, .sorter-fb.show, .quiz-score.show,
+.tree-result, details.selfcheck[open] .sc-a, .fc-group[open] > .deck{
+  animation:fpqp-rise .3s ease backwards;
+}
+
+/* ---- Mobile: compact the floating controls ----
+   On phones the legend toggle (bottom-left) and the mode toggle / feedback
+   fab / back-to-top (bottom-right) are long text pills that can collide
+   in the middle of a narrow screen. Below 600px they become small round
+   icon buttons instead — the label text stays in the DOM (still read by
+   screen readers / still the full click target), it's just visually
+   clipped so only the leading emoji shows. */
+@media (max-width:600px){
+  .legend-toggle, .mode-toggle, .fb-fab{
+    width:44px; height:44px; padding:0; border-radius:50%;
+    overflow:hidden; white-space:nowrap; text-align:left;
+    text-indent:12px; line-height:44px; font-size:15px;
+  }
+  .legend-toggle{left:14px; bottom:14px}
+  .mode-toggle{right:14px; bottom:14px}
+  .fb-fab{right:14px; bottom:64px}
+  .to-top{width:38px; height:38px; right:14px; bottom:112px}
+}
