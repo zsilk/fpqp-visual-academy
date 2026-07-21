@@ -4,6 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Scenario Drills — FPQP® Visual Academy</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/gate.js"></script>
 <style>body{--accent:var(--m10);--accent-soft:var(--m10s)}</style>
 </head>
 <body>
@@ -45,6 +46,36 @@ window.SCENARIOS = [
    {q:"Who inherits the 401(k) at Robert's death?", opts:["Ana, because the will controls","His first wife — the beneficiary form wins","His son","The probate court decides"], a:1, why:"Beneficiary designations OVERRIDE the will. The outdated form sends the 401(k) to the first wife."},
    {q:"What happens to the jointly-titled brokerage account?", opts:["It goes through probate","It passes directly to his son by survivorship","It's split under the will","It's frozen for a year"], a:1, why:"Joint tenancy with right of survivorship passes outside probate, straight to the surviving owner."},
    {q:"What's the planner's key fix here?", opts:["Rewrite the will again","Review and update every beneficiary designation and title","Buy more life insurance","Create an irrevocable trust immediately"], a:1, why:"Titling and beneficiary forms beat the will — they must be reviewed to match his real wishes."}
+  ]},
+ {title:"🏚️ The under-insured roof", intro:"The Okafors' home has a $400,000 replacement cost. Coverage A on their homeowners policy is only $240,000. Their auto liability limits sit at the state minimum, and their net worth is around $500,000.",
+  steps:[
+   {q:"A pipe bursts, causing $60,000 of damage. The 80% coinsurance requirement means they needed at least $320,000 of coverage — but they carry $240,000. What does the insurer pay?", opts:["$60,000 in full","$45,000 — a proportionally reduced payout","$0, coverage is voided","$52,000"], a:1, why:"Payout = (carried ÷ required) × loss = ($240,000 ÷ $320,000) × $60,000 = $45,000. Under-insuring hits every partial loss, which is most claims."},
+   {q:"What should the Okafors do first?", opts:["Nothing — wait for the next renewal","Raise Coverage A to at least 80% of replacement cost","Switch to actual cash value coverage","Cancel the policy and self-insure"], a:1, why:"Insuring to at least 80% of replacement cost is what avoids the coinsurance penalty on future partial losses."},
+   {q:"Given the state-minimum auto limits and $500,000 net worth, what's the single most cost-effective fix available?", opts:["A $1–2 million umbrella policy","A bigger emergency fund","Permanent life insurance","A revocable living trust"], a:0, why:"An umbrella costs a few hundred dollars a year and closes a liability gap that could otherwise reach their entire net worth and future wages."}
+  ]},
+ {title:"🩼 The disability surprise", intro:"Marcus earns $8,000/month gross. His employer-paid group LTD covers 60% of base salary with a 90-day elimination period. His non-discretionary monthly expenses run $4,600, and he holds a 4-month emergency reserve.",
+  steps:[
+   {q:"What's his group LTD gross monthly benefit?", opts:["$4,800","$8,000","$3,744","$5,900"], a:0, why:"60% × $8,000 = $4,800 gross — before any tax adjustment."},
+   {q:"Because his EMPLOYER paid the premium, how is that $4,800 benefit taxed if he becomes disabled?", opts:["Entirely tax-free","Taxable as ordinary income","Taxed only above $50,000","At capital-gains rates"], a:1, why:"The rule follows the premium dollars: employer-paid premiums make the benefit taxable to the employee."},
+   {q:"At a 22% effective rate the benefit nets to roughly $3,744 — short of his $4,600 need. What's the standard fix?", opts:["Rely on Social Security Disability Insurance (SSDI) instead","Add an individually-owned policy paid with after-tax dollars","Cancel the group coverage entirely","Redirect the gap into extra 401(k) contributions"], a:1, why:"SSDI's any-occupation standard is strict and benefits are modest — a poor primary plan. An individual policy paid after-tax pays a TAX-FREE benefit, closing the real gap."}
+  ]},
+ {title:"📊 Which fund actually wins?", intro:"A client is comparing two funds. Fund A returned 12% with a 20% standard deviation. Fund B returned 9% with a 10% standard deviation. The risk-free rate is 3%.",
+  steps:[
+   {q:"What's Fund A's Sharpe ratio?", opts:["0.45","0.60","0.90","1.20"], a:0, why:"Sharpe = (return − risk-free) ÷ standard deviation = (12−3) ÷ 20 = 0.45."},
+   {q:"What's Fund B's Sharpe ratio?", opts:["0.30","0.45","0.60","0.75"], a:2, why:"(9−3) ÷ 10 = 0.60 — a higher risk-adjusted result than Fund A."},
+   {q:"Which fund is actually superior on a risk-adjusted basis?", opts:["Fund A — it has the higher raw return","Fund B — more excess return per unit of risk taken","They're equal once fees are considered","Can't tell without knowing beta"], a:1, why:"Fund A wins on raw return alone, but Fund B delivers more return per unit of risk — the central lesson of risk-adjusted comparison."}
+  ]},
+ {title:"⏳ Starting early vs. starting late", intro:"Two savers each invest $500/month at 7%, stopping at age 65. One starts at 25 (40 years of saving); the other starts at 35 (30 years of saving).",
+  steps:[
+   {q:"Roughly what does the 25-year-old accumulate by 65?", opts:["~$610,000","~$1,050,000","~$1,312,000","~$2,000,000"], a:2, why:"About $1,312,407 — 40 years of $500/month compounding at 7%."},
+   {q:"Roughly what does the 35-year-old accumulate by 65?", opts:["~$180,000","~$610,000","~$900,000","~$1,100,000"], a:1, why:"About $609,986 — 10 fewer years of compounding makes a massive difference."},
+   {q:"The early saver contributed only $60,000 more in total. How much MORE did they end up with?", opts:["$60,000 more","$300,000 more","~$702,000 more","$1,000,000 more"], a:2, why:"Roughly $702,000 more — from just $60,000 of extra contributions. The first decade of saving does more work than the last two combined."}
+  ]},
+ {title:"👨‍👩‍👧‍👦 The Whitfields' surprise", intro:"The Whitfields have a healthy $3,607/month surplus, but no wills and no named guardian for their two minor children, no umbrella policy, and a stated top goal of funding 100% of both kids' college (which would consume nearly the entire surplus at ~$3,289/month).",
+  steps:[
+   {q:"Which finding should the planner address FIRST, even though the clients never raised it themselves?", opts:["Education funding, since that's their stated #1 priority","Estate documents — no will means a court picks the guardian for their kids","Asset location inside the portfolio","Employer stock concentration"], a:1, why:"A catastrophic, cheap-to-fix exposure (a court choosing your children's guardian) outranks a gradual, negotiable shortfall like education funding — clients don't know what they don't know."},
+   {q:"What's the single most cost-effective fix available in this case?", opts:["A $1–2 million umbrella policy for a few hundred dollars a year","A revocable living trust","Permanent life insurance","Cutting retirement contributions"], a:0, why:"With real net worth and no umbrella, this is the best risk-reduction-per-dollar available — the classic “cheap and catastrophic” fix."},
+   {q:"Their retirement projection turns out to show a large surplus. What does that free the family to do?", opts:["Nothing changes — keep every dollar in retirement accounts","Redirect some retirement savings toward education without endangering retirement","Stop saving for retirement entirely","Take on much more investment risk to grow the surplus faster"], a:1, why:"An over-funded retirement plan means resources CAN shift toward education — but never below the level that keeps the full employer match, which should never be forfeited."}
   ]}
 ];
 </script>

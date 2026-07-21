@@ -4,6 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Module 1 — The Financial Planning Process</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/gate.js"></script>
 <style>body{--accent:var(--m1);--accent-soft:var(--m1s)}</style>
 </head>
 <body>
@@ -12,8 +13,8 @@
   <div class="wrap">
     <div class="kicker">Module 1 of 10</div>
     <h1>🧭 The Financial Planning Process</h1>
-    <p class="lead">This is the module the whole program is built on: <strong>how a planner turns a stranger's messy money life into a clear plan</strong> — plus the ethics and rules that keep clients safe.</p>
-    <div><span class="badge">7-step process</span><span class="badge">PTA goals</span><span class="badge">Fiduciary vs. suitability</span><span class="badge">Reg BI (2026-current)</span></div>
+    <p class="lead">This is the module the whole program is built on: <strong>how a planner turns a stranger's messy money life into a clear, coordinated plan</strong> — plus the psychology, ethics, and rules that keep clients safe.</p>
+    <div><span class="badge">7-step process</span><span class="badge">Goals &amp; horizons</span><span class="badge">Behavioral biases</span><span class="badge">Fiduciary vs. suitability</span><span class="badge">Regulators</span></div>
   </div>
 </header>
 
@@ -22,163 +23,402 @@
   <div class="tag-row">
     <a class="tag" href="concepts.html">planning process</a>
     <a class="tag" href="concepts.html">standards of care</a>
+    <a class="tag" href="concepts.html">behavioral finance</a>
     <a class="tag" href="concepts.html">regulators</a>
     <a class="tag" href="flashcards.html">memory hooks</a>
   </div>
 
+  <nav class="chapter-nav">
+    <a href="#c1">1.1 Planning &amp; goals</a>
+    <a href="#c2">1.2 The 7-step process</a>
+    <a href="#c3">1.3 Knowledge required</a>
+    <a href="#c4">1.4 Client behaviors</a>
+    <a href="#c5">1.5 Ethics &amp; regulation</a>
+  </nav>
+
+  <!-- ================= CHAPTER 1.1 ================= -->
+  <p class="chapter-kicker" id="c1">Chapter 1.1 · Planning &amp; Financial Goals</p>
+
+  <h2>🧩 Planning is coordination, not products</h2>
+  <p>Anyone can sell a mutual fund or a term policy. <strong>Planning is the discipline of making the fund, the policy, the mortgage, the 401(k), and the will all point the same direction</strong> — and not quietly undermine each other. A tax move that wrecks a financial-aid application, or a Roth conversion that spikes a retiree's Medicare premium, is only visible when someone holds the <em>entire</em> picture at once.</p>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Quick test:</strong> if a recommendation could have been made <em>without knowing anything else</em> about the client, it probably wasn't planning. Real recommendations depend on bracket, horizon, dependents, risk tolerance, and existing coverage.</div></div>
+  <p>The field splits into a handful of overlapping domains — the overlap is the whole point. Match each planning area to the central question it answers:</p>
+  <div data-match="planAreas"></div>
+
+  <h3>🚫 Why people don't plan</h3>
+  <p>Most of a planner's early work is overcoming resistance. Name these plainly and you get further than another projection does:</p>
+  <div class="grid c3">
+    <div class="card tint"><h3>🌀 Perceived complexity</h3><p style="font-size:14px">It feels like it needs expertise they lack.</p></div>
+    <div class="card tint"><h3>⏳ Procrastination</h3><p style="font-size:14px">The cost of delay is invisible; the effort is immediate.</p></div>
+    <div class="card tint"><h3>💰 "Planning is for the wealthy"</h3><p style="font-size:14px">Backwards — less margin means less room for error.</p></div>
+    <div class="card tint"><h3>🙈 Avoidance</h3><p style="font-size:14px">Money is tangled with fear, shame, and family history.</p></div>
+    <div class="card tint"><h3>📄 "I already have a plan"</h3><p style="font-size:14px">Owning a 401(k) gets mistaken for having a plan.</p></div>
+  </div>
+
+  <h2 id="sec-goals-that-actually-work-pta">🎯 Goals give the plan its shape</h2>
+  <p>Without goals there's no standard to judge a recommendation against. A <strong>workable goal specifies four things</strong> — miss one and it can't be funded or measured:</p>
+  <div class="grid c4">
+    <div class="card"><div class="stat">What</div><div class="stat-label">The outcome in concrete terms</div></div>
+    <div class="card"><div class="stat" style="color:var(--m3)">How much</div><div class="stat-label">A dollar amount — today's dollars or inflated</div></div>
+    <div class="card"><div class="stat" style="color:var(--m5)">When</div><div class="stat-label">A target date, which sets the time horizon</div></div>
+    <div class="card"><div class="stat" style="color:var(--m7)">Priority</div><div class="stat-label">Where it ranks when resources are scarce</div></div>
+  </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Old-school hook — "PTA":</strong> Purpose, Time frame, Amount. The book adds <strong>Priority</strong> as the fourth, because nearly every client has goals competing for the same dollars — and the planner's job is often helping them decide what matters most, not finding more money.</div></div>
+
+  <h3>⏱️ Horizon drives strategy — sort each goal</h3>
+  <p>Short-horizon money belongs somewhere stable and liquid (no time to recover a loss); long-horizon money can accept volatility for expected return. Mismatching the two is one of the costliest errors in personal finance. Drop each goal into its horizon:</p>
+  <div data-sorter="goalHorizon"></div>
+
+  <h3>📖 Definitions worth keeping straight</h3>
+  <table>
+    <tr><th>Term</th><th>Meaning</th></tr>
+    <tr><td><strong>Time horizon</strong></td><td>The interval between now and when a goal must be funded</td></tr>
+    <tr><td><strong>Risk tolerance</strong></td><td>The volatility a client is <em>emotionally willing</em> to accept</td></tr>
+    <tr><td><strong>Risk capacity</strong></td><td>The loss a client can <em>financially absorb</em> without derailing goals</td></tr>
+    <tr><td><strong>Liquidity</strong></td><td>How fast an asset converts to cash without losing value</td></tr>
+  </table>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap — tolerance ≠ capacity.</strong> A young high earner may have huge capacity but panic in a drawdown; a fearless retiree may be unable to afford a bad return sequence. Good planning respects the <strong>lower</strong> of the two.</div></div>
+
+  <div class="card" style="border-left:6px solid var(--m1)">
+    <h3>🧮 Worked example — same client, opposite advice</h3>
+    <p style="font-size:14.5px">A client, 34, wants to retire at 65 <em>and</em> buy a home in three years.</p>
+    <div class="grid c2">
+      <div class="card tint"><h4>🏠 Home down payment — 3-year horizon</h4><p style="font-size:14px">Short-duration instruments, money market, or CDs. Certainty of principal is the requirement; a 20% drawdown in year two has no time to recover.</p></div>
+      <div class="card tint"><h4>🌴 Retirement — 31-year horizon</h4><p style="font-size:14px">Equity-weighted. Volatility is tolerable, and three decades of compounding let the return differential dominate.</p></div>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft)">Same risk tolerance, opposite recommendations — because the <strong>horizons</strong> differ. That's why goals are defined before strategy is chosen.</p>
+  </div>
+
+  <details class="selfcheck"><summary>Why is a goal without a date effectively unusable?</summary>
+  <div class="sc-a">The date sets the time horizon, and the horizon drives asset allocation, required savings rate, and appropriate risk. Without it, there's no way to compute how much to save or what to invest in.</div></details>
+  <details class="selfcheck"><summary>A client is "comfortable with aggressive investing," but a 25% loss would delay retirement a decade. What's the conflict?</summary>
+  <div class="sc-a">Risk <em>tolerance</em> is high but risk <em>capacity</em> is low. Follow capacity — the client can't financially absorb the loss no matter how they feel about volatility.</div></details>
+  <details class="selfcheck"><summary>Give an example of two planning areas producing contradictory advice in isolation.</summary>
+  <div class="sc-a">Maximizing pretax retirement contributions is ideal tax planning, but if it leaves no emergency reserve, a job loss forces an early withdrawal with penalty and tax — worse than the deduction was worth.</div></details>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Common pitfalls:</strong> treating a product sale as a plan · setting goals with no amount or date · ignoring inflation on a long-horizon goal · letting stated tolerance override actual capacity · optimizing one area at another's expense.</div></div>
+
+  <!-- ================= CHAPTER 1.2 ================= -->
+  <p class="chapter-kicker" id="c2">Chapter 1.2 · The Seven-Step Process</p>
+
   <h2>🗺️ The 7-step journey</h2>
-  <p>Picture this as a road trip with a client. You can't skip a stop. <strong>The exam LOVES asking what happens at each step and in what order.</strong> Click any step on the wheel to explore it — or read the full list below.</p>
+  <p>This is the profession's standard procedural framework, from the CFP Board's <em>Practice Standards</em>. Two things to fix in mind: <strong>the order isn't arbitrary</strong> — each step feeds the next — and <strong>it's a loop, not a line</strong>. Step 7 feeds back into Step 1, because lives change and a plan that isn't revisited goes stale. Click any step to explore it:</p>
   <div data-wheel="planning"></div>
   <div class="step-flow">
-    <div class="step"><div class="step-num">1</div><div><h4>🤝 Understand the client's personal &amp; financial circumstances</h4><p>Meet them. Gather facts (numbers) and feelings (values, fears, dreams).</p></div></div>
-    <div class="step"><div class="step-num">2</div><div><h4>🎯 Identify &amp; select goals</h4><p>Turn “I want to be okay someday” into specific, prioritized goals.</p></div></div>
-    <div class="step"><div class="step-num">3</div><div><h4>🔎 Analyze the current course &amp; alternatives</h4><p>Will their current path reach the goals? What else could work better?</p></div></div>
-    <div class="step"><div class="step-num">4</div><div><h4>📋 Develop the recommendations</h4><p>Choose specific actions, products, and strategies that fit THIS client.</p></div></div>
-    <div class="step"><div class="step-num">5</div><div><h4>🗣️ Present the recommendations</h4><p>Explain clearly so the client truly understands and can decide.</p></div></div>
-    <div class="step"><div class="step-num">6</div><div><h4>🚀 Implement</h4><p>Do the things: open accounts, buy coverage, retitle assets, automate savings.</p></div></div>
-    <div class="step"><div class="step-num">7</div><div><h4>🔄 Monitor progress &amp; update</h4><p>Life changes — so plans must too. Review and adjust on a schedule.</p></div></div>
+    <div class="step"><div class="step-num">1</div><div><h4>🤝 Understand the client's personal &amp; financial circumstances</h4><p>Gather facts (quantitative) <em>and</em> feelings (qualitative). Check the data is complete and consistent. Identify the client's other advisers — attorney, CPA, insurance agent — early.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div><h4>🎯 Identify &amp; select goals</h4><p>Elicit, quantify, and <strong>prioritize</strong>. Surface unachievable goal combinations <em>now</em>, not at step 5. This is where trade-offs become explicit.</p></div></div>
+    <div class="step"><div class="step-num">3</div><div><h4>🔎 Analyze the current course &amp; alternatives</h4><p>The analytical core. Evaluate the current course (does the gap close if nothing changes?), then compare alternatives — including doing nothing.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div><h4>📋 Develop the recommendations</h4><p>Specific, sequenced, and <em>traceable</em>: this recommendation, for this goal, chosen over these alternatives, for these reasons.</p></div></div>
+    <div class="step"><div class="step-num">5</div><div><h4>🗣️ Present the recommendations</h4><p>Communication, not computation. Invite pushback — objections often reveal information that sends you back to step 1. That's the loop working.</p></div></div>
+    <div class="step"><div class="step-num">6</div><div><h4>🚀 Implement</h4><p>Establish <strong>what</strong> gets done, <strong>who</strong> does it, and <strong>when</strong>. Unassigned actions are where plans die.</p></div></div>
+    <div class="step"><div class="step-num">7</div><div><h4>🔄 Monitor progress &amp; update</h4><p>Review on a schedule; revise on triggers — marriage, birth, death, job change, inheritance, illness, business sale, a move, tax-law changes. Loops back to step 1.</p></div></div>
   </div>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook (the official CFFP one):</strong> “<strong>U</strong>mbrellas <strong>I</strong>n <strong>A</strong> <strong>D</strong>ownpour <strong>P</strong>revent <strong>I</strong>mmense <strong>M</strong>ess” → Understand, Identify, Analyze, Develop, Present, Implement, Monitor. Silly = sticky!</div></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> "<strong>U</strong>mbrellas <strong>I</strong>n <strong>A</strong> <strong>D</strong>ownpour <strong>P</strong>revent <strong>I</strong>mmense <strong>M</strong>ess" → Understand, Identify, Analyze, Develop, Present, Implement, Monitor. Silly = sticky!</div></div>
 
-  <h2>🎯 Goals that actually work: PTA</h2>
-  <p>A usable goal needs all three ingredients. If a question shows a vague goal, it's missing one of these:</p>
-  <div class="grid c3">
-    <div class="card tint"><h3>💡 P — Purpose</h3><p style="font-size:14.5px">WHAT is the money for? “Retirement income” beats “some money later.”</p></div>
-    <div class="card tint"><h3>⏰ T — Time frame</h3><p style="font-size:14.5px">WHEN is it needed? “In 12 years” beats “eventually.”</p></div>
-    <div class="card tint"><h3>💰 A — Amount</h3><p style="font-size:14.5px">HOW MUCH? “$40,000/year” beats “enough to be comfortable.”</p></div>
-  </div>
+  <h3>🎮 Lock in the order</h3>
+  <p>The exam LOVES asking what happens at each step and in what sequence. Tap the steps in order — first step first:</p>
+  <div data-order="sevenSteps"></div>
+
+  <details class="selfcheck"><summary>Why does the process loop rather than terminate?</summary>
+  <div class="sc-a">Circumstances, goals, markets, and tax law all change. Step 7 detects those changes and returns to step 1 with updated information, keeping the plan aligned with reality rather than the day it was written.</div></details>
+  <details class="selfcheck"><summary>At which step does prioritization of goals occur, and why there?</summary>
+  <div class="sc-a">Step 2. Prioritization must precede analysis, because when resources can't fund every goal, step 3's analysis needs to know which goals give way.</div></details>
+  <details class="selfcheck"><summary>During step 5 a client reveals they intend to support an aging parent — never mentioned before. What happens?</summary>
+  <div class="sc-a">Return to step 1. It's new material information: it changes the data set, likely changes goals in step 2, and requires re-analysis. Proceeding would build on a picture now known to be incomplete.</div></details>
 
   <h2>📊 Two kinds of client data</h2>
+  <p>Step 1 gathers both halves of the picture — and the <strong>qualitative half is routinely underweighted and routinely decisive</strong>. Two clients with identical balance sheets can need entirely different plans because one has a disabled child and the other intends to sell a business in four years. Sort each item into the right kind:</p>
   <div class="vs">
-    <div class="side" style="border-color:var(--m4);background:var(--m4s)"><h3 style="color:var(--m4)">🔢 Quantitative = countable</h3><p style="font-size:14.5px">Facts and numbers: income, account balances, debts, ages, insurance coverage, tax returns.</p><p style="font-size:13px;color:var(--ink-soft)"><em>Quantity → numbers.</em></p></div>
-    <div class="side" style="border-color:var(--m10);background:var(--m10s)"><h3 style="color:var(--m10)">💗 Qualitative = qualities</h3><p style="font-size:14.5px">Feelings and values: risk tolerance, health, family dynamics, dreams, fears, priorities.</p><p style="font-size:13px;color:var(--ink-soft)"><em>Quality → how they feel.</em></p></div>
+    <div class="side" style="border-color:var(--m4);background:var(--m4s)"><h3 style="color:var(--m4)">🔢 Quantitative = countable</h3><p style="font-size:14.5px">Facts and numbers: income, balances, debts, ages, coverage, tax returns.</p><p style="font-size:13px;color:var(--ink-soft)"><em>Quantity → numbers.</em></p></div>
+    <div class="side" style="border-color:var(--m10);background:var(--m10s)"><h3 style="color:var(--m10)">💗 Qualitative = qualities</h3><p style="font-size:14.5px">Feelings and values: risk attitude, health, family dynamics, dreams, fears.</p><p style="font-size:13px;color:var(--ink-soft)"><em>Quality → how they feel.</em></p></div>
   </div>
+  <div data-sorter="dataKind"></div>
+
+  <h2>💵 How planners get paid</h2>
+  <p>Compensation shapes incentives, which is why it belongs in this chapter. <strong>No model is conflict-free</strong> — what matters is disclosing conflicts clearly and letting the client's interest govern when interests diverge. Tap each model to reveal the conflict to watch:</p>
+  <div data-reveal="compModels"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> "Fee-<em>based</em>" ≠ "fee-<em>only</em>." Fee-based (a.k.a. fee-and-commission) advisers can ALSO earn commissions, so the client may not know which hat the adviser is wearing. If a question hinges on <strong>fewest conflicts</strong>, the answer is <strong>fee-only</strong>.</div></div>
+
+  <details class="selfcheck"><summary>Why is it useful to identify the client's other advisers in step 1?</summary>
+  <div class="sc-a">It clarifies who owns which part of the plan, avoids contradictory advice, enables coordination on legal/tax items, and marks the boundary of what the paraplanner may appropriately handle.</div></details>
+
+  <!-- ================= CHAPTER 1.3 ================= -->
+  <p class="chapter-kicker" id="c3">Chapter 1.3 · Knowledge Required</p>
+
+  <h2>🧠 The knowledge map: every domain feeds step 3</h2>
+  <p>Analysis is only as good as the technical knowledge behind it — and that knowledge spans every remaining module. The recurring theme: <strong>a recommendation optimal within one domain is frequently suboptimal once another is considered.</strong> Tap each domain to see what it contributes:</p>
+  <div data-reveal="domains"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Two anchors:</strong> <strong>Cash management (Module 2) is foundational</strong> — everything else is funded from cash flow. <strong>Time value of money (Module 3) is the engine</strong> — retirement needs, education funding, loan comparisons, and savings rates are all present-value/future-value problems in different clothing.</div></div>
+
+  <h3>💥 Where domains collide</h3>
+  <p>None of these have universal answers — they resolve only against a specific client's goals, bracket, horizon, and priorities, which is exactly why steps 1 and 2 come before step 3:</p>
+  <table>
+    <tr><th>Decision</th><th>Domains in tension</th></tr>
+    <tr><td>Max pretax retirement contributions</td><td>Tax (favorable) vs. cash flow &amp; liquidity (reserve may be inadequate)</td></tr>
+    <tr><td>Pay off a low-rate mortgage early</td><td>Cash-flow certainty vs. investment opportunity cost vs. lost deduction</td></tr>
+    <tr><td>Buy permanent rather than term life</td><td>Risk transfer &amp; tax-deferred cash value vs. cost per dollar of coverage</td></tr>
+    <tr><td>Roth conversion in a low-income year</td><td>Tax (long-term benefit) vs. retirement (current bracket, Medicare surcharges)</td></tr>
+    <tr><td>Gift appreciated assets to children</td><td>Estate (removes future appreciation) vs. tax (no step-up in basis at death)</td></tr>
+  </table>
+
+  <h2>🚧 Scope of practice: know your lane</h2>
+  <p>Knowing the boundary is itself part of the required knowledge. The professional response to an out-of-scope question is <strong>referral and coordination, not an approximate answer</strong>. Sort each task into what a paraplanner may do vs. what must go to a licensed professional:</p>
+  <div data-sorter="scope"></div>
+
+  <details class="selfcheck"><summary>Why is cash management treated as foundational relative to the other domains?</summary>
+  <div class="sc-a">Every other recommendation is funded from cash flow. Without positive cash flow and an adequate reserve, premiums lapse, contributions stop, and assets get liquidated at bad times — so other recommendations aren't sustainable.</div></details>
+  <details class="selfcheck"><summary>A client wants to gift appreciated stock to an adult child. Which two domains conflict?</summary>
+  <div class="sc-a">Estate and tax. Gifting removes future appreciation from the estate, but a lifetime gift carries over the donor's basis, whereas holding until death generally gets a step-up. The child may face a large capital gain that holding would have eliminated.</div></details>
+  <details class="selfcheck"><summary>A client asks you to draft a "simple" will since their situation is straightforward. Correct response?</summary>
+  <div class="sc-a">Decline and refer to an attorney. Drafting legal documents is the unauthorized practice of law regardless of apparent simplicity. Identify the need, gather facts, and coordinate with the client's attorney.</div></details>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Common pitfalls:</strong> optimizing a single domain in isolation · comparing options pretax when the client experiences after-tax results · deferring risk management until after accumulation · treating estate planning as a late-life concern · answering a legal or tax question that should be referred.</div></div>
+
+  <!-- ================= CHAPTER 1.4 ================= -->
+  <p class="chapter-kicker" id="c4">Chapter 1.4 · Client Behaviors</p>
 
   <h2>🧠 Behavioral finance: why clients act against their own interests</h2>
-  <p>Part of understanding a client is understanding <strong>how they decide</strong>. Behavioral finance links psychology to money — explaining why smart people make irrational choices. Biases fall into two families:</p>
+  <p>Plans fail for human reasons far more often than technical ones. Technical analysis tells you what the client <em>should</em> do; behavioral understanding tells you what they <em>will</em> do; counseling skill narrows the gap. Biases fall into two families:</p>
   <div class="vs">
     <div class="side" style="border-color:var(--m4);background:var(--m4s)">
-      <h3 style="color:var(--m4)">🧩 Cognitive errors (biases)</h3>
-      <p style="font-size:14.5px">Faulty <strong>reasoning</strong> — from gaps in understanding, information-processing slips, or memory errors. Good news: <strong>education and coaching can fix these</strong>.</p>
-      <p style="font-size:13px;color:var(--ink-soft)">e.g. illusion of control · money illusion · conservatism bias · mental accounting · self-attribution bias</p>
+      <h3 style="color:var(--m4)">🧩 Cognitive errors</h3>
+      <p style="font-size:14.5px">Faulty <strong>reasoning</strong> — gaps in understanding, information-processing slips, memory errors. Good news: <strong>education and coaching can help fix these</strong>.</p>
+      <p style="font-size:13px;color:var(--ink-soft)">e.g. anchoring · confirmation · mental accounting · overconfidence · recency</p>
     </div>
     <div class="side" style="border-color:var(--m5);background:var(--m5s)">
       <h3 style="color:var(--m5)">❤️ Emotional biases</h3>
       <p style="font-size:14.5px">Rooted in <strong>feelings, impulses, and intuition</strong> — not conscious thought. Harder to overcome; the planner often has to <strong>accommodate</strong> them rather than correct them.</p>
-      <p style="font-size:13px;color:var(--ink-soft)">e.g. self-control bias · status quo bias · affinity bias</p>
+      <p style="font-size:13px;color:var(--ink-soft)">e.g. loss aversion · status quo · familiarity/home bias · herding</p>
     </div>
   </div>
   <div class="callout memory"><span class="ico">🧠</span><div><strong>Exam distinction:</strong> a <strong>cognitive</strong> error is a thinking/knowledge mistake you can <em>teach away</em>; an <strong>emotional</strong> bias comes from feelings and usually has to be <em>worked around</em>.</div></div>
 
+  <h3>🃏 Name that bias</h3>
+  <p>Biases are systematic, predictable deviations from rational decisions — they affect everyone, including the planner. Match each bias to what it looks like in practice:</p>
+  <div data-match="biases"></div>
+  <p>The goal isn't to eliminate every bias but to prevent the damaging ones and occasionally <em>harness</em> the harmless ones — e.g. using labeled "goal" accounts to exploit mental accounting constructively, or pre-committing to automatic rebalancing so the calm client binds the panicked one.</p>
+
   <h2>💬 Communication &amp; counseling skills</h2>
-  <p>Good data-gathering is a conversation, not an interrogation. Lead with <strong>open-ended questions</strong> (answered in the client's own words) and avoid <strong>closed-end</strong> yes/no questions that shut people down.</p>
+  <p>Data-gathering is a conversation, not an interrogation. Beneath biases sit durable <strong>values</strong> (security, independence, generosity) and <strong>attitudes</strong> (toward debt, risk, advice) — often formed before the client ever met you. A client raised through instability may hold "too much" cash; that's a value about security, and a spreadsheet won't move it. Acknowledge it and plan around it.</p>
   <div class="vs">
-    <div class="side" style="border-color:var(--m1);background:var(--m1s)"><h3 style="color:var(--m1)">🪞 Nondirective counseling</h3><p style="font-size:14.5px">Help the client reflect and open up. Skills: <strong>clarification, paraphrasing, summarizing</strong>.</p></div>
-    <div class="side" style="border-color:var(--m7);background:var(--m7s)"><h3 style="color:var(--m7)">🧭 Directive counseling</h3><p style="font-size:14.5px">Guide the client to understand their situation. Skills: <strong>reframing, explanation, advice</strong>.</p></div>
+    <div class="side" style="border-color:var(--m1);background:var(--m1s)"><h3 style="color:var(--m1)">🪞 Nondirective — draw it out</h3><p style="font-size:14.5px">Dominant in <strong>steps 1 &amp; 2</strong>. You learn what the client actually thinks without steering it.</p><p style="font-size:13px;color:var(--ink-soft)">attending · active listening · open-ended questions · clarifying · paraphrasing · reflecting feeling · summarizing · silence</p></div>
+    <div class="side" style="border-color:var(--m7);background:var(--m7s)"><h3 style="color:var(--m7)">🧭 Directive — guide it</h3><p style="font-size:14.5px">Dominant in <strong>step 5</strong>. The client came for a recommendation, not a survey of possibilities.</p><p style="font-size:13px;color:var(--ink-soft)">leading · advising/recommending · confronting · informing/educating · interpreting</p></div>
   </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Rule of thumb:</strong> <strong>nondirective early, directive late.</strong> Directing the conversation during data-gathering contaminates the information — the client tells you what you want to hear. Being nondirective during the presentation abdicates the planner's role.</div></div>
+  <p>Sort each counseling skill into the style it belongs to:</p>
+  <div data-sorter="counseling"></div>
   <div class="pill-row">
-    <span class="pill">Active listening 👂</span><span class="pill">Body language</span><span class="pill">Voice pitch &amp; tone</span><span class="pill">Mirroring</span><span class="pill">Emotional intelligence</span>
+    <span class="pill">Match language to the listener 🗣️</span><span class="pill">Watch nonverbal signals</span><span class="pill">Confirm understanding, don't assume it</span><span class="pill">Respect a couple as two clients</span><span class="pill">Silence is the most underused skill 🤫</span>
   </div>
 
+  <details class="selfcheck"><summary>Why use nondirective skills in step 1 and directive skills in step 5?</summary>
+  <div class="sc-a">Step 1 aims to gather accurate, complete information; directing biases what the client reveals. Step 5 aims to secure understanding and action on a specific recommendation, which requires guidance rather than exploration.</div></details>
+  <details class="selfcheck"><summary>A client won't sell a stock down 40%, saying they'll sell "when it gets back to what I paid." Which biases?</summary>
+  <div class="sc-a">Anchoring on the purchase price (which has no bearing on future prospects) and loss aversion — realizing the loss feels worse than continuing to hold. Together, the disposition effect.</div></details>
+  <details class="selfcheck"><summary>How does mental accounting explain carrying card debt while holding a labeled savings account?</summary>
+  <div class="sc-a">The client treats the two as separate mental buckets rather than one balance sheet. Using the savings to retire much higher-rate debt is clearly better, but the "vacation fund" is mentally categorized as untouchable.</div></details>
+
+  <!-- ================= CHAPTER 1.5 ================= -->
+  <p class="chapter-kicker" id="c5">Chapter 1.5 · Ethics &amp; Regulation</p>
+
   <h2>⚖️ The BIG one: standards of care</h2>
-  <p>Who must put the client first, and how much? Here's the 2026 picture:</p>
+  <p>The single most consequential distinction in the module: <strong>who must put the client first, and how much?</strong></p>
   <div class="vs">
     <div class="side" style="border-color:var(--m6);background:var(--m6s)">
       <h3 style="color:var(--m6)">🛡️ Fiduciary standard</h3>
-      <p style="font-size:14.5px"><strong>Investment advisers (RIAs)</strong> and <strong>CFP® professionals giving financial advice</strong> must act in the client's <strong>best interest at all times</strong> — duty of loyalty, duty of care, follow client instructions.</p>
+      <p style="font-size:14.5px">Act in the client's <strong>best interest</strong>, placing the client above yourself. Held by <strong>RIAs</strong> (Investment Advisers Act of 1940), <strong>CFP® professionals</strong> giving financial advice, and <strong>ERISA fiduciaries</strong>.</p>
     </div>
     <div class="side" style="border-color:var(--m8);background:var(--m8s)">
-      <h3 style="color:var(--m8)">🤝 Regulation Best Interest (Reg BI)</h3>
-      <p style="font-size:14.5px"><strong>Broker-dealers</strong> are no longer just “suitability.” Since June 2020, when recommending to retail customers they must act in the customer's <strong>best interest</strong> and meet <strong>4 obligations</strong>.</p>
+      <h3 style="color:var(--m8)">🤝 Suitability standard</h3>
+      <p style="font-size:14.5px">Weaker: the recommendation must be <strong>suitable</strong> — appropriate to objectives, situation, and risk tolerance — but need not be the <em>best</em> available option. Historically applied to broker-dealers.</p>
     </div>
   </div>
-  <figure class="viz">
-    <svg viewBox="0 0 760 220" role="img" aria-label="The four obligations of Regulation Best Interest: Disclosure, Care, Conflict of Interest, Compliance">
-      <rect x="280" y="10" width="200" height="52" rx="14" fill="#EA580C"/>
-      <text x="380" y="42" text-anchor="middle" fill="#fff" font-weight="bold" font-size="18" font-family="Georgia">Reg BI</text>
-      <line x1="380" y1="62" x2="95" y2="120" stroke="#EA580C" stroke-width="3"/><line x1="380" y1="62" x2="285" y2="120" stroke="#EA580C" stroke-width="3"/><line x1="380" y1="62" x2="475" y2="120" stroke="#EA580C" stroke-width="3"/><line x1="380" y1="62" x2="665" y2="120" stroke="#EA580C" stroke-width="3"/>
-      <g font-size="14" font-family="Arial" text-anchor="middle">
-        <rect x="10" y="120" width="170" height="84" rx="12" fill="#FDEEE3"/><text x="95" y="150" font-size="22">📢</text><text x="95" y="172" font-weight="bold">Disclosure</text><text x="95" y="190" font-size="11.5" fill="#6B6584">Tell customers fees &amp; conflicts</text>
-        <rect x="200" y="120" width="170" height="84" rx="12" fill="#FDEEE3"/><text x="285" y="150" font-size="22">🩺</text><text x="285" y="172" font-weight="bold">Care</text><text x="285" y="190" font-size="11.5" fill="#6B6584">Understand the product &amp; client</text>
-        <rect x="390" y="120" width="170" height="84" rx="12" fill="#FDEEE3"/><text x="475" y="150" font-size="22">⚖️</text><text x="475" y="172" font-weight="bold">Conflicts</text><text x="475" y="190" font-size="11.5" fill="#6B6584">Identify &amp; manage conflicts</text>
-        <rect x="580" y="120" width="170" height="84" rx="12" fill="#FDEEE3"/><text x="665" y="150" font-size="22">📋</text><text x="665" y="172" font-weight="bold">Compliance</text><text x="665" y="190" font-size="11.5" fill="#6B6584">Firm policies to enforce it all</text>
-      </g>
-    </svg>
-    <figcaption>Reg BI's four obligations — memory hook: “<strong>D</strong>on't <strong>C</strong>heat <strong>C</strong>lients, <strong>C</strong>omply!” (Disclosure, Care, Conflicts, Compliance)</figcaption>
-  </figure>
-  <p style="margin:-6px 0 12px"><span class="badge" style="background:#ECEAF3;color:#6B6584">🌐 Reg BI &amp; the 4 obligations are real-world context — beyond the FPQP® Module 1 outline</span></p>
+  <p>The three fiduciary duties — tap to reveal what each requires:</p>
+  <div data-reveal="fiduciaryDuties"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Why it matters — the two-fund test:</strong> two nearly identical funds, one paying the adviser a commission. Under <strong>suitability</strong>, recommending the commission fund can be defensible if it suits the client. Under a <strong>fiduciary</strong> standard, choosing the pricier fund <em>because it pays you</em> is a breach of loyalty. The client usually can't tell which standard they're getting — which is exactly why disclosure exists.</div></div>
+  <p><strong>Regulation Best Interest (Reg BI), effective 2020,</strong> raised the bar for broker-dealer recommendations to retail customers — requiring them to act in the retail customer's best interest and not place their own interests ahead — though it remains distinct from the full fiduciary duty under the Advisers Act.</p>
 
-  <h2>⚖️ The FPQP® Code of Ethics</h2>
-  <p>The program holds you to six ethical principles. The exam expects you to recognize them:</p>
-  <div class="grid c3">
-    <div class="card tint"><h3>🛡️ Fiduciary Duty</h3><p style="font-size:14px">Put the client's interest first.</p></div>
-    <div class="card tint"><h3>💎 Integrity</h3><p style="font-size:14px">Honesty and candor — never misleading.</p></div>
-    <div class="card tint"><h3>🎓 Competence</h3><p style="font-size:14px">Maintain the knowledge and skill to serve.</p></div>
-    <div class="card tint"><h3>🔍 Diligence</h3><p style="font-size:14px">Act carefully, thoroughly, and promptly.</p></div>
-    <div class="card tint"><h3>🤝 Professionalism</h3><p style="font-size:14px">Conduct that reflects well on the profession.</p></div>
-    <div class="card tint"><h3>🔒 Confidentiality</h3><p style="font-size:14px">Protect the client's information.</p></div>
-  </div>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> “<strong>F</strong>ine <strong>I</strong>ntegrity <strong>C</strong>omes <strong>D</strong>own <strong>P</strong>rofessional &amp; <strong>C</strong>onfidential” → Fiduciary, Integrity, Competence, Diligence, Professionalism, Confidentiality.</div></div>
-
-  <h2>💵 How planners get paid</h2>
-  <p style="margin:-6px 0 12px"><span class="badge" style="background:#ECEAF3;color:#6B6584">🌐 Real-world context — beyond the FPQP® Module 1 outline</span></p>
-  <table>
-    <tr><th>Model</th><th>How it works</th><th>Watch out for…</th></tr>
-    <tr><td>🏷️ <strong>Commission</strong></td><td>Paid per product sold</td><td>Incentive to sell more / pricier products</td></tr>
-    <tr><td>🧾 <strong>Fee-only</strong></td><td>Paid ONLY by client fees (hourly, flat, or % of assets)</td><td>No product commissions at all — fewest conflicts</td></tr>
-    <tr><td>🌗 <strong>Fee-based</strong></td><td>Fees AND commissions (hybrid)</td><td>Sounds like fee-only — it is NOT. Classic exam trap!</td></tr>
-    <tr><td>📊 <strong>AUM</strong></td><td>% of assets under management per year</td><td>Fee grows as the account grows</td></tr>
-  </table>
-  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> “Fee-based” ≠ “fee-only.” Fee-<em>based</em> advisers can ALSO earn commissions. If the question hinges on fewest conflicts of interest, the answer is <strong>fee-only</strong>.</div></div>
+  <h2 id="sec-the-fpqp-code-of-ethics">📜 The Code of Ethics</h2>
+  <p>Codes across the profession converge on a common set of principles (the FPQP® designation carries its own; the CFP Board's is the most cited). Match each principle to what it requires:</p>
+  <div data-match="ethics"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Watch this one:</strong> <strong>Competence</strong> carries an obligation people miss — it requires <em>declining</em> work you aren't qualified for and referring it out. Attempting a matter outside your competence violates the principle <em>even if the outcome happens to be fine</em>.</div></div>
 
   <h2>🏛️ Who regulates whom?</h2>
-  <p style="margin:-6px 0 12px"><span class="badge" style="background:#ECEAF3;color:#6B6584">🌐 Real-world context — beyond the FPQP® Module 1 outline</span></p>
-  <p>Tap a professional to light up who oversees them:</p>
+  <p>Tap a professional to light up who oversees them, then lock in the details with the matcher below:</p>
   <div data-regmap></div>
-  <div class="plain-note">Different money jobs have different “refs.” Stockbrokers answer to FINRA, investment advisers to the SEC or the state, and insurance agents to the state insurance department.</div>
+  <div class="plain-note">Different money jobs have different "refs." Stockbrokers answer to FINRA, investment advisers to the SEC or the state, and insurance agents to the state insurance department.</div>
+  <p>Match each regulator or body to its scope:</p>
+  <div data-match="regulators"></div>
+
+  <h3>📚 Key statutes &amp; Form ADV</h3>
   <div class="grid c2">
-    <div class="card"><h3>🦅 SEC</h3><p style="font-size:14.5px">Federal securities regulator. Oversees larger <strong>investment advisers (RIAs)</strong>, public markets, and enforces Reg BI.</p></div>
-    <div class="card"><h3>🛡️ FINRA</h3><p style="font-size:14.5px">Industry self-regulator for <strong>broker-dealers</strong> and their registered reps. Licensing exams, conduct rules, discipline.</p></div>
-    <div class="card"><h3>🏠 State regulators (NASAA)</h3><p style="font-size:14.5px">Register <strong>smaller advisers</strong> and enforce state securities laws. Series 65/66 exams qualify adviser reps.</p></div>
-    <div class="card"><h3>☂️ State insurance commissioners (NAIC)</h3><p style="font-size:14.5px">Insurance is regulated by the <strong>states</strong>, coordinated through the NAIC. Agents need state licenses.</p></div>
+    <div class="card"><h3>🏛️ The 1940 acts &amp; friends</h3><p style="font-size:14px"><strong>Securities Act of 1933</strong> (new-issue disclosure) · <strong>Securities Exchange Act of 1934</strong> (created the SEC) · <strong>Investment Company Act of 1940</strong> · <strong>Investment Advisers Act of 1940</strong> (registration + fiduciary duty) · <strong>Gramm-Leach-Bliley (1999)</strong> (privacy) · <strong>Sarbanes-Oxley (2002)</strong> &amp; <strong>Dodd-Frank (2010)</strong>.</p></div>
+    <div class="card"><h3>📄 Form ADV</h3><p style="font-size:14px">The investment adviser's <strong>registration and primary client disclosure document</strong> — services, fees, conflicts, disciplinary history, business practices. Delivered to clients so they can evaluate the adviser and its conflicts.</p></div>
   </div>
 
-  <h2>🎓 Alphabet soup: key designations</h2>
-  <p style="margin:-6px 0 12px"><span class="badge" style="background:#ECEAF3;color:#6B6584">🌐 Real-world context — beyond the FPQP® Module 1 outline</span></p>
-  <div class="pill-row">
-    <span class="pill">CFP® — broad financial planning</span>
-    <span class="pill">CFA — deep investment analysis</span>
-    <span class="pill">ChFC — planning (insurance roots)</span>
-    <span class="pill">CPA/PFS — CPAs doing planning</span>
-    <span class="pill">CIMA — investment consulting</span>
-    <span class="pill">FPQP® — that's YOU: paraplanner foundations</span>
-  </div>
+  <details class="selfcheck"><summary>State the practical difference between fiduciary and suitability standards.</summary>
+  <div class="sc-a">A fiduciary must act in the client's best interest, putting the client above themselves. Suitability only requires the recommendation be appropriate — so a higher-cost product that pays the adviser can satisfy suitability while breaching fiduciary duty.</div></details>
+  <details class="selfcheck"><summary>Which statute imposes fiduciary duty on registered investment advisers?</summary>
+  <div class="sc-a">The Investment Advisers Act of 1940.</div></details>
+  <details class="selfcheck"><summary>Why does the competence principle require declining certain engagements?</summary>
+  <div class="sc-a">Competence obligates having the knowledge and skill the work requires and recognizing where that ends. Taking on work outside your competence breaches the principle regardless of outcome; the correct response is referral.</div></details>
+  <details class="selfcheck"><summary>What is Form ADV for?</summary>
+  <div class="sc-a">It's the adviser's registration and primary disclosure document — services, fees, conflicts, disciplinary history, business practices — delivered to clients so they can evaluate the adviser.</div></details>
 
-  <div class="callout cheer"><span class="ico">🌟</span><div><strong>You just finished the foundation module!</strong> Everything else in this program hangs on these 7 steps. Prove it to yourself below — and remember, the quiz is practice, not judgment. 💛</div></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Common pitfalls:</strong> assuming all professionals owe the same standard · treating fine print as "disclosure" · confusing suitability with best interest · implying a credential confers authority it doesn't · answering legal/tax questions rather than referring · failing to document why a recommendation was made.</div></div>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div><strong>You just finished the foundation module!</strong> Everything else in this program hangs on these five chapters. Prove it to yourself below — and remember, the quiz is practice, not judgment. 💛</div></div>
 
   <h2>✍️ Module 1 self-quiz</h2>
   <div id="quiz" class="quiz"></div>
 
   <p class="src"><strong>Modernization sources:</strong> <a href="https://www.finra.org/investors/insights/sec-regulation-best-interest-and-form-crs-what-you-need-know">FINRA: Reg BI &amp; Form CRS</a> · <a href="https://www.cfp.net/ethics/code-of-ethics-and-standards-of-conduct">CFP Board: Code of Ethics &amp; Standards of Conduct</a> · <a href="https://www.kaplanfinancial.com/resources/getting-started/what-is-fpqp">Kaplan: FPQP® overview</a></p>
-  <p><a href="module2.html">Next up: Module 2 — Business Ownership, Cash Management &amp; Debt →</a></p>
+  <p><a href="module2.html">Next up: Module 2 — Cash Management, Debt &amp; Business Ownership →</a></p>
 </main>
 
 <footer><div class="wrap"><p>FPQP® Visual Academy v1 · <a href="index.html">Home</a></p></div></footer>
 
 <script>
+window.MATCHERS = {
+  planAreas:{ pairs:[
+    ["Cash flow &amp; debt management","Does more come in than goes out, and is borrowing helping or hurting?"],
+    ["Risk management &amp; insurance","What events could derail everything, and who bears that cost?"],
+    ["Investment planning","How should assets be allocated to fund goals at tolerable risk?"],
+    ["Tax planning","How can timing, character &amp; location of income cut lifetime tax?"],
+    ["Retirement planning","Will assets support the client once earned income stops?"],
+    ["Estate planning","How does property transfer — to whom, at what cost, under whose control?"]
+  ]},
+  biases:{ pairs:[
+    ["Anchoring","Fixating on a reference number like a purchase price or market peak"],
+    ["Loss aversion","Losses hurt about twice as much as equivalent gains please"],
+    ["Confirmation","Seeking information that supports an existing belief"],
+    ["Recency","Overweighting recent events — chasing rallies, fleeing after crashes"],
+    ["Mental accounting","Treating money differently by arbitrary category"],
+    ["Overconfidence","Overestimating one's own knowledge or forecasting ability"],
+    ["Status quo","Preferring inaction — never rebalancing, stale beneficiaries"]
+  ]},
+  ethics:{ pairs:[
+    ["Integrity","Honesty in all dealings; no subordination to personal gain"],
+    ["Objectivity","Intellectual honesty and impartiality in judgment"],
+    ["Competence","Maintain the skill to do the work — and decline what you can't"],
+    ["Fairness","Disclose conflicts; balance interests fairly"],
+    ["Confidentiality","Protect client information; disclose only with consent or legal compulsion"],
+    ["Diligence","Timely, thorough service and appropriate supervision"]
+  ]},
+  regulators:{ pairs:[
+    ["SEC","Investment advisers ~$100M+ AUM; securities markets generally"],
+    ["State securities regulators","Investment advisers below the SEC threshold"],
+    ["FINRA","Self-regulatory org overseeing broker-dealers &amp; registered reps"],
+    ["State insurance departments","Insurance producers, products, and company solvency"],
+    ["CFP Board","Enforces its Code &amp; Standards against CFP® certificants"],
+    ["DOL","Fiduciary conduct for ERISA-covered retirement plans"]
+  ]}
+};
+
+window.SORTERS = {
+  goalHorizon:{ buckets:[
+    {id:"short",label:"Short (under 1 yr)",color:"--m5"},
+    {id:"inter",label:"Intermediate (1–5 yr)",color:"--m3"},
+    {id:"long",label:"Long (5+ yr)",color:"--m7"}
+  ], items:[
+    {text:"Building a 3-month emergency reserve", bucket:"short", why:"Under a year — keep it stable and liquid."},
+    {text:"Paying off a credit card this year", bucket:"short", why:"Short-term goal; no time to risk the money."},
+    {text:"A home down payment in 3 years", bucket:"inter", why:"1–5 years — certainty of principal matters more than return."},
+    {text:"Saving for a wedding in 2 years", bucket:"inter", why:"Intermediate horizon."},
+    {text:"Buying a car in 4 years", bucket:"inter", why:"1–5 years out."},
+    {text:"Retirement 30 years away", bucket:"long", why:"5+ years — can accept volatility for expected return."},
+    {text:"A newborn's college fund", bucket:"long", why:"~18-year horizon; long-term, equity-appropriate early on."}
+  ]},
+  scope:{ buckets:[
+    {id:"ok",label:"Paraplanner may do",color:"--m6"},
+    {id:"refer",label:"Must refer to a licensed pro",color:"--m5"}
+  ], items:[
+    {text:"Gather facts and documents for step 1", bucket:"ok", why:"Data-gathering is core paraplanner work."},
+    {text:"Identify that a client needs a will", bucket:"ok", why:"Identifying the need is fine — drafting is not."},
+    {text:"Run a retirement-needs projection", bucket:"ok", why:"Analysis and calculation are in scope."},
+    {text:"Draft a will or trust", bucket:"refer", why:"Drafting legal documents is the attorney's work — UPL otherwise."},
+    {text:"Prepare and sign a tax return", bucket:"refer", why:"That's the CPA's or enrolled agent's role."},
+    {text:"Sell a securities or insurance product", bucket:"refer", why:"Requires the applicable registration or license."},
+    {text:"Give individualized investment advice for a fee", bucket:"refer", why:"Implicates investment-adviser registration."}
+  ]},
+  counseling:{ buckets:[
+    {id:"nd",label:"Nondirective (draw out)",color:"--m1"},
+    {id:"d",label:"Directive (guide)",color:"--m7"}
+  ], items:[
+    {text:"Active listening", bucket:"nd", why:"Full attention to content and feeling — nondirective."},
+    {text:"Open-ended questioning", bucket:"nd", why:"Questions that can't be answered yes/no draw the client out."},
+    {text:"Paraphrasing / restating", bucket:"nd", why:"Reflecting content back is a nondirective skill."},
+    {text:"Reflecting feeling", bucket:"nd", why:"Naming the emotion beneath the content — nondirective."},
+    {text:"Using silence", bucket:"nd", why:"Allowing a pause so the client fills it — nondirective."},
+    {text:"Advising / recommending", bucket:"d", why:"Stating the recommended course and reasoning — directive."},
+    {text:"Confronting a contradiction", bucket:"d", why:"Respectfully naming a gap between goals and behavior — directive."},
+    {text:"Informing / educating", bucket:"d", why:"Supplying knowledge the client lacks — directive."}
+  ]},
+  dataKind:{ buckets:[
+    {id:"quant",label:"Quantitative",color:"--m4"},
+    {id:"qual",label:"Qualitative",color:"--m10"}
+  ], items:[
+    {text:"Annual income and account balances", bucket:"quant", why:"Countable facts — quantitative."},
+    {text:"Ages and insurance coverage amounts", bucket:"quant", why:"Numbers — quantitative."},
+    {text:"Last year's tax return", bucket:"quant", why:"A document full of countable facts."},
+    {text:"Risk tolerance and attitude toward debt", bucket:"qual", why:"Feelings and dispositions — qualitative."},
+    {text:"Family dynamics and health", bucket:"qual", why:"Context numbers don't carry — qualitative."},
+    {text:"Dreams, fears, and what money is 'for'", bucket:"qual", why:"Values — qualitative, and often decisive."}
+  ]}
+};
+
+window.REVEALS = {
+  compModels:{ cols:2, items:[
+    {front:"🧾 Fee-only", back:"Client pays directly (hourly, flat, retainer, or % of AUM). Watch: AUM fees can discourage recommending debt paydown or annuitization, which shrink assets under management."},
+    {front:"🏷️ Commission", back:"Paid by the product provider on a sale. Watch: incentive toward products that pay — and toward transacting."},
+    {front:"🌗 Fee-based / fee-and-commission", back:"A combination of both. Watch: the client may not understand which hat the adviser is wearing at a given moment."},
+    {front:"💼 Salary", back:"Paid by an employer. Watch: the employer's sales targets can still flow through to the advice."}
+  ]},
+  domains:{ cols:3, items:[
+    {front:"💵 Cash management &amp; debt (M2)", back:"The foundation — everything else is funded from cash flow. Read a balance sheet and cash-flow statement; evaluate liquidity, reserves, and credit costs."},
+    {front:"⏱️ Time value of money (M3)", back:"The computational engine. FV, PV, solving for rate/payment/periods — retirement needs, education funding, loan comparisons are all TVM."},
+    {front:"🛡️ Risk management &amp; insurance (M4–5)", back:"Identify exposures that could destroy a plan, then avoid, retain, reduce, or transfer each. Usually precedes wealth accumulation."},
+    {front:"📈 Investments (M6)", back:"Asset classes, risk/return, diversification, allocation, and the vehicles to implement it. Needs inputs from goals, cash flow, and tax."},
+    {front:"🌴 Retirement (M7)", back:"Project resources needed once income stops, plus the vehicles and distribution-phase risks. Sits at the intersection of TVM, investments, and tax."},
+    {front:"🧾 Tax (M8)", back:"How income is taxed and what reduces it. Not standalone — it modifies nearly every recommendation. Always ask: what's the after-tax outcome?"},
+    {front:"📜 Estate planning (M9)", back:"How property transfers at death or incapacity. Beneficiary designations and titling override a will, cost nothing to review, and are widely neglected."}
+  ]},
+  fiduciaryDuties:{ cols:3, items:[
+    {front:"🤝 Duty of loyalty", back:"The client's interest governs; conflicts must be avoided, or fully disclosed and managed."},
+    {front:"🩺 Duty of care", back:"Act with the care, skill, prudence, and diligence a prudent professional would use in the circumstances."},
+    {front:"📋 Duty to follow instructions", back:"Comply with the client's reasonable and lawful directions."}
+  ]}
+};
+
+window.ORDERS = {
+  sevenSteps:{ steps:[
+    "1 · Understand the client's circumstances",
+    "2 · Identify &amp; select goals",
+    "3 · Analyze current course &amp; alternatives",
+    "4 · Develop the recommendations",
+    "5 · Present the recommendations",
+    "6 · Implement",
+    "7 · Monitor &amp; update"
+  ]}
+};
+
 window.QUIZ = { id:"m1", questions:[
- {q:"Which is the FIRST step of the financial planning process?", opts:["Identify and select goals","Understand the client's personal and financial circumstances","Develop recommendations","Implement the plan"], a:1, why:"You must understand the client before anything else — facts AND feelings come first."},
- {q:"A client says: ‘I want $500,000 for retirement in 20 years.’ Which PTA element is present in ‘in 20 years’?", opts:["Purpose","Time frame","Amount","Attitude"], a:1, why:"PTA = Purpose, Time frame, Amount. ‘In 20 years’ is the Time frame."},
+ {q:"Which is the FIRST step of the financial planning process?", opts:["Identify and select goals","Understand the client's personal and financial circumstances","Develop recommendations","Implement the plan"], a:1, why:"You must understand the client — facts AND feelings — before anything else."},
+ {q:"A workable goal specifies four things. Which does the book add beyond 'what, how much, and when'?", opts:["Priority","Profit","Product","Provider"], a:0, why:"What, How much, When, and PRIORITY — because goals compete for the same dollars."},
+ {q:"A client is emotionally fine with big swings, but a 25% loss would force a 10-year retirement delay. Planning should follow…", opts:["risk tolerance","risk capacity","the client's mood","the highest expected return"], a:1, why:"Tolerance is high but capacity is low. Respect the LOWER of the two — the client can't financially absorb the loss.", trap:"'They said they're comfortable with risk' points you to tolerance — but capacity is the binding constraint here."},
  {q:"A client's risk tolerance and family values are examples of what kind of data?", opts:["Quantitative","Qualitative","Regulatory","Fiduciary"], a:1, why:"Qualitative = qualities and feelings. Quantitative = countable numbers."},
- {q:"Under current rules, what standard applies when a broker-dealer recommends a security to a retail customer?", opts:["Suitability only","Regulation Best Interest","No standard applies","The prudent man rule only"], a:1, why:"Since June 2020, Reg BI replaced plain suitability for broker-dealer recommendations to retail customers.", trap:"“Suitability only” is the old-book answer. It was replaced by Reg BI in 2020 — a tempting but outdated choice."},
- {q:"Which compensation model has NO product commissions at all?", opts:["Fee-based","Commission","Fee-only","Hybrid"], a:2, why:"Fee-ONLY means only client-paid fees. Fee-BASED can include commissions — the classic trap.", trap:"“Fee-based” looks almost identical to “fee-only” but can still earn commissions. The exam relies on you rushing past that."},
- {q:"A CFP® professional giving financial advice must act as a ________ at all times.", opts:["salesperson","fiduciary","broker","registered representative"], a:1, why:"CFP Board's Code and Standards requires fiduciary duty at ALL times when giving financial advice."},
- {q:"Which organization is the self-regulator for broker-dealers?", opts:["SEC","NAIC","FINRA","IRS"], a:2, why:"FINRA oversees broker-dealers and their reps. The SEC is the federal regulator; NAIC coordinates state insurance regulators."},
- {q:"Which of Reg BI's four obligations requires firms to have policies and procedures to enforce the rule?", opts:["Disclosure","Care","Conflict of Interest","Compliance"], a:3, why:"Disclosure, Care, Conflicts, Compliance — Compliance is the firm-level policies obligation."},
- {q:"A client forms a rational view but won't update it as new information arrives. This is a…", opts:["emotional bias","cognitive error (conservatism bias)","fiduciary breach","liquidity problem"], a:1, why:"Failing to revise a view with new facts is conservatism bias — a cognitive error, which education and coaching can help fix."},
- {q:"Which type of bias generally must be ACCOMMODATED rather than corrected?", opts:["Cognitive errors","Emotional biases","Information-processing errors","Memory errors"], a:1, why:"Emotional biases come from feelings and impulses, so they're harder to overcome — often the planner works around them."},
- {q:"Which is one of the six FPQP® Code of Ethics principles?", opts:["Profitability","Confidentiality","Aggressiveness","Salesmanship"], a:1, why:"The six: Fiduciary Duty, Integrity, Competence, Diligence, Professionalism, and Confidentiality."},
- {q:"During data-gathering, open-ended questions are preferred because they…", opts:["can be answered yes or no","get answers in the client's own words","are faster to score","avoid emotional topics"], a:1, why:"Open-ended questions draw out the client's own words and feelings; closed-end yes/no questions shut the conversation down."}
+ {q:"Why does the planning process loop rather than end at step 7?", opts:["Regulators require it","Client circumstances, goals, markets, and tax law change","It never actually loops","To bill more hours"], a:1, why:"Monitoring detects change and returns to step 1 with updated information, keeping the plan aligned with reality."},
+ {q:"At which step are goals PRIORITIZED, and why does it matter there?", opts:["Step 3, so analysis is faster","Step 2, so step 3's analysis knows which goals give way","Step 5, during the presentation","Step 6, at implementation"], a:1, why:"Prioritization must precede analysis: when resources can't fund every goal, step 3 needs to know which yields."},
+ {q:"Which compensation model has NO product commissions at all?", opts:["Fee-based","Commission","Fee-only","Salary"], a:2, why:"Fee-ONLY means only client-paid fees. Fee-BASED can include commissions — the classic trap.", trap:"'Fee-based' looks almost identical to 'fee-only' but can still earn commissions. The exam relies on you rushing past that."},
+ {q:"Why is cash management treated as foundational relative to other planning domains?", opts:["It's the easiest to learn","Every other recommendation is funded from cash flow","Regulators start there","It has the most math"], a:1, why:"Without positive cash flow and adequate reserves, premiums lapse and contributions stop — other recommendations aren't sustainable."},
+ {q:"A client asks the paraplanner to draft a 'simple' will. The correct response is to…", opts:["draft it since it's simple","decline and refer to an attorney","refer to a CPA","draft it but not sign it"], a:1, why:"Drafting legal documents is the unauthorized practice of law regardless of simplicity. Identify the need and refer to counsel."},
+ {q:"A client refuses to sell a stock down 40% until it 'gets back to what I paid.' Which pair of biases is operating?", opts:["Herding and recency","Anchoring and loss aversion","Overconfidence and framing","Confirmation and availability"], a:1, why:"Anchoring on the purchase price plus loss aversion — realizing the loss feels worse than continuing to hold."},
+ {q:"Which type of bias generally must be ACCOMMODATED rather than corrected?", opts:["Cognitive errors","Emotional biases","Information-processing errors","Memory errors"], a:1, why:"Emotional biases come from feelings and impulses, so they're harder to overcome — the planner often works around them.", trap:"Cognitive errors are the teachable ones. Emotional biases are the 'accommodate' answer."},
+ {q:"Why are nondirective skills used in step 1 but directive skills in step 5?", opts:["Step 1 gathers accurate info (directing biases it); step 5 needs guidance to act","It's the reverse — directive first","Both steps use only directive skills","Nondirective skills are never used"], a:0, why:"Directing during data-gathering contaminates what the client reveals; the presentation needs the planner to guide, not survey."},
+ {q:"Under a FIDUCIARY standard, recommending the pricier of two near-identical funds BECAUSE it pays you a commission is…", opts:["fine if the fund is suitable","a breach of the duty of loyalty","required disclosure","only a problem for brokers"], a:1, why:"Fiduciary duty puts the client first. Suitability might tolerate it; fiduciary loyalty does not.", trap:"Under mere SUITABILITY it could be defensible — but the question specifies the fiduciary standard."},
+ {q:"Which statute imposes fiduciary duty on registered investment advisers?", opts:["Securities Act of 1933","Securities Exchange Act of 1934","Investment Advisers Act of 1940","Gramm-Leach-Bliley Act"], a:2, why:"The Investment Advisers Act of 1940 governs adviser registration and fiduciary duty."},
+ {q:"Form ADV is best described as…", opts:["a securities trade confirmation","the adviser's registration and primary client disclosure document","an insurance application","a tax return schedule"], a:1, why:"Form ADV discloses services, fees, conflicts, disciplinary history, and business practices, delivered to clients."},
+ {q:"Which organization is the self-regulatory body for broker-dealers and their reps?", opts:["SEC","NAIC","FINRA","DOL"], a:2, why:"FINRA oversees broker-dealers. The SEC is the federal regulator; the DOL handles ERISA fiduciary conduct."}
 ]};
 </script>
 <script src="js/app.js"></script>

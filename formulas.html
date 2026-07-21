@@ -4,6 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Formula Sheet — FPQP® Visual Academy</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/gate.js"></script>
 <style>
 body{--accent:var(--m3);--accent-soft:var(--m3s)}
 .formula{font-family:Georgia,serif;font-size:1.2rem;background:var(--accent-soft);color:var(--accent);
@@ -25,52 +26,77 @@ body{--accent:var(--m3);--accent-soft:var(--m3s)}
 
   <h2>⏳ Time value of money</h2>
   <table>
-    <tr><th>Concept</th><th>Formula</th><th>Use it when…</th></tr>
-    <tr><td><strong>Future value</strong></td><td><span class="formula">FV = PV × (1 + i)ⁿ</span></td><td>Growing one lump sum forward.</td></tr>
-    <tr><td><strong>Present value</strong></td><td><span class="formula">PV = FV ÷ (1 + i)ⁿ</span></td><td>Discounting a future amount back to today.</td></tr>
-    <tr><td><strong>Rule of 72</strong></td><td><span class="formula">years to double ≈ 72 ÷ rate</span></td><td>Fast mental estimate of doubling time.</td></tr>
-    <tr><td><strong>Periodic rate</strong></td><td><span class="formula">i = annual rate ÷ periods; n = years × periods</span></td><td>Any non-annual compounding (÷12 for monthly).</td></tr>
-    <tr><td><strong>Effective annual rate</strong></td><td><span class="formula">EAR = (1 + i/m)ᵐ − 1</span></td><td>Comparing rates with different compounding.</td></tr>
+    <tr><th>Concept</th><th>Formula</th><th>Plain English / worked example</th></tr>
+    <tr><td><strong>Future value (lump sum)</strong></td><td><span class="formula">FV = PV × (1 + i)ⁿ</span></td><td>Growing one deposit forward. $25,000 at 7% for 12 years annually → <strong>$56,304.79</strong>.</td></tr>
+    <tr><td><strong>Present value (lump sum)</strong></td><td><span class="formula">PV = FV ÷ (1 + i)ⁿ</span></td><td>Discounting a future amount back to today. Need $80,000 in 6 yrs at 5% → deposit <strong>$59,697.23</strong> now.</td></tr>
+    <tr><td><strong>FV of an ordinary annuity</strong></td><td><span class="formula">FV = PMT × [((1+i)ⁿ − 1) ÷ i]</span></td><td>Saving $500/mo for 30 yrs at 6% (monthly) → <strong>$502,257.52</strong> (only ~36% of that is your own contributions).</td></tr>
+    <tr><td><strong>PV of an ordinary annuity</strong></td><td><span class="formula">PV = PMT × [(1 − (1+i)⁻ⁿ) ÷ i]</span></td><td>Wanting $40,000/yr for 25 retirement years at 5% → need <strong>$563,757.78</strong> at the start.</td></tr>
+    <tr><td><strong>Annuity due (either direction)</strong></td><td><span class="formula">ordinary-annuity result × (1 + i)</span></td><td>Payments at the START of the period (rent, leases) are always worth more than the same ordinary annuity.</td></tr>
+    <tr><td><strong>Rule of 72</strong></td><td><span class="formula">years to double ≈ 72 ÷ rate</span></td><td>Fast mental estimate. At 8%: 72 ÷ 8 = 9 yrs (precise answer is 9.01 yrs).</td></tr>
+    <tr><td><strong>Periodic rate &amp; periods</strong></td><td><span class="formula">i = annual rate ÷ periods per yr; n = years × periods per yr</span></td><td>6% annual, monthly compounding, 30 yrs → i = 0.5, n = 360. Convert BOTH or neither — a classic slip.</td></tr>
+    <tr><td><strong>Effective annual rate (EAR)</strong></td><td><span class="formula">EAR = (1 + i/m)ᵐ − 1</span></td><td>Comparing rates with different compounding frequencies apples-to-apples.</td></tr>
   </table>
-  <p><a href="module3.html#sec-the-money-time-machine">Try the interactive TVM calculator in Module 3 →</a></p>
+  <p><a href="module3.html">Try the interactive TVM calculator in Module 3 →</a></p>
 
   <div class="callout memory"><span class="ico">📄</span><div><strong>Provided on the exam:</strong> the CFFP exam gives you a formula sheet — the ones marked <span class="formula" style="font-size:1rem">📄 given</span> below are on it, so focus your memorizing on the rest (like the Rule of 72 and the ratios).</div></div>
 
   <h2>📐 Cash-flow &amp; debt ratios</h2>
   <table>
-    <tr><th>Ratio</th><th>Formula</th><th>Limit</th></tr>
-    <tr><td><strong>Basic liquidity ratio</strong></td><td><span class="formula">liquid assets ÷ monthly expenses</span></td><td>3–6 months</td></tr>
-    <tr><td><strong>Housing (front-end)</strong></td><td><span class="formula">PITI ÷ gross monthly income</span></td><td>≤ 28%</td></tr>
-    <tr><td><strong>Total debt (back-end)</strong></td><td><span class="formula">all debt payments ÷ gross monthly income</span></td><td>≤ 36%</td></tr>
-    <tr><td><strong>Consumer debt</strong></td><td><span class="formula">non-housing debt ÷ NET income</span></td><td>≤ 20%</td></tr>
+    <tr><th>Ratio</th><th>Formula</th><th>Limit / worked example</th></tr>
+    <tr><td><strong>Basic liquidity ratio</strong></td><td><span class="formula">liquid assets ÷ monthly non-discretionary outflows</span></td><td>3–6 months. $18,000 ÷ $5,200 = <strong>3.5 months</strong>.</td></tr>
+    <tr><td><strong>Current ratio</strong></td><td><span class="formula">current assets ÷ current liabilities</span></td><td>Below 1.0 = can't cover this year's bills from this year's liquid resources.</td></tr>
+    <tr><td><strong>Savings ratio</strong></td><td><span class="formula">(savings + employer match) ÷ gross income</span></td><td>10–20%+, rising the later you start. $760 ÷ $9,500 = <strong>8.0%</strong> (below target).</td></tr>
+    <tr><td><strong>Housing (front-end)</strong></td><td><span class="formula">PITI ÷ gross monthly income</span></td><td>≤ 28%. $2,400 ÷ $9,500 = <strong>25.3%</strong>.</td></tr>
+    <tr><td><strong>Total debt (back-end)</strong></td><td><span class="formula">all debt payments ÷ gross monthly income</span></td><td>≤ 36%. $3,300 ÷ $9,500 = <strong>34.7%</strong>.</td></tr>
+    <tr><td><strong>Consumer debt</strong></td><td><span class="formula">non-housing debt ÷ NET income</span></td><td>≤ 20% (under 10% preferred). $900 ÷ $7,100 = <strong>12.7%</strong>.</td></tr>
+    <tr><td><strong>Debt-to-total-assets</strong></td><td><span class="formula">total liabilities ÷ total assets</span></td><td>A leverage measure — naturally high when young, should fall with age.</td></tr>
   </table>
-  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Watch the switch:</strong> the 20% consumer-debt ratio uses <strong>net</strong> (take-home) income, while 28/36 use <strong>gross</strong>.</div></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Watch the switch:</strong> the 20% consumer-debt ratio uses <strong>net</strong> (take-home) income, while the front-end/back-end/savings ratios use <strong>gross</strong>.</div></div>
 
   <h2>☂️ Insurance math</h2>
   <table>
-    <tr><th>Concept</th><th>Formula</th><th>Use it when…</th></tr>
-    <tr><td><strong>Coinsurance (80% rule)</strong></td><td><span class="formula">payout = (carried ÷ required) × loss</span></td><td>Home insured below 80% of replacement cost.</td></tr>
-    <tr><td><strong>Actual cash value</strong></td><td><span class="formula">ACV = replacement cost − depreciation</span></td><td>Older property claims without RC coverage.</td></tr>
-    <tr><td><strong>Human life value</strong></td><td><span class="formula">PV of future earnings</span></td><td>Sizing life insurance by lost income.</td></tr>
+    <tr><th>Concept</th><th>Formula</th><th>Plain English / worked example</th></tr>
+    <tr><td><strong>Coinsurance (80% rule)</strong></td><td><span class="formula">payout = (carried ÷ required) × loss</span></td><td>$400k replacement cost home carrying only $240k (required $320k), $60,000 loss → $60,000 × ($240k÷$320k) = <strong>$45,000</strong> paid, client eats the rest.</td></tr>
+    <tr><td><strong>Actual cash value</strong></td><td><span class="formula">ACV = replacement cost − depreciation</span></td><td>What older-property claims and auto comp/collision settle at — no bonus for a brand-new replacement.</td></tr>
+    <tr><td><strong>Needs-based life insurance</strong></td><td><span class="formula">Need = Total needs − Available resources</span></td><td>Final expenses + debt + PV of income replacement + education + reserve, minus existing coverage &amp; assets. Whitfield case: <strong>≈$850,000</strong> shortfall for Marcus.</td></tr>
+    <tr><td><strong>Human life value (quick estimate)</strong></td><td><span class="formula">PV of future earnings, net of taxes &amp; self-consumption</span></td><td>A rough alternative to the needs-based method — simpler, less precise.</td></tr>
+    <tr><td><strong>Disability benefit, after-tax</strong></td><td><span class="formula">gross benefit × (1 − effective tax rate)</span></td><td>Employer-paid group LTD is taxable: a "60% benefit" at a 22% rate nets roughly <strong>47%</strong> of gross pay, not 60%.</td></tr>
+    <tr><td><strong>Health-plan worst case</strong></td><td><span class="formula">deductible + out-of-pocket max = total exposure</span></td><td>$3,000 deductible + $7,000 OOP max plan on $60,000 of charges → insured pays exactly <strong>$7,000</strong>, plan pays $53,000.</td></tr>
+    <tr><td><strong>Annuity exclusion ratio</strong></td><td><span class="formula">investment in contract ÷ expected total return</span></td><td>$90,000 basis, $1,000/mo for 20 yrs (expected return $240,000) → exclusion ratio 37.5%; <strong>$375</strong> of each payment is tax-free, $625 taxable.</td></tr>
   </table>
 
   <h2>📈 Investment &amp; return math</h2>
   <table>
-    <tr><th>Concept</th><th>Formula</th><th>Use it when…</th></tr>
-    <tr><td><strong>Tax-adjusted return</strong> <span class="formula" style="font-size:.85rem">📄 given</span></td><td><span class="formula">return × (1 − tax rate)</span></td><td>Comparing taxable investment outcomes.</td></tr>
-    <tr><td><strong>Inflation-adjusted (real) return</strong> <span class="formula" style="font-size:.85rem">📄 given</span></td><td><span class="formula">[(1 + return) ÷ (1 + inflation)] − 1</span></td><td>Finding true purchasing-power growth.</td></tr>
-    <tr><td><strong>Tax- &amp; inflation-adjusted return</strong> <span class="formula" style="font-size:.85rem">📄 given</span></td><td><span class="formula">[(1 + tax-adj. return) ÷ (1 + inflation)] − 1</span></td><td>Real return after taxes AND inflation.</td></tr>
-    <tr><td><strong>Taxable-equivalent yield</strong></td><td><span class="formula">muni rate ÷ (1 − tax bracket)</span></td><td>Comparing muni bonds to taxable bonds.</td></tr>
-    <tr><td><strong>Risk-adjusted return (Treynor-style)</strong></td><td><span class="formula">total return ÷ beta</span></td><td>Return per unit of market (systematic) risk.</td></tr>
-    <tr><td><strong>Sharpe ratio</strong></td><td><span class="formula">(return − risk-free) ÷ std. deviation</span></td><td>Return earned per unit of total risk.</td></tr>
+    <tr><th>Concept</th><th>Formula</th><th>Plain English / worked example</th></tr>
+    <tr><td><strong>Total return (stock)</strong></td><td><span class="formula">(ending value − beginning value + income) ÷ beginning value</span></td><td>Bought at $50, $2 dividend, ends at $54 → ($54−$50+$2)÷$50 = <strong>12.0%</strong> (price-only would show just 8%).</td></tr>
+    <tr><td><strong>Tax-adjusted return</strong> <span class="formula" style="font-size:.85rem">📄 given</span></td><td><span class="formula">return × (1 − tax rate)</span></td><td>9% return at a 22% rate → <strong>7.02%</strong> after tax.</td></tr>
+    <tr><td><strong>Inflation-adjusted (real) return</strong> <span class="formula" style="font-size:.85rem">📄 given</span></td><td><span class="formula">[(1 + return) ÷ (1 + inflation)] − 1</span></td><td>7% nominal, 3% inflation → exact real rate = <strong>3.88%</strong> (not the sloppy "7−3=4%" shortcut).</td></tr>
+    <tr><td><strong>Tax- &amp; inflation-adjusted return</strong> <span class="formula" style="font-size:.85rem">📄 given</span></td><td><span class="formula">[(1 + tax-adj. return) ÷ (1 + inflation)] − 1</span></td><td>9% nominal, 22% tax, 3% inflation → 7.02% after tax → <strong>3.90%</strong> real. The headline 9% delivers under 4% of real purchasing power.</td></tr>
+    <tr><td><strong>Taxable-equivalent yield</strong></td><td><span class="formula">muni rate ÷ (1 − tax bracket)</span></td><td>3.5% muni, 32% bracket → 3.5%÷0.68 = <strong>5.15%</strong> taxable-equivalent.</td></tr>
+    <tr><td><strong>Current yield (bond)</strong></td><td><span class="formula">annual coupon ÷ current market price</span></td><td>5% coupon ($50/yr) on a $1,000 bond trading at $900 → $50÷$900 = <strong>5.56%</strong> (trading at a discount).</td></tr>
+    <tr><td><strong>Sharpe ratio</strong></td><td><span class="formula">(return − risk-free rate) ÷ std. deviation</span></td><td>Excess return per unit of TOTAL risk. Fund A: 12%/20% SD, risk-free 3% → 0.45. Fund B: 9%/10% SD → 0.60 — <strong>Fund B wins</strong> risk-adjusted despite the lower raw return.</td></tr>
+    <tr><td><strong>Treynor ratio</strong></td><td><span class="formula">(return − risk-free rate) ÷ beta</span></td><td>Same idea using beta — excess return per unit of SYSTEMATIC risk; use for one holding inside a diversified portfolio.</td></tr>
+    <tr><td><strong>Net asset value (NAV)</strong></td><td><span class="formula">(fund assets − fund liabilities) ÷ shares outstanding</span></td><td>Computed once daily; mutual fund orders fill at the NEXT computed NAV ("forward pricing").</td></tr>
   </table>
 
   <h2>🧾 Tax &amp; retirement</h2>
   <table>
-    <tr><th>Concept</th><th>Formula</th><th>Use it when…</th></tr>
-    <tr><td><strong>Effective tax rate</strong></td><td><span class="formula">total tax ÷ total income</span></td><td>Always lower than the marginal (top) rate.</td></tr>
-    <tr><td><strong>Required minimum distribution</strong> <span class="formula" style="font-size:.85rem">📄 given</span></td><td><span class="formula">prior 12/31 account balance ÷ life-expectancy factor</span></td><td>Yearly RMD once you reach age 73 / 75.</td></tr>
+    <tr><th>Concept</th><th>Formula</th><th>Plain English / worked example</th></tr>
+    <tr><td><strong>Effective tax rate</strong></td><td><span class="formula">total tax ÷ total income</span></td><td>Always lower than the marginal (top) rate. $8,260 tax on $60,000 income = <strong>13.77%</strong> effective vs. a 22% marginal bracket.</td></tr>
+    <tr><td><strong>Credit vs. deduction value</strong></td><td><span class="formula">credit = full $ value; deduction = $ × marginal rate</span></td><td>At 22%: a $1,000 credit saves <strong>$1,000</strong>; a $1,000 deduction saves only <strong>$220</strong>.</td></tr>
+    <tr><td><strong>The AGI flow</strong></td><td><span class="formula">Gross income − adjustments = AGI; AGI − std/itemized ded. − QBI = taxable income</span></td><td>AGI is a gatekeeper — it drives IRA/Roth eligibility, NIIT, IRMAA, and dozens of phaseouts.</td></tr>
+    <tr><td><strong>Capital gain / loss</strong></td><td><span class="formula">amount realized − adjusted basis</span></td><td>Sold at $46,800 (net), basis $28,150 → <strong>$18,650</strong> long-term gain.</td></tr>
+    <tr><td><strong>Required minimum distribution</strong> <span class="formula" style="font-size:.85rem">📄 given</span></td><td><span class="formula">prior 12/31 balance ÷ life-expectancy factor</span></td><td>Yearly RMD once you reach age 73 or 75, depending on birth year.</td></tr>
+    <tr><td><strong>Provisional income (Social Security)</strong></td><td><span class="formula">AGI + tax-exempt interest + 50% of Social Security benefits</span></td><td>Compared to thresholds to find how much of SS (0/50/85%) is taxable. Muni interest is added back — it doesn't shelter this.</td></tr>
   </table>
+
+  <h2>🏰 Estate &amp; transfer math</h2>
+  <table>
+    <tr><th>Concept</th><th>Formula</th><th>Plain English / worked example</th></tr>
+    <tr><td><strong>Taxable estate</strong></td><td><span class="formula">gross estate − debts/admin costs − marital ded. − charitable ded.</span></td><td>Add back post-1976 adjusted taxable gifts, then apply rates and the unified credit.</td></tr>
+    <tr><td><strong>Step-up in basis</strong></td><td><span class="formula">new basis = fair market value at date of death</span></td><td>A $50,000 asset worth $400,000 at death passes with a <strong>$400,000</strong> basis — lifetime gain escapes income tax entirely.</td></tr>
+    <tr><td><strong>Gift-tax annual exclusion</strong></td><td><span class="formula">gifts above the exclusion draw down the lifetime exemption</span></td><td>Unused annual exclusions don't carry over — "use it or lose it" every year.</td></tr>
+</table>
 
   <div class="callout cheer"><span class="ico">🌟</span><div>Memorize the <em>shapes</em>, not just the symbols. On exam day you'll recognize which picture the question is asking for — and the rest is button-pushing. 💛</div></div>
 

@@ -4,6 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Module 8 — Tax Implications of Financial Decisions</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/gate.js"></script>
 <style>body{--accent:var(--m8);--accent-soft:var(--m8s)}</style>
 </head>
 <body>
@@ -12,8 +13,8 @@
   <div class="wrap">
     <div class="kicker">Module 8 of 10 — updated with 2026 figures ✨</div>
     <h1>🧾 Tax Implications of Financial Decisions</h1>
-    <p class="lead">Taxes feel like a maze — until you see the flow. <strong>Income enters at the top, and each floor of the building takes its slice.</strong> Here's the whole system, drawn.</p>
-    <div><span class="badge">The income tax flow</span><span class="badge">Brackets (2026)</span><span class="badge">Capital gains</span><span class="badge">Deductions vs. credits</span></div>
+    <p class="lead">Tax isn't a standalone topic — it modifies the outcome of <em>every</em> recommendation in every other module. Learn to ask one question of everything: <strong>what's the after-tax result?</strong> Then watch the maze turn into a flow.</p>
+    <div><span class="badge">Income &amp; rate types</span><span class="badge">The 1040 flow</span><span class="badge">Basis &amp; capital gains</span><span class="badge">Benefits &amp; retirement income</span><span class="badge">Recordkeeping</span><span class="badge">Planning strategies</span></div>
   </div>
 </header>
 
@@ -23,18 +24,30 @@
     <a class="tag" href="concepts.html">tax brackets</a>
     <a class="tag" href="concepts.html">deductions vs credits</a>
     <a class="tag" href="concepts.html">capital gains</a>
+    <a class="tag" href="concepts.html">basis &amp; step-up</a>
     <a class="tag" href="number-bank.html">2026 figures</a>
   </div>
 
-  <h2>🏗️ The income tax waterfall</h2>
-  <div class="step-flow">
-    <div class="step"><div class="step-num">1</div><div><h4>💵 Gross income</h4><p>Everything taxable: wages, interest, business income, capital gains…</p></div></div>
-    <div class="step"><div class="step-num">2</div><div><h4>➖ Adjustments (“above-the-line”)</h4><p>Deductible IRA/HSA contributions, student loan interest, etc. → gives you <strong>AGI</strong>.</p></div></div>
-    <div class="step"><div class="step-num">3</div><div><h4>➖ Standard OR itemized deduction</h4><p>2026 standard deduction: <strong>$16,100 single · $32,200 married filing jointly · $24,150 head of household</strong>. Itemize only if bigger.</p></div></div>
-    <div class="step"><div class="step-num">4</div><div><h4>= Taxable income → apply the brackets</h4><p>Seven rates for 2026: <strong>10, 12, 22, 24, 32, 35, 37%</strong>.</p></div></div>
-    <div class="step"><div class="step-num">5</div><div><h4>➖ Credits → final tax bill</h4><p>Credits cut the TAX itself, dollar for dollar. That's why credits beat deductions.</p></div></div>
+  <div class="chapter-nav">
+    <a href="#c1">8.1 Types of taxes &amp; income</a>
+    <a href="#c2">8.2 Federal tax calculation</a>
+    <a href="#c3">8.3 Property &amp; annuities</a>
+    <a href="#c4">8.4 Employee benefits</a>
+    <a href="#c5">8.5 Recordkeeping</a>
+    <a href="#c6">8.6 Tax planning</a>
   </div>
-  <p class="src">Source: <a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill">IRS: 2026 inflation adjustments (incl. One Big Beautiful Bill changes)</a></p>
+
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>About the numbers:</strong> rates, brackets, and thresholds are <strong>indexed annually</strong> and shift with legislation. The dollar figures here are 2026 — but the book teaches <em>structure</em> over amounts on purpose. Exam windows through March 2026 may still test <strong>2025</strong> tables, so master the mechanics and verify every figure against current IRS pubs.</div></div>
+
+  <!-- ============================ 8.1 ============================ -->
+  <p class="chapter-kicker" id="c1">Chapter 8.1</p>
+
+  <h2>📊 Tax structures: progressive, flat, regressive</h2>
+  <p>Three ways a tax can relate to income. Sort each example into its structure:</p>
+  <div data-sorter="m8structure"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>The standard example of regressivity:</strong> the <strong>Social Security payroll tax</strong> applies only up to an annually indexed <strong>wage base</strong>. A high earner stops paying partway through the year; a lower earner pays on every dollar. The stated rate is flat — the <em>effective</em> burden is regressive. (The Medicare portion has no cap.)</div></div>
+  <details class="selfcheck"><summary>Why is the Social Security payroll tax described as regressive?</summary>
+  <div class="sc-a">It applies only up to an annually indexed wage base, so a high earner pays on a smaller fraction of total income than a lower earner who pays on every dollar. The effective burden falls more heavily on lower incomes despite a flat stated rate.</div></details>
 
   <h2>🪜 Marginal vs. effective: the staircase</h2>
   <figure class="viz">
@@ -48,37 +61,221 @@
         <text x="380" y="238" text-anchor="middle" font-size="12.5" fill="#6B6584">income → each slice is taxed ONLY at its own step's rate</text>
       </g>
     </svg>
-    <figcaption>Entering a higher bracket does NOT raise tax on all your income — only the slice inside that bracket. Your <strong>marginal</strong> rate = the top step you touch; your <strong>effective</strong> rate = total tax ÷ total income (always lower).</figcaption>
+    <figcaption>Entering a higher bracket does NOT raise tax on all your income — only the slice inside that bracket. Your <strong>marginal</strong> rate = the top step you touch; your <strong>effective</strong> rate = total tax ÷ total income (always lower). Seven rates for 2026: <strong>10, 12, 22, 24, 32, 35, 37%</strong>.</figcaption>
   </figure>
-  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> “A raise pushed me into the 24% bracket, so ALL my income is taxed at 24%” — FALSE. Only the dollars inside the 24% band are.</div></div>
-
-  <h2>🎚️ See it stack: drag an income</h2>
-  <p>Slide the income and watch each bracket fill up. Notice your <strong>effective</strong> rate always trails your <strong>marginal</strong> rate — because only the top slice hits the top rate.</p>
+  <div class="card"><h3>🧮 Worked example — $60,000 taxable income</h3>
+    <p style="font-size:14.5px;font-family:monospace;line-height:1.9">10% × $12,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= $1,200.00<br>12% × ($47,000−$12,000) = $4,200.00<br>22% × ($60,000−$47,000) = $2,860.00<br><strong>Total tax = $8,260.00</strong></p>
+    <p style="font-size:14.5px"><strong>Marginal rate: 22%</strong> (the next dollar). <strong>Effective rate:</strong> $8,260 ÷ $60,000 = <strong>13.77%</strong>. Use <em>marginal</em> for decisions about additional income or deductions; use <em>effective</em> to describe the overall burden.</p>
+  </div>
+  <p>Slide an income and watch each bracket fill — the effective rate always trails the marginal rate:</p>
   <div data-taxstack></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> "A raise pushed me into the 24% bracket, so ALL my income is taxed at 24%" — FALSE. Only the dollars inside the 24% band are. This misconception makes people refuse raises and extra work.</div></div>
   <div class="plain-note">Your income fills buckets from the bottom up. Only the money that reaches a higher bucket pays that higher rate — a raise never re-taxes the money below it.</div>
 
-  <h2>⏳ Capital gains: the 1-year stopwatch</h2>
-  <div class="vs">
-    <div class="side" style="border-color:var(--m5);background:var(--m5s)"><h3 style="color:var(--m5)">🏃 Short-term (held ≤ 1 year)</h3><p style="font-size:14.5px">Taxed at your <strong>ordinary income rates</strong> — up to 37%. Ouch.</p></div>
-    <div class="side" style="border-color:var(--m6);background:var(--m6s)"><h3 style="color:var(--m6)">🧘 Long-term (held &gt; 1 year)</h3><p style="font-size:14.5px">Preferential rates: <strong>0%, 15%, or 20%</strong> depending on income. Patience literally pays.</p></div>
-  </div>
+  <h2>🗂️ The three categories of income</h2>
+  <p>The code sorts income into three buckets, and it matters because <strong>losses generally stay in their lane</strong>. Sort each item:</p>
+  <div data-sorter="m8income"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>The passive-loss trap:</strong> a client with a $40,000 passive loss from a rental and $150,000 of wages generally <strong>cannot</strong> use that loss against the wages. Passive losses only offset <strong>passive income</strong>; the excess is suspended and carried forward. <strong>Material participation</strong> is the pivot separating active from passive.</div></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Portfolio nuance:</strong> not all dividends are equal — <strong>qualified</strong> dividends and <strong>long-term</strong> gains get preferential rates; ordinary (nonqualified) dividends and <strong>short-term</strong> gains are taxed at ordinary rates. The short-vs-long line is simply <strong>more than one year</strong>.</div></div>
+  <details class="selfcheck"><summary>Why can't a passive loss offset wage income?</summary>
+  <div class="sc-a">The passive activity loss rules confine passive losses to offsetting passive income. Excess losses are suspended and carried forward, becoming usable against future passive income or generally on a fully taxable disposition of the activity.</div></details>
 
-  <h2>🎯 Deduction vs. credit: which is worth more?</h2>
+  <h2>🎚️ Character, timing &amp; location — the three levers</h2>
+  <p>Essentially <em>all</em> tax planning is one of three levers. Recognizing which lever a strategy pulls beats memorizing strategies one by one — tap each:</p>
+  <div data-reveal="m8levers"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Filing basics:</strong> individuals use the calendar year and the <strong>cash method</strong> (income when received, expenses when paid). Tax is <strong>pay-as-you-go</strong> via withholding or quarterly estimates. The assessment statute is generally <strong>3 years</strong>, <strong>6</strong> for a substantial omission of income, and <strong>unlimited</strong> for fraud or failure to file.</div></div>
+
+  <!-- ============================ 8.2 ============================ -->
+  <p class="chapter-kicker" id="c2">Chapter 8.2</p>
+
+  <h2 id="sec-the-income-tax-waterfall">🏗️ The Form 1040 flow</h2>
+  <p>The individual computation follows a fixed sequence — and knowing the sequence is most of the skill. Each step narrows what's subject to tax. Put the flow in order:</p>
+  <div data-order="m8flow"></div>
+  <div class="step-flow">
+    <div class="step"><div class="step-num">1</div><div><h4>💵 Gross income</h4><p>All income unless specifically excluded.</p></div></div>
+    <div class="step"><div class="step-num">2</div><div><h4>➖ Adjustments → AGI</h4><p>Above-the-line deductions (IRA, HSA, student-loan interest…). <strong>AGI is the gatekeeper.</strong></p></div></div>
+    <div class="step"><div class="step-num">3</div><div><h4>➖ Standard OR itemized (+ QBI)</h4><p>2026 standard deduction: <strong>$16,100 single · $32,200 MFJ · $24,150 HOH</strong>.</p></div></div>
+    <div class="step"><div class="step-num">4</div><div><h4>= Taxable income → brackets</h4><p>Seven rates. LTCG &amp; qualified dividends ride a separate preferential schedule on top.</p></div></div>
+    <div class="step"><div class="step-num">5</div><div><h4>➖ Credits → final bill</h4><p>Credits cut the TAX itself, dollar for dollar.</p></div></div>
+  </div>
+  <p class="src">Source: <a href="https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill">IRS: 2026 inflation adjustments (incl. One Big Beautiful Bill changes)</a></p>
+
+  <h2>👥 Filing status &amp; dependents</h2>
+  <p>Status is set by your situation <strong>on the last day of the tax year</strong> and governs bracket widths, the standard deduction, and many phaseouts. Match each status to its requirement:</p>
+  <div data-match="m8filing"></div>
   <div class="grid c2">
-    <div class="card"><h3>✂️ Deduction</h3><p style="font-size:14.5px">Reduces <strong>taxable income</strong>. A $1,000 deduction saves $1,000 × your bracket (e.g., $220 in the 22% bracket).</p></div>
-    <div class="card tint"><h3>💎 Credit (the winner)</h3><p style="font-size:14.5px">Reduces <strong>the tax bill itself</strong>. A $1,000 credit saves the full $1,000 — regardless of bracket.</p></div>
+    <div class="card"><h3>🏆 MFJ &amp; HOH win</h3><p style="font-size:14.5px">MFJ is generally most favorable. <strong>HOH</strong> is materially better than single — wider brackets, bigger standard deduction — but the "qualifying person" test is specific and misapplying it is a frequent error.</p></div>
+    <div class="card tint"><h3>⚠️ MFS usually loses</h3><p style="font-size:14.5px">It restricts or kills several credits and deductions. Justified only occasionally — e.g. one spouse with large medical expenses against a smaller AGI, or to avoid joint-and-several liability.</p></div>
   </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Dependents</strong> come in two flavors — <strong>qualifying child</strong> (relationship, age, residency, support tests) and <strong>qualifying relative</strong> (gross-income and support tests). Dependency drives the child tax credit, education credits, the dependent-care credit, and HOH status.</div></div>
 
-  <h2>🪣 Tax buckets to recognize on sight</h2>
-  <div class="pill-row">
-    <span class="pill">Tax-DEFERRED: traditional 401(k)/IRA, annuities</span>
-    <span class="pill">Tax-FREE: Roth withdrawals, muni bond interest, HSA (medical)</span>
-    <span class="pill">Taxable now: wages, interest, short-term gains</span>
-    <span class="pill">Step-up in basis: inherited assets (heirs' gains reset)</span>
+  <h2>🧮 AGI, adjustments &amp; deductions</h2>
+  <p>AGI cascades through the whole return — it gatekeeps IRA deductibility, Roth eligibility, education and dependent-care credits, the medical floor, NIIT, Social Security taxation, and IRMAA. An above-the-line adjustment can be worth <em>more</em> than face value by restoring a phased-out benefit. First, sort what's <strong>in</strong> gross income vs. <strong>excluded</strong>:</p>
+  <div data-sorter="m8gross"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>The standard-deduction reality:</strong> since it was raised, most taxpayers no longer itemize — which means mortgage interest and charitable gifts produce <strong>no tax benefit</strong> for them. Advice premised on their deductibility is simply wrong for most households. Schedule A still matters for medical (above an AGI floor), SALT (capped), mortgage interest, investment interest, and charitable gifts.</div></div>
+  <details class="selfcheck"><summary>What's the advantage of an above-the-line adjustment over an itemized deduction?</summary>
+  <div class="sc-a">It's available whether or not the taxpayer itemizes, and it reduces AGI — which cascades into eligibility for other deductions and credits keyed to AGI. An itemized deduction only helps if the taxpayer itemizes and doesn't reduce AGI.</div></details>
+
+  <h2 id="sec-deduction-vs-credit-which-is-worth-more">💎 Credits vs. deductions — which is worth more?</h2>
+  <p>A <strong>deduction</strong> reduces taxable income (worth deduction × your rate). A <strong>credit</strong> reduces the tax itself, dollar for dollar. Sort each item into what it actually is:</p>
+  <div data-sorter="m8dedcred"></div>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m5);background:var(--m5s)"><h3 style="color:var(--m5)">✂️ $1,000 deduction (22% bracket)</h3><p style="font-size:14.5px">Saves $1,000 × 22% = <strong>$220</strong>. Value depends on your bracket.</p></div>
+    <div class="side" style="border-color:var(--m6);background:var(--m6s)"><h3 style="color:var(--m6)">💎 $1,000 credit</h3><p style="font-size:14.5px">Saves the full <strong>$1,000</strong> — regardless of bracket. Worth ~4.5× the deduction here.</p></div>
   </div>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> <strong>Muni bonds</strong> = federal-tax-free interest — which is why they typically pay LOWER stated rates and shine for high-bracket clients. Compare using the taxable-equivalent yield: muni rate ÷ (1 − tax bracket).</div></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Refundable vs nonrefundable:</strong> a <strong>nonrefundable</strong> credit can cut tax to zero but no further; a <strong>refundable</strong> one (EITC, part of the child tax credit) can pay you <em>beyond</em> your liability — which is why filing can be worthwhile even when not required.</div></div>
+  <details class="selfcheck"><summary>Why is a $1,000 credit worth more than a $1,000 deduction?</summary>
+  <div class="sc-a">A credit reduces tax dollar-for-dollar, so it's worth $1,000. A deduction reduces taxable income, so it's worth the deduction times the marginal rate — $220 at 22%. The credit's value is also independent of bracket, making it proportionally more valuable to lower-bracket taxpayers.</div></details>
 
-  <div class="callout cheer"><span class="ico">🌟</span><div><strong>Taxes: officially demystified.</strong> Waterfall → staircase → stopwatch → buckets. Four pictures carry this whole module. Two more to go — you're SO close! 🧡</div></div>
+  <h2>🧾 Payments, withholding &amp; safe harbor</h2>
+  <p>The last stretch of the return — additional taxes (self-employment, NIIT, additional Medicare, the 10% early penalty), then payments. Tap each fact that trips people up:</p>
+  <div data-reveal="m8safeharbor"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Forms feed the flow:</strong> W-2 (wages), the 1099 series (interest, dividends, proceeds, nonemployee pay), K-1 (pass-throughs), 1098 (mortgage/tuition). Schedules: <strong>A</strong> itemized · <strong>B</strong> interest/dividends · <strong>C</strong> sole prop · <strong>D</strong> capital gains · <strong>E</strong> rental/pass-through · <strong>SE</strong> self-employment.</div></div>
+  <details class="selfcheck"><summary>Why can increasing year-end withholding cure an underpayment penalty?</summary>
+  <div class="sc-a">Withholding is treated as paid evenly throughout the year regardless of when it occurred, so late-year withholding is credited to earlier quarters. A Q4 estimated payment gets no such treatment and won't cure earlier-quarter shortfalls.</div></details>
+
+  <!-- ============================ 8.3 ============================ -->
+  <p class="chapter-kicker" id="c3">Chapter 8.3</p>
+
+  <h2>🧱 Basis: what you recover tax-free</h2>
+  <p><strong>Basis</strong> is your investment in the property for tax purposes — the amount you get back untaxed on sale. It starts at cost and <em>changes</em> over the holding period. Sort each event by its effect:</p>
+  <div data-sorter="m8basis"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Two persistent errors:</strong> (1) <strong>Reinvested dividends</strong> in a taxable fund were already taxed, so they <em>increase</em> basis — miss them and you pay tax twice. (2) Basis is reduced by depreciation <strong>allowable</strong> whether or not you actually claimed it — neglecting to depreciate loses the deduction <em>and</em> reduces basis anyway.</div></div>
+
+  <h2>🎁 Basis by how you acquired it — step-up &amp; gifts</h2>
+  <p>How property came to you sets its basis. Match each route to its rule:</p>
+  <div data-match="m8acq"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>The step-up is one of the most consequential rules in the code.</strong> An asset bought for $50,000 and worth $400,000 at death passes to heirs with a <strong>$400,000 basis</strong> — the lifetime appreciation escapes income tax entirely. Planning rule of thumb: <strong>gift cash or high-basis assets; bequeath low-basis appreciated ones.</strong> The dual basis rule for gifts (carryover for gain, lesser-of for loss) is why a donor should <em>sell</em> a depreciated asset and gift the proceeds.</div></div>
+  <details class="selfcheck"><summary>A client gifts stock with a $20,000 basis now worth $12,000. The recipient sells for $10,000. What's the loss?</summary>
+  <div class="sc-a">For loss purposes, basis is the lesser of the donor's basis ($20,000) or FMV at the gift date ($12,000) — so $12,000. The loss is $2,000. The $8,000 of decline during the donor's ownership is lost to both parties, which is why the donor should have sold and gifted the proceeds.</div></details>
+
+  <h2 id="sec-capital-gains-the-1-year-stopwatch">⏳ Holding period, netting &amp; wash sales</h2>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m5);background:var(--m5s)"><h3 style="color:var(--m5)">🏃 Short-term (held ≤ 1 year)</h3><p style="font-size:14.5px">Taxed at your <strong>ordinary income rates</strong> — up to 37%. The period starts the day AFTER acquisition and includes the sale date.</p></div>
+    <div class="side" style="border-color:var(--m6);background:var(--m6s)"><h3 style="color:var(--m6)">🧘 Long-term (held &gt; 1 year)</h3><p style="font-size:14.5px">Preferential <strong>0/15/20%</strong> rates. Inherited property is <em>always</em> long-term; gifted property tacks the donor's holding period.</p></div>
+  </div>
+  <p>When you have gains and losses, netting follows a defined sequence — put it in order:</p>
+  <div data-order="m8netting"></div>
+  <div class="card"><h3>🧮 Worked example — stock held 3 years</h3>
+    <p style="font-size:14.5px">Basis $28,150 ($28,000 + $150 commission). Amount realized $46,800 ($47,000 − $200). <strong>Long-term gain = $18,650.</strong> Same year, a <strong>$6,000 short-term loss</strong> → net <strong>long-term gain of $12,650</strong> at preferential rates. Lesson: given a choice, offset <em>short-term</em> gains (ordinary rates) with losses, not long-term.</p></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Wash-sale rule:</strong> a loss is <strong>disallowed</strong> if you buy substantially identical securities within <strong>30 days before or after</strong> the sale (a 61-day window). Normally the loss is added to the replacement's basis — but a repurchase inside your <strong>IRA</strong> makes the loss <em>permanently</em> lost. Personal-use losses (a home, a car sold at a loss) aren't deductible at all — though gains are taxable.</div></div>
+  <details class="selfcheck"><summary>What is the wash sale rule and why does an IRA repurchase make it worse?</summary>
+  <div class="sc-a">A loss is disallowed if substantially identical securities are bought within 30 days before or after the sale. Normally the disallowed loss is added to the replacement shares' basis, deferring it. If the repurchase occurs in an IRA, there's no basis benefit to preserve, so the loss is permanently lost.</div></details>
+
+  <h2>🏠 Nonrecognition: when gain waits</h2>
+  <p>Some transactions defer or exclude gain entirely. Tap each provision:</p>
+  <div data-reveal="m8nonrec"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Two directly testable numbers:</strong> §121 needs <strong>2 of the last 5 years</strong> of ownership &amp; use as a principal residence. §1031 (real property only now) needs replacement <strong>identified within 45 days</strong> and the exchange <strong>completed within 180</strong>.</div></div>
+
+  <h2>💰 Annuities &amp; collectibles</h2>
+  <p>Two asset types with their own rules — and both surprise investors. Tap each:</p>
+  <div data-reveal="m8annuity"></div>
+  <details class="selfcheck"><summary>A client invested $60,000 in an annuity now paying $800/month for a 25-year life expectancy. Compute the exclusion ratio and the taxable portion.</summary>
+  <div class="sc-a">Expected return = $800 × 12 × 25 = $240,000. Exclusion ratio = $60,000 ÷ $240,000 = 25%. Tax-free per payment = $200; taxable = $600. Once the full $60,000 basis is recovered, payments become fully taxable.</div></details>
+
+  <!-- ============================ 8.4 ============================ -->
+  <p class="chapter-kicker" id="c4">Chapter 8.4</p>
+
+  <h2>🎁 Fringe benefits: excluded, taxable, or deferred</h2>
+  <p>Every benefit is compensation — the only question is whether it's currently taxable, excluded, or deferred. Many are excluded, which makes them worth <em>more</em> than equivalent salary. Sort each:</p>
+  <div data-sorter="m8fringe"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>The two employers get wrong:</strong> <strong>personal use of a company car</strong> and <strong>cash / gift cards</strong> are taxable compensation — the de minimis exclusion never covers cash equivalents, no matter how small. And group term life above <strong>$50,000</strong> creates imputed income via the IRS uniform premium table (Table I) by age.</div></div>
+  <details class="selfcheck"><summary>Why is employer-provided health coverage worth more than equivalent salary?</summary>
+  <div class="sc-a">It's excluded from income entirely with no dollar cap, so the full value is received tax-free. Equivalent salary would be reduced by both income tax and payroll tax before the employee could purchase the same coverage.</div></details>
+
+  <h2>🍔 Cafeteria plans &amp; FSAs</h2>
+  <p>A §125 cafeteria plan lets you elect qualified benefits with <strong>pre-tax</strong> salary reduction — cutting income tax <em>and</em> FICA. Tap each rule:</p>
+  <div data-reveal="m8fsa"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Health FSA vs dependent-care FSA:</strong> the health FSA makes your <em>full</em> annual election available on day one; the dependent-care FSA only reimburses what you've contributed so far. And you can't use a dependent-care FSA <em>and</em> the dependent-care credit for the same expenses — the FSA usually wins at higher incomes, the credit at lower ones.</div></div>
+
+  <h2>💵 How retirement income is taxed</h2>
+  <p>Distributions from traditional IRAs/401(k)s are <strong>ordinary income</strong> — never capital gains, regardless of how the growth arose inside the account. Roth is the opposite. For a <em>non-qualified</em> Roth IRA distribution, the favorable ordering rules pull money out in a set sequence — put it in order:</p>
+  <div data-order="m8roth"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Form 8606 matters:</strong> where you made <strong>nondeductible</strong> contributions you have basis, and distributions are partly tax-free under a <strong>pro rata</strong> rule across all traditional IRAs. Fail to file Form 8606 and you pay tax <em>twice</em> on the same money.</div></div>
+
+  <h2>🌊 Social Security taxation: provisional income</h2>
+  <p>Up to <strong>85%</strong> of benefits can be taxed, based on <strong>provisional income = AGI + tax-exempt interest + 50% of benefits</strong> against thresholds that <em>aren't</em> inflation-indexed. Sort what counts toward it:</p>
+  <div data-sorter="m8prov"></div>
+  <figure class="viz">
+    <svg viewBox="0 0 760 130" role="img" aria-label="Three provisional income tiers determine how much of Social Security is taxable">
+      <g font-family="Arial" text-anchor="middle">
+        <rect x="40" y="40" width="220" height="50" rx="10" fill="#E6F6F0"/><text x="150" y="62" font-size="13.5" font-weight="bold" fill="#059669">Below 1st threshold</text><text x="150" y="80" font-size="12" fill="#059669">0% of benefits taxable</text>
+        <rect x="270" y="40" width="220" height="50" rx="10" fill="#FBD9BC"/><text x="380" y="62" font-size="13.5" font-weight="bold" fill="#9A3412">Between thresholds</text><text x="380" y="80" font-size="12" fill="#9A3412">up to 50% taxable</text>
+        <rect x="500" y="40" width="220" height="50" rx="10" fill="#F49B57"/><text x="610" y="62" font-size="13.5" font-weight="bold" fill="#fff">Above 2nd threshold</text><text x="610" y="80" font-size="12" fill="#fff">up to 85% taxable</text>
+      </g>
+    </svg>
+    <figcaption>Because extra income can tax <em>itself</em> AND push more benefit into tax, a band of middle-income retirees faces an effective rate above their bracket — the <strong>"tax torpedo."</strong> Roth distributions avoid it; municipal interest does <em>not</em> (it's added back).</figcaption>
+  </figure>
+  <details class="selfcheck"><summary>Why does municipal bond interest fail to protect Social Security benefits from taxation?</summary>
+  <div class="sc-a">Tax-exempt interest is explicitly added back in computing provisional income. So while it escapes federal income tax directly, it still increases provisional income and can push more of the Social Security benefit into taxation.</div></details>
+
+  <h2>🗺️ State taxation of retirement income</h2>
+  <p>State treatment varies a lot and is a real factor in relocation. Tap each:</p>
+  <div data-reveal="m8state"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>No single state is "best."</strong> A retiree living on Social Security and a public pension may fare very differently from one living on IRA withdrawals and capital gains. The answer depends on the client's income mix — and income follows <em>residence</em>, not where it was earned.</div></div>
+
+  <!-- ============================ 8.5 ============================ -->
+  <p class="chapter-kicker" id="c5">Chapter 8.5</p>
+
+  <h2>🗄️ Records &amp; retention periods</h2>
+  <p>The dullest topic that most reliably costs money: in a tax dispute the burden of proof is on the <strong>taxpayer</strong>. A legitimate deduction without substantiation is, practically, not a deduction. Match each record to how long to keep it:</p>
+  <div data-match="m8retain"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>The statute of limitations, and why some records are forever:</strong> generally <strong>3 years</strong> from filing to assess, <strong>6</strong> for a substantial omission of income, and <strong>unlimited</strong> for fraud or a failure to file. Without basis records, the IRS may treat basis as <strong>zero</strong> and tax the entire proceeds. Rule of thumb: <em>returns forever, supporting records until the statute expires, basis records until the asset is gone.</em></div></div>
+  <details class="selfcheck"><summary>Why should tax returns be kept permanently?</summary>
+  <div class="sc-a">They document carryforward items — capital loss carryovers, suspended passive losses, charitable carryovers, nondeductible IRA basis — that may not be used for years. They also establish filing history, which matters because the limitations period never begins on an unfiled return.</div></details>
+
+  <h2>🧾 Substantiation &amp; basis records</h2>
+  <p>The requirements that quietly disqualify real deductions — tap each:</p>
+  <div data-reveal="m8subst"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Basis records are the highest-value records a client keeps</strong> — and the most often lost. Brokers report basis for <strong>covered securities</strong> (acquired after certain dates); for older <strong>non-covered</strong> holdings, the taxpayer is on the hook. Download brokerage history <em>before</em> closing an account — access usually ends when the relationship does.</div></div>
+  <details class="selfcheck"><summary>What does "contemporaneous" mean for charitable acknowledgments?</summary>
+  <div class="sc-a">Obtained by the earlier of the return's filing date or its due date. An acknowledgment secured later — including after an audit begins — doesn't satisfy the requirement, and the deduction is lost even for a genuine gift.</div></details>
+
+  <!-- ============================ 8.6 ============================ -->
+  <p class="chapter-kicker" id="c6">Chapter 8.6</p>
+
+  <h2>⚖️ Avoidance vs. evasion &amp; after-tax return</h2>
+  <p><strong>Tax avoidance</strong> — minimizing tax within the law — is legitimate and is what planning <em>is</em>. <strong>Tax evasion</strong> — concealing income or fabricating deductions — is criminal. The line is substantive. Sort each action:</p>
+  <div data-sorter="m8avoid"></div>
+  <div class="card"><h3>🧮 After-tax return decides it — 32% bracket</h3>
+    <p style="font-size:14.5px;font-family:monospace;line-height:1.9">Corporate 6% × (1 − 0.32) = 4.08%<br>Municipal (federally exempt) = 4.30% ✅<br>TEY = 4.3% ÷ (1 − 0.32) = <strong>6.32%</strong></p>
+    <p style="font-size:14.5px">The muni wins despite a lower headline yield. But for a <strong>12%-bracket</strong> investor, TEY = 4.3% ÷ 0.88 = 4.89% — now the 6% corporate wins. <strong>The right answer depends entirely on the bracket</strong>, so compute it.</p></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Second framing point, often violated:</strong> taxes are a <em>consideration, not the objective</em>. The classic mistake is refusing to sell a dangerously concentrated position solely to avoid the gain. A move that cuts tax but worsens the overall outcome is a bad recommendation.</div></div>
+  <details class="selfcheck"><summary>A 5% corporate bond vs a 3.6% municipal, investor in the 24% bracket. Which wins?</summary>
+  <div class="sc-a">Corporate after tax = 5% × 0.76 = 3.80%. The municipal yields 3.60% tax-free. The corporate wins by 0.20 points. Equivalently, the muni's TEY is 3.6 ÷ 0.76 = 4.74%, below the corporate's 5%.</div></details>
+
+  <h2>🔧 Harvesting &amp; the three levers in action</h2>
+  <p>Every strategy below is character, timing, or location at work. Tap each:</p>
+  <div data-reveal="m8strategies"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Tax-gain harvesting</strong> is the less-familiar mirror of loss harvesting: in a year when long-term gains fall in the <strong>0% bracket</strong>, deliberately realize them at no tax cost and reset basis higher. The wash-sale rule doesn't apply to gains, so you can repurchase immediately. Prime candidates: early retirees before Social Security &amp; RMDs.</div></div>
+
+  <h2>👨‍👩‍👧 Shifting income to lower-bracket taxpayers</h2>
+  <p>Moving income to a lower bracket works — but each technique has a real limit. Match each to its catch:</p>
+  <div data-match="m8shift"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>UGMA/UTMA's two big disclosures:</strong> (1) the <strong>kiddie tax</strong> taxes a child's unearned income above a modest threshold at the <em>parents'</em> rate (under 18, or full-time students under 24) — gutting the shift. (2) The child gains <strong>unrestricted control at the age of majority</strong> and the gift is irrevocable. Meanwhile, <strong>hiring your child</strong> for real work creates earned income that enables a Roth IRA — genuinely powerful with decades to compound.</div></div>
+  <details class="selfcheck"><summary>Why does the kiddie tax undercut UGMA/UTMA income shifting?</summary>
+  <div class="sc-a">A child's unearned income above a modest threshold is taxed at the parents' marginal rate — applying to children under 18 and full-time students under 24 who don't provide more than half their own support. Only a small amount escapes, so the shifting benefit is largely eliminated.</div></details>
+
+  <h2>🎓 Education savings: 529 vs. UGMA/UTMA vs. Coverdell</h2>
+  <p>Three vehicles with very different mechanics. Sort each feature to the account it describes:</p>
+  <div data-sorter="m8edu"></div>
+  <table>
+    <tr><th></th><th>529</th><th>UGMA/UTMA</th><th>Coverdell</th></tr>
+    <tr><td>Owner keeps control</td><td><strong>Yes</strong></td><td>No — child at majority</td><td>Yes, to age 30</td></tr>
+    <tr><td>Income phaseout</td><td><strong>None</strong></td><td>None</td><td><strong>Yes</strong></td></tr>
+    <tr><td>Financial-aid treatment</td><td><strong>Parental — favorable</strong></td><td>Student — unfavorable</td><td>Parental</td></tr>
+    <tr><td>Tax-free growth (qualified)</td><td>Yes</td><td>No (kiddie tax)</td><td>Yes</td></tr>
+  </table>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>The 529 is the default for most families:</strong> no income limits, high limits, retained control, favorable aid treatment, often a state tax break, and <strong>five-year forward gift averaging</strong>. Watch the coordination rule: the <em>same expenses</em> can't be used for both an education credit (AOTC/Lifetime Learning) and a tax-free 529 withdrawal.</div></div>
+
+  <h2 id="sec-tax-buckets-to-recognize-on-sight">📍 Asset location</h2>
+  <p>The <strong>location</strong> lever — placing each asset in the account type that minimizes total tax — is one of the most reliable sources of value a planner adds, because it needs <em>no forecasting</em>. Sort each asset to where it belongs:</p>
+  <div data-sorter="m8location"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Two specifics:</strong> municipal bonds in a tax-deferred account <em>waste</em> their exemption entirely, and appreciated assets meant for heirs should stay in a <strong>taxable</strong> account to capture the step-up — the same assets in a traditional IRA get no step-up and emerge as ordinary income to beneficiaries. <strong>Roth</strong> accounts ideally hold the highest-growth assets, since all growth escapes tax permanently.</div></div>
+  <details class="selfcheck"><summary>Why keep appreciated assets intended for heirs in a taxable account?</summary>
+  <div class="sc-a">Taxable-account assets receive a step-up in basis at death, eliminating the built-in gain permanently. The same assets in a traditional IRA get no step-up and are distributed to beneficiaries as ordinary income.</div></details>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div><strong>Taxes: officially demystified.</strong> Structures → the staircase → the 1040 flow → basis &amp; step-up → benefits &amp; provisional income → records → the three levers. You now see the after-tax result <em>everywhere</em>. One module to go! 🧡</div></div>
 
   <h2>✍️ Module 8 self-quiz</h2>
   <div id="quiz" class="quiz"></div>
@@ -91,14 +288,252 @@
 <script>
 window.QUIZ = { id:"m8", questions:[
  {q:"What is the 2026 standard deduction for married filing jointly?", opts:["$24,150","$27,700","$32,200","$16,100"], a:2, why:"$32,200 MFJ · $16,100 single · $24,150 head of household for 2026.", trap:"$27,700 is a prior-year MFJ figure. Standard deductions rise with inflation (and jumped under the One Big Beautiful Bill), so an older number is a planted wrong answer."},
- {q:"Adjusted gross income (AGI) equals gross income minus…", opts:["credits","above-the-line adjustments","the standard deduction","withholding"], a:1, why:"Adjustments (IRA, HSA, student loan interest…) come off BEFORE AGI. Deductions come after."},
- {q:"Moving into a higher bracket means…", opts:["all income is taxed at the new rate","only income within that bracket is taxed at the new rate","your effective rate exceeds your marginal rate","credits stop working"], a:1, why:"The staircase: each slice is taxed only at its own step's rate."},
- {q:"A stock held 14 months is sold at a gain. It's taxed at…", opts:["ordinary income rates","long-term capital gains rates (0/15/20%)","a flat 37%","payroll tax rates"], a:1, why:"Held over 1 year = long-term = preferential 0/15/20% rates."},
- {q:"For someone in the 22% bracket, which saves more tax: a $1,000 deduction or a $1,000 credit?", opts:["The deduction","The credit","They're identical","Neither saves anything"], a:1, why:"Credit = full $1,000 off the bill. Deduction = $220 (22% × $1,000)."},
- {q:"Municipal bond interest is generally…", opts:["taxed twice","free from federal income tax","taxed as capital gains","only taxable at death"], a:1, why:"Munis pay federal-tax-free interest — most valuable to high-bracket investors."},
+ {q:"Adjusted gross income (AGI) equals gross income minus…", opts:["credits","above-the-line adjustments","the standard deduction","withholding"], a:1, why:"Adjustments (IRA, HSA, student-loan interest…) come off BEFORE AGI. The standard/itemized deduction comes after."},
+ {q:"Moving into a higher bracket means…", opts:["all income is taxed at the new rate","only income within that bracket is taxed at the new rate","your effective rate exceeds your marginal rate","credits stop working"], a:1, why:"The staircase: each slice is taxed only at its own step's rate. Marginal governs decisions about additional income; effective describes the overall burden."},
+ {q:"A stock held 14 months is sold at a gain. It's taxed at…", opts:["ordinary income rates","long-term capital gains rates (0/15/20%)","a flat 37%","payroll-tax rates"], a:1, why:"Held over 1 year = long-term = preferential 0/15/20% rates. Short-term (≤1 year) would be ordinary rates."},
+ {q:"For someone in the 22% bracket, which saves more tax: a $1,000 deduction or a $1,000 credit?", opts:["The deduction","The credit","They're identical","Neither saves anything"], a:1, why:"Credit = full $1,000 off the bill. Deduction = $220 (22% × $1,000). A credit's value is also independent of bracket."},
+ {q:"Municipal bond interest is generally…", opts:["taxed twice","free from federal income tax","taxed as capital gains","only taxable at death"], a:1, why:"Munis pay federal-tax-free interest — most valuable to high-bracket investors. Compare via taxable-equivalent yield: muni rate ÷ (1 − bracket)."},
  {q:"How many federal ordinary income tax rates are there in 2026?", opts:["Five","Six","Seven","Nine"], a:2, why:"Seven: 10, 12, 22, 24, 32, 35, 37 percent."},
- {q:"Your effective tax rate is…", opts:["always equal to your marginal rate","total tax ÷ total income (lower than marginal)","the highest bracket that exists","your bracket plus payroll tax"], a:1, why:"Effective = the blended average across all the staircase steps you filled — always below your top (marginal) rate."}
+ {q:"Your effective tax rate is…", opts:["always equal to your marginal rate","total tax ÷ total income (lower than marginal)","the highest bracket that exists","your bracket plus payroll tax"], a:1, why:"Effective = the blended average across all the staircase steps you filled — always below your top (marginal) rate under a progressive system."},
+ {q:"A client has a $40,000 passive loss from a rental and $150,000 of wages. This year they can generally…", opts:["deduct the full $40,000 against wages","deduct nothing — passive losses only offset passive income","deduct half against wages","convert it to a capital loss"], a:1, why:"Passive losses generally offset only passive income; the excess is suspended and carried forward, usable against future passive income or on a fully taxable disposition.", trap:"It's tempting to net the loss against wages — but losses stay in their lane. Material participation is what separates active from passive."},
+ {q:"An asset bought for $50,000 is worth $400,000 when the owner dies and passes to an heir. The heir's basis is…", opts:["$50,000 (carryover)","$400,000 (stepped up to FMV)","$0","$225,000 (the average)"], a:1, why:"Inherited property is stepped up to fair market value at death, so the $350,000 of lifetime appreciation escapes income tax entirely."},
+ {q:"You sell a stock at a loss and buy it back 10 days later. The loss is…", opts:["fully deductible now","disallowed by the wash-sale rule","converted to long-term","deductible only against wages"], a:1, why:"The wash-sale rule disallows a loss if substantially identical securities are bought within 30 days before or after; the loss is added to the replacement's basis.", trap:"If you repurchase inside an IRA, the loss is permanently lost — there's no basis benefit to preserve."},
+ {q:"To use the Section 121 home-sale exclusion, you must have owned and used the home as a principal residence for…", opts:["1 of the last 3 years","2 of the last 5 years","5 of the last 10 years","the entire ownership period"], a:1, why:"Owned and used as a principal residence for at least 2 of the 5 years before sale, generally available once every 2 years. The exclusion doubles for MFJ."},
+ {q:"Long-term gains on collectibles (art, coins, physical-metal ETFs) are taxed at a maximum rate of…", opts:["15%","20%","28%","37%"], a:2, why:"A maximum 28% on long-term collectible gains — higher than other LTCG rates.", trap:"Precious-metals ETFs structured as grantor trusts get collectibles treatment, surprising investors who expect ordinary securities rates."},
+ {q:"Provisional income for taxing Social Security benefits ADDS BACK…", opts:["Roth distributions","tax-exempt municipal bond interest","the standard deduction","employer 401(k) matches"], a:1, why:"Provisional income = AGI + tax-exempt interest + 50% of benefits. Munis are added back, so they don't shield benefits from tax.", trap:"Retirees buy munis expecting to keep Social Security untaxed — but muni interest still counts. Roth distributions do NOT."},
+ {q:"For fraud or a failure to file a return, the IRS assessment statute of limitations is…", opts:["3 years","6 years","10 years","unlimited"], a:3, why:"Generally 3 years, 6 for a substantial omission of income, and unlimited for fraud or failure to file — a reason to keep returns permanently."},
+ {q:"The kiddie tax undercuts UGMA/UTMA income shifting by…", opts:["taxing the child's unearned income at the parents' rate","banning gifts to minors","doubling the gift tax","requiring a trust"], a:0, why:"A child's unearned income above a modest threshold is taxed at the parents' marginal rate (under 18, or full-time students under 24), so little income actually shifts.", trap:"UGMA/UTMA also hands the child unrestricted control at majority — and it's counted as a student asset, hurting financial aid. A 529 avoids all three."}
 ]};
+
+window.SORTERS = {
+ m8structure:{buckets:[
+   {id:"prog",label:"Progressive",color:"--m8"},
+   {id:"prop",label:"Proportional (flat)",color:"--m3"},
+   {id:"reg",label:"Regressive",color:"--m5"}
+  ], items:[
+   {text:"Federal income tax", bucket:"prog", why:"Rate rises as the base rises."},
+   {text:"Federal estate tax", bucket:"prog", why:"Also progressive."},
+   {text:"The Medicare payroll portion", bucket:"prop", why:"A flat rate on all wages, no cap."},
+   {text:"A flat-rate state income tax", bucket:"prop", why:"Constant rate regardless of income."},
+   {text:"Sales tax", bucket:"reg", why:"Takes a larger share from lower incomes."},
+   {text:"Social Security payroll tax (with its wage-base cap)", bucket:"reg", why:"Applies only up to a wage base, so high earners pay on a smaller fraction."}
+ ]},
+ m8income:{buckets:[
+   {id:"active",label:"Active (earned)",color:"--m8"},
+   {id:"portfolio",label:"Portfolio",color:"--m6"},
+   {id:"passive",label:"Passive",color:"--m5"}
+  ], items:[
+   {text:"Wages and salary", bucket:"active", why:"Compensation for personal services."},
+   {text:"Net self-employment earnings", bucket:"active", why:"Active income, subject to SE tax."},
+   {text:"Interest and dividends", bucket:"portfolio", why:"Income from investments."},
+   {text:"Capital gains", bucket:"portfolio", why:"Portfolio income."},
+   {text:"Royalties", bucket:"portfolio", why:"Treated as portfolio income."},
+   {text:"Most rental activity", bucket:"passive", why:"Rental is passive regardless of participation."},
+   {text:"A business you don't materially participate in", bucket:"passive", why:"No material participation = passive."}
+ ]},
+ m8gross:{buckets:[
+   {id:"incl",label:"Included in gross income",color:"--m8"},
+   {id:"excl",label:"Excluded",color:"--m6"}
+  ], items:[
+   {text:"Wages, business income, and rents", bucket:"incl", why:"All income unless specifically excluded."},
+   {text:"Taxable interest and dividends", bucket:"incl", why:"Included."},
+   {text:"Taxable retirement-account distributions", bucket:"incl", why:"Included as ordinary income."},
+   {text:"Gifts and inheritances received", bucket:"excl", why:"Excluded to the recipient."},
+   {text:"Life insurance death benefits", bucket:"excl", why:"Generally income-tax-free."},
+   {text:"Qualified municipal bond interest", bucket:"excl", why:"Federally excluded."},
+   {text:"Qualified Roth distributions", bucket:"excl", why:"Tax-free if qualified."},
+   {text:"Home-sale gain within the §121 exclusion", bucket:"excl", why:"Excluded up to the limit."}
+ ]},
+ m8dedcred:{buckets:[
+   {id:"ded",label:"Deduction (cuts taxable income)",color:"--m5"},
+   {id:"cred",label:"Credit (cuts the tax itself)",color:"--m6"}
+  ], items:[
+   {text:"A deductible traditional IRA contribution", bucket:"ded", why:"Reduces taxable income by its amount × your rate."},
+   {text:"The standard deduction", bucket:"ded", why:"A deduction from AGI."},
+   {text:"Mortgage interest on Schedule A", bucket:"ded", why:"An itemized deduction."},
+   {text:"The child tax credit", bucket:"cred", why:"Reduces tax dollar-for-dollar (partly refundable)."},
+   {text:"The earned income tax credit", bucket:"cred", why:"A refundable credit."},
+   {text:"The American Opportunity credit", bucket:"cred", why:"An education credit — cuts the tax."},
+   {text:"The foreign tax credit", bucket:"cred", why:"Offsets tax dollar-for-dollar."}
+ ]},
+ m8basis:{buckets:[
+   {id:"up",label:"Increases basis",color:"--m6"},
+   {id:"down",label:"Decreases basis",color:"--m5"}
+  ], items:[
+   {text:"Capital improvements", bucket:"up", why:"Add to your investment in the property."},
+   {text:"Reinvested dividends in a fund", bucket:"up", why:"Already taxed, so they add to basis."},
+   {text:"Legal fees defending title", bucket:"up", why:"Capitalized into basis."},
+   {text:"Depreciation taken (or allowable)", bucket:"down", why:"Reduces basis even if never claimed."},
+   {text:"Casualty-loss deductions claimed", bucket:"down", why:"Reduce basis."},
+   {text:"Return-of-capital distributions", bucket:"down", why:"Reduce basis — they're a partial return of your investment."}
+ ]},
+ m8fringe:{buckets:[
+   {id:"excl",label:"Excluded",color:"--m6"},
+   {id:"tax",label:"Taxable (imputed)",color:"--m5"},
+   {id:"def",label:"Tax-deferred",color:"--m8"}
+  ], items:[
+   {text:"Employer-provided health coverage", bucket:"excl", why:"Excluded entirely, no cap."},
+   {text:"Group term life up to $50,000", bucket:"excl", why:"Excluded to $50k of coverage."},
+   {text:"De minimis fringe (occasional small perks)", bucket:"excl", why:"Too small to account for."},
+   {text:"Personal use of a company car", bucket:"tax", why:"Imputed income."},
+   {text:"Gift cards and cash equivalents", bucket:"tax", why:"Taxable regardless of size — de minimis doesn't cover cash."},
+   {text:"Group term life ABOVE $50,000", bucket:"tax", why:"Excess coverage is imputed via IRS Table I."},
+   {text:"Qualified retirement plan contributions", bucket:"def", why:"Deferred, not excluded."}
+ ]},
+ m8prov:{buckets:[
+   {id:"yes",label:"Counts toward provisional income",color:"--m8"},
+   {id:"no",label:"Does NOT count",color:"--m6"}
+  ], items:[
+   {text:"AGI (IRA withdrawals, wages, pensions)", bucket:"yes", why:"AGI is the base of provisional income."},
+   {text:"Tax-exempt municipal bond interest", bucket:"yes", why:"Added back — munis don't protect Social Security."},
+   {text:"50% of your Social Security benefits", bucket:"yes", why:"Half of benefits is included."},
+   {text:"Qualified Roth IRA distributions", bucket:"no", why:"Excluded — the strongest argument for tax diversification."}
+ ]},
+ m8avoid:{buckets:[
+   {id:"avoid",label:"Tax avoidance (legal ✅)",color:"--m6"},
+   {id:"evade",label:"Tax evasion (criminal 🚫)",color:"--m5"}
+  ], items:[
+   {text:"Funding a deductible IRA to lower this year's tax", bucket:"avoid", why:"Minimizing tax within the law."},
+   {text:"Harvesting losses to offset realized gains", bucket:"avoid", why:"A legitimate planning technique."},
+   {text:"Holding a stock past one year for long-term rates", bucket:"avoid", why:"Using the character lever legally."},
+   {text:"Not reporting cash income", bucket:"evade", why:"Concealing income is criminal."},
+   {text:"Fabricating deductions you never incurred", bucket:"evade", why:"Fabrication is evasion."},
+   {text:"Hiding assets in an undisclosed offshore account", bucket:"evade", why:"Concealment — criminal."}
+ ]},
+ m8edu:{buckets:[
+   {id:"529",label:"529 plan",color:"--m8"},
+   {id:"coverdell",label:"Coverdell ESA",color:"--m3"},
+   {id:"ugma",label:"UGMA/UTMA",color:"--m5"}
+  ], items:[
+   {text:"Owner keeps control; the beneficiary can't claim the funds", bucket:"529", why:"The account owner retains control."},
+   {text:"No income phaseout and very high contribution limits", bucket:"529", why:"A 529 advantage."},
+   {text:"Counted as a favorable PARENTAL asset for aid", bucket:"529", why:"Parent-owned 529s are assessed favorably."},
+   {text:"Has income phaseouts and a low contribution limit", bucket:"coverdell", why:"Coverdell's key limits."},
+   {text:"Broad K–12 use with brokerage-like investment flexibility", bucket:"coverdell", why:"Coverdell allows wide investments and K–12 use."},
+   {text:"Becomes the child's outright at the age of majority", bucket:"ugma", why:"Irrevocable — the child gains control."},
+   {text:"Counted as a STUDENT asset — assessed harshly for aid", bucket:"ugma", why:"Student assets hurt aid the most."}
+ ]},
+ m8location:{buckets:[
+   {id:"taxable",label:"Hold in a TAXABLE account",color:"--m6"},
+   {id:"deferred",label:"Hold in a TAX-DEFERRED account",color:"--m8"}
+  ], items:[
+   {text:"Broad index funds & ETFs (low turnover)", bucket:"taxable", why:"Tax-efficient already."},
+   {text:"Individual stocks held long-term", bucket:"taxable", why:"Low distributions, and eligible for the step-up."},
+   {text:"Municipal bonds", bucket:"taxable", why:"Already exempt — a tax-deferred account wastes the exemption."},
+   {text:"Appreciated assets intended for heirs", bucket:"taxable", why:"To capture the step-up in basis."},
+   {text:"Taxable bonds and bond funds", bucket:"deferred", why:"Their ordinary-income interest is sheltered."},
+   {text:"REITs (mostly ordinary-income distributions)", bucket:"deferred", why:"Shelter the ordinary income."},
+   {text:"High-turnover active funds", bucket:"deferred", why:"Shelter the frequent distributions."}
+ ]}
+};
+
+window.MATCHERS = {
+ m8filing:{pairs:[
+  ["Single","Unmarried and not qualifying for another status"],
+  ["Married filing jointly","Both spouses on one return, with joint and several liability"],
+  ["Married filing separately","Married but filing individually — usually the least favorable"],
+  ["Head of household","Unmarried, paid more than half the cost of a home for a qualifying person"],
+  ["Qualifying surviving spouse","Two years after a spouse's death with a dependent child; uses MFJ brackets"]
+ ]},
+ m8acq:{pairs:[
+  ["Inheritance","Stepped up (or down) to fair market value at the date of death"],
+  ["Gift — figuring a GAIN","Carryover of the donor's adjusted basis"],
+  ["Gift — figuring a LOSS","Lesser of the donor's basis or FMV at the date of gift"],
+  ["Property from a spouse","Carryover basis; the transfer itself is generally nontaxable"],
+  ["Purchase","Cost, including commissions and acquisition costs"]
+ ]},
+ m8retain:{pairs:[
+  ["Tax returns","Keep permanently — they hold carryforwards and filing history"],
+  ["W-2s, 1099s, receipts","At least until the statute of limitations expires"],
+  ["Property / basis records","Until the property is sold, plus the limitations period"],
+  ["Form 8606 (nondeductible IRA basis)","Until the account is fully distributed"],
+  ["Estate and gift tax returns","Keep permanently"]
+ ]},
+ m8shift:{pairs:[
+  ["Non-grantor trust retaining income","Compressed brackets — often taxes MORE than the grantor would"],
+  ["Grantor trust","Disregarded for income tax — shifts nothing (grantor is taxed)"],
+  ["UGMA/UTMA account","Kiddie tax, plus the child gains unrestricted control at majority"],
+  ["Employing your child","Pay must be reasonable for REAL services actually performed"]
+ ]}
+};
+
+window.ORDERS = {
+ m8flow:{steps:[
+  "Start with gross income",
+  "Subtract above-the-line adjustments → AGI",
+  "Subtract the standard OR itemized deduction (and QBI)",
+  "= Taxable income → apply the graduated brackets",
+  "Subtract credits (dollar-for-dollar)",
+  "Add any additional taxes",
+  "Subtract payments & withholding → refund or amount owed"
+ ]},
+ m8netting:{steps:[
+  "Net short-term gains against short-term losses",
+  "Net long-term gains against long-term losses",
+  "Net the two results against each other"
+ ]},
+ m8roth:{steps:[
+  "Contributions come out first — always tax- and penalty-free",
+  "Then converted amounts",
+  "Then earnings (taxable, and penalized if not qualified)"
+ ]}
+};
+
+window.REVEALS = {
+ m8levers:{cols:3, items:[
+  {front:"Character", back:"WHAT KIND of income is it? Holding an asset beyond one year converts a short-term gain into a long-term one at preferential rates."},
+  {front:"Timing", back:"WHEN is it recognized? Defer a gain into a lower-bracket year; accelerate or bunch deductions."},
+  {front:"Location", back:"WHICH ACCOUNT holds the asset? Bonds in tax-deferred, tax-efficient equity in taxable, high growth in Roth."}
+ ]},
+ m8safeharbor:{cols:2, items:[
+  {front:"Withholding is spread evenly", back:"Treated as paid evenly across the year no matter when it happened — so boosting year-end withholding can cure an earlier-quarter underpayment a Q4 estimate can't."},
+  {front:"Safe harbor", back:"Avoid underpayment penalties by paying ~100% of last year's tax (more for high earners) or 90% of this year's."},
+  {front:"A big refund isn't a win", back:"It's an interest-free loan to the government — adjust withholding to keep that cash flow during the year."},
+  {front:"Refundable vs nonrefundable", back:"Nonrefundable credits stop at zero tax; refundable ones (EITC, part of the child credit) can pay you beyond your liability."}
+ ]},
+ m8nonrec:{cols:2, items:[
+  {front:"§121 — home sale", back:"Excludes gain on a principal residence (doubled for MFJ) if you owned AND used it 2 of the last 5 years. Generally once every 2 years."},
+  {front:"§1031 — like-kind exchange", back:"Defers gain on REAL property held for business/investment. Identify replacement in 45 days, close in 180. Boot triggers recognition."},
+  {front:"Installment sale", back:"Recognize gain proportionally as payments arrive, spreading income across years. Seller takes the buyer's credit risk."},
+  {front:"Involuntary conversion", back:"Defer gain when insurance or condemnation proceeds are reinvested in similar property within the statutory period."},
+  {front:"Transfers between spouses", back:"Generally nontaxable, with carryover basis."}
+ ]},
+ m8annuity:{cols:2, items:[
+  {front:"Withdrawals before annuitizing", back:"LIFO — earnings come out FIRST as ordinary income (never capital gain), plus a 10% penalty before 59½."},
+  {front:"The exclusion ratio", back:"Investment ÷ expected total return. $90k contract paying $1,000/mo for 20 yrs: $90k ÷ $240k = 37.5% tax-free ($375); $625 taxable per payment."},
+  {front:"After basis is recovered", back:"Every later payment is fully taxable. Die before recovering basis → the shortfall is deductible on the final return."},
+  {front:"Annuity death benefits", back:"NO step-up — beneficiaries owe ordinary income on the gain. A poor asset to leave to heirs."},
+  {front:"Collectibles (art, coins, metals)", back:"Long-term gains taxed at a maximum 28% — higher than other LTCG. Includes physical-metal ETFs held as grantor trusts."}
+ ]},
+ m8fsa:{cols:2, items:[
+  {front:"§125 cafeteria plan", back:"Choose among cash and qualified benefits with PRE-TAX salary reduction — cutting income tax AND FICA."},
+  {front:"Irrevocable elections", back:"Locked for the year, changeable only on a qualifying life event (marriage, birth, job change)."},
+  {front:"Health FSA head start", back:"The FULL annual election is available from day one of the plan year, before you've contributed it — great for a big predictable early expense."},
+  {front:"Use-it-or-lose-it", back:"Softened by EITHER a grace period OR a limited carryover — never both."},
+  {front:"Dependent-care FSA", back:"Separate account and limit; reimbursement is limited to amounts contributed so far. Can't also use the dependent-care CREDIT for the same expenses."}
+ ]},
+ m8state:{cols:2, items:[
+  {front:"No-income-tax states", back:"Several impose no individual income tax at all — but check property and sales taxes before assuming they're cheapest."},
+  {front:"Social Security", back:"Many income-tax states exempt Social Security benefits entirely."},
+  {front:"Pensions & IRA withdrawals", back:"Some states exempt or partially exempt them — sometimes only public pensions, or above a certain age."},
+  {front:"Estate / inheritance tax", back:"Several states levy their own, often with exclusions far below the federal level."},
+  {front:"Income follows residence", back:"A state generally can't tax a non-resident's retirement income earned while working there."}
+ ]},
+ m8subst:{cols:2, items:[
+  {front:"Cash gift of $250+", back:"Needs a CONTEMPORANEOUS written acknowledgment — obtained by the earlier of your filing or due date. One gotten after an audit begins doesn't count."},
+  {front:"Noncash gifts", back:"Over $500 → Form 8283. Over $5,000 → a qualified appraisal too."},
+  {front:"Business mileage", back:"A CONTEMPORANEOUS log: date, destination, purpose, miles. A log rebuilt from memory during an audit carries little weight — a known audit focus."},
+  {front:"Medical expenses", back:"Receipts showing amounts actually PAID and what insurance didn't cover — only unreimbursed amounts above the AGI floor count."},
+  {front:"Mutual fund basis", back:"Track every purchase AND each reinvested distribution. Within-family fund exchanges are taxable sales, not neutral transfers."}
+ ]},
+ m8strategies:{cols:2, items:[
+  {front:"Tax-loss harvesting", back:"Sell losers to offset gains, reinvest in a similar (not substantially identical) security. Best against short-term gains. Mind the wash-sale rule."},
+  {front:"Tax-gain harvesting", back:"In a 0%-LTCG year, realize gains at no tax cost and reset basis higher. Wash-sale doesn't apply to gains — repurchase immediately."},
+  {front:"Bunching + donor-advised fund", back:"Concentrate charitable gifts into one year to clear the standard deduction; a DAF lets you deduct now and distribute to charities later."},
+  {front:"Asset location", back:"Put the right asset in the right account type — reliable value that needs no forecasting."},
+  {front:"Roth conversions in low-income years", back:"Fill unused low brackets between retirement and RMDs; the converted amount later escapes provisional income."}
+ ]}
+};
 </script>
 <script src="js/app.js"></script>
 </body>

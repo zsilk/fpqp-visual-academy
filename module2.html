@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Module 2 — Business Ownership, Cash Management &amp; Debt</title>
+<title>Module 2 — Cash Management, Debt &amp; Business Ownership</title>
 <link rel="stylesheet" href="css/style.css">
+<script src="js/gate.js"></script>
 <style>body{--accent:var(--m2);--accent-soft:var(--m2s)}</style>
 </head>
 <body>
@@ -11,54 +12,131 @@
 <header class="hero">
   <div class="wrap">
     <div class="kicker">Module 2 of 10</div>
-    <h1>🏦 Business Ownership, Cash Management &amp; Debt</h1>
-    <p class="lead">Three life skills in one module: <strong>how businesses are built</strong>, <strong>how households stay liquid</strong>, and <strong>how to use debt without it using you</strong>.</p>
-    <div><span class="badge">Business entities</span><span class="badge">Emergency fund</span><span class="badge">Money ratios</span><span class="badge">Credit &amp; bankruptcy</span></div>
+    <h1>🏦 Cash Management, Debt &amp; Business Ownership</h1>
+    <p class="lead">The foundation the rest of the plan is funded from: <strong>read the two financial statements</strong>, <strong>turn them into ratios</strong>, <strong>use debt without it using you</strong>, <strong>build a budget that survives real life</strong>, and <strong>pick the right business form</strong>.</p>
+    <div><span class="badge">Balance sheet &amp; cash flow</span><span class="badge">Money ratios</span><span class="badge">Credit &amp; bankruptcy</span><span class="badge">Budgeting</span><span class="badge">Business entities</span></div>
   </div>
 </header>
 
 <main class="wrap">
 
-  <h2>🏗️ The 5 business structures</h2>
-  <p>Think of these as houses a business can live in — from a tent to a fortress:</p>
-  <table>
-    <tr><th>Entity</th><th>Owners</th><th>Liability protection</th><th>How it's taxed</th></tr>
-    <tr><td>⛺ <strong>Sole proprietorship</strong></td><td>1</td><td>❌ None — owner IS the business</td><td>Owner's personal return (Schedule C)</td></tr>
-    <tr><td>🏕️ <strong>Partnership</strong></td><td>2+</td><td>❌ General partners fully liable</td><td>Passes through to partners</td></tr>
-    <tr><td>🏠 <strong>LLC</strong></td><td>1+</td><td>✅ Yes — personal assets shielded</td><td>Flexible: usually pass-through</td></tr>
-    <tr><td>🏢 <strong>S corporation</strong></td><td>≤100 (US persons)</td><td>✅ Yes</td><td>Pass-through (no corporate tax)</td></tr>
-    <tr><td>🏰 <strong>C corporation</strong></td><td>Unlimited</td><td>✅ Yes</td><td>⚠️ Double tax: corporate + dividends</td></tr>
-  </table>
-  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> “Double taxation” belongs to the <strong>C corporation</strong> only. S corps, LLCs, partnerships, and sole props are pass-through.</div></div>
+  <div class="tag-row">
+    <a class="tag" href="concepts.html">financial statements</a>
+    <a class="tag" href="concepts.html">liquidity &amp; ratios</a>
+    <a class="tag" href="concepts.html">credit &amp; debt</a>
+    <a class="tag" href="concepts.html">business entities</a>
+    <a class="tag" href="flashcards.html">memory hooks</a>
+  </div>
 
-  <h2>🧰 The emergency fund: your financial airbag</h2>
-  <figure class="viz">
-    <svg viewBox="0 0 760 150" role="img" aria-label="Emergency fund guideline: three to six months of expenses">
-      <rect x="10" y="40" width="360" height="70" rx="14" fill="#E6F7F4" stroke="#0D9488" stroke-width="3"/>
-      <text x="190" y="72" text-anchor="middle" font-family="Georgia" font-size="20" font-weight="bold" fill="#0D9488">3 months of expenses</text>
-      <text x="190" y="96" text-anchor="middle" font-size="12.5" fill="#6B6584">dual-income household, stable jobs</text>
-      <rect x="390" y="40" width="360" height="70" rx="14" fill="#0D9488"/>
-      <text x="570" y="72" text-anchor="middle" font-family="Georgia" font-size="20" font-weight="bold" fill="#fff">6 months of expenses</text>
-      <text x="570" y="96" text-anchor="middle" font-size="12.5" fill="#CFF0EA">single income, variable pay, less stable</text>
-      <text x="380" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B2640">🛡️ Keep 3–6 months of living expenses in LIQUID accounts</text>
-    </svg>
-    <figcaption>Liquid = you can grab it fast without losing value: savings, money market funds, short CDs.</figcaption>
-  </figure>
+  <nav class="chapter-nav">
+    <a href="#c1">2.1 Financial statements</a>
+    <a href="#c2">2.2 Situation analysis</a>
+    <a href="#c3">2.3 Credit &amp; debt</a>
+    <a href="#c4">2.4 Budgeting</a>
+    <a href="#c5">2.5 Business forms</a>
+  </nav>
+
+  <!-- ================= CHAPTER 2.1 ================= -->
+  <p class="chapter-kicker" id="c1">Chapter 2.1 · Financial Statements</p>
+
+  <h2>📸 Two statements, two questions</h2>
+  <p>Two statements describe a client's condition, and they answer <em>different</em> questions. A client can look wealthy on one and be in trouble on the other — so you need both.</p>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m2);background:var(--m2s)"><h3 style="color:var(--m2)">📷 Statement of financial position</h3><p style="font-size:14.5px">A <strong>snapshot</strong> — what the client owns and owes at a single moment. Always dated.</p><p style="font-size:13px;color:var(--ink-soft)"><strong>Assets − Liabilities = Net Worth</strong></p></div>
+    <div class="side" style="border-color:var(--m3);background:var(--m3s)"><h3 style="color:var(--m3)">🎬 Cash flow statement</h3><p style="font-size:14.5px">A <strong>video</strong> — what came in and went out over a period (a month or a year).</p><p style="font-size:13px;color:var(--ink-soft)"><strong>Inflows − Outflows = Net Cash Flow</strong></p></div>
+  </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Valuation rules:</strong> assets are carried at <strong>fair market value</strong> (what they'd sell for today, not what was paid), and liabilities at <strong>outstanding principal balance</strong> today — <em>not</em> the sum of remaining payments (which would include unaccrued interest).</div></div>
+
+  <h3>🗂️ Sort the balance sheet</h3>
+  <p>Assets split into three layers. The <strong>invested vs. use</strong> distinction matters: use assets (the couch, the car) generally won't be sold to fund retirement, so net worth including them <em>overstates</em> the resources actually available. Sort each item:</p>
+  <div data-sorter="assetType"></div>
+  <p style="font-size:13.5px;color:var(--ink-soft)">Liabilities, meanwhile, split into <strong>current</strong> (due within a year — card balances, unpaid taxes) and <strong>long-term</strong> (mortgages, student loans). And don't drop the <strong>footnotes</strong> — titling, interest rates, and maturities live there, and they're exactly what estate and risk planning need later.</p>
+
+  <h2>💵 Cash flow: inflows &amp; outflows</h2>
+  <p><strong>Inflows:</strong> salary/wages, self-employment income, bonuses, investment and rental income, pensions, Social Security, alimony. <strong>Outflows</strong> come in three flavors — and taxes <em>and</em> savings both belong here. Sort each outflow:</p>
+  <div data-sorter="outflowType"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Classic omission:</strong> leaving <strong>savings</strong> out of outflows overstates the true surplus and hides that the client has no savings plan at all. Only <strong>variable and discretionary</strong> outflows respond quickly to a budget; fixed outflows need a structural change (refinance, move, sell a vehicle).</div></div>
+
+  <div class="card" style="border-left:6px solid var(--m2)">
+    <h3>🧮 Worked example — building the statements</h3>
+    <div class="grid c2">
+      <div class="card tint"><h4>Balance sheet</h4><p style="font-size:13.5px">Cash $18,000 · Invested $145,000 · Use assets $310,000<br>Current liabilities $9,000 · Long-term $242,000</p><p style="font-size:14px"><strong>Assets $473,000 − Liabilities $251,000 = Net worth $222,000</strong></p></div>
+      <div class="card tint"><h4>Cash flow (monthly)</h4><p style="font-size:13.5px">Inflows $9,500 · Outflows $9,150</p><p style="font-size:14px"><strong>Net cash flow = +$350/month surplus</strong></p></div>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft)">Reading: solvent with a positive but <em>thin</em> surplus — $350/month is all that's available to fund every recommendation. And use assets are 65% of total assets, so net worth overstates goal-funding capacity. The number that matters for future goals is the <strong>$145,000 invested base</strong>.</p>
+  </div>
+
+  <details class="selfcheck"><summary>Why is a liability recorded at outstanding principal rather than the sum of remaining payments?</summary>
+  <div class="sc-a">The remaining payments include interest that hasn't accrued yet. The obligation today is the principal balance — what it would take to extinguish the debt now.</div></details>
+  <details class="selfcheck"><summary>A client has net worth of $600,000 and a monthly deficit of $700. Which finding drives the plan?</summary>
+  <div class="sc-a">The deficit. Net worth is a snapshot; a persistent deficit means it's shrinking — funded by drawing down assets or adding debt. Correcting it precedes almost every other recommendation.</div></details>
+  <details class="selfcheck"><summary>Why separate invested assets from use assets?</summary>
+  <div class="sc-a">Use assets are consumed rather than held for return and generally won't be liquidated to fund goals. Including them in net worth overstates the resources actually available for retirement, education, and the like.</div></details>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Common pitfalls:</strong> recording assets at purchase price · listing the sum of remaining payments as the liability · omitting savings from outflows · reading net worth as available resources · undated balance sheets · dropping footnotes.</div></div>
+
+  <!-- ================= CHAPTER 2.2 ================= -->
+  <p class="chapter-kicker" id="c2">Chapter 2.2 · Financial Situation Analysis</p>
 
   <h2>📐 The money ratios (memorize these!)</h2>
+  <p>Statements produce raw numbers; ratios turn them into judgments. The three lending ratios everyone quotes:</p>
   <div class="grid c3">
-    <div class="card" style="border-top:6px solid var(--m2)"><div class="stat">≤28%</div><div class="stat-label"><strong>Housing costs</strong> ÷ gross monthly income (PITI: principal, interest, taxes, insurance)</div></div>
-    <div class="card" style="border-top:6px solid var(--m3)"><div class="stat" style="color:var(--m3)">≤36%</div><div class="stat-label"><strong>Housing + ALL debt payments</strong> ÷ gross monthly income</div></div>
-    <div class="card" style="border-top:6px solid var(--m5)"><div class="stat" style="color:var(--m5)">≤20%</div><div class="stat-label"><strong>Consumer (non-housing) debt</strong> ÷ NET (take-home) income</div></div>
+    <div class="card" style="border-top:6px solid var(--m2)"><div class="stat">≤28%</div><div class="stat-label"><strong>Front-end / housing</strong> — PITI (principal, interest, taxes, insurance) ÷ gross monthly income</div></div>
+    <div class="card" style="border-top:6px solid var(--m3)"><div class="stat" style="color:var(--m3)">≤36%</div><div class="stat-label"><strong>Back-end / total debt</strong> — all debt service ÷ gross monthly income</div></div>
+    <div class="card" style="border-top:6px solid var(--m5)"><div class="stat" style="color:var(--m5)">≤20%</div><div class="stat-label"><strong>Consumer debt</strong> — non-mortgage payments ÷ <em>NET</em> (take-home) income</div></div>
   </div>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> “28 / 36 / 20” — house first (28 of gross), everything (36 of gross), consumer junk (20 of NET). Note the sneaky switch: the 20% ratio uses <strong>net</strong> income!</div></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook — "28 / 36 / 20":</strong> house first (28 of gross), everything (36 of gross), consumer junk (20 of NET). Note the sneaky switch — the 20% ratio uses <strong>net</strong> income!</div></div>
+  <p>But there are more than three. Tap each ratio to reveal its formula, guideline, and the trap to avoid:</p>
+  <div data-reveal="ratioCards"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Treat guidelines as starting points, not pass/fail thresholds.</strong> The liquidity target flexes up for single-income, commissioned, or self-employed clients, and down for dual stable incomes with disability coverage in place. Same 3.5-month reserve, different verdict depending on income stability.</div></div>
 
-  <h2>💳 What builds a credit score?</h2>
+  <h2>⚖️ Gross vs. net &amp; the worked ratios</h2>
+  <p>Which income base a ratio takes is <em>not</em> arbitrary — reporting a ratio on the wrong base produces a number that looks plausible and is wrong. Sort each ratio by the income it uses:</p>
+  <div data-sorter="grossNet"></div>
+  <div class="plain-note">Lenders standardize on gross income, so the mortgage ratios use gross. The consumer-debt ratio asks what share of the money you actually take home is spoken for — so it uses net.</div>
+
+  <h3>🧮 Worked example — the same client, judged</h3>
+  <table>
+    <tr><th>Ratio</th><th>Calculation</th><th>Result</th><th>Guideline</th><th>Reading</th></tr>
+    <tr><td>Basic liquidity</td><td>$18,000 ÷ $5,200</td><td>3.5 months</td><td>3–6</td><td>Low end</td></tr>
+    <tr><td>Savings</td><td>$760 ÷ $9,500</td><td>8.0%</td><td>10–20%</td><td>Below target</td></tr>
+    <tr><td>Front-end</td><td>$2,400 ÷ $9,500</td><td>25.3%</td><td>≤28%</td><td>Acceptable</td></tr>
+    <tr><td>Back-end</td><td>$3,300 ÷ $9,500</td><td>34.7%</td><td>≤36%</td><td>Little room</td></tr>
+    <tr><td>Consumer debt</td><td>$900 ÷ $7,100</td><td>12.7%</td><td>≤20%</td><td>Acceptable</td></tr>
+    <tr><td>Debt to assets</td><td>$251,000 ÷ $473,000</td><td>53.1%</td><td>Context</td><td>Reasonable mid-career</td></tr>
+  </table>
+  <p style="font-size:13.5px;color:var(--ink-soft)"><strong>Analysis:</strong> no crisis, but two findings drive the plan — the savings rate is below target and the reserve is thin. They compete for the same $350 surplus, so prioritize (reserve generally before accumulation). At 34.7% back-end, new debt is effectively off the table until something is retired — the auto loan is the natural first target.</p>
+
+  <details class="selfcheck"><summary>Why does the liquidity ratio exclude retirement accounts?</summary>
+  <div class="sc-a">They aren't truly liquid — accessing them before 59½ generally triggers income tax plus a 10% penalty and undermines a separate goal. The ratio measures resources available for an emergency without damaging the plan.</div></details>
+  <details class="selfcheck"><summary>Which ratios take gross income, and why?</summary>
+  <div class="sc-a">Front-end, back-end, and savings ratios. The first two are lender underwriting conventions standardized on gross. The consumer-debt ratio is the exception, using net because it asks what share of spendable income is committed.</div></details>
+  <details class="selfcheck"><summary>A client shows a back-end ratio of 41%. What follows?</summary>
+  <div class="sc-a">It exceeds the 36% guideline, so debt service is consuming too much income. The client will struggle to qualify for new credit and has little room for savings. Focus on retiring debt before adding obligations.</div></details>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Common pitfalls:</strong> counting retirement accounts as liquid · using total instead of non-discretionary outflows in the liquidity ratio · applying gross income to the consumer-debt ratio · omitting taxes/insurance from housing costs · excluding employer match from the savings ratio.</div></div>
+
+  <!-- ================= CHAPTER 2.3 ================= -->
+  <p class="chapter-kicker" id="c3">Chapter 2.3 · Credit &amp; Debt</p>
+
+  <h2 id="sec-good-debt-vs-risky-debt">⚖️ Good debt vs. risky debt — and the 5 Cs</h2>
+  <p>Debt is a tool — neither good nor bad in itself. The useful line is between borrowing that acquires an <strong>appreciating or income-producing asset</strong> and borrowing that funds <strong>consumption</strong>.</p>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m6);background:var(--m6s)"><h3 style="color:var(--m6)">🌱 Debt that can build wealth</h3><p style="font-size:14.5px">A reasonable mortgage · student loans that raise income · a business loan with a plan. Buys assets that can grow or earn.</p></div>
+    <div class="side" style="border-color:var(--m5);background:var(--m5s)">🔥<h3 style="color:var(--m5)"> Debt that burns wealth</h3><p style="font-size:14.5px">Revolving card balances at 20%+ · payday loans · financing things that lose value fast. High rates, no asset left behind.</p></div>
+  </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Compounding in reverse:</strong> a $5,000 balance at 20% APR paid at a 2% minimum takes <em>decades</em> to retire and costs more in interest than the original purchase. The same math that builds wealth works against a carried balance.</div></div>
+  <h3>🏦 The five Cs of credit</h3>
+  <p>What a lender is really assessing. Match each C to what it measures:</p>
+  <div data-match="fiveCs"></div>
+
+  <h2 id="sec-what-builds-a-credit-score">💳 Scores, mortgages &amp; consumer protection</h2>
+  <p>Three bureaus — <strong>Equifax, Experian, TransUnion</strong> — compile credit reports (which can differ, since not every creditor reports to all three). The <strong>FICO</strong> score, ~300–850, condenses the report:</p>
   <figure class="viz">
     <svg viewBox="0 0 760 210" role="img" aria-label="FICO score factors: payment history 35%, amounts owed 30%, length of history 15%, new credit 10%, credit mix 10%">
       <g font-family="Arial">
         <rect x="10" y="20" width="266" height="56" rx="10" fill="#0D9488"/><text x="143" y="44" text-anchor="middle" fill="#fff" font-weight="bold" font-size="15">Payment history</text><text x="143" y="64" text-anchor="middle" fill="#CFF0EA" font-size="13">35% — pay on time, every time</text>
-        <rect x="286" y="20" width="228" height="56" rx="10" fill="#14B8A6"/><text x="400" y="44" text-anchor="middle" fill="#fff" font-weight="bold" font-size="15">Amounts owed</text><text x="400" y="64" text-anchor="middle" fill="#E6F7F4" font-size="13">30% — keep balances low</text>
+        <rect x="286" y="20" width="228" height="56" rx="10" fill="#14B8A6"/><text x="400" y="44" text-anchor="middle" fill="#fff" font-weight="bold" font-size="15">Amounts owed</text><text x="400" y="64" text-anchor="middle" fill="#E6F7F4" font-size="13">30% — keep utilization low</text>
         <rect x="524" y="20" width="114" height="56" rx="10" fill="#5EEAD4"/><text x="581" y="44" text-anchor="middle" fill="#134E4A" font-weight="bold" font-size="14">History</text><text x="581" y="64" text-anchor="middle" fill="#134E4A" font-size="12">15%</text>
         <rect x="648" y="20" width="50" height="56" rx="10" fill="#99F6E4"/><text x="673" y="48" text-anchor="middle" fill="#134E4A" font-weight="bold" font-size="12">New</text><text x="673" y="64" text-anchor="middle" fill="#134E4A" font-size="11">10%</text>
         <rect x="708" y="20" width="44" height="56" rx="10" fill="#CCFBF1"/><text x="730" y="48" text-anchor="middle" fill="#134E4A" font-weight="bold" font-size="12">Mix</text><text x="730" y="64" text-anchor="middle" fill="#134E4A" font-size="11">10%</text>
@@ -66,23 +144,129 @@
         <text x="380" y="148" text-anchor="middle" font-size="13" fill="#6B6584">Length of history 15% · New credit 10% · Credit mix 10%</text>
       </g>
     </svg>
-    <figcaption>FICO weightings — a bar you can picture on exam day.</figcaption>
+    <figcaption>FICO weightings — a bar you can picture on exam day. <strong>Weights are approximate and can shift with FICO model updates.</strong></figcaption>
+  </figure>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Two things clients get backwards:</strong> closing an old, unused card can <em>lower</em> a score (shorter average history + less available credit → higher utilization), and you do <em>not</em> need to carry a balance to build score — paying in full is fine. Free reports from each bureau are a no-cost planning recommendation.</div></div>
+  <h3>🏠 Mortgage types — tap to reveal</h3>
+  <div data-reveal="mortgageTypes"></div>
+  <p style="font-size:13.5px;color:var(--ink-soft)">Also know: <strong>points</strong> (prepaid interest to cut the rate — worth it only past breakeven) · <strong>PMI</strong> (protects the lender, not you; removable at ~20% equity) · <strong>escrow</strong> · <strong>refinancing</strong> (resetting to a fresh 30-year term can raise <em>total</em> interest even at a lower rate) · <strong>HELOCs</strong> (lower rate, but your house is the collateral).</p>
+  <h3>🛡️ Consumer credit protection — match the law</h3>
+  <div data-match="creditLaws"></div>
+
+  <h2 id="sec-bankruptcy-the-two-chapters-to-know">🆘 Bankruptcy &amp; paydown strategy</h2>
+  <p>Bankruptcy is a legal process for debts that can't be repaid — the last option, with lasting credit consequences. <strong>Refer clients to a bankruptcy attorney; this is squarely legal practice.</strong> The two chapters to know — sort each feature into the right one:</p>
+  <div data-sorter="bankruptcy"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> 7 letters in "LIQUIDS" → Chapter <strong>7 = liquidation</strong> (up to 10 years on the report). "13" looks like a calendar page → Chapter <strong>13 = payment plan over 3–5 years</strong> (up to 7 years).</div></div>
+  <div class="pill-row">
+    <span class="pill">🚫 Not dischargeable: most student loans</span><span class="pill">recent taxes</span><span class="pill">child support &amp; alimony</span><span class="pill">court fines</span><span class="pill">debts from fraud</span>
+  </div>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m8);background:var(--m8s)"><h3 style="color:var(--m8)">🏔️ Avalanche</h3><p style="font-size:14.5px">Highest interest rate first. <strong>Mathematically optimal</strong> — minimizes total interest.</p></div>
+    <div class="side" style="border-color:var(--m6);background:var(--m6s)"><h3 style="color:var(--m6)">⛄ Snowball</h3><p style="font-size:14.5px">Smallest balance first. Suboptimal arithmetically, but early wins <strong>sustain motivation</strong> — and a plan the client finishes beats one they abandon.</p></div>
+  </div>
+
+  <details class="selfcheck"><summary>Why can closing an old unused credit card lower a score?</summary>
+  <div class="sc-a">It reduces total available credit, raising utilization (~30% of the score), and can shorten average account age (~15%). Both move the score down.</div></details>
+  <details class="selfcheck"><summary>Two clients each carry $30,000 — one a 4% mortgage, one 22% cards. Same recommendation?</summary>
+  <div class="sc-a">No. The mortgage bought an appreciating asset at a low rate and may not warrant accelerated payoff. The card balance is consumption debt above any reasonable expected return, so retiring it takes priority over most investing beyond an employer match.</div></details>
+  <details class="selfcheck"><summary>What's the risk in consolidating credit card debt into a HELOC?</summary>
+  <div class="sc-a">The rate falls, but unsecured debt becomes secured by the home — nonpayment now risks foreclosure rather than collection. It also frees card capacity, so without a behavior change the client may re-accumulate on top of the HELOC.</div></details>
+  <details class="selfcheck"><summary>When does buying an auto clearly beat leasing?</summary>
+  <div class="sc-a">When the client keeps vehicles well beyond the loan term — the savings come from the payment-free years after payoff. A client who trades every three years never reaches them and may find leasing competitive.</div></details>
+
+  <!-- ================= CHAPTER 2.4 ================= -->
+  <p class="chapter-kicker" id="c4">Chapter 2.4 · Budgeting</p>
+
+  <h2 id="sec-the-emergency-fund-your-financial-airbag">🧰 Building a budget &amp; the emergency fund</h2>
+  <p>A cash flow statement records what <em>happened</em>; a budget states what <em>should</em> happen — so it can be compared against actuals, which is the whole source of its value. Budgets fail for behavioral reasons far more than analytical ones, so the goal is the most <strong>sustainable</strong> budget, not the most precise. Put the four creation steps in order:</p>
+  <div data-order="budgetSteps"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>The one reframe that matters most — "pay yourself first":</strong> treat savings as a <em>fixed obligation</em> funded before discretionary spending, not as whatever remains at month end. Nothing ever remains at month end. Then <strong>automate</strong> the transfer on payday to neutralize status-quo and present bias.</div></div>
+  <h3>🧩 Pick a framework that fits the client</h3>
+  <table>
+    <tr><th>Framework</th><th>Method</th><th>Fits</th></tr>
+    <tr><td><strong>Line-item</strong></td><td>Target per spending category</td><td>Clients wanting detail and control</td></tr>
+    <tr><td><strong>50/30/20</strong></td><td>50% needs, 30% wants, 20% savings/debt</td><td>Clients who need simplicity to sustain it</td></tr>
+    <tr><td><strong>Zero-based</strong></td><td>Every dollar assigned a job; income − allocations = 0</td><td>Clients with leakage they can't locate</td></tr>
+    <tr><td><strong>Envelope</strong></td><td>Physical/digital limits per category</td><td>Clients who overspend on variable categories</td></tr>
+  </table>
+
+  <figure class="viz">
+    <svg viewBox="0 0 760 150" role="img" aria-label="Emergency fund guideline: three to six months of non-discretionary expenses">
+      <rect x="10" y="40" width="360" height="70" rx="14" fill="#E6F7F4" stroke="#0D9488" stroke-width="3"/>
+      <text x="190" y="72" text-anchor="middle" font-family="Georgia" font-size="20" font-weight="bold" fill="#0D9488">3 months</text>
+      <text x="190" y="96" text-anchor="middle" font-size="12.5" fill="#6B6584">dual stable income, disability coverage</text>
+      <rect x="390" y="40" width="360" height="70" rx="14" fill="#0D9488"/>
+      <text x="570" y="72" text-anchor="middle" font-family="Georgia" font-size="20" font-weight="bold" fill="#fff">6 months</text>
+      <text x="570" y="96" text-anchor="middle" font-size="12.5" fill="#CFF0EA">single/commissioned income, less stable</text>
+      <text x="380" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#2B2640">🛡️ 3–6 months of NON-DISCRETIONARY expenses, in LIQUID accounts</text>
+    </svg>
+    <figcaption>The emergency fund is usually the <strong>first</strong> budget priority — ahead of accelerated debt paydown and investing past an employer match. A <strong>$1,000–$2,000 starter reserve</strong> while attacking high-rate debt is a reasonable compromise. Keep it liquid (high-yield savings, money market) — never equities, since it's needed precisely when markets are down.</figcaption>
   </figure>
 
-  <h2>⚖️ Good debt vs. risky debt</h2>
-  <div class="vs">
-    <div class="side" style="border-color:var(--m6);background:var(--m6s)"><h3 style="color:var(--m6)">🌱 Debt that can build wealth</h3><p style="font-size:14.5px">Reasonable mortgage · student loans that raise income · business loans with a plan. Buys assets that can grow or earn.</p></div>
-    <div class="side" style="border-color:var(--m5);background:var(--m5s)"><h3 style="color:var(--m5)">🔥 Debt that burns wealth</h3><p style="font-size:14.5px">Revolving credit card balances · payday loans · financing things that lose value fast. High rates, no asset left behind.</p></div>
+  <h2>🔁 Monitoring, variances &amp; sinking funds</h2>
+  <p>Compare actual against budgeted on a regular cycle. But <strong>diagnose before correcting</strong> — the same overage means different things. Match each variance to its response:</p>
+  <div data-match="variance"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>The #1 cause of budget failure — irregular expenses:</strong> insurance premiums, property taxes, holidays, car maintenance, annual subscriptions. They aren't monthly, so they get omitted, then blow up the month they land. The fix is a <strong>sinking fund</strong> — divide the annual cost by twelve and set it aside monthly, so it's already funded when it arrives.</div></div>
+
+  <div class="card" style="border-left:6px solid var(--m2)">
+    <h3>🧮 Worked example — reaching 10% savings &amp; a 6-month reserve</h3>
+    <p style="font-size:13.5px">Client from 2.1/2.2: $9,500 gross, $350 surplus, 8% savings, 3.5-month reserve. To hit 10% of gross needs <strong>+$190/month</strong> to savings; the reserve gap is <strong>$13,200</strong> (6 × $5,200 − $18,000). That leaves only $160/month for the reserve — ~82 months. Too slow.</p>
+    <p style="font-size:13.5px;color:var(--ink-soft)">Best realistic move without lifestyle change: <strong>the auto loan's $520 payment ends in 14 months</strong> — redirect it and the reserve gap closes in about two years. Lesson: a scheduled payoff is a future cash-flow raise. Deciding where it goes <em>before</em> it frees up is what stops it from being absorbed into spending.</p>
   </div>
 
-  <h2>🆘 Bankruptcy: the two chapters to know</h2>
-  <div class="vs">
-    <div class="side" style="border-color:var(--m2);background:var(--m2s)"><h3 style="color:var(--m2)">Chapter 7 — “fresh start” 🧹</h3><p style="font-size:14.5px">Liquidation. Non-exempt assets are sold, most unsecured debts wiped out. Fast, but assets can be lost.</p></div>
-    <div class="side" style="border-color:var(--m7);background:var(--m7s)"><h3 style="color:var(--m7)">Chapter 13 — “wage earner’s plan” 📆</h3><p style="font-size:14.5px">Reorganization. Keep assets, repay debts over 3–5 years from income under a court plan.</p></div>
-  </div>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> 7 letters in “LIQUIDS” → Chapter <strong>7 = liquidation</strong>. “13” looks like a calendar page → Chapter <strong>13 = payment plan over time</strong>.</div></div>
+  <details class="selfcheck"><summary>Why does "pay yourself first" outperform saving what's left over?</summary>
+  <div class="sc-a">Spending expands to consume available income, so nothing reliably remains. Making savings a fixed obligation funded first — ideally automatically — removes the monthly decision and the biases that defeat it.</div></details>
+  <details class="selfcheck"><summary>What's a sinking fund and which failure does it prevent?</summary>
+  <div class="sc-a">Setting aside a monthly fraction of a known irregular expense so it's funded when due. It prevents the common failure where non-monthly expenses are omitted and then break the budget when they arrive.</div></details>
+  <details class="selfcheck"><summary>Why does the emergency fund generally precede accelerated debt paydown?</summary>
+  <div class="sc-a">Without a reserve, the next unexpected expense goes on credit or forces an early retirement withdrawal — reversing paydown progress and adding cost. A small starter reserve alongside attacking high-rate debt is the common compromise.</div></details>
+  <details class="selfcheck"><summary>A client is over budget in every category every month. Diagnosis?</summary>
+  <div class="sc-a">Not a single-category discipline problem — either income is genuinely insufficient or the budget was aspirational rather than built from actual spending. The response is structural: raise income, cut fixed costs, or revise goals.</div></details>
 
-  <div class="callout cheer"><span class="ico">🌟</span><div><strong>Two modules deep already!</strong> Ratios and chapters feel dry to most people — but you just learned them as pictures. That's your superpower. Quiz time! 💚</div></div>
+  <!-- ================= CHAPTER 2.5 ================= -->
+  <p class="chapter-kicker" id="c5">Chapter 2.5 · Closely Held Business Forms</p>
+
+  <h2 id="sec-the-5-business-structures">🏗️ The business structures</h2>
+  <p>Entity form drives consequences across nearly every other module — taxation, asset exposure, retirement plans, transfer at death, value. <strong>Two questions separate the forms:</strong></p>
+  <div class="grid c2">
+    <div class="card tint"><h3>🛡️ Is there liability protection?</h3><p style="font-size:14px">Can business creditors reach the owner's <em>personal</em> assets?</p></div>
+    <div class="card tint"><h3>🧾 How is income taxed?</h3><p style="font-size:14px">Does it <em>pass through</em> to the owner's return, or is it taxed at the <em>entity level</em> first?</p></div>
+  </div>
+  <table>
+    <tr><th>Entity</th><th>Owners</th><th>Liability protection</th><th>How it's taxed</th></tr>
+    <tr><td>⛺ <strong>Sole proprietorship</strong></td><td>1</td><td>❌ None — owner IS the business</td><td>Pass-through (Schedule C)</td></tr>
+    <tr><td>🏕️ <strong>General partnership</strong></td><td>2+</td><td>❌ Partners fully liable — even for each other's acts</td><td>Pass-through (Form 1065, K-1s)</td></tr>
+    <tr><td>⛰️ <strong>Limited partnership</strong></td><td>2+</td><td>GP: ❌ / LP: ✅ if not managing</td><td>Pass-through</td></tr>
+    <tr><td>🏠 <strong>LLC</strong></td><td>1+</td><td>✅ Yes — personal assets shielded</td><td>Elective: default pass-through</td></tr>
+    <tr><td>🏢 <strong>S corporation</strong></td><td>Restricted (US persons, one class of stock)</td><td>✅ Yes</td><td>Pass-through (no entity tax)</td></tr>
+    <tr><td>🏰 <strong>C corporation</strong></td><td>Unlimited</td><td>✅ Yes</td><td>⚠️ Double tax: corporate + dividends</td></tr>
+  </table>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> "Double taxation" belongs to the <strong>C corporation</strong> only. Sole props, partnerships, LLCs (by default), and S corps are all pass-through. It's often mitigated by paying out earnings as reasonable salary, which the corporation deducts.</div></div>
+  <h3>🃏 Match each form to its defining trait</h3>
+  <div data-match="businessForms"></div>
+  <h3>🗂️ Pass-through or entity-level tax?</h3>
+  <p>Sort each entity by how its income is taxed:</p>
+  <div data-sorter="passThrough"></div>
+
+  <h2>🤝 Operating &amp; succession</h2>
+  <p>Running a closely held business raises recurring planning issues — tap each to reveal why it matters:</p>
+  <div data-reveal="operating"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>The personal-guarantee trap:</strong> forming an LLC does <em>not</em> protect personal assets against a loan the owner <strong>personally guaranteed</strong> — which is most small-business bank debt. The shield still covers <em>other</em> liabilities (tort claims, trade creditors), but the guarantee waives it for that specific debt.</div></div>
+
+  <details class="selfcheck"><summary>Two questions distinguish most business forms. What are they?</summary>
+  <div class="sc-a">Whether the form provides limited liability protecting personal assets, and whether income is taxed at the entity level or passes through to the owners' returns.</div></details>
+  <details class="selfcheck"><summary>What is double taxation and which form has it?</summary>
+  <div class="sc-a">The C corporation. Corporate income is taxed at the entity level, and dividends to shareholders are taxed again on their personal returns — the same earnings taxed twice.</div></details>
+  <details class="selfcheck"><summary>What's the S corporation's potential self-employment tax advantage, and its limit?</summary>
+  <div class="sc-a">An owner-employee pays payroll tax only on reasonable salary; remaining distributions aren't subject to SE tax. The limit is the reasonableness requirement — an artificially low salary is a recognized audit target.</div></details>
+  <details class="selfcheck"><summary>A client forms an LLC, then personally guarantees the bank loan. What protection remains?</summary>
+  <div class="sc-a">The LLC still shields personal assets from other business liabilities — tort claims, trade creditors, other contracts. But the personal guarantee waives protection for that specific debt, so the lender can pursue personal assets on default.</div></details>
+  <details class="selfcheck"><summary>Why is a funded buy-sell agreement important for a closely held business?</summary>
+  <div class="sc-a">It establishes in advance who buys a departing or deceased owner's interest and at what price, and the funding — often life insurance — ensures the money exists when needed. Without one, heirs may be stuck with an illiquid interest or forced into business with the survivors.</div></details>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Common pitfalls:</strong> assuming an entity protects against personally guaranteed debt · treating an LLC as a tax classification rather than a legal form · a limited partner losing the shield by managing · running a partnership with no written agreement · commingling personal and business funds · advising on entity selection rather than coordinating with the client's attorney and CPA.</div></div>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div><strong>Two modules deep already!</strong> Statements, ratios, credit chapters, budgets, and entity forms feel dry to most people — but you just learned them as pictures and games. That's your superpower. Quiz time! 💚</div></div>
 
   <h2>✍️ Module 2 self-quiz</h2>
   <div id="quiz" class="quiz"></div>
@@ -93,15 +277,153 @@
 <footer><div class="wrap"><p>FPQP® Visual Academy v1 · <a href="index.html">Home</a></p></div></footer>
 
 <script>
+window.MATCHERS = {
+  fiveCs:{ pairs:[
+    ["Character","Willingness to repay — credit history, stability, references"],
+    ["Capacity","Ability to repay from income — the debt-to-income ratios"],
+    ["Capital","Net worth and assets available as a fallback"],
+    ["Collateral","The specific asset securing the loan"],
+    ["Conditions","Economic environment, loan purpose, and terms"]
+  ]},
+  creditLaws:{ pairs:[
+    ["Truth in Lending Act (TILA)","Uniform APR &amp; finance-charge disclosure; right to rescind some home loans"],
+    ["Fair Credit Reporting Act (FCRA)","Access to your report and the right to dispute errors"],
+    ["Fair Credit Billing Act (FCBA)","Billing-error dispute procedures; caps liability for unauthorized charges"],
+    ["Equal Credit Opportunity Act (ECOA)","Prohibits discrimination in lending on protected bases"],
+    ["Fair Debt Collection Practices Act (FDCPA)","Restricts third-party collector conduct — timing, harassment, false statements"],
+    ["CARD Act","Limits on rate increases, fees, and marketing to young consumers"]
+  ]},
+  variance:{ pairs:[
+    ["One category consistently over","Target was unrealistic — adjust it, offset elsewhere"],
+    ["Overage in a single month only","Irregular expense — add a sinking fund"],
+    ["Overspending across ALL categories","Income insufficient or budget aspirational — structural change"],
+    ["Consistently under","Target set too loosely — redirect the difference to goals"]
+  ]},
+  businessForms:{ pairs:[
+    ["Sole proprietorship","One owner, no filing needed, unlimited personal liability"],
+    ["General partnership","2+ owners, each liable for the others' acts within the business"],
+    ["Limited partnership","A general partner runs it; limited partners are capped if they don't manage"],
+    ["C corporation","Separate taxpayer with double taxation but the best access to capital"],
+    ["S corporation","Corporate liability shield + pass-through, but only one class of stock"],
+    ["LLC","Limited liability with elective, flexible taxation and few formalities"]
+  ]}
+};
+
+window.SORTERS = {
+  assetType:{ buckets:[
+    {id:"cash",label:"Cash &amp; equivalents",color:"--m2"},
+    {id:"inv",label:"Invested assets",color:"--m3"},
+    {id:"use",label:"Use (personal) assets",color:"--m5"}
+  ], items:[
+    {text:"Checking &amp; savings accounts", bucket:"cash", why:"The liquidity layer — grab-it-fast money."},
+    {text:"A 6-month CD / money market fund", bucket:"cash", why:"Short, stable cash equivalents."},
+    {text:"401(k) and brokerage holdings", bucket:"inv", why:"Held to produce return; funds future goals."},
+    {text:"Investment real estate", bucket:"inv", why:"An income/return asset, not consumed."},
+    {text:"A stake in a closely held business", bucket:"inv", why:"An invested asset (though illiquid)."},
+    {text:"The primary residence", bucket:"use", why:"Personal-use — consumed, not held for return."},
+    {text:"Cars, furniture &amp; jewelry", bucket:"use", why:"Use assets; you won't sell the couch to retire."}
+  ]},
+  outflowType:{ buckets:[
+    {id:"fixed",label:"Fixed",color:"--m2"},
+    {id:"var",label:"Variable",color:"--m3"},
+    {id:"disc",label:"Discretionary",color:"--m7"}
+  ], items:[
+    {text:"Mortgage or rent payment", bucket:"fixed", why:"Doesn't vary period to period — fixed."},
+    {text:"Auto loan payment", bucket:"fixed", why:"A set amount each month — fixed."},
+    {text:"Insurance premiums", bucket:"fixed", why:"Fixed recurring obligation."},
+    {text:"Groceries &amp; utilities", bucket:"var", why:"Fluctuates with usage — variable."},
+    {text:"Gas &amp; clothing", bucket:"var", why:"Varies with choice and usage — variable."},
+    {text:"Travel &amp; subscriptions", bucket:"disc", why:"Could be reduced or eliminated — discretionary."},
+    {text:"Gifts &amp; dining out for fun", bucket:"disc", why:"Nice-to-have; first to cut in an emergency."}
+  ]},
+  grossNet:{ buckets:[
+    {id:"gross",label:"Uses GROSS income",color:"--m3"},
+    {id:"net",label:"Uses NET (take-home)",color:"--m5"}
+  ], items:[
+    {text:"Front-end (housing) ratio", bucket:"gross", why:"Lender underwriting convention — gross."},
+    {text:"Back-end (total debt) ratio", bucket:"gross", why:"Also a lending ratio — gross."},
+    {text:"Savings ratio", bucket:"gross", why:"Savings + match ÷ gross income."},
+    {text:"Consumer (non-mortgage) debt ratio", bucket:"net", why:"The sneaky exception — uses NET income."},
+    {text:"Building a household budget", bucket:"net", why:"Budgets run on spendable, take-home income."}
+  ]},
+  bankruptcy:{ buckets:[
+    {id:"c7",label:"Chapter 7 (liquidation)",color:"--m2"},
+    {id:"c13",label:"Chapter 13 (reorganization)",color:"--m7"}
+  ], items:[
+    {text:"Non-exempt assets are sold off", bucket:"c7", why:"Liquidation — assets can be lost."},
+    {text:"Eligibility set by a means test", bucket:"c7", why:"Chapter 7 uses an income means test."},
+    {text:"Stays on the credit report up to 10 years", bucket:"c7", why:"Chapter 7 = up to 10 years."},
+    {text:"Debtor keeps assets", bucket:"c13", why:"Reorganization lets the debtor retain assets."},
+    {text:"Debts repaid over a 3–5 year court plan", bucket:"c13", why:"The wage-earner's repayment plan."},
+    {text:"Requires regular income", bucket:"c13", why:"You need income to fund the plan."},
+    {text:"Stays on the report up to 7 years", bucket:"c13", why:"Chapter 13 = up to 7 years."}
+  ]},
+  passThrough:{ buckets:[
+    {id:"pass",label:"Pass-through",color:"--m6"},
+    {id:"entity",label:"Entity-level (double) tax",color:"--m5"}
+  ], items:[
+    {text:"Sole proprietorship", bucket:"pass", why:"Reported on the owner's Schedule C."},
+    {text:"General partnership", bucket:"pass", why:"Passes through via K-1s."},
+    {text:"S corporation", bucket:"pass", why:"Elects pass-through — no entity tax."},
+    {text:"LLC (default)", bucket:"pass", why:"Disregarded or partnership by default — pass-through."},
+    {text:"C corporation", bucket:"entity", why:"Taxed at the entity level, then dividends taxed again."}
+  ]}
+};
+
+window.REVEALS = {
+  ratioCards:{ cols:2, items:[
+    {front:"💧 Basic liquidity ratio", back:"Liquid assets ÷ monthly non-discretionary outflows. 'How many months could I cover if income stopped?' Guideline 3–6. Trap: excludes retirement accounts and uses non-discretionary (not total) outflows."},
+    {front:"⚖️ Current ratio", back:"Current assets ÷ current liabilities. A quick solvency check — below 1.0 means near-term obligations can't be covered from near-term assets."},
+    {front:"🐷 Savings ratio", back:"(Savings + employer contributions) ÷ gross income. Guideline 10–20%+, rising with a later start. Employer match counts — it's real money toward the goal."},
+    {front:"🏠 Front-end (housing) ratio", back:"Monthly housing costs (full PITI + HOA) ÷ gross monthly income. Guideline ≤28%. For renters: rent + renters insurance."},
+    {front:"💳 Back-end (total debt) ratio", back:"Total monthly debt service (PITI + all other debt) ÷ gross monthly income. Guideline ≤36%. The other ratio mortgage underwriters apply."},
+    {front:"🧾 Consumer debt ratio", back:"Non-mortgage debt payments ÷ NET (take-home) income. Guideline ≤20%, under 10% preferable. Note the denominator switch to net!"},
+    {front:"📊 Debt to total assets", back:"Total liabilities ÷ total assets. A leverage measure — naturally high for young clients with a new mortgage; a rising ratio in one's fifties is a warning sign."}
+  ]},
+  mortgageTypes:{ cols:2, items:[
+    {front:"🔒 Fixed-rate", back:"Rate and payment constant for the term. Predictable, but a higher initial rate."},
+    {front:"📈 Adjustable-rate (ARM)", back:"Rate resets against an index + margin. Lower initial rate; the borrower carries rate risk — check periodic and lifetime caps."},
+    {front:"💤 Interest-only", back:"Interest only for an initial period. No principal reduction; the payment jumps sharply at recast."},
+    {front:"🎈 Balloon", back:"Small payments with a large principal due at maturity. Requires refinancing or a sale."},
+    {front:"🔄 Reverse mortgage", back:"Converts home equity to income for older homeowners. Balance grows; reduces heirs' inheritance."},
+    {front:"🏦 Home equity loan / HELOC", back:"Borrowing against equity — lower rates than unsecured debt, but the house is collateral, converting unsecured risk into foreclosure risk."}
+  ]},
+  operating:{ cols:2, items:[
+    {front:"🎯 Concentration risk", back:"The business is often the client's largest asset AND income source — so a single event threatens both at once."},
+    {front:"🧊 Liquidity", back:"Closely held interests are illiquid, creating problems at death when estate taxes or equalization among heirs come due."},
+    {front:"📝 Buy-sell agreements", back:"A funded buy-sell — commonly with life insurance — sets who buys the interest, at what price, on death/disability/departure. Absent one, the family may be stuck or forced into business with survivors."},
+    {front:"🏦 Financing &amp; personal guarantees", back:"Owner capital, retained earnings, bank debt (usually needs a personal guarantee that reverses the liability shield), SBA loans, trade credit, equity investors (cost: control &amp; dilution)."},
+    {front:"🌴 Retirement plan selection", back:"Entity form and employee count drive which plans are available — SEP-IRA, SIMPLE IRA, solo 401(k), or a full qualified plan."},
+    {front:"⚠️ Commingling", back:"Mixing personal and business funds jeopardizes liability protection — one of the most common small-business errors."}
+  ]}
+};
+
+window.ORDERS = {
+  budgetSteps:{ steps:[
+    "1 · Establish actual current spending (3 months of statements)",
+    "2 · Set the target (work backward from goals)",
+    "3 · Allocate — pay yourself first, then automate",
+    "4 · Reconcile — if targets exceed income, something gives"
+  ]}
+};
+
 window.QUIZ = { id:"m2", questions:[
- {q:"Which business entity exposes the owner's PERSONAL assets to business debts?", opts:["C corporation","LLC","Sole proprietorship","S corporation"], a:2, why:"A sole proprietor IS the business — no liability shield at all."},
- {q:"Which entity faces double taxation?", opts:["C corporation","S corporation","Partnership","LLC"], a:0, why:"C corps pay corporate tax, then shareholders pay tax again on dividends."},
- {q:"A single-income family with variable pay should keep an emergency fund of about…", opts:["2 weeks of expenses","1 month of expenses","6 months of expenses","5 years of expenses"], a:2, why:"3–6 months is the guideline — lean toward 6 with one income or unstable pay."},
+ {q:"The statement of financial position is built on which identity?", opts:["Inflows − Outflows = Net Cash Flow","Assets − Liabilities = Net Worth","Income − Taxes = Take-home","Assets + Liabilities = Net Worth"], a:1, why:"Assets minus Liabilities equals Net Worth — the personal balance sheet. Inflows − Outflows is the cash flow statement."},
+ {q:"On a personal balance sheet, a liability should be recorded at…", opts:["the sum of all remaining payments","the original loan amount","the outstanding principal balance today","the monthly payment × 12"], a:2, why:"Outstanding principal is what it would take to extinguish the debt now; remaining payments include interest that hasn't accrued.", trap:"'Sum of remaining payments' feels right but double-counts future interest."},
+ {q:"Why can net worth OVERSTATE the resources available to fund goals?", opts:["It ignores liabilities","Much of it can be use assets that won't be sold","It's measured over a period","It uses net income"], a:1, why:"Use assets (home, cars, furniture) generally aren't liquidated for goals, so they inflate net worth relative to goal-funding capacity."},
+ {q:"A client shows net worth of $600,000 but a $700/month cash-flow deficit. Which finding drives the plan?", opts:["The net worth — they're wealthy","The deficit — net worth is shrinking","Neither matters","The use-asset total"], a:1, why:"A persistent deficit means net worth is eroding via asset drawdown or new debt. Correcting it precedes almost everything.", trap:"A big net worth looks reassuring, but a snapshot can't tell you the picture is deteriorating."},
+ {q:"Which item is the CLASSIC omission from cash-flow outflows?", opts:["Groceries","Savings","Rent","Utilities"], a:1, why:"Leaving savings out overstates the true surplus and hides that there's no savings plan. Taxes and savings both belong in outflows."},
+ {q:"The basic liquidity ratio EXCLUDES retirement accounts because…", opts:["they're too small","accessing them early triggers tax + a 10% penalty","they're already spent","they count as use assets"], a:1, why:"They aren't truly liquid — early access before 59½ generally means income tax plus a 10% penalty and undermines a separate goal."},
  {q:"Housing costs (PITI) should generally not exceed what share of GROSS monthly income?", opts:["20%","28%","36%","50%"], a:1, why:"28/36/20: housing ≤28% of gross, total debt ≤36% of gross, consumer debt ≤20% of NET."},
- {q:"The consumer (non-housing) debt ratio of 20% is measured against…", opts:["gross income","net (take-home) income","total assets","discretionary income"], a:1, why:"Sneaky switch: that one ratio uses NET income, not gross — a favorite exam trick."},
- {q:"What is the single biggest factor in a FICO credit score?", opts:["Credit mix","Payment history","New credit inquiries","Length of history"], a:1, why:"Payment history is 35% — paying on time matters more than anything else."},
- {q:"A client wants to keep their house and repay debts over 5 years from wages. Which bankruptcy chapter?", opts:["Chapter 7","Chapter 11","Chapter 13","Chapter 20"], a:2, why:"Chapter 13 is the wage earner's repayment plan (3–5 years). Chapter 7 is liquidation."},
- {q:"An emergency fund should be held in…", opts:["a growth stock fund","liquid accounts like savings or money markets","a 30-year bond","collectible art"], a:1, why:"Emergencies need money that is instantly available without losing value."}
+ {q:"The consumer (non-housing) debt ratio of ≤20% is measured against…", opts:["gross income","net (take-home) income","total assets","discretionary income"], a:1, why:"Sneaky switch: that one ratio uses NET income, not gross — a favorite exam trick.", trap:"Every other ratio here uses gross, so autopilot picks gross — but this one is the exception."},
+ {q:"What is the single biggest factor in a FICO credit score?", opts:["Credit mix","Payment history","New credit inquiries","Length of history"], a:1, why:"Payment history is ~35% — paying on time matters more than anything else. Amounts owed is ~30%."},
+ {q:"Closing an old, unused credit card can LOWER a score because it…", opts:["removes a fee","reduces available credit and can shorten average history","adds a hard inquiry","reports a late payment"], a:1, why:"Less available credit raises utilization (~30%) and a shorter average age hurts length of history (~15%).", trap:"It feels tidy to close unused cards, but it usually nudges the score down."},
+ {q:"Which paydown strategy minimizes total interest paid?", opts:["Snowball (smallest balance first)","Avalanche (highest rate first)","Paying every card equally","Whichever the client prefers"], a:1, why:"Avalanche targets the highest interest rate first — mathematically optimal. Snowball is the behavioral choice for motivation."},
+ {q:"A client wants to KEEP their house and repay debts over 5 years from wages. Which bankruptcy chapter?", opts:["Chapter 7","Chapter 11","Chapter 13","Chapter 20"], a:2, why:"Chapter 13 is the wage-earner's 3–5 year repayment plan; the debtor keeps assets. Chapter 7 is liquidation."},
+ {q:"Which debt is generally NOT dischargeable in bankruptcy?", opts:["Credit card balances","Most student loans","Medical bills","Personal loans"], a:1, why:"Most student loans, recent taxes, child support/alimony, court fines, and fraud debts survive bankruptcy."},
+ {q:"Which entity faces double taxation?", opts:["C corporation","S corporation","Partnership","LLC"], a:0, why:"C corps pay corporate tax, then shareholders pay again on dividends. The rest are pass-through."},
+ {q:"A client forms an LLC and then personally guarantees the business bank loan. For that loan, personal assets are…", opts:["fully protected by the LLC","exposed — the guarantee waives the shield for that debt","protected only in Chapter 7","only at risk if the LLC dissolves"], a:1, why:"The LLC still shields OTHER liabilities, but a personal guarantee lets the lender pursue personal assets on that specific debt.", trap:"'I have an LLC, so I'm protected' is exactly the misconception the guarantee defeats."},
+ {q:"Which is an eligibility restriction UNIQUE to the S corporation?", opts:["Unlimited shareholders","Only one class of stock","Must be publicly traded","No liability protection"], a:1, why:"S corps allow only one class of stock and a limited number of US-person shareholders — while still giving corporate liability protection and pass-through tax."}
 ]};
 </script>
 <script src="js/app.js"></script>
