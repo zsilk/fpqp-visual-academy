@@ -13,58 +13,415 @@
   <div class="wrap">
     <div class="kicker">Module 10 of 10 — the grand finale 🎉</div>
     <h1>🧩 Case Study &amp; Exam Rehearsal</h1>
-    <p class="lead">The real exam tests whether you can <strong>apply</strong> concepts to a family's actual situation. So let's rehearse exactly that — meet the Riveras, and think like their planner.</p>
-    <div><span class="badge">Applied thinking</span><span class="badge">Cross-module quiz</span><span class="badge">Final rehearsal</span></div>
+    <p class="lead">The real exam tests whether you can <strong>apply</strong> every module to a family's actual situation. So let's rehearse exactly that — meet the Whitfields, gather their numbers, analyze the gaps, and build the recommendations like a real planner would.</p>
+    <div><span class="badge">Applied thinking</span><span class="badge">Full 7-step process</span><span class="badge">Cross-module quiz</span><span class="badge">Final rehearsal</span></div>
   </div>
 </header>
 
 <main class="wrap">
 
-  <h2>👪 Meet the Riveras</h2>
-  <div class="card" style="border-left:8px solid var(--m10)">
-    <p style="margin:0 0 10px"><strong>Marco (38) &amp; Elena (36) Rivera</strong> · two kids (6 and 3) · Marco earns $95,000 as an engineer; Elena earns $52,000 part-time.</p>
-    <div class="pill-row">
-      <span class="pill">💰 $8,000 in savings (≈ 1 month of expenses)</span>
-      <span class="pill">💳 $14,000 credit card debt at 24%</span>
-      <span class="pill">🏠 Mortgage — 28% of gross income</span>
-      <span class="pill">📈 Marco's 401(k): 4% contribution, 5% employer match available</span>
-      <span class="pill">❤️ No life insurance · no wills · 401(k) beneficiary: Marco's mother</span>
+  <div class="tag-row">
+    <a class="tag" href="concepts.html">case study</a>
+    <a class="tag" href="concepts.html">ratio analysis</a>
+    <a class="tag" href="concepts.html">needs analysis</a>
+    <a class="tag" href="concepts.html">recommendations</a>
+  </div>
+
+  <div class="chapter-nav">
+    <a href="#c1">10.1 Client profile</a>
+    <a href="#c2">10.2 Analysis</a>
+    <a href="#c3">10.3 Recommendations</a>
+  </div>
+
+  <p class="chapter-kicker" id="c1">Chapter 10.1 — Getting to Know the Whitfields</p>
+
+  <h2>👪 Meet the Whitfields</h2>
+  <div class="grid c2">
+    <div class="card" style="border-left:8px solid var(--m10)">
+      <h3>👨‍💻 Marcus Whitfield, 44</h3>
+      <p style="font-size:14.5px">Senior software engineer, <strong>$128,000</strong> salary. 401(k) with a 50% match on the first 6% of pay. Ten stable years with the firm. Risk tolerance: <strong>moderately aggressive.</strong></p>
+    </div>
+    <div class="card" style="border-left:8px solid var(--m5)">
+      <h3>👩‍⚕️ Dana Whitfield, 42</h3>
+      <p style="font-size:14.5px">Nurse practitioner at a nonprofit hospital, <strong>$96,000</strong> salary. 403(b) with a 3% nonelective employer contribution. Risk tolerance: <strong>moderate to conservative</strong> — moved a balance to stable value after a past downturn.</p>
     </div>
   </div>
+  <div class="pill-row">
+    <span class="pill">💍 Married 15 years</span>
+    <span class="pill">💰 Combined income: $224,000</span>
+    <span class="pill">👧 Nia, 12 — 6 yrs to college</span>
+    <span class="pill">👦 Theo, 9 — 9 yrs to college</span>
+    <span class="pill">🧓 Dana's mother, 71, may need support within a decade</span>
+    <span class="pill">🏠 Possible ~$240,000 inheritance — excluded from the plan on purpose</span>
+  </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Why exclude the expected inheritance?</strong> Timing is unknown, the amount is uncertain, and it could be consumed by Dana's mother's own long-term care costs. Plan without it — if it arrives, it's a bonus. That's the safer direction to be wrong.</div></div>
+  <p>Every fact from a client meeting is either countable or a feeling. Sort each one:</p>
+  <div data-sorter="whitfieldDataTypes"></div>
+
+  <h2>📊 Statement of financial position</h2>
+  <table>
+    <tr><th>Assets</th><th>Item</th><th>Amount</th></tr>
+    <tr><td>Cash &amp; equivalents</td><td>Checking + savings reserve</td><td>$46,000</td></tr>
+    <tr><td>Invested assets</td><td>401(k), 403(b), Roth IRAs, brokerage, 529s, HSA</td><td>$588,000</td></tr>
+    <tr><td>Use assets</td><td>Residence, vehicles, personal property</td><td>$603,000</td></tr>
+    <tr><td><strong>TOTAL ASSETS</strong></td><td></td><td><strong>$1,237,000</strong></td></tr>
+  </table>
+  <table>
+    <tr><th>Liabilities</th><th>Item</th><th>Amount</th></tr>
+    <tr><td>Long-term</td><td>Mortgage (6.1%, 23 yrs left) + student loans (4.9%)</td><td>$340,000</td></tr>
+    <tr><td>Current</td><td>Auto loan (5.4%) + credit cards (19.9%)</td><td>$28,000</td></tr>
+    <tr><td><strong>TOTAL LIABILITIES</strong></td><td></td><td><strong>$368,000</strong></td></tr>
+  </table>
+  <div class="callout memory"><span class="ico">💜</span><div><strong>NET WORTH = $1,237,000 − $368,000 = $869,000.</strong> But use assets (49% of the total) won't fund any goal — the real number to watch is invested assets: $588,000, of which $41,000 is already earmarked for education.</div></div>
+  <p><strong>Footnotes:</strong> residence and brokerage are titled JTWROS; retirement accounts are individually owned; 529 plans are owned by Marcus, one per child; Marcus's 401(k) holds <strong>31% in employer stock</strong>. Match each asset to how it's titled:</p>
+  <div data-match="whitfieldTitling"></div>
+
+  <h2>💵 Cash flow statement</h2>
+  <p>Gross monthly income: <strong>$18,666.67.</strong> Filing jointly, in the 22–24% bracket, taking the <strong>standard deduction</strong> — so mortgage interest and charitable gifts produce zero current tax benefit (a donor-advised fund, bunching gifts into alternating years, could change that).</p>
+  <table>
+    <tr><th>Outflow type</th><th>Monthly</th></tr>
+    <tr><td>Fixed (mortgage, loans, cards, insurance)</td><td>$4,040</td></tr>
+    <tr><td>Variable (groceries, utilities, transportation, childcare)</td><td>$2,660</td></tr>
+    <tr><td>Discretionary (dining, misc.)</td><td>$1,680</td></tr>
+    <tr><td><strong>Living subtotal</strong></td><td><strong>$8,380</strong></td></tr>
+    <tr><td>Savings (401k, 403b, HSA, 529)</td><td>$2,530</td></tr>
+    <tr><td>Taxes (federal, state, FICA)</td><td>$4,150</td></tr>
+    <tr><td><strong>TOTAL OUTFLOWS</strong></td><td><strong>$15,060</strong></td></tr>
+  </table>
+  <p>Compute it, then reveal:</p>
+  <div data-reveal="cashFlowReveals"></div>
+
+  <h2>🎯 Risk tolerance, insurance &amp; estate status</h2>
+  <p><strong>Risk capacity</strong> for both is high — long horizon, stable dual incomes, healthy surplus. But Dana's <strong>tolerance</strong> is lower than Marcus's, and that gap is a real planning issue, not a formality. Sort each fact into tolerance or capacity:</p>
+  <div data-sorter="riskToleranceVsCapacity"></div>
+  <table>
+    <tr><th>Coverage</th><th>Status</th></tr>
+    <tr><td>Life — Marcus</td><td>$250,000 group term only (2× salary) — ends at job termination</td></tr>
+    <tr><td>Life — Dana</td><td>$192,000 group term only</td></tr>
+    <tr><td>Disability (both)</td><td>Group LTD, 60% of base, <strong>employer-paid → taxable benefit</strong></td></tr>
+    <tr><td>Homeowners</td><td>HO-3, $480,000 Coverage A — below replacement cost? Unverified</td></tr>
+    <tr><td>Umbrella</td><td><strong>None</strong></td></tr>
+    <tr><td>Estate documents</td><td><strong>None</strong> — no wills, no named guardian, no POAs, no contingent beneficiaries</td></tr>
+  </table>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>With two minor children and zero estate documents, this is the single most urgent item in the entire case</strong> — and the Whitfields never raised it themselves.</div></div>
+
+  <h2>🏆 Stated goals &amp; planning assumptions</h2>
+  <p>In the Whitfields' <strong>own priority order</strong> — put them back in that order:</p>
+  <div data-order="statedGoalsOrder"></div>
+  <table>
+    <tr><th>Assumption</th><th>Value</th></tr>
+    <tr><td>General inflation</td><td>3.0%</td></tr>
+    <tr><td>Education inflation</td><td>5.0%</td></tr>
+    <tr><td>Nominal portfolio return (accumulation)</td><td>7.0%</td></tr>
+    <tr><td>Real return (derived)</td><td>(1.07 ÷ 1.03) − 1 = <strong>3.8835%</strong></td></tr>
+    <tr><td>Retirement age (Marcus) / duration</td><td>65 → 21 years / 30-year retirement</td></tr>
+    <tr><td>Combined Social Security at 67 (today's $)</td><td>$46,000/yr</td></tr>
+    <tr><td>College cost (today's $, per child)</td><td>$35,000/yr × 4 years</td></tr>
+  </table>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Stating assumptions explicitly</strong> (Module 3.3) means the Whitfields can see exactly what changes if reality differs — retirement can't be borrowed for, but education can be, which is worth questioning about that #1 ranking above.</div></div>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Data-gathering pitfalls:</strong> accepting stated goals without probing their order · recording only numbers and missing context like Dana's mother or her loss aversion · treating an expected inheritance as a planning asset · missing titling/beneficiary details · omitting savings from cash flow (overstates true surplus) · not noticing the standard deduction before giving deduction-dependent advice.</div></div>
+
+  <details class="selfcheck"><summary>Why exclude Dana's expected inheritance from the plan?</summary>
+  <div class="sc-a">Timing is unknown, the amount is uncertain, and assets may be consumed by her mother's long-term care costs. Planning around it would overstate resources; if it arrives, it's a surplus — the safer direction to be wrong.</div></details>
+  <details class="selfcheck"><summary>Net worth is $869,000. Why doesn't that represent goal-funding capacity?</summary>
+  <div class="sc-a">Use assets — residence, vehicles, personal property — total $603,000, about 49% of total assets, and won't be liquidated for goals. Invested assets of $588,000 are the relevant figure, and $41,000 of that is already earmarked for education.</div></details>
+  <details class="selfcheck"><summary>What's the significance of the risk-tolerance gap between spouses?</summary>
+  <div class="sc-a">Household capacity is high but Dana's tolerance is lower. Planning purely to capacity risks her abandoning the strategy during a decline. Separate account allocations plus a written IPS agreed while calm reconciles this.</div></details>
+  <details class="selfcheck"><summary>Why does the standard deduction matter for the advice given here?</summary>
+  <div class="sc-a">Their itemized deductions fall below the standard deduction, so mortgage interest and charitable gifts produce no current tax benefit. Bunching gifts via a donor-advised fund becomes the relevant strategy instead.</div></details>
+  <details class="selfcheck"><summary>Why question the Whitfields' ranking of college above retirement?</summary>
+  <div class="sc-a">Retirement can't be financed by borrowing; education can, through loans, scholarships, work, and lower-cost schools. Prioritizing college at retirement's expense can leave parents dependent on their own children later — the ordering deserves to be examined with them, not just accepted.</div></details>
+
+  <p class="chapter-kicker" id="c2">Chapter 10.2 — Analysis: Ratios, Gaps &amp; Findings</p>
+
+  <h2>🧮 Ratio analysis: compute it, then reveal</h2>
+  <p>Gross monthly income $18,666.67; net $14,516.67; non-discretionary outflows $6,700. Try each ratio, then check yourself:</p>
+  <div data-reveal="ratioReveals"></div>
+  <div class="callout memory"><span class="ico">🌟</span><div><strong>Finding 1 — the Whitfields are financially healthy.</strong> Every ratio meets or beats guideline. This isn't a family needing correction — it's one with resources being deployed suboptimally.</div></div>
+
+  <h2>🏖️ Retirement analysis: on track?</h2>
+  <p>Target spending $130,000/yr, less $46,000 Social Security = an $84,000 annual gap to fund for 30 years. Match each number to its result:</p>
+  <div data-match="retirementNumbersMatch"></div>
+  <div class="callout exam"><span class="ico">🎉</span><div><strong>Finding 4 — retirement is comfortably on track</strong>, with a projected surplus of roughly <strong>$843,000</strong>. This reframes the whole case: the Whitfields ranked college first because they feared retirement was at risk. It isn't. They also don't need to take more risk than the plan requires — which directly helps accommodate Dana's lower tolerance.</div></div>
+
+  <h2>🎓 Education funding: the real gap</h2>
+  <table>
+    <tr><th>Child</th><th>Years to college</th><th>4-yr cost (nominal, 5% ed. inflation)</th></tr>
+    <tr><td>Nia (12)</td><td>6</td><td>$202,159</td></tr>
+    <tr><td>Theo (9)</td><td>9</td><td>$234,025</td></tr>
+    <tr><td><strong>TOTAL</strong></td><td></td><td><strong>$436,184</strong></td></tr>
+  </table>
+  <p>Current 529 balance $41,000, contributions $400/month at 6%. Compute the required monthly contribution, then reveal:</p>
+  <div data-reveal="educationReveals"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Finding 5 — education is the material gap</strong> — but it's a genuine values trade-off for the Whitfields, not a technical problem with one right answer. Because retirement is over-funded, some of that redirected surplus can come from easing off retirement contributions — but never below the level that captures Dana's full employer match.</div></div>
+
+  <h2>🛡️ Insurance analysis: life, disability &amp; property</h2>
+  <p>Needs-based analysis for Marcus (final expenses, mortgage payoff, other debt, 18 years of income replacement, 75% of education, a reserve for the survivor) totals <strong>$1,649,739</strong> in needs against <strong>$797,000</strong> in resources. Sort each coverage:</p>
+  <div data-sorter="insuranceGaps"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Finding 6 — Marcus is underinsured by roughly $850,000</strong> (Dana by roughly $600,000). Both rely SOLELY on group coverage, which vanishes at job termination — exactly when a family is most vulnerable. <strong>Finding 9 — no umbrella</strong> is the single most cost-effective fix in the whole case: a $1–2M policy costs a few hundred dollars a year against a $869,000 net worth and two future teen drivers.</div></div>
+
+  <h2>📈 Investment &amp; estate findings</h2>
+  <p>Twelve findings, one severity ranking. Sort each into how serious it is:</p>
+  <div data-sorter="findingSeverity"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Note the ordering:</strong> the Whitfields' #1 stated priority — education — ranks FOURTH. The critical finding (no estate documents, no named guardian) is one they never even raised, because clients don't know what they don't know. Surfacing it is the planner's job. Federal estate tax itself is NOT a concern at this asset level — the issues are guardianship, incapacity, and administration.</div></div>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Analysis pitfalls:</strong> presenting point estimates instead of ranges · accepting the client's goal priority without testing it · analyzing only what the client asked about · assuming market value equals replacement cost for homeowners · forgetting to tax-adjust group disability benefits · mistaking healthy ratios for a complete plan.</div></div>
+
+  <details class="selfcheck"><summary>Why does the retirement surplus change how this whole case is approached?</summary>
+  <div class="sc-a">It removes the constraint the Whitfields assumed was binding. Retirement is over-funded by ~$843,000, so resources can shift toward education without endangering it — and the required return is below 7%, permitting a more conservative allocation for Dana.</div></details>
+  <details class="selfcheck"><summary>Why is the $6,000 credit card balance a behavioral finding, not a capacity one?</summary>
+  <div class="sc-a">With a $3,607 monthly surplus, they could retire it in under two months. Paying 19.9% while holding surplus cash isn't an affordability problem — it points to mental accounting or inattention, so the fix is a conversation plus automation, not a budget.</div></details>
+  <details class="selfcheck"><summary>Why does homeowners Coverage A need verification rather than assumption?</summary>
+  <div class="sc-a">Market value includes land, which can't be destroyed, so it may overstate or understate replacement cost. If replacement cost exceeds $600,000, the $480,000 limit breaches the 80% coinsurance requirement and partial losses get proportionally reduced.</div></details>
+  <details class="selfcheck"><summary>Why is the estate finding critical despite zero estate-tax exposure?</summary>
+  <div class="sc-a">The issue isn't tax — with no will, a court selects the guardian for two minor children, and with no powers of attorney, incapacity would require conservatorship. Among the highest-consequence, lowest-cost gaps in personal financial planning.</div></details>
+  <details class="selfcheck"><summary>Why is 31% in employer stock worse than 31% in an unrelated stock?</summary>
+  <div class="sc-a">It compounds an existing concentration — Marcus's salary, job security, and retirement plan all depend on the same company, so one adverse event threatens income and assets together. The risk is also unsystematic and therefore uncompensated.</div></details>
+
+  <p class="chapter-kicker" id="c3">Chapter 10.3 — Recommendations &amp; Implementation</p>
 
   <h2>🧭 How a planner thinks it through</h2>
-  <div class="step-flow">
-    <div class="step"><div class="step-num">1</div><div><h4>🚨 Emergencies first</h4><p>1 month of savings is thin — build toward 3–6 months (Module 2) while attacking the 24% credit card (guaranteed “return” by paying it off!).</p></div></div>
-    <div class="step"><div class="step-num">2</div><div><h4>🎁 Never leave free money</h4><p>Marco contributes 4% but the match is 5% — raise to at least 5% for an instant 100% return on that slice (Module 7).</p></div></div>
-    <div class="step"><div class="step-num">3</div><div><h4>❤️ Protect the people</h4><p>Two young kids + two incomes + no life insurance = big need. Answer: affordable <strong>term</strong> policies on both spouses (Module 5). Add disability coverage — the paycheck IS the plan.</p></div></div>
-    <div class="step"><div class="step-num">4</div><div><h4>📜 Paper the plan</h4><p>Wills naming guardians for the kids, durable POAs, healthcare directives — and FIX that 401(k) beneficiary (Module 9: designations override the will!).</p></div></div>
-    <div class="step"><div class="step-num">5</div><div><h4>🔄 Monitor</h4><p>Review yearly and at every life event — step 7 of the process never ends (Module 1).</p></div></div>
-  </div>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>The priority pyramid the exam rewards:</strong> ① emergency fund &amp; toxic debt → ② full employer match → ③ insurance protection → ④ estate documents → ⑤ extra investing. Protection before growth!</div></div>
+  <p>Twelve findings compete for one $3,607 monthly surplus and the Whitfields' limited attention. Three sequencing principles: <strong>catastrophic exposures first</strong> (a gap that could destroy the plan outranks one that merely reduces efficiency), <strong>cost-effectiveness next</strong> (some fixes cost almost nothing and remove huge risk), and <strong>cash-flow-consuming items last</strong> (education is the top stated priority, but it requires an ongoing commitment). Put the ten recommendations back in priority order:</p>
+  <div data-order="prioritizationLogic"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>This ordering differs from the Whitfields' own stated priorities</strong> — which means step 5 (presenting) has to explain WHY. Frame it around their own goals: every goal, including education, depends on both parents being alive, insured, and having named who'd raise their kids. Protection isn't competing with education — it's protecting it.</div></div>
+  <figure class="viz">
+    <svg viewBox="0 0 700 200" role="img" aria-label="Prioritization funnel: catastrophic exposures first, then cost-effective fixes, then cash-flow-consuming commitments">
+      <polygon points="20,20 680,20 520,90 180,90" fill="#FDEAEE" stroke="#E11D48"/>
+      <text x="350" y="55" text-anchor="middle" font-size="14" font-weight="bold" fill="#9F1239">① Catastrophic exposures — estate docs, life insurance</text>
+      <polygon points="180,90 520,90 420,140 280,140" fill="#FDF3E3" stroke="#D97706"/>
+      <text x="350" y="120" text-anchor="middle" font-size="13" font-weight="bold" fill="#7C4A03">② Cost-effective fixes — umbrella, credit card, homeowners</text>
+      <polygon points="280,140 420,140 380,180 320,180" fill="#E6F6F0" stroke="#059669"/>
+      <text x="350" y="165" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#065F46">③ Cash-flow items</text>
+    </svg>
+    <figcaption>The widest, most urgent exposures get closed first — the ongoing commitments come last.</figcaption>
+  </figure>
 
-  <h2>🎯 Final rehearsal quiz (cross-module!)</h2>
-  <p>These mix every module — exactly like the real 75-question final. Aim for 70%+. You've trained for this. 💪</p>
+  <h2>📋 The ten recommendations</h2>
+  <div class="grid c2">
+    <div class="card" style="border-top:6px solid var(--m5)"><h3>1 · Estate documents</h3><p style="font-size:14px">Wills naming a guardian, durable POAs, health care proxies, HIPAA, updated contingent beneficiaries. ~$2,000–$3,500 · 60 days.</p></div>
+    <div class="card" style="border-top:6px solid var(--m5)"><h3>2 · Umbrella policy</h3><p style="font-size:14px">$2,000,000 umbrella; raise auto to 250/500/100. ~$400–$600/yr · 30 days.</p></div>
+    <div class="card" style="border-top:6px solid var(--m8)"><h3>3 · Term life insurance</h3><p style="font-size:14px">Marcus $850,000 / Dana $600,000, both 20-year level term, convertible. ~$1,900/yr · 60 days.</p></div>
+    <div class="card" style="border-top:6px solid var(--m8)"><h3>4 · Retire the credit card</h3><p style="font-size:14px">Pay the $6,000 balance from excess reserve; automate full statement payment. Immediate.</p></div>
+  </div>
+  <table>
+    <tr><th>#</th><th>Recommendation</th><th>Due</th></tr>
+    <tr><td>5</td><td>Verify homeowners replacement cost; correct Coverage A</td><td>30 days</td></tr>
+    <tr><td>6</td><td>Target 75% education funding — add $1,900/mo to 529s</td><td>60 days</td></tr>
+    <tr><td>7</td><td>Cut employer stock 31% → ≤10% (confirm NUA first)</td><td>90 days</td></tr>
+    <tr><td>8</td><td>Draft &amp; sign an investment policy statement</td><td>90 days</td></tr>
+    <tr><td>9</td><td>Ask HR about after-tax LTD premiums (tax-free benefit)</td><td>120 days</td></tr>
+    <tr><td>10</td><td>Asset location &amp; donor-advised fund review</td><td>next annual review</td></tr>
+  </table>
+  <p>Match each recommendation to its owner and timeline:</p>
+  <div data-match="recommendationOwners"></div>
+  <p style="font-size:14.5px"><strong>Deferred on purpose:</strong> long-term care insurance (revisit mid-50s), formal support for Dana's mother (keep the reserve high, start the conversation now), mortgage prepayment (below education in priority), and the family trip (fund it from remaining surplus — it's a legitimate goal too).</p>
+
+  <h2>💵 Cash flow reallocation &amp; deferred items</h2>
+  <table>
+    <tr><th>Use</th><th>Monthly</th></tr>
+    <tr><td>Additional 529 contributions</td><td>$1,900</td></tr>
+    <tr><td>Life insurance premiums</td><td>$158</td></tr>
+    <tr><td>Umbrella + increased auto limits</td><td>$50</td></tr>
+    <tr><td>Homeowners increase (estimate)</td><td>$25</td></tr>
+  </table>
+  <p>Compute the totals, then reveal:</p>
+  <div data-reveal="cashReallocReveals"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Deliberately not allocating every dollar</strong> is a design choice — a plan with no slack breaks on the first surprise and then gets abandoned entirely.</div></div>
+
+  <h2>🗣️ Presenting, implementing &amp; monitoring</h2>
+  <div class="grid c2">
+    <div class="card tint"><h3>🌟 Lead with the good news</h3><p style="font-size:14px">Retirement is on track with a big surplus — true, and it's what they were most anxious about. It earns credibility to raise harder items.</p></div>
+    <div class="card tint"><h3>🔀 Explain the reordering</h3><p style="font-size:14px">Protection isn't competing with education — every goal depends on both parents being alive, insured, and having named who'd raise the kids.</p></div>
+    <div class="card tint"><h3>🤝 Make the education trade-off theirs</h3><p style="font-size:14px">Present the funding levels and costs; let THEM choose. A single recommended figure here substitutes the planner's values for the client's.</p></div>
+    <div class="card tint"><h3>💛 Address Dana directly</h3><p style="font-size:14px">Her risk tolerance is a documented input, not an obstacle. Showing the plan doesn't need aggressive returns should ease her anxiety more than reassurance would.</p></div>
+  </div>
+  <p><strong>Monitoring:</strong> annual review of net worth, cash flow, education/retirement progress, allocation drift, and insurance adequacy. <strong>Off-cycle triggers:</strong> a job change, either parent's health change, Dana's mother needing support, an inheritance arriving, a big market move, a state move, tax law changes, or Nia starting to drive. Sort the SWOT of the whole plan:</p>
+  <div data-sorter="swotSorter"></div>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Recommendation &amp; implementation pitfalls:</strong> ordering by client priority instead of consequence · presenting analysis instead of specific actions · making a values decision (like the education funding level) FOR the client · not documenting alternatives considered · leaving actions unassigned or undated · allocating every dollar of surplus (no slack) · cutting retirement contributions below the full match · selling employer stock before checking NUA · treating implementation as the finish line instead of monitoring.</div></div>
+
+  <details class="selfcheck"><summary>Why do estate documents outrank education funding despite the Whitfields' stated priorities?</summary>
+  <div class="sc-a">Consequence and cost-effectiveness. With no wills, a court would choose the guardian for two minor children — an outcome touching every other goal, fixable for a few thousand dollars. Education is important but is a gradual shortfall, not a catastrophic exposure.</div></details>
+  <details class="selfcheck"><summary>Why is term rather than permanent insurance recommended here?</summary>
+  <div class="sc-a">The need is temporary — it declines as the mortgage amortizes, education gets funded, and the kids become independent. Term affordably provides $850,000/$600,000; the same amounts as permanent coverage would be unaffordable and crowd out education funding.</div></details>
+  <details class="selfcheck"><summary>Why pay the credit card from the reserve rather than the monthly surplus?</summary>
+  <div class="sc-a">The reserve sits above guideline at 6.87 months, so $6,000 can come out while staying near 6.0 months. This kills the 19.9% cost immediately and preserves the monthly surplus for ongoing commitments like premiums and 529 contributions.</div></details>
+  <details class="selfcheck"><summary>Why leave $1,474 of surplus unallocated?</summary>
+  <div class="sc-a">A plan with no slack breaks on the first unplanned expense and then tends to get abandoned entirely. The remainder funds the family trip, a sinking fund, and genuine flexibility.</div></details>
+  <details class="selfcheck"><summary>What must be checked before selling Marcus's employer stock?</summary>
+  <div class="sc-a">Whether the position carries substantial net unrealized appreciation (NUA). NUA treatment can allow appreciation to receive long-term capital gain rather than ordinary income treatment at separation, and it can be forfeited by a later rollover — confirm cost basis with the plan administrator first.</div></details>
+  <details class="selfcheck"><summary>Why plan now for cash flow that frees up in nine years?</summary>
+  <div class="sc-a">When the education commitment ends, $2,300/month becomes available. Deciding in advance where it goes prevents it from being silently absorbed into lifestyle spending — the default outcome when a scheduled obligation ends without a plan for the freed cash flow.</div></details>
+
+  <div class="callout cheer"><span class="ico">🏆</span><div><strong>That's the whole process, start to finish — on a real family.</strong> Data gathering → ratios → needs analysis → prioritized recommendations → implementation → monitoring. If you followed the Whitfields through all three chapters, you're not just memorizing anymore — you're thinking like a planner.</div></div>
+
+  <h2>🎯 Final rehearsal quiz (case-based, cross-module!)</h2>
+  <p>Every question below is grounded in the Whitfield facts above — exactly like the real 75-question final mixes topics into scenarios. Aim for 70%+. You've trained for this. 💪</p>
   <div id="quiz" class="quiz"></div>
 
-  <div class="callout cheer"><span class="ico">🏆</span><div><strong>If you passed this quiz, you're thinking like a planner — not just memorizing.</strong> Head to the <a href="exam-skills.html">Test-Taking Skills page</a> for your final polish, then trust your training. The exam gives you 3 hours, 2 attempts, and needs only 70%. You've got everything you need. 💛</div></div>
+  <div class="callout cheer"><span class="ico">🏆</span><div><strong>If you passed this quiz, you're thinking like a planner — not just memorizing.</strong> Head to the <a href="exam-skills.html">Test-Taking Skills page</a> for your final polish, drill more scenarios on the <a href="scenarios.html">Scenarios page</a>, clear your <a href="review.html">Rematch list</a>, then trust your training. The exam gives you 3 hours, 2 attempts, and needs only 70%. You've got everything you need. 💛</div></div>
 
+  <p><a href="module9.html">← Back to Module 9 — Estate Planning Basics</a></p>
 </main>
 
 <footer><div class="wrap"><p>FPQP® Visual Academy v1 · <a href="index.html">Home</a></p></div></footer>
 
 <script>
 window.QUIZ = { id:"m10", questions:[
- {q:"What should the Riveras tackle FIRST?", opts:["Buy a rental property","Emergency fund + the 24% credit card debt","Open a 529 plan","Buy whole life insurance"], a:1, why:"Protection before growth: thin savings and toxic 24% debt come before any investing move."},
- {q:"Marco contributes 4% with a 5% match available. The exam-best advice is…", opts:["stop contributing until debt is gone","raise to at least 5% to capture the full match","move it all to bonds","cash out the 401(k)"], a:1, why:"The match is a 100% instant return — capture it even while paying down debt."},
- {q:"The Riveras' 401(k) beneficiary is Marco's mother, but his will leaves everything to Elena. Who inherits the 401(k)?", opts:["Elena, because the will controls","Marco's mother — the beneficiary form wins","The probate court decides","Split 50/50"], a:1, why:"Beneficiary designations OVERRIDE the will. This is one of the most-tested facts in the program."},
- {q:"For maximum life insurance protection on a tight budget, the Riveras should buy…", opts:["whole life","variable universal life","term life","an immediate annuity"], a:2, why:"Term = most death benefit per dollar — ideal for young families with temporary big needs."},
- {q:"Elena asks: ‘If rates rise, what happens to our bond fund?’ You answer…", opts:["prices rise","prices fall","nothing changes","it becomes FDIC insured"], a:1, why:"The seesaw from Module 6: rates up → existing bond prices down."},
- {q:"The Riveras want $60,000 for college in 12 years. ‘$60,000’ and ‘12 years’ are which PTA elements?", opts:["Purpose and Time","Amount and Time frame","Amount and Purpose","Time and Attitude"], a:1, why:"Amount ($60,000) + Time frame (12 years). The Purpose is college."},
- {q:"If Marco (born 1988) inherits nothing else, his OWN retirement RMDs will start at age…", opts:["70½","72","73","75"], a:3, why:"Born 1960 or later → RMD age 75 under SECURE 2.0."},
- {q:"A planner who charges fees AND can earn commissions is called…", opts:["fee-only","fee-based","pro bono","AUM-only"], a:1, why:"Fee-BASED = fees + commissions. Fee-ONLY = fees alone. Don't let the exam trick you!"},
- {q:"The Riveras die in a car accident with no wills. Their estate is distributed by…", opts:["their financial planner","state intestacy laws","the IRS","their employer"], a:1, why:"No will = intestate → state law decides, and courts choose the kids' guardian. This is why wills matter."},
- {q:"Which account gives the Riveras a TRIPLE tax advantage for medical costs?", opts:["Roth IRA","529 plan","HSA","Brokerage account"], a:2, why:"HSA: deductible in, tax-free growth, tax-free out for qualified medical expenses."}
+ {q:"The Whitfields' net worth ($1,237,000 assets − $368,000 liabilities) is…", opts:["$1,605,000","$869,000","$588,000","$603,000"], a:1, why:"$1,237,000 − $368,000 = $869,000 — though use assets (49% of the total) won't fund any goal, so invested assets ($588,000) matter more for planning."},
+ {q:"The Whitfields' basic liquidity ratio comes out to 6.87 months against a 3–6 month guideline. The assessment is…", opts:["dangerously thin","strong — arguably excess","exactly on target","impossible to compute without more data"], a:1, why:"6.87 months is above the 3–6 month guideline — strong, with $5,000–$12,000 available for redeployment given two stable incomes."},
+ {q:"The Whitfields ranked college funding as their #1 goal. The analysis shows the actual highest-priority issue is…", opts:["their retirement is underfunded","they have no estate documents and no named guardian for their kids","their credit card debt is out of control","they're over-insured"], a:1, why:"With two minor children and zero estate documents, a court would select the guardian if both parents died — the most urgent, and among the cheapest, gaps in the whole case.", trap:"It's tempting to assume the clients' own stated #1 priority IS the analysis's #1 finding. It ranks fourth — clients don't know what they don't know."},
+ {q:"The retirement projection shows a surplus of roughly…", opts:["$84,000","$260,000","$843,000","$2,740,000"], a:2, why:"Total projected capital (~$3,583,542) minus capital required (~$2,740,773) ≈ $842,769 — retirement is comfortably on track."},
+ {q:"Given that retirement surplus, what should the Whitfields do with it?", opts:["Ignore it and keep saving exactly as before","Consider redirecting some retirement savings toward education, but never below the level that captures the full employer match","Stop contributing to retirement entirely","Immediately withdraw it to pay off the mortgage"], a:1, why:"Because retirement is over-funded, easing off retirement contributions to fund education is defensible — but only down to the level that preserves the full employer match, which should never be forfeited."},
+ {q:"Why is the $6,000 credit card balance at 19.9% called a 'behavioral' finding rather than a capacity problem?", opts:["They can't actually afford to pay it off","With a $3,607 monthly surplus they could pay it off in under two months — the issue is attention, not affordability","Credit card debt is always behavioral by definition","It's actually a tax-planning issue"], a:1, why:"Paying 19.9% while holding surplus cash isn't an affordability problem — it points to inattention or mental accounting, so the fix is a conversation plus automation."},
+ {q:"The needs-analysis gap for Marcus's life insurance is roughly…", opts:["$250,000","$600,000","$850,000","$1,650,000"], a:2, why:"Total needs (~$1,649,739) minus resources (~$797,000, including his $250,000 group term) ≈ $852,739 — call it $850,000 of ADDITIONAL coverage needed."},
+ {q:"Why is a $2,000,000 umbrella policy called 'the most cost-effective gap in the case'?", opts:["It's required by law","It costs a few hundred dollars a year against $869,000 of net worth and auto limits of only 100/300/50, with a teen driver approaching", "It replaces the need for any life insurance","It eliminates the need for homeowners insurance"], a:1, why:"Best risk-reduction-per-dollar in the whole case — cheap, and closes a real gap given rising net worth and Nia's approaching driving age."},
+ {q:"Why recommend TERM rather than permanent life insurance for the Whitfields?", opts:["Term is always better than permanent","The need is temporary — it shrinks as the mortgage amortizes and the kids become independent, and permanent coverage at this size would be unaffordable", "Permanent insurance isn't sold to people under 50","Term builds more cash value"], a:1, why:"A 20-year level term carries them past the dependency window at an affordable premium; the same face amounts as permanent coverage would crowd out education funding."},
+ {q:"Homeowners Coverage A is $480,000 against a $520,000 market value. Why can't you just assume that's adequate?", opts:["Market value always equals replacement cost","Market value includes land, which can't burn down, so replacement cost must be verified separately — if it exceeds $600,000 the 80% coinsurance rule is breached", "Coverage A never needs to match market value","Replacement cost is always lower than market value"], a:1, why:"If replacement cost tops $600,000, the $480,000 limit falls below the 80% coinsurance requirement, proportionally reducing PARTIAL losses — the majority of real claims."},
+ {q:"Both spouses have group LTD disability coverage at 60% of base pay, employer-paid. What's the catch?", opts:["It only pays out once","Employer-paid premiums make the benefit taxable, so 60% replaces materially less than it sounds like", "Group LTD never actually pays claims","It expires after one year regardless of disability"], a:1, why:"Because the employer pays the premium, benefits are taxable — Marcus's stated 60% nets to roughly $59,900 after tax against $80,400 of annual non-discretionary outflows."},
+ {q:"Marcus's 401(k) holds 31% in his employer's stock. The core problem is…", opts:["it's illegal to hold that much employer stock","it's uncompensated, unsystematic risk that compounds his existing dependence on the same company for salary and job security", "employer stock always underperforms the market","it disqualifies the 401(k) from tax deferral"], a:1, why:"His salary, job security, and retirement plan all ride on one company — the market doesn't pay extra return for risk diversification could remove."},
+ {q:"Before reducing that employer stock position, what must be checked first?", opts:["Nothing — sell immediately to reduce risk","Whether the position carries net unrealized appreciation (NUA), which can be forfeited by a later 401(k) rollover", "Whether the stock pays a dividend","The current day's market price only"], a:1, why:"NUA can let appreciation get long-term capital gains treatment at separation from service — confirm cost basis with the plan administrator, and consider staging the reduction, before acting."},
+ {q:"The Whitfields' retirement accounts name each other as beneficiary with NO contingent beneficiaries. The risk this creates is…", opts:["higher account fees","if both spouses died together, assets could pass to the estate and through probate", "the accounts would be frozen immediately","it triggers the generation-skipping tax"], a:1, why:"Without a contingent beneficiary, a simultaneous death can force assets into the estate — precisely the situation contingent beneficiaries exist to prevent."},
+ {q:"Why does the recommended sequence put estate documents and insurance AHEAD of education funding, even though education was the Whitfields' stated #1 goal?", opts:["Because education funding isn't actually important","Because catastrophic, plan-destroying exposures outrank goals that merely reduce efficiency — and every goal, including education, depends on both parents being alive, insured, and having named a guardian", "Because insurance agents earn higher commissions","Because the CFP Board requires this exact order"], a:1, why:"Prioritization logic: catastrophic exposures first, cost-effective fixes next, cash-flow-consuming commitments last. Protection isn't competing with education — it's protecting it."}
 ]};
+
+window.SORTERS = {
+  whitfieldDataTypes:{
+    buckets:[{id:"quant",label:"🔢 Quantitative",color:"--m3"},{id:"qual",label:"💗 Qualitative",color:"--m1"}],
+    items:[
+      {text:"$224,000 combined household income", bucket:"quant"},
+      {text:"Dana's anxiety during market downturns", bucket:"qual"},
+      {text:"Marcus's 401(k) holds 31% employer stock", bucket:"quant"},
+      {text:"Marcus stays calm and holds through downturns", bucket:"qual"},
+      {text:"Dana anticipates her mother may need support within a decade", bucket:"qual"},
+      {text:"Net worth of $869,000", bucket:"quant"}
+    ]
+  },
+  riskToleranceVsCapacity:{
+    buckets:[{id:"tolerance",label:"😰 Tolerance (feeling)",color:"--m5"},{id:"capacity",label:"💪 Capacity (ability)",color:"--m6"}],
+    items:[
+      {text:"Dana moved a 403(b) balance to stable value after a market drop", bucket:"tolerance"},
+      {text:"Marcus checks balances infrequently and held through prior downturns", bucket:"tolerance"},
+      {text:"A long, 21-year horizon to Marcus's retirement at 65", bucket:"capacity"},
+      {text:"Stable dual incomes in resilient professions", bucket:"capacity"},
+      {text:"A healthy $3,607 monthly surplus", bucket:"capacity"},
+      {text:"Dana reports feeling anxious when markets decline", bucket:"tolerance"}
+    ]
+  },
+  insuranceGaps:{
+    buckets:[{id:"adequate",label:"✅ Adequate",color:"--m6"},{id:"gap",label:"🚨 Gap",color:"--m5"}],
+    items:[
+      {text:"$250,000 group term on Marcus, ends at job termination", bucket:"gap", why:"Underinsured by roughly $850,000 against the needs analysis — and it vanishes if he leaves the job."},
+      {text:"Family HDHP with an HSA", bucket:"adequate"},
+      {text:"Homeowners Coverage A of $480,000 vs. $520,000 market value", bucket:"gap", why:"Must be verified against replacement cost — could breach the 80% coinsurance requirement."},
+      {text:"Auto limits of 100/300/50 with $869,000 net worth and no umbrella", bucket:"gap", why:"The single most cost-effective fix in the whole case."},
+      {text:"Group LTD at 60% of base pay, employer-paid", bucket:"gap", why:"Adequate on paper, but employer-paid premiums make the benefit taxable — materially less than 60% in hand."}
+    ]
+  },
+  findingSeverity:{
+    buckets:[{id:"critical",label:"🔴 Critical",color:"--m5"},{id:"high",label:"🟠 High",color:"--m8"},{id:"moderate",label:"🟡 Moderate",color:"--m3"},{id:"low",label:"🟢 Low",color:"--m1"},{id:"favorable",label:"⭐ Favorable",color:"--m6"}],
+    items:[
+      {text:"No estate documents; no guardian named for the kids", bucket:"critical"},
+      {text:"Life insurance shortfall — ≈$850k Marcus, ≈$600k Dana", bucket:"high"},
+      {text:"No umbrella liability coverage", bucket:"high"},
+      {text:"Education funding gap — $400/mo vs. ~$2,327 needed for 75%", bucket:"high"},
+      {text:"31% employer stock concentration in Marcus's 401(k)", bucket:"moderate"},
+      {text:"$6,000 credit card balance at 19.9%", bucket:"moderate"},
+      {text:"Homeowners Coverage A unverified against replacement cost", bucket:"moderate"},
+      {text:"No investment policy statement", bucket:"moderate"},
+      {text:"Group disability benefits taxable; margin thin", bucket:"moderate"},
+      {text:"Asset location unexamined", bucket:"low"},
+      {text:"Liquidity modestly above target (6.87 vs. 3–6 months)", bucket:"low"},
+      {text:"Retirement on track — ~$843,000 projected surplus", bucket:"favorable"}
+    ]
+  },
+  swotSorter:{
+    buckets:[{id:"strength",label:"💪 Strength",color:"--m6"},{id:"weakness",label:"⚠️ Weakness",color:"--m5"},{id:"opportunity",label:"🌤️ Opportunity",color:"--m3"},{id:"threat",label:"⛈️ Threat",color:"--m8"}],
+    items:[
+      {text:"Strong ratios across the board and a healthy monthly surplus", bucket:"strength"},
+      {text:"Retirement over-funded by roughly $843,000", bucket:"strength"},
+      {text:"No estate documents at all", bucket:"weakness"},
+      {text:"Underinsured, with a spouse risk-tolerance mismatch and no IPS", bucket:"weakness"},
+      {text:"Employer match plus Dana's 3% nonelective contribution", bucket:"opportunity"},
+      {text:"Still insurable at good term-life rates today", bucket:"opportunity"},
+      {text:"Education inflation running above general inflation", bucket:"threat"},
+      {text:"Dana's mother's potential future long-term care needs", bucket:"threat"}
+    ]
+  }
+};
+
+window.MATCHERS = {
+  whitfieldTitling:{pairs:[
+    ["Residence ($520,000)","Titled JTWROS — passes automatically to the survivor"],
+    ["Taxable brokerage ($62,000)","Titled JTWROS"],
+    ["Retirement accounts (401k, 403b, Roth IRAs)","Individually owned — pass by beneficiary designation"],
+    ["529 plans ($41,000)","Owned by Marcus, one per child"]
+  ]},
+  retirementNumbersMatch:{pairs:[
+    ["PV of the $84,000 annual gap, 30 years","$1,473,300 (today's dollars)"],
+    ["That PV inflated to age 65 (21 yrs)","$2,740,773 (nominal capital required)"],
+    ["Current retirement assets, grown to 65 at 7%","$2,190,358"],
+    ["Monthly contributions ($2,440), grown to 65","$1,393,184"],
+    ["Total projected capital at 65","$3,583,542"],
+    ["Projected surplus","≈ $842,769"]
+  ]},
+  recommendationOwners:{pairs:[
+    ["Estate documents (wills, POAs, proxies)","Whitfields, with an attorney — due in 60 days"],
+    ["Umbrella policy &amp; raised auto limits","Whitfields, with their P&C agent — due in 30 days"],
+    ["Individual term life policies","Whitfields, with an insurance agent — due in 60 days"],
+    ["Pay off the credit card","Whitfields — immediate, from excess reserve"],
+    ["Reduce employer stock concentration","Marcus, with planner support — due in 90 days (confirm NUA first)"],
+    ["Investment policy statement","Planner drafts, both approve — due in 90 days"]
+  ]}
+};
+
+window.ORDERS = {
+  statedGoalsOrder:{steps:[
+    "1. Fund both children's college — cover \"most\" of a 4-year in-state public education",
+    "2. Retire at 65 (Marcus) with ~$130,000/year in today's dollars",
+    "3. Be prepared to help Dana's mother if needed",
+    "4. Pay off the mortgage before retirement",
+    "5. Take an extended family trip within three years (~$15,000)"
+  ]},
+  prioritizationLogic:{steps:[
+    "Priority 1 — Estate documents: wills, POAs, health care proxies, HIPAA authorizations",
+    "Priority 2 — Umbrella liability policy & raised auto limits",
+    "Priority 3 — Individual term life insurance",
+    "Priority 4 — Retire the credit card balance",
+    "Priority 5 — Verify & correct homeowners coverage",
+    "Priority 6 — Decide the education funding level",
+    "Priority 7 — Reduce employer stock concentration",
+    "Priority 8 — Investment policy statement & allocation",
+    "Priority 9 — Disability review (tax treatment of premiums)",
+    "Priority 10 — Asset location & tax efficiency"
+  ]}
+};
+
+window.REVEALS = {
+  cashFlowReveals:{cols:3, items:[
+    {front:"Net cash flow?", back:"+$3,606.67 a month — gross income minus all outflows, including savings."},
+    {front:"After-tax monthly income?", back:"$14,516.67."},
+    {front:"Monthly savings subtotal?", back:"$2,530 — 401(k), 403(b), HSA, and 529 contributions combined."}
+  ]},
+  ratioReveals:{cols:3, items:[
+    {front:"Basic liquidity — $46,000 ÷ $6,700 non-discretionary?", back:"6.87 months — vs. a 3–6 month guideline. Strong, arguably excess."},
+    {front:"Savings rate — (savings + match) ÷ gross income?", back:"16.77% — vs. 10–20% guideline. Good."},
+    {front:"Front-end (housing) — $2,680 ÷ $18,666.67?", back:"14.36% — vs. ≤28% guideline. Excellent."},
+    {front:"Back-end (total debt) — $3,650 ÷ $18,666.67?", back:"19.55% — vs. ≤36% guideline. Excellent."},
+    {front:"Consumer debt — $970 ÷ $14,516.67 (net)?", back:"6.68% — vs. ≤20% guideline. Strong."},
+    {front:"Debt-to-assets — $368,000 ÷ $1,237,000?", back:"29.75% — reasonable for mid-career."}
+  ]},
+  educationReveals:{cols:3, items:[
+    {front:"Fund 100% of both educations?", back:"≈$3,289/month — consumes the entire surplus, nothing left for anything else."},
+    {front:"Fund a 75% target?", back:"≈$2,327/month — leaves about $1,280 for other priorities."},
+    {front:"Fund a 50% target?", back:"≈$1,365/month — substantial room remains for other goals."}
+  ]},
+  cashReallocReveals:{cols:2, items:[
+    {front:"Total newly committed each month?", back:"$2,133 — 529 top-up, life insurance, umbrella & auto, homeowners increase."},
+    {front:"Remaining surplus after commitments?", back:"$1,474 — deliberately left unallocated for the family trip, a sinking fund, and flexibility."}
+  ]}
+};
 </script>
 <script src="js/app.js"></script>
 </body>

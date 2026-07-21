@@ -13,8 +13,8 @@
   <div class="wrap">
     <div class="kicker">Module 9 of 10 — big 2026 update inside ✨</div>
     <h1>🏰 Estate Planning Basics</h1>
-    <p class="lead">Estate planning = making sure the right people get the right things the right way — <strong>without unnecessary courts, taxes, or family fights</strong>.</p>
-    <div><span class="badge">Wills &amp; probate</span><span class="badge">Trusts</span><span class="badge">Titling beats the will!</span><span class="badge">$15M exemption (2026)</span></div>
+    <p class="lead">Estate planning = making sure the right people get the right things the right way — <strong>without unnecessary courts, taxes, or family fights</strong>. Four chapters: terminology, the tools that move property, what it costs, and planning for the messier problem of incapacity.</p>
+    <div><span class="badge">Wills &amp; probate</span><span class="badge">Trusts</span><span class="badge">Titling beats the will!</span><span class="badge">$15M exemption (2026)</span><span class="badge">Incapacity planning</span></div>
   </div>
 </header>
 
@@ -24,29 +24,186 @@
     <a class="tag" href="concepts.html">wills &amp; probate</a>
     <a class="tag" href="concepts.html">trusts</a>
     <a class="tag" href="concepts.html">titling</a>
+    <a class="tag" href="concepts.html">incapacity planning</a>
     <a class="tag" href="number-bank.html">2026 exemptions</a>
   </div>
 
-  <h2>🗂️ The estate planning toolbox</h2>
-  <div class="grid c2">
-    <div class="card"><h3>📜 Will</h3><p style="font-size:14.5px">Says who gets what, names guardians for kids, names an executor. Dies without one = <strong>intestate</strong> → state law decides. A will still goes through <strong>probate</strong>.</p></div>
-    <div class="card"><h3>⚖️ Probate</h3><p style="font-size:14.5px">The court process validating a will and distributing assets. <strong>Public, slow, costly</strong> — much of estate planning is about avoiding it.</p></div>
-    <div class="card"><h3>🤝 Durable power of attorney</h3><p style="font-size:14.5px">Someone manages your <strong>finances</strong> if you're incapacitated. “Durable” = stays valid through incapacity.</p></div>
-    <div class="card"><h3>🩺 Healthcare directives</h3><p style="font-size:14.5px">Living will (your medical wishes) + healthcare proxy (who decides for you).</p></div>
+  <div class="chapter-nav">
+    <a href="#c1">9.1 Estate terminology</a>
+    <a href="#c2">9.2 Transfer tools</a>
+    <a href="#c3">9.3 Transfer expenses</a>
+    <a href="#c4">9.4 Incapacity planning</a>
   </div>
+
+  <p class="chapter-kicker" id="c1">Chapter 9.1 — Estate Planning Terminology</p>
+
+  <h2>🗂️ The estate planning toolbox</h2>
+  <p>How property is <em>classified</em> decides how it transfers — and this single distinction drives the whole module.</p>
+  <div class="grid c2">
+    <div class="card"><h3>⚖️ Probate property</h3><p style="font-size:14.5px">Solely owned, with <strong>no</strong> beneficiary designation or survivorship feature. Transfers by the will — or by intestacy law if there's no will.</p></div>
+    <div class="card"><h3>🚀 Non-probate property</h3><p style="font-size:14.5px">Has a survivorship feature, a beneficiary designation, or is held in trust. Transfers by <strong>operation of law or contract</strong> — the will never touches it.</p></div>
+  </div>
+  <p><strong>Real property</strong> is governed by the law of the state where it sits (which is why out-of-state property can trigger <strong>ancillary probate</strong>). <strong>Personal property</strong> follows the law of the decedent's home state.</p>
+  <p>Every estate plan involves a cast of characters. Match each role to its job:</p>
+  <div data-match="estateRoles"></div>
+  <div class="plain-note">The executor runs the show after you die; the trustee runs a trust while it exists; a guardian raises your kids if you can't. Different jobs, often different people.</div>
+
+  <h2>⚖️ Probate: what it does, and its drawbacks</h2>
+  <p>Probate <strong>proves</strong> the will's validity, appoints the executor, gives creditors and will-contesters a forum, and produces clear title for distributed assets. Those are genuine benefits — but they come at a price. Tap each drawback:</p>
+  <div data-reveal="probateDrawbacks"></div>
+  <p style="font-size:14.5px">Many states offer <strong>simplified or small-estate procedures</strong> for modest estates that cut the cost and delay substantially. And a will that omits a <strong>residuary clause</strong> (a catch-all for anything not otherwise given) risks <strong>partial intestacy</strong> — one of the most common drafting failures.</p>
 
   <h2>🚦 What skips probate? (titling beats the will!)</h2>
   <p>Hover or tap each asset to see where it actually goes. Green = straight to heirs; amber = through probate court first.</p>
   <div data-probate></div>
   <div class="plain-note">Whoever is named on the account (the beneficiary or co-owner) gets it — fast, no court. Anything with only your name on it and no beneficiary has to go through probate court first.</div>
-  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Huge exam point:</strong> a beneficiary designation OVERRIDES the will. An outdated 401(k) beneficiary means an ex-spouse could inherit — no matter what the will says!</div></div>
+  <table>
+    <tr><th>Will substitute</th><th>How it moves property</th></tr>
+    <tr><td>Joint tenancy with right of survivorship (JTWROS)</td><td>Automatic to the surviving joint owner</td></tr>
+    <tr><td>Tenancy by the entirety</td><td>Spousal form with survivorship, where recognized</td></tr>
+    <tr><td>Beneficiary designations</td><td>Life insurance, retirement accounts, annuities</td></tr>
+    <tr><td>POD / TOD accounts</td><td>Payable-on-death / transfer-on-death registrations</td></tr>
+    <tr><td>TOD deeds</td><td>Real property, in states that allow them</td></tr>
+    <tr><td>Living trusts</td><td>Trust assets pass under the trust's own terms</td></tr>
+  </table>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Huge exam point:</strong> a beneficiary designation OVERRIDES the will. An outdated 401(k) beneficiary means an ex-spouse could inherit — no matter what the will says! Common failures: a stale ex-spouse designation, a deceased primary with no contingent, a minor named directly (forces guardianship), or the estate named as beneficiary (needlessly triggers probate and loses favorable retirement stretch treatment).</div></div>
+
+  <h2>💻 Digital assets, step-up in basis &amp; reviewing the plan</h2>
+  <p><strong>Digital assets</strong> — email, cloud storage, crypto, domain names, loyalty programs — are a growing headache: terms of service may forbid transfer, and computer-fraud statutes create real uncertainty about access, even for a legitimate executor. Most states now follow <strong>RUFADAA</strong>, which gives effect to the user's own directions in a strict priority order. Put the steps in order:</p>
+  <div data-order="rufadaa"></div>
+  <div class="plain-note">Without the private keys, cryptocurrency is gone forever — no court order can retrieve it. Use a provider's legacy-contact tool, grant explicit digital-asset authority in your documents, and keep a secure account inventory.</div>
+  <p>Reprising <a href="module8.html">8.3</a> because it drives so many estate decisions: property from a decedent generally gets a <strong>step-up in basis</strong> to fair market value at death, erasing lifetime appreciation for income tax purposes. Sort these into the right bucket:</p>
+  <div data-sorter="stepUpSorter"></div>
+  <p style="font-size:14.5px">Estate documents go stale silently. <strong>Review triggers:</strong> marriage/divorce/remarriage, a birth or adoption, a death (spouse, beneficiary, executor, guardian), a big change in wealth, a move to another state, tax law changes, buying or selling a business, health changes, or just periodic review. <strong>Divorce deserves emphasis</strong> — many states revoke will provisions for an ex-spouse by statute, but that almost never reaches retirement-account beneficiary forms, which are governed by federal law.</p>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Chapter 9.1 pitfalls:</strong> assuming the will governs assets that pass by designation or titling · not updating beneficiary forms after divorce, death, or a birth · naming a minor or the estate as beneficiary · no residuary clause (partial intestacy) · no named guardian · out-of-state property without ancillary-probate planning · gifting away a step-up · missing the portability election because no tax was owed · ignoring low state estate-tax exclusions · inaccessible digital assets and crypto.</div></div>
+
+  <details class="selfcheck"><summary>Why can a carefully drafted will still fail to control an estate?</summary>
+  <div class="sc-a">Will substitutes — beneficiary designations, joint tenancy with survivorship, POD/TOD registrations, and trusts — pass outside the will and override it. Much of a typical estate transfers this way, so a stale designation defeats even perfect drafting.</div></details>
+  <details class="selfcheck"><summary>State the four main drawbacks of probate.</summary>
+  <div class="sc-a">Cost (court fees, executor commissions, attorney fees), delay (months to years), publicity (records are public), and ancillary probate in every state where real property sits. Court supervision also reduces flexibility.</div></details>
+  <details class="selfcheck"><summary>Explain the step-up and its gifting implication.</summary>
+  <div class="sc-a">Property from a decedent takes a basis equal to date-of-death fair market value, so lifetime appreciation escapes income tax. That's why you bequeath low-basis appreciated assets and gift cash or high-basis assets instead — gifting appreciated property wastes the step-up.</div></details>
+  <details class="selfcheck"><summary>What is portability, and how is it lost?</summary>
+  <div class="sc-a">It lets a surviving spouse use the deceased spouse's unused federal exclusion. It requires a timely-filed estate tax return to elect — commonly skipped in estates owing no tax, which can prove very costly at the survivor's death.</div></details>
+  <details class="selfcheck"><summary>Why is divorce a particularly dangerous point for beneficiary designations?</summary>
+  <div class="sc-a">Many state statutes revoke will provisions for a former spouse, creating a false sense that everything updated automatically. Those statutes generally don't reach retirement-account beneficiary forms, governed by federal law — so an ex can remain entitled to the account.</div></details>
+  <details class="selfcheck"><summary>What's distinctive about community property at the first spouse's death?</summary>
+  <div class="sc-a">The ENTIRE community interest — both spouses' halves — generally gets a step-up in basis, not just the decedent's share. In common law states, only the decedent's half steps up.</div></details>
+
+  <p class="chapter-kicker" id="c2">Chapter 9.2 — Estate Transfer Tools</p>
+
+  <h2>📜 Wills: strengths vs. weaknesses</h2>
+  <p>A real plan combines several tools — the will handles what nothing else reaches, titling and designations handle the bulk, and trusts handle what needs ongoing control. Sort each fact about wills:</p>
+  <div data-sorter="willStrengthWeak"></div>
+  <div class="pill-row">
+    <span class="pill">📝 Formal (attested) — the standard, most reliable</span>
+    <span class="pill">✍️ Holographic — handwritten, some states only</span>
+    <span class="pill">🗣️ Nuncupative — oral, rarely valid</span>
+    <span class="pill">📎 Codicil — amends a will (big changes → new will instead)</span>
+    <span class="pill">✅ Self-proving affidavit — cheap insurance against a will contest</span>
+  </div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Say it plainly to clients:</strong> a will does NOTHING while you're alive but incapacitated — it operates only at death. That's what <a href="#c4">Chapter 9.4</a> is for.</div></div>
+
+  <h2>🚫 Intestate succession &amp; how property is titled</h2>
+  <p>Without a valid will, state statute decides — and it can't do everything a will can:</p>
+  <div class="pill-row">
+    <span class="pill">🚫 No unmarried partner</span>
+    <span class="pill">🚫 No unadopted stepchildren</span>
+    <span class="pill">🚫 No charitable gifts</span>
+    <span class="pill">🚫 No chosen guardian — a court decides</span>
+    <span class="pill">🚫 No chosen executor</span>
+  </div>
+  <p>Titling silently overrides the will, too. Match each form of ownership to what happens at death:</p>
+  <div data-match="titlingForms"></div>
+
+  <h2>⚠️ JTWROS: convenient, and frequently misused</h2>
+  <p>Adding an adult child to a bank account or deed "for convenience" is one of the most common well-intentioned estate mistakes. Tap each problem to see why:</p>
+  <div data-reveal="jtwrosProblems"></div>
+  <p style="font-size:14.5px">A durable power of attorney or a revocable trust achieves the same convenience — without the fallout.</p>
+  <p><strong>Worked example</strong> — a widow's will says "everything equally to my three children":</p>
+  <table>
+    <tr><th>Asset</th><th>Value</th><th>Titling / beneficiary</th><th>Actually passes to</th></tr>
+    <tr><td>Home</td><td>$400,000</td><td>JTWROS with daughter Ann</td><td><strong>Ann alone</strong></td></tr>
+    <tr><td>IRA</td><td>$500,000</td><td>Beneficiary: son Ben</td><td><strong>Ben alone</strong></td></tr>
+    <tr><td>Life insurance</td><td>$250,000</td><td>Deceased spouse, no contingent</td><td><strong>The estate</strong> — probate</td></tr>
+    <tr><td>Brokerage</td><td>$150,000</td><td>Sole name</td><td>Estate — split 3 ways</td></tr>
+    <tr><td>Checking</td><td>$30,000</td><td>POD to daughter Cara</td><td><strong>Cara alone</strong></td></tr>
+  </table>
+  <p style="font-size:14.5px">Intended: ~$443,000 each. Actual: Ann ≈$533,000, Ben ≈$633,000, Cara ≈$163,000. <strong>The will was fine.</strong> The plan failed entirely on coordination — one beneficiary review would have caught it all.</p>
+
+  <h2>📑 Transfers by contract</h2>
+  <p>Life insurance, retirement accounts (IRAs, 401(k)s, 403(b)s), annuities, POD/TOD accounts, and TOD deeds all pass by contract — outside both the will and probate. Efficient, private, and free... which is exactly why they're easy to set and forget. Sort each practice:</p>
+  <div data-sorter="contractCautions"></div>
 
   <h2>🎭 Trusts: revocable vs. irrevocable</h2>
   <div class="vs">
     <div class="side" style="border-color:var(--m9);background:var(--m9s)"><h3 style="color:var(--m9)">🔄 Revocable (living) trust</h3><p style="font-size:14.5px">You keep control, can change or cancel it. <strong>Avoids probate</strong> — but assets still count in your taxable estate and get no creditor shield.</p></div>
     <div class="side" style="border-color:var(--m2);background:var(--m2s)"><h3 style="color:var(--m2)">🔒 Irrevocable trust</h3><p style="font-size:14.5px">You give up control — permanently. In exchange: assets leave your taxable estate and gain creditor protection. Classic use: irrevocable life insurance trust (ILIT).</p></div>
   </div>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> the three trust roles — <strong>Grantor</strong> gives, <strong>Trustee</strong> tends, <strong>Beneficiary</strong> benefits. “G.T.B. — Give, Tend, Benefit.”</div></div>
+  <table>
+    <tr><th></th><th>Revocable</th><th>Irrevocable</th></tr>
+    <tr><td>Grantor can amend/revoke</td><td><strong>Yes</strong></td><td>Generally no</td></tr>
+    <tr><td>Included in grantor's gross estate</td><td><strong>Yes</strong></td><td>Generally no</td></tr>
+    <tr><td>Creditor protection from grantor's creditors</td><td>No</td><td>Generally yes</td></tr>
+    <tr><td>Primary purpose</td><td>Probate avoidance, incapacity mgmt</td><td>Tax reduction, asset protection</td></tr>
+  </table>
+  <p>The trade-off is direct: <strong>control versus benefit.</strong> Match each piece of trust vocabulary:</p>
+  <div data-match="trustRoles"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> the three trust roles — <strong>Grantor</strong> gives, <strong>Trustee</strong> tends, <strong>Beneficiary</strong> benefits. "G.T.B. — Give, Tend, Benefit."</div></div>
+  <figure class="viz">
+    <svg viewBox="0 0 720 190" role="img" aria-label="The ILIT three-year rule: transferring an existing policy and dying within three years pulls proceeds back into the estate">
+      <line x1="60" y1="110" x2="660" y2="110" stroke="#ccc" stroke-width="3"/>
+      <circle cx="60" cy="110" r="8" fill="#9333EA"/><text x="60" y="145" text-anchor="middle" font-size="12" fill="#6B6584">Policy transferred to ILIT</text>
+      <rect x="90" y="96" width="300" height="28" rx="14" fill="#FDEAEE"/><text x="240" y="115" text-anchor="middle" font-size="12.5" fill="#9F1239" font-weight="bold">Dies within 3 years → proceeds INCLUDED in estate</text>
+      <rect x="400" y="96" width="260" height="28" rx="14" fill="#E6F6F0"/><text x="530" y="115" text-anchor="middle" font-size="12.5" fill="#065F46" font-weight="bold">Dies after 3 years → proceeds EXCLUDED</text>
+      <circle cx="390" cy="110" r="7" fill="#059669"/><text x="390" y="70" text-anchor="middle" font-size="12" fill="#6B6584">3-year mark</text>
+    </svg>
+    <figcaption>Why the ILIT should purchase a NEW policy from inception, rather than take an existing one.</figcaption>
+  </figure>
+
+  <h2>🔄 Revocable living trusts &amp; the irrevocable trust family</h2>
+  <p>The revocable living trust is the workhorse of ordinary estate planning — but only if it's <strong>funded</strong>. Sort each fact:</p>
+  <div data-sorter="revocableAdvLim"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>The #1 living-trust failure:</strong> clients pay for the document and never retitle assets into it. An unfunded trust accomplishes nothing. A <strong>pour-over will</strong> catches the leftovers — but they still go through probate first; it's a safety net, not a substitute for funding.</div></div>
+  <p>Irrevocable trusts trade control for tax and protection benefits. Tap each to learn its purpose:</p>
+  <div data-reveal="irrevocableTrusts"></div>
+  <p style="font-size:14.5px"><strong>Special needs trusts</strong> deserve emphasis: leaving assets outright to a disabled beneficiary can disqualify them from Medicaid or SSI. Disinheriting them and relying on an informal sibling promise offers zero legal protection.</p>
+
+  <h2>🎁 Gifts: exclusions, UGMA/UTMA &amp; gift vs. bequest</h2>
+  <p>Lifetime gifts remove assets AND their future appreciation from the estate. Sort each item into the smarter move:</p>
+  <div data-sorter="giftOrBequeath"></div>
+  <div class="pill-row">
+    <span class="pill">🎓 Tuition &amp; medical, paid DIRECTLY = unlimited, no forms</span>
+    <span class="pill">👨‍👩‍👧 UGMA/UTMA = irrevocable gift; property is the minor's</span>
+    <span class="pill">🔓 Custodial control passes at majority</span>
+    <span class="pill">👶 Kiddie tax limits income shifting</span>
+    <span class="pill">⚠️ Donor-as-custodian who dies while serving → included in donor's estate</span>
+  </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>The rule of thumb:</strong> gift cash and high-basis assets; bequeath low-basis appreciated assets. Gifting carries over the donor's basis and wastes a step-up that would have erased the gain.</div></div>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Chapter 9.2 pitfalls:</strong> relying on a will while titling/designations actually control · adding a child as joint owner "for convenience" · creating a revocable trust and never funding it · assuming a pour-over will substitutes for funding · transferring an existing policy to an ILIT and dying within 3 years · leaving assets outright to a disabled beneficiary · naming a minor or the estate as beneficiary · omitting contingent beneficiaries · serving as custodian of a UTMA you funded · reimbursing tuition instead of paying the school directly · gifting appreciated assets that would have stepped up.</div></div>
+
+  <details class="selfcheck"><summary>Why is an unfunded revocable living trust worthless?</summary>
+  <div class="sc-a">A trust governs only assets actually titled in its name. Without retitling, assets stay in the grantor's name and go through probate anyway — exactly what the trust was meant to avoid. A pour-over will catches them, but they still go through probate first.</div></details>
+  <details class="selfcheck"><summary>What's wrong with adding an adult child as joint owner "for convenience"?</summary>
+  <div class="sc-a">It's a completed gift with survivorship — the account passes to that child alone, disinheriting siblings as to that asset. It also exposes the funds to the child's creditors and divorce, may trigger gift tax, and forfeits part of the step-up. A durable POA achieves the same convenience without these effects.</div></details>
+  <details class="selfcheck"><summary>How does an ILIT keep insurance out of the gross estate, and what's the 3-year rule?</summary>
+  <div class="sc-a">Proceeds are included only when the insured holds incidents of ownership. If the ILIT owns the policy from inception, the insured holds none. The 3-year rule pulls proceeds back into the estate if an EXISTING policy is transferred to the trust and the insured dies within 3 years — so the trust should buy the policy originally.</div></details>
+  <details class="selfcheck"><summary>Why is leaving assets outright to a disabled beneficiary a problem?</summary>
+  <div class="sc-a">It can disqualify them from means-tested benefits like Medicaid and SSI. A properly drafted special needs trust supplements those benefits without replacing them — an informal sibling promise offers no legal protection.</div></details>
+  <details class="selfcheck"><summary>What's distinctive about the tuition and medical gift exclusions?</summary>
+  <div class="sc-a">They're unlimited in amount and don't use the annual exclusion or lifetime exemption — but payment must go DIRECTLY to the school or medical provider. Reimbursing the individual instead makes it an ordinary gift.</div></details>
+  <details class="selfcheck"><summary>State the general rule for gifting vs. bequeathing an asset.</summary>
+  <div class="sc-a">Gift cash and high-basis assets; bequeath low-basis appreciated assets. Gifting carries over the donor's basis, so the recipient inherits the built-in gain, while bequeathing delivers a step-up that erases it.</div></details>
+
+  <p class="chapter-kicker" id="c3">Chapter 9.3 — Estate Transfer Expenses</p>
+
+  <div class="callout memory"><span class="ico">📌</span><div><strong>Note on figures:</strong> exclusion amounts, annual exclusions, rates, and thresholds are indexed annually and subject to legislation. This chapter describes the <em>structure</em> — always verify the current-year figures before relying on them.</div></div>
+
+  <h2>🧮 The unified transfer tax system</h2>
+  <p>Federal gift and estate taxes are <strong>unified</strong> — one lifetime exemption covers both, so lifetime gifts and death transfers draw on the same pool. Without unification, the estate tax would only catch people who died unexpectedly. Match each tax to what it applies to:</p>
+  <div data-match="transferTaxes"></div>
 
   <h2>💰 The 2026 numbers (big update!)</h2>
   <div class="grid c3">
@@ -54,16 +211,91 @@
     <div class="card" style="border-top:6px solid var(--m2)"><div class="stat" style="color:var(--m2)">$19,000</div><div class="stat-label"><strong>Annual gift exclusion</strong> per recipient in 2026 — give this much to ANY number of people, no tax forms needed</div></div>
     <div class="card" style="border-top:6px solid var(--m8)"><div class="stat" style="color:var(--m8)">40%</div><div class="stat-label"><strong>Top estate tax rate</strong> on amounts above the exemption</div></div>
   </div>
+  <p>Tap each gift-tax rule to see how it works:</p>
+  <div data-reveal="giftTaxRules"></div>
   <p class="src">Sources: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax">IRS: What's new — estate &amp; gift tax</a> · <a href="https://www.morganlewis.com/pubs/2025/10/irs-announces-increased-gift-and-estate-tax-exemption-amounts-for-2026">Morgan Lewis: 2026 exemption amounts</a></p>
 
   <h2>♾️ Two spouse superpowers</h2>
   <div class="grid c2">
-    <div class="card tint"><h3>💍 Unlimited marital deduction</h3><p style="font-size:14.5px">Leave ANY amount to a U.S.-citizen spouse — zero estate tax at the first death.</p></div>
+    <div class="card tint"><h3>💍 Unlimited marital deduction</h3><p style="font-size:14.5px">Leave ANY amount to a U.S.-citizen spouse — zero estate tax at the first death. (It defers tax; the assets land in the survivor's estate later.)</p></div>
     <div class="card tint"><h3>📨 Portability</h3><p style="font-size:14.5px">A surviving spouse can claim the deceased spouse's unused exemption (file the election!) — doubling the shield.</p></div>
   </div>
-  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam traps:</strong> (1) Inherited assets get a <strong>step-up in basis</strong> — heirs' capital gains clock resets to date-of-death value. (2) A revocable trust does <strong>NOT</strong> reduce estate taxes — it only avoids probate.</div></div>
+  <p><strong>Credit shelter (bypass) trusts</strong> are the traditional alternative to portability — funding a trust with the first spouse's exclusion so assets AND their future growth bypass the survivor's estate. Trade-off: bypass-trust assets don't get a second step-up at the survivor's death. Put the taxable-estate formula in order:</p>
+  <div data-order="taxableEstateFormula"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam traps:</strong> (1) Inherited assets get a <strong>step-up in basis</strong> — heirs' capital gains clock resets to date-of-death value. (2) A revocable trust does <strong>NOT</strong> reduce estate taxes — it only avoids probate. (3) Portability requires a <strong>timely-filed</strong> return, even when no tax is owed.</div></div>
 
-  <div class="callout cheer"><span class="ico">🌟</span><div><strong>Nine modules. NINE.</strong> One rehearsal module left, and it's the fun one — putting it all together like a real planner. You should be genuinely proud right now. 💜</div></div>
+  <h2>🏛️ The gross estate &amp; valuation</h2>
+  <p>The gross estate is broader than probate property — the unifying rule is: <strong>retained control means inclusion.</strong> Sort each item:</p>
+  <div data-sorter="grossEstateSorter"></div>
+  <p style="font-size:14.5px">Property is valued at fair market value on the date of death, or the executor may elect the <strong>alternate valuation date</strong> (6 months later) — but only if it reduces BOTH the gross estate and the tax, and only for the entire estate at once. <strong>Valuation discounts</strong> for lack of marketability/control can apply to closely held business interests, but they're an audit magnet.</p>
+
+  <h2>💧 Administrative costs, IRD &amp; the liquidity problem</h2>
+  <p>For most families, <strong>administrative costs and liquidity</strong> matter far more than estate tax — current exclusions put most estates beyond its reach entirely. <strong>Income in respect of a decedent (IRD)</strong> — like a traditional IRA balance — gets NO step-up, and the recipient owes income tax on it, which is why an IRA should go to charity (which owes no income tax) and appreciated stock to family (which gets the step-up). And estate bills come due within months, while assets can be illiquid — forcing a distress sale. Match each liquidity source:</p>
+  <div data-match="liquiditySolutions"></div>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Chapter 9.3 pitfalls:</strong> focusing on estate tax when admin costs/liquidity are the real issue · missing the portability election because no tax was owed · assuming a revocable trust cuts estate tax · life insurance IS included when the insured holds incidents of ownership · reimbursing tuition/medical instead of paying directly · skipping Form 709 when required · leaving IRD to individuals and appreciated assets to charity (backwards!) · ignoring low state exclusions · no liquidity plan for an illiquid estate · electing alternate valuation without confirming it helps both figures.</div></div>
+
+  <details class="selfcheck"><summary>What does it mean that gift and estate taxes are "unified"?</summary>
+  <div class="sc-a">A single lifetime exemption covers both, so lifetime gifts and death transfers draw on the same pool — preventing avoidance by simply giving everything away before death.</div></details>
+  <details class="selfcheck"><summary>Why should an IRA go to charity and appreciated stock to family?</summary>
+  <div class="sc-a">The IRA is income in respect of a decedent — no step-up, and heirs owe ordinary income tax. A charity pays no income tax, so that liability disappears. Appreciated securities get a step-up at death, so family receives them free of the built-in gain. Reversing the two wastes both advantages.</div></details>
+  <details class="selfcheck"><summary>What is portability, and why is it commonly lost?</summary>
+  <div class="sc-a">It lets a surviving spouse use the deceased spouse's unused exclusion. It requires a timely-filed federal estate tax return to elect — often skipped when the first estate owes no tax, forfeiting exclusion that could matter greatly later.</div></details>
+  <details class="selfcheck"><summary>Why does a revocable trust provide no estate tax benefit?</summary>
+  <div class="sc-a">The grantor retains the power to amend or revoke, so the assets remain under their control and stay in the gross estate. Retained control means inclusion — the general rule governing the gross estate.</div></details>
+  <details class="selfcheck"><summary>What is the liquidity problem, and how is it usually solved?</summary>
+  <div class="sc-a">Estate debts, expenses, and taxes come due within months while assets may be illiquid — a business, farm, or real estate — forcing a distress sale. Life insurance owned by an ILIT is the standard fix: immediate, income-tax-free liquidity that doesn't enlarge the taxable estate.</div></details>
+  <details class="selfcheck"><summary>When may the alternate valuation date be elected?</summary>
+  <div class="sc-a">Six months after death, and only if it reduces BOTH the gross estate and the estate tax. It applies to the entire estate, not selected assets.</div></details>
+
+  <p class="chapter-kicker" id="c4">Chapter 9.4 — Incapacity Planning</p>
+
+  <h2>🤝 Durable power of attorney &amp; avoiding conservatorship</h2>
+  <p>Every tool in this chapter needs legal capacity to execute — once capacity is genuinely in question, it's too late, and a court-appointed <strong>conservator</strong> (costly, public, slow, chosen by the court, not the family) is the only option left.</p>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m9);background:var(--m9s)"><h3 style="color:var(--m9)">⚡ Immediate (standing) durable POA</h3><p style="font-size:14.5px">Effective on signing and survives incapacity. Many practitioners favor this — with a highly trusted agent — to avoid trigger friction.</p></div>
+    <div class="side" style="border-color:var(--m5);background:var(--m5s)"><h3 style="color:var(--m5)">🌱 Springing durable POA</h3><p style="font-size:14.5px">Effective only when a trigger (usually certified incapacity) occurs. Feels safer, but physician certification takes time — and institutions may dispute it.</p></div>
+  </div>
+  <p>Match each incapacity document to what it actually does:</p>
+  <div data-match="incapacityDocs"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Word matters:</strong> "durable" means the power SURVIVES incapacity. An ordinary (non-durable) POA terminates at incapacity — precisely when it's needed. Always name successor agents, and remember a POA ends at death (the executor takes over) — agents sometimes wrongly keep acting.</div></div>
+
+  <h2>🩺 Health care decisions: proxy, living will, DNR &amp; HIPAA</h2>
+  <p>A <strong>health care proxy</strong> appoints an agent to make medical decisions no document could anticipate; a <strong>living will</strong> states your own wishes about life-sustaining treatment. They work together — the living will guides, the proxy decides. Sort each document by type:</p>
+  <div data-sorter="healthDocsSorter"></div>
+  <div class="plain-note">Without a HIPAA authorization, doctors can legally refuse to even talk to your named agent. And documents help nobody sitting in a safe deposit box — copies go to the agent, physicians, and the hospital record.</div>
+
+  <h2>🏥 Medicaid planning: look-back, spend-down &amp; estate recovery</h2>
+  <p>Medicaid is <strong>means-tested</strong> — assets and income must spend down to state limits. This is elder-law territory: the paraplanner's job is to spot the issue and refer, not to plan it directly. Tap each rule:</p>
+  <div data-reveal="medicaidRules"></div>
+
+  <h2>💛 ABLE accounts &amp; the incapacity SWOT</h2>
+  <table>
+    <tr><th>ABLE account feature</th><th>Treatment</th></tr>
+    <tr><td>Contributions</td><td>Not federally deductible (some states differ)</td></tr>
+    <tr><td>Growth &amp; qualified withdrawals</td><td><strong>Tax-free</strong></td></tr>
+    <tr><td>Means-tested benefits</td><td>Balances up to a threshold are <strong>disregarded</strong> for SSI; Medicaid generally unaffected</td></tr>
+    <tr><td>Ownership</td><td>The <strong>beneficiary</strong> owns the account</td></tr>
+  </table>
+  <p style="font-size:14.5px">ABLE accounts and special needs trusts are <strong>complements</strong>, not alternatives — ABLE is simple and beneficiary-controlled for modest sums; SNTs handle larger amounts with professional management. Every client needs a core document set — sort each one by what it addresses:</p>
+  <div data-sorter="coreDocSet"></div>
+
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Chapter 9.4 pitfalls:</strong> waiting until capacity is already questionable · a non-durable POA (terminates exactly when needed) · a springing POA without appreciating the certification friction · missing specific powers (gifting, beneficiary changes) that later prove necessary · no successor agents named · an unfunded "incapacity" trust · no HIPAA authorization · never discussing wishes with the health care agent · documents nobody can find · uncompensated transfers inside the Medicaid look-back · attempting Medicaid planning without elder law counsel · overlooking ABLE eligibility · assuming an agent's authority survives the principal's death.</div></div>
+
+  <details class="selfcheck"><summary>Why must incapacity documents be executed well before they're needed?</summary>
+  <div class="sc-a">Executing them requires legal capacity. Once capacity is genuinely in question, the client can no longer sign — leaving court-appointed conservatorship as the only option: costly, public, delayed, and court-chosen rather than family-chosen.</div></details>
+  <details class="selfcheck"><summary>What does "durable" mean, and why is it essential?</summary>
+  <div class="sc-a">A durable power of attorney survives the principal's incapacity. An ordinary power terminates upon incapacity — exactly the moment it's needed — so without durability the document fails at its whole purpose.</div></details>
+  <details class="selfcheck"><summary>How do a living will and a health care proxy differ?</summary>
+  <div class="sc-a">A living will states wishes about life-sustaining treatment; a health care proxy appoints an agent to make medical decisions. The living will guides, the proxy decides — applying values to situations no document anticipated. Both are needed.</div></details>
+  <details class="selfcheck"><summary>Why are a funded revocable trust and a durable POA complements, not alternatives?</summary>
+  <div class="sc-a">The successor trustee manages only assets titled in the trust. The durable POA covers everything outside it — including the act of transferring assets into the trust in the first place. Neither alone covers the full picture.</div></details>
+  <details class="selfcheck"><summary>What makes an ABLE account valuable for a disabled beneficiary?</summary>
+  <div class="sc-a">Balances up to a threshold are disregarded for SSI, and Medicaid eligibility is generally unaffected — so the beneficiary can hold meaningful savings in their own name without losing means-tested benefits. Growth and qualified withdrawals are also tax-free.</div></details>
+  <details class="selfcheck"><summary>Why is gifting shortly before a Medicaid application worse than not gifting?</summary>
+  <div class="sc-a">Uncompensated transfers inside the ~5-year look-back create a penalty period that begins when the applicant would otherwise have qualified — leaving them without the transferred assets AND without coverage, right when care is needed.</div></details>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div><strong>Nine modules. NINE.</strong> One rehearsal module left, and it's the fun one — putting it all together like a real planner, on a full family case. You should be genuinely proud right now. 💜</div></div>
 
   <h2>✍️ Module 9 self-quiz</h2>
   <div id="quiz" class="quiz"></div>
@@ -81,9 +313,204 @@ window.QUIZ = { id:"m9", questions:[
  {q:"The 2026 federal estate and gift tax exemption per person is…", opts:["$5 million","$11.58 million","$13.99 million","$15 million"], a:3, why:"$15M per person / $30M per couple in 2026, made permanent by the One Big Beautiful Bill Act.", trap:"$11.58M was the figure many books quote — plus they warned it would “sunset” in 2026. It didn't: the exemption rose to $15M and was made permanent."},
  {q:"In 2026 you can give any individual ______ per year with no gift-tax paperwork.", opts:["$10,000","$15,000","$17,000","$19,000"], a:3, why:"The annual exclusion is $19,000 per recipient for 2026 — to unlimited recipients.", trap:"$15,000 held for several years and is the sticky old number; the annual exclusion has since indexed up to $19,000."},
  {q:"Who manages the assets inside a trust?", opts:["The grantor","The trustee","The beneficiary","The probate judge"], a:1, why:"G.T.B.: Grantor gives, Trustee tends (manages), Beneficiary benefits."},
- {q:"Inherited stock gets a ‘step-up in basis,’ meaning…", opts:["heirs owe tax on all growth since original purchase","the cost basis resets to date-of-death value","the stock cannot be sold for 5 years","dividends become tax-free"], a:1, why:"Basis resets at death — decades of gains can escape capital gains tax for heirs."},
- {q:"A durable power of attorney handles your ______ if you become incapacitated.", opts:["medical wishes","finances","funeral plans","guardianship of pets"], a:1, why:"Financial POA. Medical wishes = living will + healthcare proxy."}
+ {q:"Inherited stock gets a 'step-up in basis,' meaning…", opts:["heirs owe tax on all growth since original purchase","the cost basis resets to date-of-death value","the stock cannot be sold for 5 years","dividends become tax-free"], a:1, why:"Basis resets at death — decades of gains can escape capital gains tax for heirs."},
+ {q:"A durable power of attorney handles your ______ if you become incapacitated.", opts:["medical wishes","finances","funeral plans","guardianship of pets"], a:1, why:"Financial POA. Medical wishes = living will + healthcare proxy."},
+ {q:"Adding an adult child as joint owner of a bank account 'for convenience' mainly risks…", opts:["higher account fees","disinheriting other children and exposing the funds to that child's creditors","triggering the GST tax","losing FDIC insurance"], a:1, why:"JTWROS passes automatically to the surviving joint owner, overriding the will as to that asset — and it exposes the funds to that child's creditors and divorce. A durable POA gives the same convenience without the fallout."},
+ {q:"An ILIT keeps life insurance out of the gross estate ONLY IF…", opts:["the death benefit is $19,000 or less","the trust owned the policy from inception, or the insured survives 3 years after an existing policy is transferred in","the insured is under age 65","the beneficiary is a spouse"], a:1, why:"Proceeds are included when the insured holds incidents of ownership. The 3-year rule pulls proceeds back in if an existing policy is transferred and the insured dies within 3 years — so the trust should buy the policy originally."},
+ {q:"Leaving assets outright to a disabled beneficiary mainly risks…", opts:["a bigger step-up in basis","disqualifying them from means-tested benefits like Medicaid and SSI","automatic estate tax","losing the annual exclusion"], a:1, why:"A properly drafted special needs trust supplements Medicaid/SSI without replacing them — an outright inheritance can knock them off those benefits entirely."},
+ {q:"The general rule for deciding whether to gift or bequeath an asset is…", opts:["gift low-basis appreciated assets; bequeath cash","bequeath low-basis appreciated assets; gift cash and high-basis assets","always gift, never bequeath","always bequeath, never gift"], a:1, why:"Bequeathing delivers a step-up that erases built-in gain; gifting carries over the donor's basis, wasting that step-up."},
+ {q:"Portability lets a surviving spouse use a deceased spouse's unused exclusion, but only if…", opts:["the estate is worth over $50 million","a federal estate tax return is timely filed to elect it, even when no tax is owed","the couple lived in a community property state","the survivor remarries within a year"], a:1, why:"The election requires a timely-filed Form 706 — commonly skipped when the first estate owes no tax, which can prove costly at the survivor's death.", trap:"It's tempting to assume portability is automatic. It isn't — missing the filing forfeits it, tax-owed or not."},
+ {q:"A springing (rather than immediate) durable power of attorney can create friction because…", opts:["it never expires","determining the trigger (incapacity) requires physician certification that institutions may dispute","it costs far more to draft","it only covers medical decisions"], a:1, why:"Certifying the triggering event takes time and financial institutions sometimes resist it — which is why many practitioners favor an immediate durable POA with a highly trusted agent."},
+ {q:"Gifting assets within Medicaid's roughly five-year look-back period is risky because…", opts:["it lowers the annual gift exclusion","the resulting penalty period begins right when the applicant would otherwise qualify — exactly when care is needed","it permanently disqualifies the applicant","it triggers the generation-skipping tax"], a:1, why:"Uncompensated transfers inside the look-back create a penalty period that starts when eligibility would otherwise begin — leaving the applicant without the assets AND without coverage at the worst moment."}
 ]};
+
+window.SORTERS = {
+  stepUpSorter:{
+    buckets:[{id:"stepsup",label:"✅ Steps up at death",color:"--m6"},{id:"nostepup",label:"🚫 No step-up / carryover",color:"--m5"}],
+    items:[
+      {text:"Appreciated stock, left to heirs at death", bucket:"stepsup", why:"Basis resets to date-of-death value — the lifetime gain escapes income tax entirely."},
+      {text:"Appreciated stock, gifted during life", bucket:"nostepup", why:"Gifts carry over the donor's original basis — no step-up, so the built-in gain survives."},
+      {text:"Traditional IRA or 401(k) balance", bucket:"nostepup", why:"Retirement accounts are income in respect of a decedent (IRD) — no step-up, ever."},
+      {text:"Community property, both halves, at the first spouse's death", bucket:"stepsup", why:"A community-property special rule: the ENTIRE interest steps up, not just the decedent's half."},
+      {text:"Property that has declined below its basis", bucket:"nostepup", why:"Basis can step DOWN too — better to sell and realize the loss during life than hold it to death."}
+    ]
+  },
+  willStrengthWeak:{
+    buckets:[{id:"strength",label:"💪 Strength",color:"--m6"},{id:"weakness",label:"⚠️ Weakness",color:"--m5"}],
+    items:[
+      {text:"Names a guardian for minor children", bucket:"strength", why:"Often the single most important reason to have a will."},
+      {text:"Governs only probate property", bucket:"weakness", why:"Beneficiary designations, survivorship property, and trust assets ignore the will completely."},
+      {text:"Can create a testamentary trust", bucket:"strength", why:"Builds in trust management for minors or beneficiaries who need it."},
+      {text:"Provides no incapacity planning", bucket:"weakness", why:"A will operates only at death — it does nothing while you're alive but incapacitated."},
+      {text:"Relatively inexpensive to prepare", bucket:"strength"},
+      {text:"Becomes a public record through probate", bucket:"weakness"}
+    ]
+  },
+  contractCautions:{
+    buckets:[{id:"do",label:"✅ Do",color:"--m6"},{id:"dont",label:"🚫 Don't",color:"--m5"}],
+    items:[
+      {text:"Name a contingent beneficiary", bucket:"do"},
+      {text:"Name a minor directly as beneficiary", bucket:"dont", why:"Forces a guardianship proceeding — use a trust or custodial arrangement instead."},
+      {text:"Name the estate as beneficiary", bucket:"dont", why:"Forces probate and can eliminate favorable retirement account distribution treatment."},
+      {text:"Coordinate designations with the overall plan", bucket:"do"},
+      {text:"Skip spousal consent on an ERISA-covered plan", bucket:"dont", why:"ERISA plans generally require spousal consent to name a non-spouse beneficiary."}
+    ]
+  },
+  giftOrBequeath:{
+    buckets:[{id:"gift",label:"🎁 Gift it now",color:"--m6"},{id:"bequeath",label:"⚰️ Bequeath at death",color:"--m5"}],
+    items:[
+      {text:"Cash", bucket:"gift"},
+      {text:"High-basis assets", bucket:"gift"},
+      {text:"Low-basis, highly appreciated stock", bucket:"bequeath", why:"Bequeathing delivers a step-up that erases the gain; gifting would carry over the low basis."},
+      {text:"Tuition paid directly to the school", bucket:"gift", why:"Unlimited exclusion — doesn't even use the annual exclusion."},
+      {text:"An asset the client still needs the income from", bucket:"bequeath"}
+    ]
+  },
+  revocableAdvLim:{
+    buckets:[{id:"adv",label:"👍 Advantage",color:"--m6"},{id:"lim",label:"👎 Limitation",color:"--m5"}],
+    items:[
+      {text:"Avoids probate for titled assets, including ancillary probate", bucket:"adv"},
+      {text:"Provides incapacity management via a successor trustee", bucket:"adv"},
+      {text:"No estate tax benefit — assets remain in the gross estate", bucket:"lim"},
+      {text:"No creditor protection during the grantor's life", bucket:"lim"},
+      {text:"Must actually be funded to work", bucket:"lim", why:"An unfunded revocable trust accomplishes nothing — untitled assets still go through probate."},
+      {text:"Remains private and fully amendable", bucket:"adv"}
+    ]
+  },
+  grossEstateSorter:{
+    buckets:[{id:"included",label:"📥 In the gross estate",color:"--m5"},{id:"excluded",label:"📤 Not in the gross estate",color:"--m6"}],
+    items:[
+      {text:"Life insurance where the decedent held incidents of ownership", bucket:"included"},
+      {text:"Revocable trust assets", bucket:"included", why:"Retained control means retained inclusion — the core principle of the gross estate."},
+      {text:"Retirement accounts and annuities", bucket:"included"},
+      {text:"A policy an ILIT has owned since inception", bucket:"excluded", why:"The insured never held incidents of ownership — as long as the 3-year rule isn't triggered."},
+      {text:"Property given away outright years ago, with no retained interest", bucket:"excluded"}
+    ]
+  },
+  healthDocsSorter:{
+    buckets:[{id:"legal",label:"📄 Legal directive (you create it)",color:"--m9"},{id:"clinical",label:"🏥 Physician order (clinical, immediate)",color:"--m5"}],
+    items:[
+      {text:"Health care proxy", bucket:"legal"},
+      {text:"Living will", bucket:"legal"},
+      {text:"HIPAA authorization", bucket:"legal"},
+      {text:"DNR order", bucket:"clinical", why:"A physician order with immediate clinical effect — not a legal directive you draft yourself."},
+      {text:"POLST / MOLST order", bucket:"clinical"}
+    ]
+  },
+  coreDocSet:{
+    buckets:[{id:"incapacity",label:"🧠 Addresses incapacity",color:"--m5"},{id:"death",label:"⚰️ Addresses death",color:"--m9"},{id:"both",label:"🔁 Addresses both",color:"--m6"}],
+    items:[
+      {text:"Durable power of attorney (financial)", bucket:"incapacity"},
+      {text:"Health care proxy", bucket:"incapacity"},
+      {text:"Living will / advance directive", bucket:"incapacity"},
+      {text:"HIPAA authorization", bucket:"incapacity"},
+      {text:"Will, naming an executor and guardian", bucket:"death"},
+      {text:"Beneficiary designations, reviewed and current", bucket:"death"},
+      {text:"Funded revocable living trust", bucket:"both", why:"A successor trustee manages titled assets through incapacity, and the trust also directs them at death."}
+    ]
+  }
+};
+
+window.MATCHERS = {
+  estateRoles:{pairs:[
+    ["Testator","The person who makes the will"],
+    ["Executor (personal representative)","Named in the will to administer the estate"],
+    ["Administrator","Court-appointed when there's no will or no able executor"],
+    ["Beneficiary / legatee / devisee","Receives property under the will"],
+    ["Heir","Entitled to inherit under intestacy law"],
+    ["Guardian","Named for minor children — often the will's most important job"]
+  ]},
+  titlingForms:{pairs:[
+    ["Fee simple (sole ownership)","Passes by will or intestacy — probate"],
+    ["Joint tenancy with right of survivorship","Passes automatically to the surviving owner(s) — no probate"],
+    ["Tenancy by the entirety","Automatic to the surviving spouse, plus creditor protection"],
+    ["Tenancy in common","The decedent's share passes by will — probate"],
+    ["Community property","The decedent's half passes by will; the WHOLE interest gets a step-up"]
+  ]},
+  trustRoles:{pairs:[
+    ["Grantor (settlor, trustor)","Creates and funds the trust — “Gives”"],
+    ["Trustee","Manages trust property for the beneficiaries — “Tends”"],
+    ["Beneficiary","Receives the benefit of the trust — “Benefits”"],
+    ["Revocable","Grantor can amend or cancel it any time"],
+    ["Irrevocable","Generally cannot be changed once created"],
+    ["Pour-over will","Catches assets never retitled into the trust — still through probate"]
+  ]},
+  transferTaxes:{pairs:[
+    ["Gift tax","Lifetime transfers above the annual exclusion"],
+    ["Estate tax","Transfers at death above the remaining exclusion"],
+    ["Generation-skipping transfer (GST) tax","Transfers that skip a generation, e.g. to a grandchild"]
+  ]},
+  liquiditySolutions:{pairs:[
+    ["Life insurance owned by an ILIT","Immediate, income-tax-free cash, outside the taxable estate"],
+    ["Funded buy-sell agreement","Sets a buyer and price for a closely held business interest"],
+    ["Retaining liquid assets","Simple, at the cost of lower expected returns"],
+    ["Installment payment of estate tax","Relief when the estate is mostly a closely held business"]
+  ]},
+  incapacityDocs:{pairs:[
+    ["Durable power of attorney","Manages your finances if you're incapacitated"],
+    ["Health care proxy","Appoints an agent to make medical decisions for you"],
+    ["Living will","States your own wishes about life-sustaining treatment"],
+    ["HIPAA authorization","Lets your agent actually access your medical information"],
+    ["Funded revocable trust","Successor trustee manages titled assets — no court needed"],
+    ["Ordinary (non-durable) power of attorney","Terminates at incapacity — exactly when you'd need it"]
+  ]}
+};
+
+window.ORDERS = {
+  rufadaa:{steps:[
+    "First: the provider's own online legacy-contact tool",
+    "Then: the will or trust's own directions",
+    "Last resort: the provider's terms of service"
+  ]},
+  taxableEstateFormula:{steps:[
+    "Start with the gross estate",
+    "Subtract debts, funeral, and administration expenses",
+    "Subtract the marital deduction",
+    "Subtract the charitable deduction — that's the taxable estate",
+    "Add adjusted taxable gifts made since 1976",
+    "Apply the tax rates to get the tentative tax base",
+    "Subtract gift taxes payable and the unified credit — that's the estate tax due"
+  ]}
+};
+
+window.REVEALS = {
+  probateDrawbacks:{cols:3, items:[
+    {front:"💸 Cost", back:"Court fees, executor commissions, and attorney fees — varying widely by state."},
+    {front:"⏳ Delay", back:"Months to years before beneficiaries actually receive property."},
+    {front:"📰 Publicity", back:"Probate is a public record — the will and often an asset inventory become viewable."},
+    {front:"🗺️ Ancillary probate", back:"A separate proceeding in EACH state where the decedent owned real property."},
+    {front:"⚖️ Court supervision", back:"Reduced flexibility — many actions need court approval along the way."}
+  ]},
+  jtwrosProblems:{cols:3, items:[
+    {front:"👪 Overrides the will entirely", back:"Adding one child as joint owner “for convenience” silently disinherits the others as to that asset."},
+    {front:"⚠️ Exposes the asset", back:"To the joint owner's creditors, divorce, and lawsuits — not just yours."},
+    {front:"🎁 Gift tax consequences", back:"Adding a non-spouse joint owner can itself be a taxable gift."},
+    {front:"🔓 Loss of control", back:"The joint owner can often withdraw or encumber the asset on their own."},
+    {front:"📉 Partial step-up lost", back:"With a non-spouse joint owner, generally only the decedent's share gets a step-up."}
+  ]},
+  irrevocableTrusts:{cols:4, items:[
+    {front:"ILIT", back:"Owns life insurance so proceeds are excluded from the gross estate."},
+    {front:"Credit shelter / bypass trust", back:"Uses the first spouse's exclusion, sheltering assets (and growth) from the survivor's estate."},
+    {front:"QTIP", back:"Income to the surviving spouse; grantor still controls where it ultimately goes — common in blended families."},
+    {front:"Charitable remainder trust", back:"Income to family for a period, then the remainder goes to charity."},
+    {front:"Charitable lead trust", back:"The reverse — income to charity first, remainder back to family."},
+    {front:"Special needs trust", back:"Supplements a disabled beneficiary without disqualifying them from means-tested benefits."},
+    {front:"Spendthrift trust", back:"Protects assets from a beneficiary's own creditors — and their own impulses."},
+    {front:"GRAT", back:"Transfers appreciation above a statutory rate to heirs with minimal gift tax."}
+  ]},
+  giftTaxRules:{cols:2, items:[
+    {front:"Annual exclusion", back:"An indexed amount per recipient per year, no gift tax, no lifetime exemption used — to unlimited recipients."},
+    {front:"Gift splitting", back:"A married couple can treat gifts as made half by each — but it requires FILING a gift tax return to elect."},
+    {front:"Unlimited exclusions", back:"Tuition and medical expenses paid DIRECTLY to the institution or provider — any amount, no forms."},
+    {front:"Form 709 required", back:"When gifts to one recipient exceed the annual exclusion, when splitting, or for certain future-interest transfers — even if no tax is owed."}
+  ]},
+  medicaidRules:{cols:2, items:[
+    {front:"5-year look-back", back:"Uncompensated transfers within ~5 years of applying create a penalty period — gifting late is worse than not gifting."},
+    {front:"Exempt assets", back:"Primary residence (to an equity limit), one vehicle, personal effects, some burial funds and life insurance."},
+    {front:"Spousal impoverishment", back:"Lets the community spouse keep a limited resource and income allowance."},
+    {front:"Estate recovery", back:"States must try to recover paid costs from the recipient's estate after death — which can reach the home."}
+  ]}
+};
 </script>
 <script src="js/app.js"></script>
 </body>
