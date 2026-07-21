@@ -13,73 +13,237 @@
   <div class="wrap">
     <div class="kicker">Module 5 of 10</div>
     <h1>❤️ Life &amp; Health Insurance</h1>
-    <p class="lead">This module protects the most valuable asset a client has: <strong>themselves</strong>. Their life, their health, and their ability to earn a paycheck.</p>
-    <div><span class="badge">Term vs. permanent</span><span class="badge">Health plans</span><span class="badge">Disability</span><span class="badge">LTC &amp; Medicare</span></div>
+    <p class="lead">This module protects the most valuable asset a client has: <strong>themselves</strong> — their life, their health, their ability to earn a paycheck, and their savings against the risk of living a very long time.</p>
+    <div><span class="badge">Life insurance</span><span class="badge">Health plans &amp; HSA</span><span class="badge">Disability</span><span class="badge">Long-term care</span><span class="badge">Annuities</span></div>
   </div>
 </header>
 
 <main class="wrap">
 
+  <div class="tag-row">
+    <a class="tag" href="concepts.html">life insurance</a>
+    <a class="tag" href="concepts.html">health &amp; HSA</a>
+    <a class="tag" href="concepts.html">disability</a>
+    <a class="tag" href="concepts.html">long-term care</a>
+    <a class="tag" href="concepts.html">annuities</a>
+    <a class="tag" href="flashcards.html">memory hooks</a>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="#c1">5.1 Life insurance</a>
+    <a href="#c2">5.2 Health &amp; HSA</a>
+    <a href="#c3">5.3 Disability</a>
+    <a href="#c4">5.4 Long-term care</a>
+    <a href="#c5">5.5 Annuities</a>
+  </nav>
+
+  <!-- ================= CHAPTER 5.1 ================= -->
+  <p class="chapter-kicker" id="c1">Chapter 5.1 — Life Insurance</p>
+
   <h2>⚖️ Life insurance: rent it or own it</h2>
+  <p>Life insurance transfers the <em>financial</em> consequence of a premature death. Two decisions structure everything: <strong>how much</strong> coverage, and <strong>what type</strong>. Type comes down to how long the need lasts and whether the client has a use for the savings element permanent policies carry.</p>
   <div class="vs">
     <div class="side" style="border-color:var(--m5);background:var(--m5s)">
       <h3 style="color:var(--m5)">⏱️ TERM — rent protection</h3>
-      <p style="font-size:14.5px">Pure death benefit for a set period (10/20/30 yrs). <strong>Cheapest per dollar of coverage.</strong> No cash value — outlive it, nothing back. Perfect for big needs on a budget (young family!).</p>
+      <p style="font-size:14.5px">Pure death benefit for a set period (10/20/30 yrs). <strong>Cheapest per dollar of coverage.</strong> No cash value — outlive it, nothing back. Most policies are <strong>convertible</strong> to permanent without new evidence of insurability. Perfect for temporary needs (young family, mortgage!).</p>
     </div>
     <div class="side" style="border-color:var(--m7);background:var(--m7s)">
       <h3 style="color:var(--m7)">🏠 PERMANENT — own it</h3>
-      <p style="font-size:14.5px"><strong>Whole life:</strong> fixed premium + guaranteed cash value. <strong>Universal:</strong> flexible premiums/death benefit. <strong>Variable:</strong> cash value in investment subaccounts (market risk!). Lasts for life — costs far more.</p>
+      <p style="font-size:14.5px"><strong>Whole life:</strong> fixed premium + guaranteed cash value. <strong>Universal:</strong> flexible premiums/death benefit. <strong>Variable:</strong> cash value in investment subaccounts (market risk!). <strong>VUL:</strong> both. Lasts for life — costs far more.</p>
     </div>
   </div>
-  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> If a question describes a young family needing maximum coverage at lowest cost → the answer is <strong>term</strong>. “Flexible premiums” → <strong>universal</strong>. “Investment subaccounts” → <strong>variable</strong>.</div></div>
+  <p>Tap a policy on the left and its true description on the right to lock in the five types:</p>
+  <div data-match="policytypes"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> young family + max coverage + low budget → <strong>term</strong>. "Flexible premiums" → <strong>universal</strong>. "Investment subaccounts / separate accounts" → <strong>variable</strong> (needs a securities license + prospectus). The frequent real-world error is buying permanent on a budget and ending up badly under-insured — <strong>adequate amount matters more than policy type.</strong></div></div>
 
   <h2>📉 See the cost over time</h2>
-  <p>Drag through the years: term stays cheap but stops; whole costs far more yet is permanent and builds cash value.</p>
+  <p>Drag through the years: term stays cheap but stops; whole costs far more yet is permanent and builds cash value. The whole-life premium is level because early-year overpayments fund later years and build the cash value.</p>
   <div data-lifecompare></div>
   <div class="plain-note">Term is like renting protection — cheap while you need it most, then it ends. Whole life is like buying — much pricier, but it lasts your whole life and slowly builds a savings value inside.</div>
 
-  <h2>🧮 How much life insurance? Two roads</h2>
+  <h2>🧮 How much? Two roads to the number</h2>
   <div class="grid c2">
-    <div class="card"><h3>💼 Human life value</h3><p style="font-size:14.5px">Present value of the person's <strong>future earnings</strong>. “What paycheck stream disappears?”</p></div>
-    <div class="card"><h3>📋 Needs analysis (preferred)</h3><p style="font-size:14.5px">Add up actual needs — income replacement, mortgage, debts, education, final expenses — minus existing assets.</p></div>
+    <div class="card"><h3>💼 Human life value</h3><p style="font-size:14.5px">Present value of the person's <strong>future earnings</strong>, net of taxes and self-consumption. Quick, but ignores existing resources and specific obligations — so it can over- or under-state badly.</p></div>
+    <div class="card"><h3>📋 Needs analysis (preferred)</h3><p style="font-size:14.5px">Add up actual needs — final expenses, debts, income replacement, education, emergency reserve — then subtract existing resources. <strong>Need = Total needs − Available resources.</strong></p></div>
   </div>
+  <p>Here's the book's worked example: a married client, 40, with two kids. Watch how resources shrink a $1.37M need down to the actual coverage gap:</p>
+  <div class="barchart" data-bars='[{"label":"Total needs","value":1366558,"display":"$1,366,558","color":"--m7"},{"label":"Available resources","value":585000,"display":"$585,000","color":"--m6"},{"label":"Additional coverage needed","value":781558,"display":"≈ $800,000 term","color":"--m5"}]'></div>
+  <p style="font-size:14px;color:var(--ink-soft)">Needs = final expenses $20k + mortgage $285k + other debt $32k + income replacement $759,558 (PV of $60k/yr, 18 yrs at 4%) + education $240k + reserve $30k. Resources = group life $190k + individual $250k + investments $145k. Gap ≈ $781,558, rounded up to <strong>$800,000 of level term</strong> matching the dependency period. The need is clearly temporary → term is indicated.</p>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>The analysis drives the type.</strong> A temporary need (income replacement, mortgage, kids' dependency) → term. A genuinely permanent need (special-needs dependent, estate liquidity, funded buy-sell) → permanent. Round <em>up</em>, since estimates usually omit inflation.</div></div>
+
+  <h2>📜 Provisions, dividends &amp; taxation</h2>
+  <p>The exam loves the standard policy provisions. Tap each card to reveal what it does:</p>
+  <div data-reveal="provisions"></div>
+  <div class="grid c3" style="margin-top:14px">
+    <div class="card tint"><h3>💵 Death benefit</h3><p style="font-size:14px">Generally received <strong>income-tax-free</strong> by the beneficiary.</p></div>
+    <div class="card tint"><h3>📈 Cash value</h3><p style="font-size:14px">Grows <strong>tax-deferred</strong> inside the policy. Surrender is taxable to the extent proceeds exceed basis (premiums paid).</p></div>
+    <div class="card tint"><h3>🏛️ Estate inclusion</h3><p style="font-size:14px">Proceeds are in the gross estate if the insured held <strong>incidents of ownership</strong> at death. Fix: own it in an <strong>ILIT</strong>.</p></div>
+  </div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Pitfalls:</strong> choosing type before amount · relying solely on group coverage (it ends at termination; employer-paid coverage over $50k creates taxable <strong>imputed income</strong>) · stale beneficiary designations (ex-spouse still named) · naming a <strong>minor</strong> directly (forces guardianship) · surrendering a policy with an outstanding <strong>loan</strong>, triggering unexpected taxable gain.</div></div>
+  <details class="selfcheck"><summary>Why does the duration of the need drive the term-vs-permanent decision?</summary><div class="sc-a">Term is cheapest per dollar but expires; permanent costs more but lasts for life. A temporary need is efficiently covered by term; a genuinely permanent need (special-needs dependent, estate liquidity) requires coverage that won't expire.</div></details>
+  <details class="selfcheck"><summary>What's the main risk of universal life's premium flexibility?</summary><div class="sc-a">Underfunding. If cash value can't cover the ongoing cost of insurance and expenses, the policy lapses — often decades later when the insured is old and replacing coverage is costly or impossible. Periodic in-force illustration reviews catch it.</div></details>
+  <details class="selfcheck"><summary>When are death benefits included in the gross estate, and what's the standard fix?</summary><div class="sc-a">When the insured possessed incidents of ownership at death (right to change beneficiary, borrow, or surrender). The standard technique is ownership by an irrevocable life insurance trust (ILIT), so the insured holds no incidents of ownership.</div></details>
+  <details class="selfcheck"><summary>Why is convertibility on a term policy valuable?</summary><div class="sc-a">It allows conversion to permanent coverage without new evidence of insurability — so if the insured's health deteriorates during the term, they keep access to permanent coverage they could no longer qualify for on the open market.</div></details>
+
+  <!-- ================= CHAPTER 5.2 ================= -->
+  <p class="chapter-kicker" id="c2">Chapter 5.2 — Health Care Plans &amp; HSAs</p>
 
   <h2>🏥 Health plan zoo</h2>
+  <p>The trade-off is consistent: tighter network restrictions and more gatekeeping buy lower premiums. Match each plan to its personality:</p>
+  <div data-match="plantypes"></div>
   <table>
-    <tr><th>Plan</th><th>Network rules</th><th>Personality</th></tr>
-    <tr><td><strong>HMO</strong> 🚪</td><td>Stay in network; primary doctor gatekeeps referrals</td><td>Lowest cost, least freedom</td></tr>
-    <tr><td><strong>PPO</strong> 🛍️</td><td>Any doctor; network is just cheaper</td><td>Most freedom, higher premium</td></tr>
-    <tr><td><strong>HDHP + HSA</strong> 🐷</td><td>High deductible + tax-advantaged savings account</td><td>Triple tax win: deductible in, grows tax-free, tax-free out for medical</td></tr>
+    <tr><th>Type</th><th>Network</th><th>Referral?</th><th>Out-of-network</th><th>Cost</th></tr>
+    <tr><td><strong>HMO</strong> 🚪</td><td>Restricted</td><td>Usually required</td><td>Emergencies only</td><td>Lowest</td></tr>
+    <tr><td><strong>PPO</strong> 🛍️</td><td>Preferred, but open</td><td>Not required</td><td>Reduced benefit</td><td>Higher</td></tr>
+    <tr><td><strong>EPO</strong> 🚧</td><td>Restricted</td><td>Usually not</td><td>Not covered</td><td>Moderate</td></tr>
+    <tr><td><strong>POS</strong> 🔀</td><td>Hybrid</td><td>Usually required</td><td>Reduced benefit</td><td>Moderate</td></tr>
+    <tr><td><strong>HDHP</strong> 🐷</td><td>Varies</td><td>Varies</td><td>Varies</td><td>Low premium, high deductible</td></tr>
   </table>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> HSA = the only account with a <strong>triple tax benefit</strong>: money goes in pre-tax → grows untaxed → comes out untaxed for qualified medical costs. The exam loves this.</div></div>
+
+  <h2>💵 What a plan actually costs</h2>
+  <p>Five terms define what you really pay. Match each to its meaning:</p>
+  <div data-match="costterms"></div>
+  <div class="card" style="margin-top:14px"><h3>🧾 Worked example — the out-of-pocket max caps everything</h3>
+    <p style="font-size:14.5px">Plan: $3,000 deductible, 20% coinsurance, $7,000 out-of-pocket max. Insured incurs <strong>$60,000</strong> of covered in-network charges.</p>
+    <div class="step-flow">
+      <div class="step"><div class="step-num">1</div><div><h4>Pay the deductible</h4><p>$3,000 out of pocket.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h4>Coinsurance on the rest</h4><p>20% of $57,000 = $11,400 <em>would</em> apply…</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h4>…but the OOP max caps it</h4><p>$3,000 already paid, so coinsurance stops at $4,000. <strong>Total insured cost = $7,000; plan pays $53,000.</strong></p></div></div>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft)">Premiums are paid on top and do <em>not</em> count toward the out-of-pocket maximum.</p>
+  </div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>The out-of-pocket maximum is the most important number</strong> — it defines the worst case. Comparing plans on premium alone (ignoring the OOP max) is the classic mistake. Watch too: out-of-network care may not count toward the OOP max.</div></div>
+
+  <h2>🐷 The HSA: the triple-tax champion</h2>
+  <p>The HSA is the most tax-favored account in the entire code — the <strong>only</strong> one with a triple tax advantage:</p>
+  <figure class="viz">
+    <svg viewBox="0 0 760 150" role="img" aria-label="HSA triple tax advantage: deductible in, grows tax-free, tax-free out for medical">
+      <g font-family="Arial" text-anchor="middle">
+        <rect x="30" y="30" width="220" height="90" rx="14" fill="#E6F6F0" stroke="#059669" stroke-width="3"/>
+        <text x="140" y="66" font-size="26">⬇️</text><text x="140" y="92" font-weight="bold" font-size="15" fill="#059669">1. Deductible IN</text><text x="140" y="110" font-size="12" fill="#6B6584">pre-tax / deductible</text>
+        <rect x="270" y="30" width="220" height="90" rx="14" fill="#E6F6F0" stroke="#059669" stroke-width="3"/>
+        <text x="380" y="66" font-size="26">📈</text><text x="380" y="92" font-weight="bold" font-size="15" fill="#059669">2. Grows TAX-FREE</text><text x="380" y="110" font-size="12" fill="#6B6584">no tax on growth</text>
+        <rect x="510" y="30" width="220" height="90" rx="14" fill="#E6F6F0" stroke="#059669" stroke-width="3"/>
+        <text x="620" y="66" font-size="26">⬆️</text><text x="620" y="92" font-weight="bold" font-size="15" fill="#059669">3. Tax-free OUT</text><text x="620" y="110" font-size="12" fill="#6B6584">for qualified medical</text>
+      </g>
+    </svg>
+    <figcaption>Only the HDHP pairs with an HSA. A traditional IRA taxes withdrawals; a Roth gives no deduction — the HSA gives all three.</figcaption>
+  </figure>
+  <p>The HSA and the FSA look similar and are constantly confused. Sort each trait into the right account:</p>
+  <div data-sorter="hsafsa"></div>
+  <table style="margin-top:14px">
+    <tr><th>Withdrawal</th><th>Tax treatment</th></tr>
+    <tr><td>Qualified medical, any age</td><td>Tax-free ✅</td></tr>
+    <tr><td>Non-qualified, before 65</td><td>Ordinary income <strong>+ 20% penalty</strong></td></tr>
+    <tr><td>Non-qualified, 65 or older</td><td>Ordinary income, <strong>no penalty</strong> (works like a traditional IRA)</td></tr>
+  </table>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Memory hook:</strong> after 65 the HSA behaves like a traditional IRA for non-medical withdrawals and stays fully tax-free for medical ones — so it doubles as a stealth retirement account. Contribution limits are <strong>set by statute and indexed annually</strong> (year-sensitive — always confirm the current figure), with catch-up contributions starting at <strong>age 55</strong>. <strong>Enrolling in Medicare ends HSA contribution eligibility.</strong></div></div>
+  <details class="selfcheck"><summary>What is the HSA's triple tax advantage?</summary><div class="sc-a">Contributions are deductible or pre-tax, growth is tax-free, and withdrawals for qualified medical expenses are tax-free. No other account offers all three.</div></details>
+  <details class="selfcheck"><summary>A plan has a $2,500 deductible, 20% coinsurance, and a $6,000 OOP max. The insured incurs $80,000 in covered charges. What do they pay?</summary><div class="sc-a">$6,000. Pay the $2,500 deductible; 20% of the remaining $77,500 would be $15,500, but the OOP max caps total cost-sharing at $6,000, so coinsurance stops at $3,500. Premiums are additional and don't count toward the max.</div></details>
+  <details class="selfcheck"><summary>Key differences between an FSA and an HSA?</summary><div class="sc-a">The HSA requires HDHP enrollment, is individually owned and portable, and rolls over without limit. The FSA needs no HDHP but is employer-tied, generally forfeited at termination, and subject to use-it-or-lose-it (softened only by a limited grace period or small carryover).</div></details>
+  <details class="selfcheck"><summary>Why might COBRA not be the best option after job loss?</summary><div class="sc-a">The individual pays the full premium plus an administrative charge with no employer subsidy — often far more than the prior payroll deduction. Marketplace (ACA) coverage with premium tax credits may cost substantially less, though COBRA preserves network and deductible progress.</div></details>
+
+  <!-- ================= CHAPTER 5.3 ================= -->
+  <p class="chapter-kicker" id="c3">Chapter 5.3 — Disability Income Insurance</p>
 
   <h2>🤕 Disability insurance: protect the paycheck</h2>
+  <p>For most working clients the largest asset isn't the house or the portfolio — it's the <strong>ability to earn income</strong>, and it's usually uninsured. Disability is <em>more</em> probable than death during working years. The single most important provision is the <strong>definition of disability</strong>. Tap each card:</p>
+  <div data-reveal="disdefs"></div>
   <figure class="viz">
-    <svg viewBox="0 0 760 190" role="img" aria-label="Disability insurance definitions: own occupation pays if you cannot do your own job; any occupation pays only if you cannot do any job">
+    <svg viewBox="0 0 760 165" role="img" aria-label="Own occupation pays if you cannot do your own job; any occupation pays only if you cannot do any job">
       <g font-family="Arial" text-anchor="middle">
-        <rect x="40" y="25" width="330" height="130" rx="14" fill="#E6F6F0" stroke="#059669" stroke-width="3"/>
-        <text x="205" y="60" font-size="24">🩺</text>
-        <text x="205" y="88" font-weight="bold" font-size="16" fill="#059669">OWN occupation</text>
-        <text x="205" y="112" font-size="13" fill="#2B2640">Pays if you can't do YOUR job</text>
-        <text x="205" y="132" font-size="12" fill="#6B6584">(surgeon who can't operate → paid)</text>
-        <rect x="390" y="25" width="330" height="130" rx="14" fill="#FDEAEE" stroke="#E11D48" stroke-width="3"/>
-        <text x="555" y="60" font-size="24">🧹</text>
-        <text x="555" y="88" font-weight="bold" font-size="16" fill="#E11D48">ANY occupation</text>
-        <text x="555" y="112" font-size="13" fill="#2B2640">Pays only if you can't do ANY job</text>
-        <text x="555" y="132" font-size="12" fill="#6B6584">(harder to qualify → cheaper policy)</text>
+        <rect x="40" y="20" width="330" height="115" rx="14" fill="#E6F6F0" stroke="#059669" stroke-width="3"/>
+        <text x="205" y="52" font-size="24">🩺</text>
+        <text x="205" y="80" font-weight="bold" font-size="16" fill="#059669">OWN occupation</text>
+        <text x="205" y="103" font-size="13" fill="#2B2640">Pays if you can't do YOUR job</text>
+        <text x="205" y="123" font-size="12" fill="#6B6584">(surgeon who can't operate → paid)</text>
+        <rect x="390" y="20" width="330" height="115" rx="14" fill="#FDEAEE" stroke="#E11D48" stroke-width="3"/>
+        <text x="555" y="52" font-size="24">🧹</text>
+        <text x="555" y="80" font-weight="bold" font-size="16" fill="#E11D48">ANY occupation</text>
+        <text x="555" y="103" font-size="13" fill="#2B2640">Pays only if you can't do ANY job</text>
+        <text x="555" y="123" font-size="12" fill="#6B6584">(harder to qualify → cheaper policy)</text>
       </g>
-      <text x="380" y="180" text-anchor="middle" font-size="13.5" fill="#6B6584" font-family="Arial">“Own-occ” = better protection, higher premium. The elimination period = the waiting period before benefits start.</text>
     </svg>
-    <figcaption>Also remember: benefits from a policy YOU paid for with after-tax dollars arrive income-tax-free.</figcaption>
+    <figcaption>"Own-occ" = better protection, higher premium. <strong>Split definition</strong> (own-occ for the first 2–5 years, then any-occ) is the market standard.</figcaption>
   </figure>
 
-  <h2>👵 Long-term care &amp; Medicare</h2>
-  <div class="grid c2">
-    <div class="card"><h3>🏡 Long-term care (LTC)</h3><p style="font-size:14.5px">Covers help with <strong>activities of daily living</strong> (bathing, dressing, eating…) — usually triggered when you can't do <strong>2 of 6 ADLs</strong>. Regular health insurance and Medicare do NOT meaningfully cover custodial care.</p></div>
-    <div class="card"><h3>🏛️ Medicare's four parts</h3><p style="font-size:14.5px"><strong>A</strong> = Hospital (“A for Admitted”) · <strong>B</strong> = Doctors/outpatient (“B for Bills from doctors”) · <strong>C</strong> = Medicare Advantage (private all-in-one) · <strong>D</strong> = Drugs. Eligibility at 65.</p></div>
+  <h2>⏳ Elimination, benefit period &amp; the tax twist</h2>
+  <div class="grid c3">
+    <div class="card tint"><h3>⏳ Elimination period</h3><p style="font-size:14px">Waiting period before benefits begin (30/60/90/180/365 days) — a <strong>deductible in time</strong>. Size it to the client's <strong>emergency reserve</strong>: more reserve → longer wait → cheaper policy.</p></div>
+    <div class="card tint"><h3>📅 Benefit period</h3><p style="font-size:14px">How long benefits last (2 yrs, 5 yrs, to 65/67). Since the point is protecting retirement funding, <strong>to retirement age</strong> is generally recommended.</p></div>
+    <div class="card tint"><h3>💲 Benefit amount</h3><p style="font-size:14px">Capped at ~<strong>60–70% of gross</strong> on purpose — full replacement would remove the incentive to return to work (moral hazard).</p></div>
   </div>
+  <p>Now the exam's favorite twist — <strong>who paid the premium decides whether benefits are taxed.</strong> Sort each situation:</p>
+  <div data-sorter="disbtax"></div>
+  <div class="card" style="margin-top:14px"><h3>🧾 Worked example — the tax adjustment reveals the gap</h3>
+    <p style="font-size:14.5px">Client earns $8,000/mo gross ($5,900 net); non-discretionary outflows $4,600/mo. Group LTD pays 60% of base, employer-paid, 90-day elimination, to 65. Four-month reserve.</p>
+    <div class="pill-row">
+      <span class="pill">Group benefit: 60% × $8,000 = $4,800 gross</span>
+      <span class="pill">Employer-paid → taxable. At 22%: × 0.78 = $3,744 net</span>
+      <span class="pill">Required: $4,600</span>
+      <span class="pill" style="font-weight:700">Gap: $856/mo</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft)">The 60% benefit <em>looked</em> adequate and wasn't — the tax adjustment is what exposed the gap. Fix: an individual policy ~$900–$1,000/mo paid with after-tax dollars (so benefits are tax-free), 90-day elimination to match the group coverage and the reserve, with a residual benefit and a future-increase option.</p>
+  </div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Pitfalls &amp; distinctions:</strong> assuming group LTD is enough without the tax adjustment · treating <strong>SSDI</strong> as real coverage (its strict any-occupation standard and 5-month wait make it a backstop, not a plan) · omitting <strong>residual</strong> coverage when most disabilities are partial. <strong>Non-cancelable</strong> locks the premium AND coverage; <strong>guaranteed renewable</strong> locks only coverage (premiums can rise by class).</div></div>
+  <details class="selfcheck"><summary>Why is own occupation more favorable than any occupation?</summary><div class="sc-a">Own-occ pays when the insured can't perform their own occupation's material duties, even if capable of other work. Any-occ pays only if they can't perform any suited job. A surgeon who can't operate but could teach collects under own-occ and likely not under any-occ.</div></details>
+  <details class="selfcheck"><summary>How should the elimination period be chosen?</summary><div class="sc-a">By matching it to the emergency reserve. Six months of expenses saved → a 180-day elimination period and the premium savings. No reserve → a shorter one, since the client can't self-fund the gap.</div></details>
+  <details class="selfcheck"><summary>What does a residual disability benefit do, and why does it matter?</summary><div class="sc-a">It pays a proportional benefit when the insured can work but at reduced capacity or income. It matters because most disabilities are partial, not total — without it, a client working at reduced capacity may collect nothing.</div></details>
 
-  <div class="callout cheer"><span class="ico">🌟</span><div><strong>Halfway there!</strong> Five modules down after this quiz. You're not just memorizing — you're building a map of how real families stay safe. That's beautiful work. 🌈</div></div>
+  <!-- ================= CHAPTER 5.4 ================= -->
+  <p class="chapter-kicker" id="c4">Chapter 5.4 — Long-Term Care Insurance</p>
+
+  <h2>👵 Long-term care &amp; Medicare</h2>
+  <p>Long-term care is extended help with everyday living — bathing, dressing, eating, moving — rather than medical treatment. That distinction is the whole subject, because it's exactly the line health insurance and Medicare draw. They cover <strong>skilled medical</strong> care; long-term care is largely <strong>custodial</strong>, and custodial care is where the gap sits.</p>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m8);background:var(--m8s)"><h3 style="color:var(--m8)">🏛️ Medicare — very limited</h3><p style="font-size:14.5px">Skilled nursing only after a qualifying hospital stay, only while <em>skilled</em> care is needed, for a limited number of days with heavy coinsurance later. <strong>Does NOT cover custodial care</strong> — the majority of the need.</p></div>
+    <div class="side" style="border-color:var(--m7);background:var(--m7s)"><h3 style="color:var(--m7)">🩹 Medicaid — payer of last resort</h3><p style="font-size:14.5px">Does cover custodial care, but it's a <strong>means-tested welfare program</strong> — you spend down first. <strong>5-year look-back</strong> on transfers, spousal-impoverishment rules, and <strong>estate recovery</strong> after death.</p></div>
+  </div>
+  <p>Benefits trigger when the insured can't perform <strong>at least 2 of the 6 ADLs</strong> for 90+ days, <strong>or</strong> has severe cognitive impairment. Memorize the six ADLs — sort each activity below:</p>
+  <div data-sorter="adls"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Why two triggers?</strong> Someone with dementia may be physically able to do every ADL yet need constant supervision — without the separate <strong>cognitive</strong> trigger, a huge share of real need would fail the test. The non-ADL items above (cooking, money, shopping, driving) are <em>IADLs</em> — instrumental activities — and don't count for the standard trigger.</div></div>
+
+  <h2>🛡️ Policy features &amp; who needs coverage</h2>
+  <p>Tap each feature to reveal what it does:</p>
+  <div data-reveal="ltcfeatures"></div>
+  <table style="margin-top:14px">
+    <tr><th>Asset level</th><th>Typical approach</th></tr>
+    <tr><td><strong>Low</strong></td><td>Insurance unaffordable → Medicaid is the realistic path</td></tr>
+    <tr><td><strong>Middle</strong> 🎯</td><td><strong>The core market</strong> — enough assets to lose, not enough to self-fund. Faces genuine ruin.</td></tr>
+    <tr><td><strong>High</strong></td><td>Self-funding viable; coverage may still preserve a legacy or avoid liquidating assets</td></tr>
+  </table>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Pitfalls:</strong> assuming Medicare covers custodial care · declining <strong>inflation protection</strong> (a benefit bought at 55 may not be used until 85 — compound protection is close to essential) · setting a daily benefit without reference to <strong>local</strong> care costs · overlooking the cognitive trigger · making transfers inside the look-back without elder-law counsel. Timing sweet spot: <strong>mid-50s to early 60s</strong>. Tax-qualified premiums are deductible medical expenses (age-based limits); benefits are generally tax-free.</div></div>
+  <details class="selfcheck"><summary>Why doesn't Medicare solve the long-term care problem?</summary><div class="sc-a">Medicare covers skilled nursing only briefly and only after a qualifying hospital stay, with heavy coinsurance after an initial period and coverage ending well before a long stay concludes. It doesn't cover custodial care, which is most long-term care need.</div></details>
+  <details class="selfcheck"><summary>State the two standard benefit triggers.</summary><div class="sc-a">Inability to perform at least 2 of the 6 ADLs (bathing, dressing, eating, transferring, toileting, continence) for an expected 90+ days; or severe cognitive impairment requiring substantial supervision.</div></details>
+  <details class="selfcheck"><summary>Which asset group most needs LTC insurance, and why?</summary><div class="sc-a">Middle-asset clients. Low-asset clients can't afford premiums and rely on Medicaid; high-asset clients can self-fund. Middle-asset clients have enough to lose entirely but not enough to absorb several years of care — the greatest risk of ruin.</div></details>
+
+  <!-- ================= CHAPTER 5.5 ================= -->
+  <p class="chapter-kicker" id="c5">Chapter 5.5 — Annuities</p>
+
+  <h2>🔄 The mirror image of life insurance</h2>
+  <p>An annuity is a contract with an insurer: pay a sum, receive income for life. It's the mirror image of life insurance and transfers <strong>longevity risk</strong> — the one retirement risk that can't be diversified away. Only pooling mortality across many people solves it, and that's what an insurer provides.</p>
+  <div class="vs">
+    <div class="side" style="border-color:var(--m5);background:var(--m5s)"><h3 style="color:var(--m5)">❤️ Life insurance</h3><p style="font-size:14.5px">Protects against dying <strong>too soon</strong>. Pays <strong>at</strong> death, income-tax-free to the beneficiary.</p></div>
+    <div class="side" style="border-color:var(--m6);background:var(--m6s)"><h3 style="color:var(--m6)">🔄 Annuity</h3><p style="font-size:14.5px">Protects against living <strong>too long</strong>. Pays <strong>until</strong> death. Gain is taxable as <strong>ordinary income</strong>; <strong>no step-up</strong> in basis.</p></div>
+  </div>
+  <p>Annuities are described along three dimensions. Match each type to its defining feature:</p>
+  <div data-match="annuitytypes"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Indexed-annuity reality check:</strong> "market upside, no downside" really means <em>limited</em> upside (via a <strong>participation rate, cap, or spread</strong>) in exchange for a ~0% floor — and crediting typically <strong>excludes dividends</strong>, a big hidden drag. Neither scam nor free lunch, but routinely oversold.</div></div>
+
+  <h2>💸 Payouts, taxation &amp; when annuities fit</h2>
+  <p>Every guarantee added to a payout <em>reduces</em> the payment, because the insurer's obligation lasts longer. Put the payout options in order from the highest payment to the lowest:</p>
+  <div data-order="annpayout"></div>
+  <div class="grid c2" style="margin-top:14px">
+    <div class="card"><h3>🧾 Taxation of a non-qualified deferred annuity</h3><p style="font-size:14px">Funded with after-tax dollars → growth is tax-deferred. Withdrawals before annuitization are <strong>LIFO</strong> — earnings out first, taxed as <strong>ordinary income</strong> (not capital gains), plus a <strong>10% penalty before 59½</strong>. On annuitization each payment splits via the <strong>exclusion ratio</strong>.</p></div>
+    <div class="card"><h3>➗ Exclusion ratio</h3><p style="font-size:14px"><strong>Investment in the contract ÷ Expected total return.</strong> Sets the tax-free return-of-basis portion of each payment. Once basis is recovered, payments are fully taxable.</p></div>
+  </div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>When annuities fit:</strong> a retiree wanting guaranteed income for essentials · someone specifically worried about outliving assets · a client who has already maxed 401(k)/IRA capacity and wants more deferral. <strong>When they don't:</strong> inside an IRA without a specific reason (redundant deferral, added cost) · when 401(k)/IRA space is unused · when liquidity may be needed within the surrender period.</div></div>
+  <details class="selfcheck"><summary>What risk does an annuity transfer, and why can't investing solve it?</summary><div class="sc-a">Longevity risk — outliving your assets. No investment strategy eliminates the possibility of a very long life; only pooling mortality across many people does, which is what an insurer provides.</div></details>
+  <details class="selfcheck"><summary>How are withdrawals from a non-qualified deferred annuity taxed before annuitization?</summary><div class="sc-a">Last-in, first-out — earnings come out first and are taxed as ordinary income, not capital gains. A 10% penalty applies to the taxable portion before age 59½, subject to exceptions.</div></details>
+  <details class="selfcheck"><summary>Why is an annuity inside an IRA usually redundant?</summary><div class="sc-a">The IRA already provides tax deferral, so the annuity's primary tax advantage adds nothing while its costs — M&amp;E charges, rider fees, surrender schedules — still apply. Justifiable only if the client specifically wants the income guarantees for their own sake.</div></details>
+  <details class="selfcheck"><summary>Why can an indexed annuity underperform the index it tracks?</summary><div class="sc-a">Crediting is limited by participation rates, caps, or spreads, and typically excludes dividends — a substantial part of long-run equity return. The floor protecting against loss is paid for by giving up part of the upside.</div></details>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div><strong>Halfway there!</strong> Five modules down after this quiz. You've mapped how real families stay safe against dying too soon, getting sick, losing a paycheck, needing care, and living too long. That's the whole personal-risk landscape. 🌈</div></div>
 
   <h2>✍️ Module 5 self-quiz</h2>
   <div id="quiz" class="quiz"></div>
@@ -90,15 +254,116 @@
 <footer><div class="wrap"><p>FPQP® Visual Academy v1 · <a href="index.html">Home</a></p></div></footer>
 
 <script>
+window.MATCHERS = {
+  policytypes:{pairs:[
+    ["⏱️ Term life","Pure death protection for a set period; no cash value; cheapest per dollar"],
+    ["🏠 Whole life","Permanent; guaranteed level premium, death benefit, and cash value growth"],
+    ["🎛️ Universal life","Permanent with FLEXIBLE premiums and an adjustable death benefit"],
+    ["📊 Variable life","Cash value in separate-account subaccounts; policyowner bears investment risk"],
+    ["🎲 Variable universal (VUL)","UL premium flexibility + variable investment choice; most flexible and complex"]
+  ]},
+  plantypes:{pairs:[
+    ["🚪 HMO","Restricted network; PCP referral required; lowest cost"],
+    ["🛍️ PPO","Out-of-network allowed at reduced benefit; no referral; higher cost"],
+    ["🚧 EPO","Restricted network, but usually no referral needed"],
+    ["🔀 POS","Hybrid; referral usually required; out-of-network at reduced benefit"],
+    ["🐷 HDHP","High deductible, low premium; the ONLY plan that permits HSA contributions"]
+  ]},
+  costterms:{pairs:[
+    ["Premium","Paid regardless of whether any care is used"],
+    ["Deductible","Amount paid out of pocket before the plan begins paying"],
+    ["Copayment","Flat dollar amount per service (e.g., $30 per visit)"],
+    ["Coinsurance","Percentage split after the deductible (e.g., 80/20)"],
+    ["Out-of-pocket max","Annual cap on your cost-sharing; plan pays 100% after"]
+  ]},
+  annuitytypes:{pairs:[
+    ["⚡ Immediate (SPIA)","Single premium; income begins almost at once — the pure longevity transfer"],
+    ["⏳ Deferred","Value accumulates before income begins; tax-deferred growth"],
+    ["🔒 Fixed","Insurer credits a guaranteed rate; principal protected"],
+    ["📊 Variable","Subaccounts like mutual funds; you bear the investment risk (a security)"],
+    ["🎢 Equity-indexed","Interest tied to an index, with a floor (≈0%) and a cap/participation/spread"]
+  ]}
+};
+window.REVEALS = {
+  provisions:{cols:2, items:[
+    {front:"Incontestability",back:"After a stated period (commonly 2 yrs) the insurer can't contest for app misstatements — except typically for fraud."},
+    {front:"Grace period",back:"Typically 31 days after a missed premium before the policy lapses."},
+    {front:"Suicide clause",back:"Excludes suicide within a stated period (commonly 2 yrs); premiums usually refunded."},
+    {front:"Incidents of ownership",back:"If the insured holds them at death (change beneficiary, borrow, surrender), proceeds are in the gross estate. Fix: ILIT."},
+    {front:"Convertibility",back:"Convert term to permanent WITHOUT new evidence of insurability — protects a client whose health declines."},
+    {front:"Nonforfeiture options",back:"On surrender of a permanent policy: cash, reduced paid-up insurance, or extended term."},
+    {front:"Accelerated death benefit",back:"Access part of the death benefit early on terminal or chronic illness."},
+    {front:"Settlement options",back:"How proceeds are paid: lump sum, interest only, fixed period, fixed amount, or life income."}
+  ]},
+  disdefs:{cols:2, items:[
+    {front:"🩺 Own occupation",back:"Pays if you can't perform the material duties of YOUR own occupation — even if you could do other work. Most favorable."},
+    {front:"🔧 Modified own occ",back:"Own occupation AND not actually working in another job. A middle ground."},
+    {front:"🧹 Any occupation",back:"Pays only if you can't do ANY job you're reasonably suited to by education, training, experience. Least favorable."},
+    {front:"✂️ Split definition",back:"Own-occ for an initial period (commonly 2–5 yrs), then any-occ. The market standard."}
+  ]},
+  ltcfeatures:{cols:3, items:[
+    {front:"Benefit trigger",back:"Can't do 2 of 6 ADLs for 90+ days, OR severe cognitive impairment requiring supervision."},
+    {front:"Elimination period",back:"Waiting period (30/60/90/100 days) you self-fund. Size it to your liquid assets."},
+    {front:"Pool of money",back:"A total dollar pool (daily benefit × period) drawn at any rate. Spending under the daily max stretches it."},
+    {front:"Inflation protection",back:"Compound adjustment keeps a benefit bought at 55 adequate at 85. The most important option."},
+    {front:"Shared care",back:"Spouses can access one another's benefit pool."},
+    {front:"Guaranteed renewable",back:"Insurer can't cancel but CAN raise premiums by class — a real LTC risk historically."}
+  ]}
+};
+window.SORTERS = {
+  hsafsa:{buckets:[{id:"hsa",label:"🐷 HSA",color:"--m5"},{id:"fsa",label:"🧾 FSA",color:"--m7"}], items:[
+    {text:"Requires enrollment in a qualifying HDHP",bucket:"hsa",why:"HDHP enrollment is the gateway to HSA contributions."},
+    {text:"Portable — stays with you across jobs",bucket:"hsa",why:"The HSA is individually owned."},
+    {text:"Balances roll over with no limit",bucket:"hsa",why:"No use-it-or-lose-it for the HSA."},
+    {text:"Has a triple tax advantage",bucket:"hsa",why:"Deductible in, tax-free growth, tax-free out for medical."},
+    {text:"Catch-up contributions begin at age 55",bucket:"hsa",why:"HSA catch-up starts at 55 (not 50)."},
+    {text:"Employer-tied; generally forfeited at termination",bucket:"fsa",why:"The FSA is employer-owned and non-portable."},
+    {text:"Use-it-or-lose-it (limited grace/carryover)",bucket:"fsa",why:"Classic FSA rule."},
+    {text:"Full annual election available from day one of the plan year",bucket:"fsa",why:"An FSA advantage for a known large expense."}
+  ]},
+  disbtax:{buckets:[{id:"tax",label:"💸 Benefits TAXABLE",color:"--m7"},{id:"free",label:"✅ Benefits TAX-FREE",color:"--m6"}], items:[
+    {text:"Employer paid the premium (and deducted it)",bucket:"tax",why:"Employer-paid premium → taxable benefit."},
+    {text:"You paid with after-tax dollars",bucket:"free",why:"After-tax premium → tax-free benefit. The decisive advantage."},
+    {text:"You paid with pre-tax dollars (cafeteria plan)",bucket:"tax",why:"Pre-tax premium → taxable benefit."},
+    {text:"You bought an individual policy yourself",bucket:"free",why:"Individually-paid with after-tax dollars → tax-free."}
+  ]},
+  adls:{buckets:[{id:"adl",label:"✅ One of the 6 ADLs",color:"--m5"},{id:"iadl",label:"🚫 Not an ADL",color:"--m8"}], items:[
+    {text:"Bathing",bucket:"adl",why:"One of the six ADLs."},
+    {text:"Dressing",bucket:"adl",why:"One of the six ADLs."},
+    {text:"Eating",bucket:"adl",why:"One of the six ADLs."},
+    {text:"Transferring (bed to chair)",bucket:"adl",why:"One of the six ADLs."},
+    {text:"Toileting",bucket:"adl",why:"One of the six ADLs."},
+    {text:"Continence",bucket:"adl",why:"One of the six ADLs."},
+    {text:"Cooking meals",bucket:"iadl",why:"An IADL (instrumental) — not part of the standard trigger."},
+    {text:"Managing money / paying bills",bucket:"iadl",why:"An IADL — doesn't count for the benefit trigger."},
+    {text:"Driving",bucket:"iadl",why:"An IADL — not one of the six ADLs."},
+    {text:"Grocery shopping",bucket:"iadl",why:"An IADL — not one of the six ADLs."}
+  ]}
+};
+window.ORDERS = {
+  annpayout:{steps:[
+    "Straight life — HIGHEST payment (nothing to heirs after death)",
+    "Life with period certain — a guaranteed minimum number of years",
+    "Joint &amp; survivor — LOWEST payment (covers two lives)"
+  ]}
+};
 window.QUIZ = { id:"m5", questions:[
- {q:"A young couple with two kids and a tight budget needs $1M of coverage. Best fit?", opts:["Whole life","Term life","Variable universal life","An annuity"], a:1, why:"Term = maximum death benefit per premium dollar. Perfect for big temporary needs."},
- {q:"Which permanent policy invests cash value in market subaccounts?", opts:["Whole life","Universal life","Variable life","Term life"], a:2, why:"‘Variable’ = varies with markets. Universal = flexible premiums; whole = fixed guarantees."},
- {q:"The needs analysis approach sizes life insurance by…", opts:["future earnings only","adding up actual family needs minus existing resources","10× salary always","the human life value tables"], a:1, why:"Needs analysis totals real obligations (income, mortgage, education, final expenses) less assets."},
- {q:"Which health plan requires a gatekeeper primary-care doctor for referrals?", opts:["PPO","HMO","HDHP","Indemnity plan"], a:1, why:"HMOs trade freedom for lower cost — in-network care coordinated by a gatekeeper."},
- {q:"The famous ‘triple tax advantage’ belongs to the…", opts:["401(k)","Roth IRA","HSA","529 plan"], a:2, why:"HSA: deductible going in, tax-free growth, tax-free out for qualified medical expenses."},
- {q:"A surgeon who can no longer operate but could teach still collects under which disability definition?", opts:["Any occupation","Own occupation","Modified occupation","Social Security definition"], a:1, why:"Own-occ pays when you can't perform YOUR occupation — even if you could do other work."},
- {q:"The waiting period before disability benefits begin is the…", opts:["grace period","elimination period","free-look period","probation period"], a:1, why:"The elimination period works like a time-deductible — longer wait, cheaper policy."},
- {q:"Which Medicare part covers prescription drugs?", opts:["Part A","Part B","Part C","Part D"], a:3, why:"D = Drugs. A = hospital (Admitted), B = doctor Bills, C = Advantage plans."}
+ {q:"A young couple with two kids and a tight budget needs $1M of coverage. Best fit?", opts:["Whole life","Term life","Variable universal life","An annuity"], a:1, why:"Term = maximum death benefit per premium dollar. Perfect for big temporary needs.", trap:"Whole life feels 'safer/permanent,' but on a budget it would buy far too little coverage — adequate amount beats policy type."},
+ {q:"Which permanent policy invests cash value in market subaccounts and requires a securities license?", opts:["Whole life","Universal life","Variable life","Term life"], a:2, why:"'Variable' = varies with markets (separate accounts). It's a security, so it needs a prospectus and securities registration."},
+ {q:"The needs-analysis approach sizes life insurance by…", opts:["future earnings only","adding up actual needs minus existing resources","10× salary always","the human life value tables"], a:1, why:"Need = total needs (income, mortgage, education, final expenses) − available resources."},
+ {q:"When are life insurance proceeds included in the insured's gross estate?", opts:["Always","When the insured held incidents of ownership at death","Only if term insurance","Never"], a:1, why:"Incidents of ownership (change beneficiary, borrow, surrender) at death → inclusion. The fix is ownership by an ILIT."},
+ {q:"Which health plan requires a gatekeeper primary-care doctor for referrals and offers the lowest cost?", opts:["PPO","HMO","EPO","Indemnity plan"], a:1, why:"HMOs trade freedom for lower cost — in-network care coordinated by a PCP gatekeeper."},
+ {q:"A plan has a $3,000 deductible, 20% coinsurance, and a $7,000 out-of-pocket max. On $60,000 of covered charges, the insured pays…", opts:["$3,000","$7,000","$14,400","$12,000"], a:1, why:"Deductible $3,000 + capped coinsurance $4,000 = $7,000; the OOP max stops it there. Plan pays $53,000."},
+ {q:"The famous 'triple tax advantage' belongs to the…", opts:["401(k)","Roth IRA","HSA","529 plan"], a:2, why:"HSA: deductible in, tax-free growth, tax-free out for qualified medical. No other account gives all three.", trap:"Roth gives tax-free growth and withdrawals but NO deduction — only two of the three."},
+ {q:"Which is TRUE of an HSA but not an FSA?", opts:["Use-it-or-lose-it applies","It is portable and rolls over with no limit","Employer owns it","No HDHP is required"], a:1, why:"The HSA is individually owned, portable, and rolls over indefinitely; the FSA is employer-tied and forfeited at termination."},
+ {q:"A surgeon who can no longer operate but could teach still collects under which disability definition?", opts:["Any occupation","Own occupation","Social Security definition","Modified any occupation"], a:1, why:"Own-occ pays when you can't perform YOUR occupation — even if you could do other work."},
+ {q:"An employer PAID the group disability premium. When the employee collects benefits, they are…", opts:["tax-free","taxable","tax-free up to 60%","exempt from FICA only"], a:1, why:"Employer-paid premium → taxable benefit. That's why a stated 60% benefit can net closer to 45%."},
+ {q:"Non-cancelable differs from guaranteed renewable in that non-cancelable also…", opts:["locks the premium","covers any occupation","waives the elimination period","adds a residual benefit"], a:0, why:"Non-cancelable locks premium AND coverage; guaranteed renewable locks only coverage (premiums can rise by class)."},
+ {q:"Long-term care benefits are typically triggered when the insured cannot perform…", opts:["any 1 of 6 ADLs","at least 2 of 6 ADLs (or has severe cognitive impairment)","3 of 5 IADLs","any job"], a:1, why:"The standard trigger: 2 of 6 ADLs for 90+ days, OR severe cognitive impairment."},
+ {q:"Which does Medicare essentially NOT cover?", opts:["Skilled nursing after a hospital stay","Custodial long-term care","Hospital admission (Part A)","Doctor visits (Part B)"], a:1, why:"Medicare doesn't cover custodial care — the overwhelming majority of long-term care need. Medicaid does, but only after spend-down."},
+ {q:"An annuity primarily transfers which risk?", opts:["Longevity (outliving assets)","Dying too soon","Market risk","Inflation risk"], a:0, why:"An annuity is the mirror of life insurance: it protects against living too long. Only mortality pooling solves it."},
+ {q:"Withdrawals from a non-qualified deferred annuity before annuitization are taxed…", opts:["as long-term capital gains","LIFO — earnings first, as ordinary income","tax-free","only at annuitization"], a:1, why:"Earnings come out first (LIFO) as ordinary income, plus a 10% penalty before 59½.", trap:"Gains that would be capital gains in a brokerage account become ordinary income inside an annuity."},
+ {q:"Which annuity payout option produces the HIGHEST periodic payment?", opts:["Joint and survivor","Life with 20-year period certain","Straight life","Life with refund"], a:2, why:"Straight life pays most — the insurer's obligation ends at death with no guarantee to heirs. Every added guarantee reduces the payment."}
 ]};
 </script>
 <script src="js/app.js"></script>

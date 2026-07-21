@@ -13,25 +13,46 @@
   <div class="wrap">
     <div class="kicker">Module 6 of 10</div>
     <h1>📈 Investment Basics &amp; Strategies</h1>
-    <p class="lead">Stocks, bonds, funds, and the golden rule of investing: <strong>risk and return travel together</strong>. Here's the whole landscape, drawn as one picture at a time.</p>
-    <div><span class="badge">Stocks &amp; bonds</span><span class="badge">Funds &amp; ETFs</span><span class="badge">Risk types</span><span class="badge">Diversification</span></div>
+    <p class="lead">Asset classes, risk, funds, and the discipline of building a portfolio — anchored by the golden rule: <strong>risk and return travel together</strong>. Here's the whole landscape, drawn one picture at a time.</p>
+    <div><span class="badge">Asset classes</span><span class="badge">Risk &amp; measures</span><span class="badge">Funds &amp; ETFs</span><span class="badge">Allocation &amp; the IPS</span></div>
   </div>
 </header>
 
 <main class="wrap">
 
+  <div class="tag-row">
+    <a class="tag" href="concepts.html">asset classes</a>
+    <a class="tag" href="concepts.html">risk &amp; return</a>
+    <a class="tag" href="concepts.html">funds &amp; ETFs</a>
+    <a class="tag" href="concepts.html">asset allocation</a>
+    <a class="tag" href="formulas.html">key formulas</a>
+  </div>
+
+  <nav class="chapter-nav">
+    <a href="#c1">6.1 Asset classes</a>
+    <a href="#c2">6.2 Risk</a>
+    <a href="#c3">6.3 Funds &amp; ETFs</a>
+    <a href="#c4">6.4 Investment decisions</a>
+  </nav>
+
+  <!-- ================= CHAPTER 6.1 ================= -->
+  <p class="chapter-kicker" id="c1">Chapter 6.1 — Asset Classes</p>
+
   <h2>🧩 Owner or lender?</h2>
+  <p>An asset class is a group of investments that behave similarly. Classes matter because they respond differently to the same conditions — and combining imperfectly correlated classes is what makes diversification work. Two roles anchor everything: owning and lending.</p>
   <div class="vs">
     <div class="side" style="border-color:var(--m6);background:var(--m6s)">
       <h3 style="color:var(--m6)">📈 Stock = you're an OWNER</h3>
-      <p style="font-size:14.5px">A slice of the company. You may get <strong>dividends</strong> and price growth — or losses. Common stock votes; preferred gets fixed dividends first (bond-like).</p>
+      <p style="font-size:14.5px">A residual claim — paid <strong>after</strong> creditors and bondholders (which is why it's riskier and pays more). You get <strong>dividends</strong> + capital appreciation, <strong>voting rights</strong>, and <strong>limited liability</strong>.</p>
     </div>
     <div class="side" style="border-color:var(--m4);background:var(--m4s)">
       <h3 style="color:var(--m4)">🧾 Bond = you're a LENDER</h3>
-      <p style="font-size:14.5px">An IOU. You get <strong>coupon interest</strong> + your money back at maturity. Safer than stock of the same company — bondholders are paid first if things go wrong.</p>
+      <p style="font-size:14.5px">A loan to an issuer — you're a <strong>creditor</strong>, paid before shareholders. You get <strong>coupon interest</strong> + par back at maturity. Safer than the same company's stock.</p>
     </div>
   </div>
-  <div class="callout memory"><span class="ico">🧠</span><div><strong>The seesaw you MUST know:</strong> interest rates ⬆️ → existing bond prices ⬇️ (and vice versa). Longer maturity = bigger swings. Picture a seesaw with “rates” on one side and “prices” on the other. ⚖️</div></div>
+  <p>Tap each of the four classes to reveal its role:</p>
+  <div data-reveal="assetclasses"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>The seesaw you MUST know:</strong> interest rates ⬆️ → existing bond prices ⬇️ (and vice versa). A bond's coupon is fixed, so if new bonds pay more, the old one must cheapen until its yield matches. <strong>Longer maturity &amp; lower coupon = bigger swings</strong> (that's duration). ⚖️</div></div>
 
   <h2>🎢 The risk–return ladder</h2>
   <figure class="viz">
@@ -49,45 +70,123 @@
     </svg>
     <figcaption>No free lunch: every step up in expected return is a step up in risk.</figcaption>
   </figure>
+  <p>Cash equivalents fund the emergency reserve and near-term goals — their job is <strong>liquidity and stability</strong>, not return. One trap clients constantly miss: which of these carries <strong>FDIC insurance</strong>? Sort them:</p>
+  <div data-sorter="fdic"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> a <strong>money market mutual fund is NOT FDIC insured</strong> — it's a security that only <em>aims</em> to hold a stable value. A money market <em>deposit account</em> at a bank <em>is</em> insured. And a Treasury bill isn't FDIC-insured either — it's backed directly by the U.S. government. FDIC coverage is per depositor, per bank, per <strong>ownership category</strong>.</div></div>
+
+  <h2>🧾 Bonds: prices, yields &amp; ratings</h2>
+  <p>Bond prices move <strong>inversely</strong> to interest rates — the single most important bond concept. Match each bond term to its meaning:</p>
+  <div data-match="bondterms"></div>
+  <table style="margin-top:14px">
+    <tr><th>Condition</th><th>Price</th><th>Yields</th></tr>
+    <tr><td>Coupon = market rate</td><td><strong>Par</strong></td><td>Current yield = coupon = YTM</td></tr>
+    <tr><td>Coupon &lt; market rate</td><td><strong>Discount</strong> (below par)</td><td>Current yield &gt; coupon; YTM &gt; current yield</td></tr>
+    <tr><td>Coupon &gt; market rate</td><td><strong>Premium</strong> (above par)</td><td>Current yield &lt; coupon; YTM &lt; current yield</td></tr>
+  </table>
+  <div class="grid c2" style="margin-top:14px">
+    <div class="card"><h3>🧮 Taxable-equivalent yield</h3><p style="font-size:14px"><strong>TEY = tax-free yield ÷ (1 − marginal rate).</strong> A 3.5% muni in the 32% bracket = 3.5 ÷ 0.68 = <strong>5.15%</strong>. In the 12% bracket it's worth only ~3.98% — so munis suit <strong>high</strong> brackets and never a tax-deferred account.</p></div>
+    <div class="card"><h3>🏅 The investment-grade line</h3><p style="font-size:14px">Investment grade = AAA to <strong>BBB−</strong> (S&amp;P/Fitch) / Aaa to <strong>Baa3</strong> (Moody's). Below that = speculative / high-yield ("junk"). The <strong>BBB−/Baa3 boundary</strong> is directly testable.</p></div>
+  </div>
+  <div class="callout exam"><span class="ico">⚠️</span><div>A <strong>call provision</strong> lets the issuer redeem early — they do it when rates <em>fall</em>, so you lose an above-market coupon and must reinvest at lower rates (<strong>reinvestment risk</strong>). Callable bonds pay more to compensate; use <strong>yield to call</strong> when a call is likely. Don't measure stock return by price change alone — <strong>total return = (end − begin + income) ÷ begin</strong>.</div></div>
+  <details class="selfcheck"><summary>Why do bond prices fall when interest rates rise?</summary><div class="sc-a">The coupon is fixed. When prevailing rates rise, an existing bond paying below the new market rate is less attractive, so its price must fall until its yield to maturity matches new issues.</div></details>
+  <details class="selfcheck"><summary>A stock bought at $80 pays $3 in dividends and ends the year at $85. Total return?</summary><div class="sc-a">($85 − $80 + $3) ÷ $80 = $8 ÷ $80 = 10.0%. Price appreciation alone would show only 6.25% — dividends matter.</div></details>
+  <details class="selfcheck"><summary>Which rating boundary separates investment grade from speculative?</summary><div class="sc-a">BBB− (S&amp;P/Fitch) or Baa3 (Moody's). At or above is investment grade; below is speculative or high-yield.</div></details>
+
+  <!-- ================= CHAPTER 6.2 ================= -->
+  <p class="chapter-kicker" id="c2">Chapter 6.2 — Types &amp; Measurements of Risk</p>
 
   <h2>🎭 The two families of risk</h2>
+  <p>In investing, "risk" means <em>variability of returns</em>. The organizing split is between risk diversification <strong>can</strong> remove and risk it <strong>cannot</strong>.</p>
   <div class="vs">
     <div class="side" style="border-color:var(--m8);background:var(--m8s)">
       <h3 style="color:var(--m8)">🌎 Systematic — market-wide</h3>
-      <p style="font-size:14.5px">Hits EVERYTHING: recessions, interest rates, inflation, war. <strong>Diversification cannot remove it.</strong> Measured by <strong>beta</strong>.</p>
+      <p style="font-size:14.5px">Hits EVERYTHING: recessions, rates, inflation, currency. <strong>Diversification cannot remove it</strong> — so it's the risk the market <strong>compensates</strong>. Measured by <strong>beta</strong>.</p>
     </div>
     <div class="side" style="border-color:var(--m7);background:var(--m7s)">
-      <h3 style="color:var(--m7)">🏢 Unsystematic — one company</h3>
-      <p style="font-size:14.5px">A CEO scandal, a factory fire, one bad product. <strong>Diversification CAN nearly eliminate it</strong> — that's the whole point of owning many holdings.</p>
+      <h3 style="color:var(--m7)">🏢 Unsystematic — company-specific</h3>
+      <p style="font-size:14.5px">A CEO scandal, a factory fire, one bad product. <strong>Diversification CAN nearly eliminate it</strong> — so it's <strong>not compensated</strong>. The core argument against concentrated positions (including employer stock).</p>
     </div>
   </div>
-  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> “Which risk can diversification eliminate?” → <strong>unsystematic</strong> (company-specific). Beta measures <strong>systematic</strong> risk; standard deviation measures <strong>total</strong> risk.</div></div>
-
-  <h2>🧺 Funds: baskets of investments</h2>
-  <table>
-    <tr><th>Vehicle</th><th>How it trades</th><th>Know this</th></tr>
-    <tr><td>🧺 <strong>Mutual fund</strong></td><td>Once daily at NAV</td><td>Professional management; open-end funds issue/redeem shares</td></tr>
-    <tr><td>⚡ <strong>ETF</strong></td><td>All day like a stock</td><td>Usually index-tracking, low cost, tax-efficient</td></tr>
-    <tr><td>🔒 <strong>Closed-end fund</strong></td><td>Fixed shares on an exchange</td><td>Can trade at premium or discount to NAV</td></tr>
-    <tr><td>📇 <strong>Index fund</strong></td><td>Mutual fund or ETF</td><td>Passive: just matches a benchmark (e.g., S&amp;P 500) cheaply</td></tr>
-  </table>
-
-  <h2>🥄 Strategies that tame timing</h2>
-  <div class="grid c3">
-    <div class="card tint"><h3>📆 Dollar-cost averaging</h3><p style="font-size:14px">Invest a fixed amount on a schedule. You automatically buy MORE shares when prices are low, fewer when high.</p></div>
-    <div class="card tint"><h3>🪴 Diversification</h3><p style="font-size:14px">Spread across assets whose returns don't move together (low correlation) — smooths the ride.</p></div>
-    <div class="card tint"><h3>⚖️ Rebalancing</h3><p style="font-size:14px">Periodically sell winners / buy laggards back to target weights. Forces “buy low, sell high.”</p></div>
-  </div>
+  <p>Sort each risk into its family:</p>
+  <div data-sorter="risktypes"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Systematic mnemonic — PRIME:</strong> <strong>P</strong>urchasing power (inflation), <strong>R</strong>einvestment, <strong>I</strong>nterest rate, <strong>M</strong>arket, <strong>E</strong>xchange rate. These five can't be diversified away. <strong>Correlation</strong> runs +1 (move together) to −1 (move opposite); the lower the correlation, the greater the diversification benefit — the closest thing to a free lunch in finance.</div></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Exam trap:</strong> "Which risk can diversification eliminate?" → <strong>unsystematic</strong>. Beware <em>apparent</em> diversification — twenty holdings all in one sector are still concentrated. Diversification needs <strong>low correlation</strong>, not merely many positions.</div></div>
 
   <h2>📏 Quick measures to recognize</h2>
-  <div class="pill-row">
-    <span class="pill">Beta — sensitivity to the market (1.0 = market)</span>
-    <span class="pill">Standard deviation — total volatility</span>
-    <span class="pill">Sharpe ratio — return earned per unit of risk</span>
-    <span class="pill">Correlation — how two assets move together (+1 to −1)</span>
+  <p>Match each measure to what it captures — the beta-vs-standard-deviation distinction is directly testable:</p>
+  <div data-match="riskmeasures"></div>
+  <div class="grid c2" style="margin-top:14px">
+    <div class="card"><h3>📐 Standard deviation (total risk)</h3><p style="font-size:14px">A fund averaging 9% with a 15% SD: about <strong>68%</strong> of years fall in −6% to +24% (±1 SD), and <strong>95%</strong> in −21% to +39% (±2 SD). Right measure for a <strong>whole portfolio</strong>.</p></div>
+    <div class="card"><h3>📊 Beta (systematic risk)</h3><p style="font-size:14px">1.0 = moves with the market; 1.3 ≈ 13% move per 10% market move; 0.7 ≈ 7%; negative moves opposite. Right measure for a component <strong>inside</strong> a diversified portfolio.</p></div>
   </div>
+  <p>Risk-adjusted return puts investments on equal footing. Here's the book's <strong>Sharpe</strong> example (risk-free 3%): the higher raw return doesn't win.</p>
+  <div class="barchart" data-bars='[{"label":"Fund A — 12% return, 20% SD → Sharpe 0.45","value":45,"display":"0.45","color":"--m7"},{"label":"Fund B — 9% return, 10% SD → Sharpe 0.60","value":60,"display":"0.60 ✅ better","color":"--m6"}]'></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Sharpe</strong> = (return − risk-free) ÷ <strong>SD</strong> (per unit of total risk). <strong>Treynor</strong> = same, ÷ <strong>beta</strong> (per unit of systematic risk). <strong>Alpha</strong> = return above what the risk level predicts. And plan to the <em>lower</em> of <strong>risk tolerance</strong> (emotional) and <strong>risk capacity</strong> (financial) — the sustainable portfolio beats the theoretically optimal one the client won't hold.</div></div>
+  <details class="selfcheck"><summary>Why is unsystematic risk not compensated by the market?</summary><div class="sc-a">It can be eliminated through diversification at essentially no cost. Investors aren't rewarded for bearing a risk they could have removed for free, so expected return compensates only systematic risk.</div></details>
+  <details class="selfcheck"><summary>When is standard deviation the right measure, and when is beta?</summary><div class="sc-a">Standard deviation measures total risk — right for a whole portfolio. Beta measures systematic risk only — right for a security held within an already diversified portfolio, where unsystematic risk is already gone.</div></details>
+  <details class="selfcheck"><summary>Fund X: 14% return, 18% SD. Fund Y: 10% return, 9% SD. Risk-free 3%. Which is better risk-adjusted?</summary><div class="sc-a">X Sharpe = (14−3)/18 = 0.61; Y Sharpe = (10−3)/9 = 0.78. Fund Y delivers more excess return per unit of risk despite the lower raw return.</div></details>
+  <details class="selfcheck"><summary>Why can't diversification protect against inflation risk?</summary><div class="sc-a">Inflation (purchasing power) risk is systematic — it hits the whole market, not individual securities. Adding holdings doesn't help; only asset classes with different inflation sensitivity (real assets, TIPS) address it.</div></details>
 
-  <div class="callout cheer"><span class="ico">🌟</span><div><strong>This module intimidates everyone else — and you just walked through it with pictures.</strong> Owner vs. lender, seesaw, ladder, two risk families. Four images = dozens of exam answers. 💚</div></div>
+  <!-- ================= CHAPTER 6.3 ================= -->
+  <p class="chapter-kicker" id="c3">Chapter 6.3 — Mutual Funds &amp; ETFs</p>
+
+  <h2>🧺 Funds: baskets of investments</h2>
+  <p>A fund pools money and buys a portfolio — a client with $5,000 gets diversification across hundreds of securities. The counterweight is <strong>cost</strong>: expenses are certain, outperformance isn't. Sort each trait into open-end, closed-end, or ETF:</p>
+  <div data-sorter="fundtype"></div>
+  <table style="margin-top:14px">
+    <tr><th>Vehicle</th><th>How it trades</th><th>Know this</th></tr>
+    <tr><td>🧺 <strong>Open-end mutual fund</strong></td><td>Once daily at the next NAV (forward pricing)</td><td>Creates/redeems shares continuously with the fund</td></tr>
+    <tr><td>🔒 <strong>Closed-end fund</strong></td><td>Fixed shares on an exchange</td><td>Can trade at a <strong>premium or discount</strong> to NAV</td></tr>
+    <tr><td>⚡ <strong>ETF</strong></td><td>Intraday like a stock</td><td>Low cost, index-tracking, tax-efficient via in-kind creation</td></tr>
+    <tr><td>📇 <strong>Index fund</strong></td><td>Mutual fund or ETF</td><td>Passive: matches a benchmark (e.g., S&amp;P 500) cheaply</td></tr>
+  </table>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>NAV = (total assets − total liabilities) ÷ shares outstanding</strong>, computed once daily after close. Mutual fund orders execute at the <strong>next</strong> computed NAV — <em>forward pricing</em> — not a price you know when ordering. ETFs and stocks price continuously instead.</div></div>
+
+  <h2>💸 Costs, share classes &amp; tax efficiency</h2>
+  <p>Costs are where fund selection is won or lost — the one variable known in advance. Watch a 1-point expense difference compound on $100,000 at 7% gross over 30 years:</p>
+  <div class="barchart" data-bars='[{"label":"0.10% expense ratio (net 6.90%)","value":740169,"display":"$740,169","color":"--m6"},{"label":"1.10% expense ratio (net 5.90%)","value":558314,"display":"$558,314","color":"--m7"}]'></div>
+  <p style="font-size:14px;color:var(--ink-soft)">The 1-point difference costs about <strong>$181,855</strong> — roughly a quarter of the ending balance — with no difference in gross performance.</p>
+  <p>Sales charges come in share classes. Match each:</p>
+  <div data-match="shareclass"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Class A</strong> costs more up front (front-end load) and less annually; <strong>Class C</strong> costs less up front and <em>more forever</em> — so over a long horizon Class C's drag beats a front load. Claim available <strong>breakpoints</strong> on Class A. ETFs/index funds are more <strong>tax-efficient</strong> — prefer them in <strong>taxable</strong> accounts (an <strong>asset-location</strong> decision). And <strong>reinvested distributions are taxable</strong> in the year distributed and raise basis — track them or you'll be taxed twice.</div></div>
+  <details class="selfcheck"><summary>Why are ETFs generally more tax-efficient than mutual funds?</summary><div class="sc-a">Mutual funds may sell securities to meet redemptions, realizing gains distributed to all remaining shareholders. ETFs use in-kind creation and redemption, transferring securities rather than selling them, so few gains are realized.</div></details>
+  <details class="selfcheck"><summary>What is NAV and when does a mutual fund order execute?</summary><div class="sc-a">NAV = (total assets − total liabilities) ÷ shares outstanding, computed once daily after close. Orders execute at the next computed NAV — forward pricing — so the exact price isn't known when the order is placed.</div></details>
+  <details class="selfcheck"><summary>When does Class A generally beat Class C?</summary><div class="sc-a">Over long holding periods. Class A charges a front-end load once plus lower ongoing fees; Class C charges little up front but higher 12b-1 fees every year, so its recurring drag eventually exceeds the load.</div></details>
+  <details class="selfcheck"><summary>Why is buying a fund just before a distribution unwise in a taxable account?</summary><div class="sc-a">The investor receives a distribution that's economically a return of part of the purchase price — the share price drops by that amount — yet the distribution is taxable. They pay tax with no economic gain.</div></details>
+
+  <!-- ================= CHAPTER 6.4 ================= -->
+  <p class="chapter-kicker" id="c4">Chapter 6.4 — Investment Decisions</p>
+
+  <h2>🧭 Asset allocation &amp; the horizon rule</h2>
+  <p><strong>Asset allocation</strong> — how a portfolio is divided among classes — explains the large majority of return variability over time. Security selection and market timing account for far less, so allocation deserves the most care. And the single biggest input is <strong>time horizon</strong>: a longer horizon allows recovery, so it supports more volatility. Match each horizon to its emphasis:</p>
+  <div data-match="horizon"></div>
+  <div class="callout memory"><span class="ico">🧠</span><div><strong>Two symmetric, costly errors:</strong> a near-term goal held in equities (a drawdown arrives with no time to recover) and a long-term goal held in cash (inflation erodes it while the return differential compounds against the client). <strong>Strategic</strong> allocation sets long-term targets and holds them; <strong>tactical</strong> makes short-term bets and is where costs and taxes pile up.</div></div>
+  <p>Over time, appreciation drifts a 60/40 portfolio to something like 72/28 — riskier than intended, with no decision made. <strong>Rebalancing</strong> restores targets (calendar or ±5-point threshold triggers) — but it's behaviorally hard because it means selling winners. In taxable accounts, rebalance with <strong>new contributions</strong> first to avoid realizing gains.</p>
+
+  <h2>🥄 Strategies: value, growth &amp; taming timing</h2>
+  <div class="grid c3">
+    <div class="card tint"><h3>📆 Dollar-cost averaging</h3><p style="font-size:14px">Fixed amount, fixed schedule → automatically more shares when cheap. Its value is <strong>behavioral</strong>; a lump sum has better <em>expected</em> outcomes, but DCA is the plan clients actually follow.</p></div>
+    <div class="card tint"><h3>🪨 Buy-and-hold</h3><p style="font-size:14px">Hold through cycles: low costs, deferred gains, immune to the biggest behavioral errors. Missing a few of the best market days badly hurts returns. Not the same as neglect — still rebalance.</p></div>
+    <div class="card tint"><h3>⚖️ Rebalancing</h3><p style="font-size:14px">Periodically sell winners / buy laggards back to target. Forces "buy low, sell high" and controls risk drift. A written rule is what makes it actually happen.</p></div>
+  </div>
+  <p>Two classic styles alternate leadership — most portfolios hold a <strong>blend</strong>. Sort each trait into value or growth:</p>
+  <div data-sorter="valuegrowth"></div>
+  <div class="callout exam"><span class="ico">⚠️</span><div>Don't treat DCA as mathematically superior to lump-sum (it isn't — the justification is behavioral). Don't confuse <strong>tactical</strong> deviation with a strategy absent real forecasting skill. And a <strong>value trap</strong> means the discount was deserved; over-valued <strong>growth</strong> can fall hard.</div></div>
+
+  <h2>📋 The IPS &amp; putting it together</h2>
+  <p>Vehicle selection comes near the <em>end</em>, not the start — clients and salespeople both tend to start with products; the process starts with goals. Put the build sequence in order:</p>
+  <div data-order="ipssteps"></div>
+  <div class="grid c2" style="margin-top:14px">
+    <div class="card"><h3>📄 The Investment Policy Statement</h3><p style="font-size:14px">A written document covering objectives &amp; required return, risk parameters, target allocation &amp; ranges, constraints, selection criteria, rebalancing policy, monitoring, and responsibilities. Written <strong>while calm</strong>, it's the reference point when markets fall: "this decline is within the range we planned — rebalance, don't liquidate."</p></div>
+    <div class="card"><h3>🧭 SWOT for a client's position</h3><p style="font-size:14px"><strong>Strengths</strong> (high savings rate, long horizon, match) · <strong>Weaknesses</strong> (concentrated employer stock, high-cost funds, thin reserve) · <strong>Opportunities</strong> (unused Roth/HSA, tax-loss harvesting) · <strong>Threats</strong> (volatility, inflation, job loss, tax changes). Its value is forcing attention on the <strong>external</strong> half.</p></div>
+  </div>
+  <div class="callout exam"><span class="ico">⚠️</span><div><strong>Required-return check:</strong> if a client's target allocation implies 9% but the plan only needs 5%, question the extra risk — <strong>a client who has already won doesn't need to keep playing.</strong> Pitfalls: selecting investments before the allocation · letting drift silently raise risk · rebalancing in taxable accounts without regard to gains · ignoring existing concentrations (employer stock).</div></div>
+  <details class="selfcheck"><summary>Why does asset allocation receive more attention than security selection?</summary><div class="sc-a">Allocation across asset classes explains the large majority of variability in portfolio returns over time, while security selection and market timing explain much less. Effort is best spent where it has the greatest effect.</div></details>
+  <details class="selfcheck"><summary>A 60/40 portfolio drifts to 72/28 after a strong equity run. What's the problem?</summary><div class="sc-a">It's now meaningfully riskier than intended, and the client got there without deciding to. Rebalancing back to 60/40 restores the planned risk level — which requires selling recent winners, the behaviorally hard part.</div></details>
+  <details class="selfcheck"><summary>What is the purpose of an investment policy statement?</summary><div class="sc-a">To document objectives, risk parameters, target allocation, constraints, and rebalancing policy in advance — providing an agreed reference during volatility, so decisions follow the policy set while calm rather than impulse under stress.</div></details>
+  <details class="selfcheck"><summary>A client's required return is 5% and their allocation targets 9%. What should the planner raise?</summary><div class="sc-a">Whether the additional risk is necessary. If a more conservative allocation funds the goals reliably, extra volatility adds risk of failure without added benefit. The client may still choose growth, but as a deliberate choice.</div></details>
+
+  <div class="callout cheer"><span class="ico">🌟</span><div><strong>This module intimidates everyone else — and you just walked it with pictures.</strong> Owner vs. lender, the seesaw, the ladder, two risk families, and a build sequence that starts with goals, not products. Six images = dozens of exam answers. 💚</div></div>
 
   <h2>✍️ Module 6 self-quiz</h2>
   <div id="quiz" class="quiz"></div>
@@ -98,15 +197,111 @@
 <footer><div class="wrap"><p>FPQP® Visual Academy v1 · <a href="index.html">Home</a></p></div></footer>
 
 <script>
+window.MATCHERS = {
+  bondterms:{pairs:[
+    ["Par / face value","Amount repaid at maturity — conventionally $1,000"],
+    ["Coupon rate","Stated annual interest rate, applied to par"],
+    ["Current yield","Annual coupon ÷ current market price"],
+    ["Yield to maturity","Total return if held to maturity, incl. gain/loss vs par"],
+    ["Duration","Price sensitivity to rate changes — longer/lower-coupon = more"],
+    ["Indenture","The contract of the issuer's obligations and covenants"]
+  ]},
+  riskmeasures:{pairs:[
+    ["Beta","Systematic risk — volatility relative to the market (1.0 = market)"],
+    ["Standard deviation","Total risk — dispersion of returns around the average"],
+    ["Sharpe ratio","Excess return per unit of TOTAL risk (uses SD)"],
+    ["Treynor ratio","Excess return per unit of SYSTEMATIC risk (uses beta)"],
+    ["Alpha","Return earned above what the risk level would predict"],
+    ["Correlation","How two assets move together, from +1 to −1"]
+  ]},
+  shareclass:{pairs:[
+    ["Class A","Front-end load at purchase; lower ongoing 12b-1 — best for large, long-horizon"],
+    ["Class B","Back-end load (CDSC) declining over years; higher 12b-1 — largely phased out"],
+    ["Class C","Little/no front load; higher ongoing fees forever — suits short holding periods"],
+    ["No-load","No sales charge at all — for self-directed investors"]
+  ]},
+  horizon:{pairs:[
+    ["Under 1 year","Cash equivalents — no time to recover; principal certainty required"],
+    ["1–3 years","Cash and short-term bonds — limited recovery window"],
+    ["3–10 years","Balanced stocks and bonds — moderate recovery capacity"],
+    ["10+ years","Equity-weighted — volatility tolerable; the return differential dominates"]
+  ]}
+};
+window.REVEALS = {
+  assetclasses:{cols:2, items:[
+    {front:"💵 Cash &amp; equivalents",back:"Short-term, highly liquid. Job = liquidity &amp; stability for the reserve and under-1-yr goals. Lowest risk and return."},
+    {front:"🧾 Bonds",back:"A loan to an issuer — you're a creditor, paid before shareholders. Role = income, stability, diversification."},
+    {front:"📈 Stocks",back:"Ownership: residual claim, voting rights, limited liability. Highest long-run return and highest volatility."},
+    {front:"🏠 Real estate",back:"Direct or REITs. Diversification, income, inflation hedge, leverage — but illiquid and management-heavy for direct ownership."}
+  ]}
+};
+window.SORTERS = {
+  fdic:{buckets:[{id:"yes",label:"🏦 FDIC insured",color:"--m6"},{id:"no",label:"🚫 Not FDIC insured",color:"--m8"}], items:[
+    {text:"Money market DEPOSIT account (at a bank)",bucket:"yes",why:"A bank deposit — FDIC insured."},
+    {text:"Savings account",bucket:"yes",why:"A basic bank deposit — insured."},
+    {text:"Certificate of deposit (CD)",bucket:"yes",why:"A bank time deposit — insured (early-withdrawal penalty applies)."},
+    {text:"Money market MUTUAL fund",bucket:"no",why:"A security — NOT FDIC insured, despite the similar name. The classic trap."},
+    {text:"Treasury bill",bucket:"no",why:"Backed directly by the U.S. government, not by the FDIC."},
+    {text:"A corporate bond fund",bucket:"no",why:"A security — no FDIC coverage."}
+  ]},
+  risktypes:{buckets:[{id:"sys",label:"🌎 Systematic",color:"--m8"},{id:"unsys",label:"🏢 Unsystematic",color:"--m7"}], items:[
+    {text:"A market-wide recession",bucket:"sys",why:"Market risk — hits everything; diversification can't remove it."},
+    {text:"Interest rates rising",bucket:"sys",why:"Interest-rate risk — systematic (the 'I' in PRIME)."},
+    {text:"Inflation eroding real returns",bucket:"sys",why:"Purchasing-power risk — systematic."},
+    {text:"Having to reinvest cash flows at lower rates",bucket:"sys",why:"Reinvestment-rate risk — systematic."},
+    {text:"A stronger dollar hurting foreign holdings",bucket:"sys",why:"Exchange-rate risk — systematic."},
+    {text:"A CEO scandal at one company",bucket:"unsys",why:"Business risk — company-specific; diversifiable."},
+    {text:"A factory fire at one firm",bucket:"unsys",why:"Company-specific — diversification washes it out."},
+    {text:"One issuer defaulting on its debt",bucket:"unsys",why:"Default/credit risk — specific to that issuer."},
+    {text:"A single company losing its biggest customer",bucket:"unsys",why:"Business risk — unsystematic."}
+  ]},
+  fundtype:{buckets:[{id:"open",label:"🧺 Open-end",color:"--m6"},{id:"closed",label:"🔒 Closed-end",color:"--m8"},{id:"etf",label:"⚡ ETF",color:"--m4"}], items:[
+    {text:"Priced once daily at the next computed NAV",bucket:"open",why:"Open-end funds use forward pricing at NAV."},
+    {text:"Creates and redeems shares continuously with the fund",bucket:"open",why:"Defining feature of open-end funds."},
+    {text:"Fixed share count after a one-time IPO",bucket:"closed",why:"Closed-end: a fixed number of shares, then it trades."},
+    {text:"Can trade at a premium or discount to NAV",bucket:"closed",why:"Market price can diverge from NAV for closed-end funds."},
+    {text:"Uses in-kind creation/redemption for tax efficiency",bucket:"etf",why:"The ETF mechanism that avoids realizing gains."},
+    {text:"No minimum investment beyond one share",bucket:"etf",why:"An ETF advantage."},
+    {text:"Broad ones track an index intraday at very low cost",bucket:"etf",why:"ETFs trade like a stock all day."}
+  ]},
+  valuegrowth:{buckets:[{id:"value",label:"💰 Value",color:"--m6"},{id:"growth",label:"🚀 Growth",color:"--m9"}], items:[
+    {text:"Low P/E and low price-to-book",bucket:"value",why:"Classic value metrics."},
+    {text:"Higher dividend yield",bucket:"value",why:"Value names tend to pay dividends."},
+    {text:"Thesis: the market has underpriced this company",bucket:"value",why:"The value thesis."},
+    {text:"Risk of a 'value trap'",bucket:"value",why:"The discount may be deserved — a value risk."},
+    {text:"Above-average revenue and earnings growth",bucket:"growth",why:"The growth signature."},
+    {text:"Reinvests earnings rather than paying dividends",bucket:"growth",why:"Growth firms plow earnings back in."},
+    {text:"High valuations that can fall hard if growth disappoints",bucket:"growth",why:"The growth risk."}
+  ]}
+};
+window.ORDERS = {
+  ipssteps:{steps:[
+    "Confirm goals, horizons &amp; priorities",
+    "Assess risk tolerance &amp; capacity — plan to the lower",
+    "Determine the required return the plan actually needs",
+    "Set the strategic asset allocation",
+    "Choose asset location, then select low-cost vehicles",
+    "Document it in an Investment Policy Statement (IPS)",
+    "Rebalance per policy &amp; monitor on material changes"
+  ]}
+};
 window.QUIZ = { id:"m6", questions:[
- {q:"A stockholder is best described as…", opts:["a lender to the company","an owner of the company","a creditor with priority","a guaranteed-income investor"], a:1, why:"Stock = ownership. Bonds = lending. Bondholders get paid before stockholders in bankruptcy."},
- {q:"Interest rates rise sharply. Existing bond prices will…", opts:["rise","fall","stay the same","become guaranteed"], a:1, why:"The seesaw: rates up → existing bond prices down (their old coupons look less attractive)."},
- {q:"Which risk can diversification nearly eliminate?", opts:["Systematic risk","Market risk","Unsystematic (company-specific) risk","Inflation risk"], a:2, why:"Owning many holdings washes out single-company problems. Market-wide risk remains."},
- {q:"Beta measures…", opts:["total volatility","sensitivity to market movements","dividend yield","tax efficiency"], a:1, why:"Beta = systematic risk vs. the market (1.0 moves with the market). Standard deviation = total risk."},
- {q:"Which vehicle trades all day on an exchange and typically tracks an index at low cost?", opts:["Open-end mutual fund","ETF","CD","Whole life policy"], a:1, why:"ETFs trade like stocks intraday; mutual funds price once daily at NAV."},
- {q:"Investing $500 on the 1st of every month regardless of price is…", opts:["market timing","dollar-cost averaging","day trading","rebalancing"], a:1, why:"DCA: fixed amount, fixed schedule — automatically buys more shares when cheap."},
- {q:"For maximum diversification benefit, combine assets whose correlation is…", opts:["+1.0","+0.5","0 or negative","irrelevant"], a:2, why:"Low or negative correlation means they zig when others zag — smoothing total risk."},
- {q:"The Sharpe ratio tells you…", opts:["return per unit of risk taken","the tax owed on gains","a bond's maturity","a fund's expense ratio"], a:0, why:"Sharpe = excess return ÷ standard deviation — how well you're paid for the risk."}
+ {q:"A stockholder is best described as…", opts:["a lender to the company","an owner of the company","a creditor with priority","a guaranteed-income investor"], a:1, why:"Stock = ownership (residual claim). Bonds = lending. Bondholders are paid before stockholders in bankruptcy."},
+ {q:"Interest rates rise sharply. Existing bond prices will…", opts:["rise","fall","stay the same","become guaranteed"], a:1, why:"The seesaw: rates up → existing bond prices down, because their fixed coupons now look less attractive."},
+ {q:"Which is NOT FDIC insured?", opts:["Money market deposit account","Certificate of deposit","Money market mutual fund","Savings account"], a:2, why:"A money market MUTUAL fund is a security — not FDIC insured, despite the similar name.", trap:"The 'money market deposit account' IS insured; the near-identical 'money market mutual fund' is not."},
+ {q:"A stock bought at $50 pays $2 in dividends and ends at $54. Total return?", opts:["8%","10%","12%","4%"], a:2, why:"($54 − $50 + $2) ÷ $50 = $6 ÷ $50 = 12%. Price change alone (8%) understates it by a third."},
+ {q:"A 3.5% municipal bond for an investor in the 32% bracket has a taxable-equivalent yield of…", opts:["3.5%","5.15%","4.62%","2.38%"], a:1, why:"TEY = 3.5% ÷ (1 − 0.32) = 3.5 ÷ 0.68 = 5.15%. Munis favor high brackets and never a tax-deferred account."},
+ {q:"The boundary between investment-grade and speculative bonds is…", opts:["A / A3","BBB− / Baa3","BB+ / Ba1","AA / Aa2"], a:1, why:"BBB− (S&P/Fitch) or Baa3 (Moody's) is the line. Below it is high-yield 'junk.'"},
+ {q:"Which risk can diversification nearly eliminate?", opts:["Systematic risk","Interest-rate risk","Unsystematic (company-specific) risk","Inflation risk"], a:2, why:"Owning many low-correlation holdings washes out single-company problems. Market-wide risk remains.", trap:"Systematic/market/inflation risks are all non-diversifiable — only the company-specific one can be removed."},
+ {q:"Beta measures ______, while standard deviation measures ______.", opts:["total risk; systematic risk","systematic risk; total risk","tax efficiency; volatility","yield; duration"], a:1, why:"Beta = systematic risk vs. the market; standard deviation = total risk. Beta for a component in a diversified portfolio; SD for the whole portfolio."},
+ {q:"Fund A returns 12% with a 20% SD; Fund B returns 9% with a 10% SD (risk-free 3%). Which is better risk-adjusted?", opts:["Fund A","Fund B","Equal","Can't tell"], a:1, why:"Sharpe A = (12−3)/20 = 0.45; B = (9−3)/10 = 0.60. Fund B earns more excess return per unit of risk despite the lower raw return."},
+ {q:"Which vehicle trades all day on an exchange and typically tracks an index at low cost with strong tax efficiency?", opts:["Open-end mutual fund","ETF","CD","Closed-end fund at a discount"], a:1, why:"ETFs trade intraday and use in-kind creation/redemption for tax efficiency; mutual funds price once daily at NAV."},
+ {q:"A mutual fund order executes at…", opts:["the price when you place it","the next computed NAV (forward pricing)","yesterday's closing NAV","the bid-ask midpoint"], a:1, why:"Mutual funds are forward-priced — you get the NAV computed after the market next closes, not a known price."},
+ {q:"Over a 30-year horizon, a 1% higher expense ratio on a $100,000 investment costs roughly…", opts:["about $18,000","about $182,000","nothing, if returns are equal","only the first year's fee"], a:1, why:"On $100k at 7% gross over 30 yrs, the gap is ≈$182,000 — about a quarter of the ending balance. Costs compound.", trap:"It feels like 'just 1%,' but compounded over decades it's a quarter of the final balance."},
+ {q:"Asset allocation is emphasized over security selection because it…", opts:["is easier to sell","explains most of the variability in portfolio returns over time","avoids all taxes","guarantees higher returns"], a:1, why:"Allocation across classes drives the large majority of return variability; selection and timing explain far less."},
+ {q:"A 60/40 portfolio has drifted to 72/28 after a strong stock run. The right action is to…", opts:["do nothing — winners keep winning","rebalance back toward 60/40","sell everything","shift fully to cash"], a:1, why:"Drift raised risk with no decision made. Rebalancing restores the planned risk level — sell winners, buy laggards."},
+ {q:"The main purpose of an Investment Policy Statement is to…", opts:["predict market returns","provide an agreed reference set while calm, to guide decisions during volatility","eliminate all risk","pick the best stocks"], a:1, why:"The IPS documents objectives, allocation, and rebalancing rules in advance, so market drops are met with policy, not panic."},
+ {q:"When planning, a client's portfolio should be built to…", opts:["their risk capacity only","their risk tolerance only","the LOWER of risk tolerance and risk capacity","the higher of the two"], a:2, why:"Plan to the lower: a client with high capacity but low tolerance will bail in a drawdown, turning a paper loss into a permanent one."}
 ]};
 </script>
 <script src="js/app.js"></script>
